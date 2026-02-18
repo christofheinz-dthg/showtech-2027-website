@@ -250,70 +250,9 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // ── Hero Collage: Dynamic Image Rotator (Robust Version) ──────────
-    const collageImages = document.querySelectorAll('.collage-item img');
-    // Encode special chars/spaces in filenames to ensure loading
-    const imagePool = [
-        "assets/Photos_start-hero/119%20-%2020250522-showtec-2025-119.png",
-        "assets/Photos_start-hero/170---20250522-showtec-2025-170.png",
-        "assets/Photos_start-hero/20250522-showtec-2025-100.png",
-        "assets/Photos_start-hero/20250522-showtec-2025-186(1).jpg",
-        "assets/Photos_start-hero/20250522-showtec-2025-506(2).png",
-        "assets/Photos_start-hero/20250522-showtec-2025-596.png",
-        "assets/Photos_start-hero/20250522-showtec-2025-804.png",
-        "assets/Photos_start-hero/407---20250522-showtec-2025-407.png",
-        "assets/Photos_start-hero/545---20250522-showtec-2025-545.png"
-    ];
-
-    function getRandomImage(excludeSrc) {
-        let pick;
-        let attempts = 0;
-        do {
-            pick = imagePool[Math.floor(Math.random() * imagePool.length)];
-            attempts++;
-        } while (pick === excludeSrc && attempts < 10);
-        return pick;
-    }
-
-    function rotateRandomCollageImage() {
-        if (collageImages.length === 0) return;
-
-        const slotIndex = Math.floor(Math.random() * collageImages.length);
-        const imgElement = collageImages[slotIndex];
-
-        // Save old src in case of error
-        const oldSrc = imgElement.getAttribute('src');
-        const newSrc = getRandomImage(oldSrc);
-
-        if (!newSrc) return;
-
-        // Preload image to check validity before fading
-        const preloadImg = new Image();
-        preloadImg.src = newSrc;
-
-        preloadImg.onload = () => {
-            // Only swap if load successful
-            imgElement.classList.add('fading-out');
-
-            setTimeout(() => {
-                imgElement.src = newSrc;
-                // Wait small tick for render, then fade in
-                requestAnimationFrame(() => {
-                    imgElement.classList.remove('fading-out');
-                });
-            }, 500); // 500ms match css transition
-        };
-
-        preloadImg.onerror = () => {
-            console.warn('Failed to load collage image:', newSrc);
-            // Do nothing, keep old image
-        };
-    }
-
-    // Rotate an image every 3.5 seconds
-    if (collageImages.length > 0) {
-        setInterval(rotateRandomCollageImage, 3500);
-    }
+    // ── Hero Collage: One-time Init (Static) ──────────
+    // Auto-rotation disabled per user request. 
+    // Images are static as defined in HTML.
 
     // ── Venue Accordion ─────────────────────────────────────────────
     document.querySelectorAll('.venue-acc-header').forEach(header => {

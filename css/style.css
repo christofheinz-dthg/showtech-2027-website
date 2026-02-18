@@ -535,7 +535,7 @@ p {
 /* HERO REDESIGN - UNIFIED */
 .hero-redesign {
     position: relative;
-    padding-top: 140px;
+    padding-top: 80px;
     min-height: 100vh;
     background: radial-gradient(ellipse at 60% 0%, #1a3a5c 0%, #0d1b2e 60%);
     color: var(--color-text-primary);
