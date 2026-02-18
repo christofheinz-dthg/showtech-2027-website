@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unterseite - SHOWTECH 2027</title>
+    <meta name="description" content="SHOWTECH 2027 - Unterseite">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+</head>
+
+<body>
+
+    <!-- Header (Identical to Home) -->
+    <header class="site-header scrolled"> <!-- Permanently solid/scrolled style for subpages -->
+        <div class="container header-inner">
+            <div class="logo">
+                <a href="index.html" class="logo-link">
+                    <!-- Standard Logo (Default) -->
+                    <img src="assets/SHOWTECH27_logo.png" alt="SHOWTECH 2027 Logo" class="logo-img logo-default"
+                        style="opacity: 0; pointer-events: none;">
+                    <!-- Hidden on subpage header if we want sticky style always -->
+                    <!-- Sticky Logo (Always visible on subpage header) -->
+                    <img src="assets/ST27-sticky-logo.png" alt="SHOWTECH 2027 Sticky Logo" class="logo-img logo-sticky"
+                        style="opacity: 1; transform: translateY(-50%) scale(0.8); pointer-events: auto;">
+                </a>
+            </div>
+
+            <!-- Desktop Nav -->
+            <nav class="main-nav">
+                <ul class="nav-list">
+                    <li><a href="visit.html" class="nav-link active">Visit</a></li>
+                    <li><a href="exhibit.html" class="nav-link">Exhibit</a></li>
+                    <li><a href="about.html" class="nav-link">About</a></li>
+                    <li><a href="#news" class="nav-link">News</a></li>
+                </ul>
+            </nav>
+
+            <div class="header-actions">
+                <button class="menu-toggle-btn" id="menuToggle" aria-label="Toggle Menu">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </button>
+                <a href="#contact" class="btn btn-primary">Kontakt</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Navigation Overlay (Identical to Home) -->
+    <div class="nav-overlay" id="navOverlay">
+        <div class="nav-overlay-inner">
+            <ul class="nav-overlay-links">
+                <li><a href="index.html" class="nav-overlay-link">Home</a></li>
+                <li><a href="visit.html" class="nav-overlay-link">Visit</a></li>
+                <li><a href="exhibit.html" class="nav-overlay-link">Exhibit</a></li>
+                <li><a href="conference.html" class="nav-overlay-link">Conference</a></li>
+                <li><a href="about.html" class="nav-overlay-link">About</a></li>
+            </ul>
+            <div class="logo">
+                <!-- Using Footer Logo Style for Overlay -->
+                <span
+                    style="font-family: var(--font-heading); font-weight: 700; font-size: 2rem; color: #fff; letter-spacing: -0.02em;">SHOWTECH</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <main>
+
+        <!-- Page Header (Simple Banner) -->
+        <section class="page-header">
+            <div class="container">
+                <div class="page-header-content">
+                    <span class="meta-pill">Info & Service</span>
+                    <h1 class="page-title">Page Title Goes Here</h1>
+                    <p class="page-subtitle">Eine kurze Zusammenfassung, worum es auf dieser Unterseite geht. Ideal für
+                        SEO und Nutzerführung.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Standard Content Section -->
+        <section class="page-content section-padding">
+            <div class="container">
+                <div class="content-grid-layout">
+
+                    <!-- Main Text Column -->
+                    <div class="content-main">
+                        <h2>Überschrift für den Inhalt</h2>
+                        <p>Dies ist ein Blindtext für die Unterseite. Er zeigt, wie Fließtext aussehen wird. WordPress
+                            macht es sehr einfach, solche Texte zu bearbeiten.</p>
+                        <p>Wir können hier Bilder, Listen und Zitate einfügen.</p>
+
+                        <h3>Zwischenüberschrift</h3>
+                        <ul>
+                            <li>Wichtiger Punkt Eins</li>
+                            <li>Wichtiger Punkt Zwei</li>
+                            <li>Wichtiger Punkt Drei</li>
+                        </ul>
+
+                        <div class="info-box">
+                            <h4>Pro-Tipp</h4>
+                            <p>Solche Info-Boxen sind super, um wichtige Hinweise hervorzuheben (z.B. Deadlines für
+                                Aussteller).</p>
+                        </div>
+                    </div>
+
+                    <!-- Sidebar (Downloads, Links) -->
+                    <aside class="content-sidebar">
+                        <div class="sidebar-widget">
+                            <h3>Downloads</h3>
+                            <ul class="download-list">
+                                <li>
+                                    <a href="#" class="download-link">
+                                        <span class="icon">↓</span>
+                                        <span class="text">Aussteller-Broschüre (.pdf)</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" class="download-link">
+                                        <span class="icon">↓</span>
+                                        <span class="text">Hallenplan 2027 (.pdf)</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="sidebar-widget contact-widget">
+                            <h3>Fragen?</h3>
+                            <p>Unser Support-Team hilft dir gerne weiter.</p>
+                            <a href="mailto:info@showtech.me" class="link-arrow">info@showtech.me</a>
+                        </div>
+                    </aside>
+
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer (Identical to Home) -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="logo">SHOWTECH</div>
+                    <p class="footer-tagline">The world of theatre & stage technology.</p>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-col">
+                        <h4>Event</h4>
+                        <a href="#">Über uns</a>
+                        <a href="#">Sprecher</a>
+                        <a href="#">Programm</a>
+                    </div>
+                    <div class="footer-col">
+                        <h4>Besucher</h4>
+                        <a href="#">Tickets</a>
+                        <a href="#">Anreise</a>
+                        <a href="#">FAQ</a>
+                    </div>
+                    <div class="footer-col">
+                        <h4>Aussteller</h4>
+                        <a href="#">Stand buchen</a>
+                        <a href="#">Sponsoring</a>
+                        <a href="#">Kontakt</a>
+                    </div>
+                </div>
+                <div class="footer-social">
+                    <a href="#" class="social-link">LN</a>
+                    <a href="#" class="social-link">IG</a>
+                    <a href="#" class="social-link">YT</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2027 SHOWTECH. Alle Rechte vorbehalten.</p>
+                <div class="footer-meta">
+                    <a href="#">Impressum</a>
+                    <a href="#">Datenschutz</a>
+                    <a href="#">AGB</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+
+</html>

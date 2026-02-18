@@ -1,0 +1,970 @@
+<!DOCTYPE html>
+<html lang="en"> <!-- Changed to EN as default, switcher will toggle -->
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SHOWTECH 2027</title>
+    <link rel="stylesheet" href="css/style.css">
+    <meta name="description" content="SHOWTECH 2027 - The world of theatre & stage technology">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <!-- Sticky Header -->
+    <header class="site-header" id="site-header">
+        <div class="container header-inner">
+            <div class="logo">
+                <a href="#hero" class="logo-link">
+                    <!-- Standard Logo (Default) -->
+                    <img src="assets/SHOWTECH27_logo.png" alt="SHOWTECH 2027 Logo" class="logo-img logo-default">
+                    <!-- Sticky Logo (Shown on scroll) -->
+                    <img src="assets/ST27-sticky-logo.png" alt="SHOWTECH 2027 Sticky Logo" class="logo-img logo-sticky">
+                </a>
+            </div>
+
+            <div class="header-actions">
+                <div class="lang-switcher">
+                    <button class="lang-btn active" data-lang="en">EN</button>
+                    <span class="lang-sep">/</span>
+                    <button class="lang-btn" data-lang="de">DE</button>
+                </div>
+                <a href="#contact" class="btn btn-primary btn-sm">Kontakt</a>
+                <button class="mobile-menu-toggle" id="menuToggle" aria-label="Toggle Menu" aria-expanded="false">
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Full-screen Nav Overlay -->
+    <div class="nav-overlay" id="navOverlay" aria-hidden="true">
+        <nav class="nav-overlay-inner">
+            <ul class="nav-overlay-links">
+                <li><a href="#" class="nav-overlay-link">Startseite</a></li>
+                <li><a href="#exhibit" class="nav-overlay-link">Ausstellen</a></li>
+                <li><a href="#visit" class="nav-overlay-link">Besuchen</a></li>
+                <li><a href="#venue" class="nav-overlay-link">Location</a></li>
+                <li><a href="#about" class="nav-overlay-link">Über uns</a></li>
+                <li><a href="#contact" class="nav-overlay-link">Kontakt</a></li>
+            </ul>
+            <div class="nav-overlay-footer">
+                <a href="#exhibit" class="btn btn-primary btn-lg btn-pill">Stand buchen</a>
+                <a href="#visit" class="btn btn-outline btn-lg btn-pill">Ticket sichern</a>
+            </div>
+        </nav>
+    </div>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero-redesign">
+            <div class="container hero-wrapper">
+
+                <!-- Left Content -->
+                <div class="hero-text-side">
+
+                    <!-- Meta Bar -->
+                    <div class="hero-meta-bar">
+                        <span class="meta-pill meta-date">1.–3. Juni 2027 · Arena Berlin</span>
+                        <button class="meta-pill meta-btn">✓ Zum Kalender</button>
+                    </div>
+
+                    <h1 class="hero-title-en">The world of theatre <span class="text-gradient">&amp; stage
+                            technology</span></h1>
+
+                    <p class="hero-sub">Der internationale Treffpunkt für die Theater-, Veranstaltungs- und
+                        Bühnenbranche. Technologie erleben, Netzwerke aufbauen, Zukunft gestalten.
+                    </p>
+
+                    <div class="hero-actions">
+                        <a href="#exhibit" class="btn btn-primary btn-lg btn-pill">Stand buchen</a>
+                        <a href="#visit" class="btn btn-outline btn-lg btn-pill">Ticket sichern</a>
+                    </div>
+
+
+                </div>
+
+                <!-- Right Visuals: Collage Grid (As requested) -->
+                <div class="hero-visual-side">
+                    <div class="hero-collage">
+
+                        <!-- Left Column (Stacked) -->
+                        <div class="collage-col-left">
+                            <div class="collage-item">
+                                <img src="assets/Photos_start-hero/20250522-showtec-2025-100.png"
+                                    alt="SHOWTECH Audience Interaction">
+                            </div>
+                            <div class="collage-item">
+                                <img src="assets/Photos_start-hero/20250522-showtec-2025-804.png"
+                                    alt="SHOWTECH Exhibition Detail">
+                            </div>
+                        </div>
+
+                        <!-- Right Column (Tall) -->
+                        <div class="collage-col-right">
+                            <div class="collage-item tall">
+                                <img src="assets/Photos_start-hero/545---20250522-showtec-2025-545.png"
+                                    alt="SHOWTECH Atmosphere">
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Bottom Logos (Currently Hidden) -->
+            <div class="hero-footer-logos" style="display: none;">
+                <div class="container logo-strip">
+                    <span class="logo-item">DTHG</span>
+                    <span class="logo-item">OISTAT</span>
+                    <span class="logo-item">VPLT</span>
+                    <span class="logo-item">Riedel</span>
+                    <span class="logo-item">ROBE</span>
+                    <span class="logo-item">ETC</span>
+                    <span class="logo-item">GLP</span>
+                    <span class="logo-item">Sennheiser</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Latest News Section -->
+        <section id="news" class="section-news">
+            <div class="container">
+                <div class="news-section-header">
+                    <div class="news-header-left">
+                        <span class="section-tag">Stay Updated</span>
+                        <h2>Latest News</h2>
+                        <p>Insights, announcements, and stories from the world of stage technology.</p>
+                    </div>
+                    <a href="#" class="news-view-all">All News &rarr;</a>
+                </div>
+                <div class="news-grid-4">
+                    <!-- Card 1: Day 1 Recap -->
+                    <article class="news-card-v2">
+                        <div class="news-card-image"
+                            style="background-image: url('assets/20250522-showtec-2025-100.png');">
+                            <span class="news-badge news-badge-red">Recap</span>
+                        </div>
+                        <div class="news-card-body">
+                            <span class="news-card-date">22. Mai 2025</span>
+                            <h3>SHOWTECH25 Tag 1 – Technologie live erleben</h3>
+                            <p>Eindrückliche Eröffnung, volle Hallen und ein Publikum, das die Innovationen der Branche
+                                hautnah erlebt hat.</p>
+                            <a href="#" class="news-read-more">Weiterlesen &rarr;</a>
+                        </div>
+                    </article>
+                    <!-- Card 2: Day 2 Recap -->
+                    <article class="news-card-v2">
+                        <div class="news-card-image"
+                            style="background-image: url('assets/545---20250522-showtec-2025-545.png');">
+                            <span class="news-badge news-badge-blue">Kongress</span>
+                        </div>
+                        <div class="news-card-body">
+                            <span class="news-card-date">23. Mai 2025</span>
+                            <h3>SHOWTECH25 Tag 2 – Das neue Theatererlebnis</h3>
+                            <p>Internationales Kongressprogramm mit Expert*innen aus Theater, Technologie und Kunst –
+                                inspirierende Diskussionen und neue Perspektiven.</p>
+                            <a href="#" class="news-read-more">Weiterlesen &rarr;</a>
+                        </div>
+                    </article>
+                    <!-- Card 3: Tag der Szenografie -->
+                    <article class="news-card-v2">
+                        <div class="news-card-image"
+                            style="background-image: url('assets/Arena Halle von innen.jpeg');">
+                            <span class="news-badge news-badge-teal">Szenografie</span>
+                        </div>
+                        <div class="news-card-body">
+                            <span class="news-card-date">24. Mai 2025</span>
+                            <h3>Tag der Szenografie 2025 – Recap</h3>
+                            <p>Fokussession in Kooperation mit der DTHG: Szenografie zwischen Handwerk, Technologie und
+                                künstlerischer Vision.</p>
+                            <a href="#" class="news-read-more">Weiterlesen &rarr;</a>
+                        </div>
+                    </article>
+                    <!-- Card 4: Coming Soon -->
+                    <article class="news-card-v2 news-card-coming-soon">
+                        <div class="news-card-image news-card-dark">
+                            <span class="news-badge news-badge-outline">SHOWTECH 2027</span>
+                            <div class="coming-soon-plus">+</div>
+                        </div>
+                        <div class="news-card-body">
+                            <span class="news-card-date">&nbsp;</span>
+                            <h3>Neuigkeiten zu SHOWTECH 2027 folgen</h3>
+                            <p>Bleiben Sie gespannt – Aussteller, Programm und Highlights werden bald bekannt gegeben.
+                            </p>
+                            <a href="#" class="news-read-more">Weiterlesen &rarr;</a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Why Attend Section - Screenshot Layout -->
+        <section id="about" class="section-why-attend">
+            <div class="container">
+                <div class="why-attend-header">
+                    <div class="why-attend-intro">
+                        <h2>Warum SHOWTECH besuchen?</h2>
+                        <p>Ob Sie Innovationen entdecken oder die Branche mitgestalten wollen –<br>die Zahlen sprechen
+                            für sich.</p>
+                    </div>
+                    <div class="audience-toggle">
+                        <button class="audience-toggle-btn active" data-audience="visitor">Besucher-Infos</button>
+                        <button class="audience-toggle-btn" data-audience="exhibitor">Aussteller-Infos</button>
+                    </div>
+                </div>
+
+                <!-- Visitor Facts Panel -->
+                <div class="why-attend-body active" id="panel-visitor">
+                    <div class="why-attend-stats">
+                        <div class="stat-card">
+                            <div class="stat-icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+                                    <circle cx="9" cy="7" r="4" />
+                                    <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
+                                    <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+                                </svg>
+                            </div>
+                            <div class="stat-number">7.200+</div>
+                            <div class="stat-label">Fachbesucher</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                                    <circle cx="12" cy="12" r="10" />
+                                    <line x1="2" y1="12" x2="22" y2="12" />
+                                    <path
+                                        d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
+                                </svg>
+                            </div>
+                            <div class="stat-number">International</div>
+                            <div class="stat-label">Aus aller Welt</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
+                                    <polyline points="9 22 9 12 15 12 15 22" />
+                                </svg>
+                            </div>
+                            <div class="stat-number">90+</div>
+                            <div class="stat-label">Programmpunkte</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                                    <line x1="18" y1="20" x2="18" y2="10" />
+                                    <line x1="12" y1="20" x2="12" y2="4" />
+                                    <line x1="6" y1="20" x2="6" y2="14" />
+                                </svg>
+                            </div>
+                            <div class="stat-number">3</div>
+                            <div class="stat-label">Tage volles Programm</div>
+                        </div>
+                    </div>
+                    <div class="why-attend-testimonial">
+                        <div class="testimonial-quote-mark">&ldquo;</div>
+                        <blockquote>Die SHOWTECH hat sich in kürzester Zeit als das führende Netzwerkevent der Branche
+                            etabliert. Die Atmosphäre in der Arena Berlin war einzigartig.</blockquote>
+                        <div class="testimonial-author">
+                            <div class="testimonial-avatar"
+                                style="background: linear-gradient(135deg, #29b6f6, #0d47a1); display:flex; align-items:center; justify-content:center; font-weight:700; font-size:1rem;">
+                                KP</div>
+                            <div>
+                                <div class="testimonial-name">Kai-Uwe Patz</div>
+                                <div class="testimonial-role">Bühnenbau Wertheim</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Exhibitor Facts Panel -->
+                <div class="why-attend-body" id="panel-exhibitor">
+                    <div class="why-attend-stats">
+                        <div class="stat-card">
+                            <div class="stat-icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                                    <rect x="2" y="7" width="20" height="14" rx="2" ry="2" />
+                                    <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16" />
+                                </svg>
+                            </div>
+                            <div class="stat-number">92</div>
+                            <div class="stat-label">Ausstellende Unternehmen</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                                    <circle cx="12" cy="8" r="6" />
+                                    <path d="M15.477 12.89L17 22l-5-3-5 3 1.523-9.11" />
+                                </svg>
+                            </div>
+                            <div class="stat-number">7.200+</div>
+                            <div class="stat-label">Fachbesucher SHOWTECH25</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                                    <path
+                                        d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
+                                </svg>
+                            </div>
+                            <div class="stat-number">90+</div>
+                            <div class="stat-label">Programmpunkte</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                                    <circle cx="12" cy="12" r="10" />
+                                    <line x1="2" y1="12" x2="22" y2="12" />
+                                    <path
+                                        d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
+                                </svg>
+                            </div>
+                            <div class="stat-number">International</div>
+                            <div class="stat-label">Aussteller weltweit</div>
+                        </div>
+                    </div>
+                    <div class="why-attend-testimonial">
+                        <div class="testimonial-quote-mark">&ldquo;</div>
+                        <blockquote>Die Qualität der Gespräche und Kontakte bei der SHOWTECH ist in der Branche
+                            einmalig. Spontane Begegnungen, die echten Mehrwert schaffen.</blockquote>
+                        <div class="testimonial-author">
+                            <div class="testimonial-avatar"
+                                style="background: linear-gradient(135deg, #29b6f6, #0d47a1); display:flex; align-items:center; justify-content:center; font-weight:700; font-size:1rem;">
+                                PH</div>
+                            <div>
+                                <div class="testimonial-name">Paul Halter</div>
+                                <div class="testimonial-role">Charcoalblue</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- The Venue Section -->
+        <section id="venue" class="section-venue">
+            <div class="container venue-grid">
+
+                <!-- Left: Info + Accordion -->
+                <div class="venue-info">
+                    <p class="venue-eyebrow">The Venue</p>
+                    <h2 class="venue-title">Arena<br>Berlin</h2>
+
+                    <div class="venue-address">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                            <circle cx="12" cy="10" r="3" />
+                        </svg>
+                        <div>
+                            <span>Eichenstraße 4</span><br>
+                            <span>12435 Berlin, Germany</span>
+                        </div>
+                    </div>
+
+                    <!-- Venue Accordion -->
+                    <div class="venue-accordion">
+
+                        <div class="venue-acc-item">
+                            <button class="venue-acc-header" aria-expanded="false">
+                                <span class="venue-acc-icon">
+                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                                        <circle cx="12" cy="12" r="10" />
+                                        <polyline points="12 6 12 12 16 14" />
+                                    </svg>
+                                </span>
+                                <span>Anreise &amp; Verkehr</span>
+                                <svg class="venue-acc-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                                    stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round">
+                                    <polyline points="6 9 12 15 18 9" />
+                                </svg>
+                            </button>
+                            <div class="venue-acc-body">
+                                <p><strong>S-Bahn:</strong> S8/S9 bis Treptower Park, dann 10 Min. Fu&szlig;weg. Oder
+                                    S41/S42 bis Sonnenallee.</p>
+                                <p><strong>U-Bahn:</strong> U1 bis Schlesisches Tor, dann Bus 265 bis Arena Berlin.</p>
+                                <p><strong>Auto:</strong> A100 Ausfahrt Treptow, Beschilderung Arena Berlin folgen. GPS:
+                                    Eichenstra&szlig;e 4, 12435 Berlin.</p>
+                                <p><strong>Taxi / Rideshare:</strong> Abgabe direkt am Haupteingang Eichenstra&szlig;e.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="venue-acc-item">
+                            <button class="venue-acc-header" aria-expanded="false">
+                                <span class="venue-acc-icon">
+                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
+                                        <polyline points="9 22 9 12 15 12 15 22" />
+                                    </svg>
+                                </span>
+                                <span>Hotelempfehlungen</span>
+                                <svg class="venue-acc-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                                    stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round">
+                                    <polyline points="6 9 12 15 18 9" />
+                                </svg>
+                            </button>
+                            <div class="venue-acc-body">
+                                <p><strong>nhow Berlin</strong> &mdash; 5 Min. mit dem Auto, Designhotel direkt an der
+                                    Spree. Partnerrate verf&uuml;gbar.</p>
+                                <p><strong>Motel One Berlin-Treptow</strong> &mdash; 10 Min. Fu&szlig;weg, g&uuml;nstig
+                                    mit guter ÖPNV-Anbindung.</p>
+                                <p><strong>Hotel Spreebogen</strong> &mdash; 15 Min. mit der S-Bahn, Lage am Wasser mit
+                                    Tagungsm&ouml;glichkeiten.</p>
+                                <p style="margin-top:0.5rem;font-size:0.85rem;opacity:0.7;">Partnerkonditionen werden
+                                    rechtzeitig vor der Veranstaltung bekannt gegeben.</p>
+                            </div>
+                        </div>
+
+
+                        <div class="venue-acc-item">
+                            <button class="venue-acc-header" aria-expanded="false">
+                                <span class="venue-acc-icon">
+                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                                        <rect x="3" y="3" width="18" height="18" rx="2" />
+                                        <path d="M3 9h18" />
+                                        <path d="M9 21V9" />
+                                    </svg>
+                                </span>
+                                <span>Hallenplan &amp; Gel&auml;nde</span>
+                                <svg class="venue-acc-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                                    stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round">
+                                    <polyline points="6 9 12 15 18 9" />
+                                </svg>
+                            </button>
+                            <div class="venue-acc-body">
+                                <p>Die Ausstellung erstreckt sich &uuml;ber die Arena Halle (Hauptfl&auml;che), die
+                                    Glashaus-Galerie sowie die Spree-Terrasse im Au&szlig;enbereich. Insgesamt stehen
+                                    &uuml;ber 10.000 m&sup2; Ausstellungsfl&auml;che zur Verf&uuml;gung.</p>
+                                <p>Ein detaillierter Hallenplan wird rechtzeitig vor der Veranstaltung zum Download
+                                    bereitgestellt.</p>
+                                <a href="#" class="venue-acc-link">Hallenplan als PDF herunterladen &rarr;</a>
+                            </div>
+                        </div>
+
+                        <div class="venue-acc-item">
+                            <button class="venue-acc-header" aria-expanded="false">
+                                <span class="venue-acc-icon">
+                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                                        <circle cx="12" cy="12" r="10" />
+                                        <polyline points="12 6 12 12 16 14" />
+                                    </svg>
+                                </span>
+                                <span>&Ouml;ffnungszeiten</span>
+                                <svg class="venue-acc-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                                    stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round">
+                                    <polyline points="6 9 12 15 18 9" />
+                                </svg>
+                            </button>
+                            <div class="venue-acc-body">
+                                <p><strong>Montag, 1. Juni 2027:</strong> 09:00 &ndash; 18:00 Uhr</p>
+                                <p><strong>Dienstag, 2. Juni 2027:</strong> 09:00 &ndash; 18:00 Uhr</p>
+                                <p><strong>Mittwoch, 3. Juni 2027:</strong> 09:00 &ndash; 16:00 Uhr</p>
+                                <p style="margin-top: 0.5rem; font-size: 0.85rem; opacity: 0.7;">Nur f&uuml;r
+                                    Fachbesucher. Aussteller erhalten 30 Min. fr&uuml;her Einlass.</p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- Right: Photo Slider -->
+                <div class="venue-slider-wrap">
+                    <div class="venue-slider" id="venueSlider">
+
+                        <!-- Slide 1: Arena interior (default visible) -->
+                        <div class="venue-slide active">
+                            <img src="assets/Arena Halle von innen.jpeg" alt="Arena Berlin – Haupthalle Innenansicht">
+                            <div class="venue-slide-caption">
+                                <strong>Arena Halle</strong>
+                                <span>&Uuml;ber 10.000 m&sup2; flexible Ausstellungsfl&auml;che</span>
+                            </div>
+                        </div>
+
+                        <!-- Slide 2: Arena exterior -->
+                        <div class="venue-slide">
+                            <img src="assets/Arena Halle Schr&auml;gansicht.jpeg"
+                                alt="Arena Berlin – Au&szlig;enansicht">
+                            <div class="venue-slide-caption">
+                                <strong>Arena Berlin</strong>
+                                <span>Eichenstra&szlig;e 4, 12435 Berlin</span>
+                            </div>
+                        </div>
+
+                        <!-- Slide 3: YouTube Video -->
+                        <div class="venue-slide venue-slide-video">
+                            <div class="venue-video-thumb" id="venueVideoThumb">
+                                <img src="https://img.youtube.com/vi/lZAhplhMzns/maxresdefault.jpg"
+                                    alt="SHOWTECH 2025 Highlight Video">
+                                <button class="venue-play-btn" id="venuePlayBtn" aria-label="Video abspielen">
+                                    <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor">
+                                        <polygon points="5 3 19 12 5 21 5 3" />
+                                    </svg>
+                                </button>
+                            </div>
+                            <div class="venue-video-frame" id="venueVideoFrame" style="display:none;">
+                                <iframe id="venueYouTube" src=""
+                                    data-src="https://www.youtube.com/embed/lZAhplhMzns?autoplay=1&amp;start=8&amp;rel=0"
+                                    title="SHOWTECH 2025 Highlight Video" frameborder="0"
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                    allowfullscreen>
+                                </iframe>
+                            </div>
+                            <div class="venue-slide-caption">
+                                <strong>SHOWTECH 2025 Highlights</strong>
+                                <span>Offizieller Event-Recap ansehen</span>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!-- Slider Controls -->
+                    <div class="venue-slider-controls">
+                        <button class="venue-slider-btn" id="venuePrev" aria-label="Vorheriger Slide">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="15 18 9 12 15 6" />
+                            </svg>
+                        </button>
+                        <div class="venue-slider-dots" id="venueSliderDots">
+                            <button class="venue-dot active" data-index="0" aria-label="Slide 1"></button>
+                            <button class="venue-dot" data-index="1" aria-label="Slide 2"></button>
+                            <button class="venue-dot" data-index="2" aria-label="Slide 3"></button>
+                        </div>
+                        <button class="venue-slider-btn" id="venueNext" aria-label="N&auml;chster Slide">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="9 18 15 12 9 6" />
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- Road to SHOWTECH Timeline -->
+        <section class="section-timeline-new section-timeline-navy">
+            <div class="container">
+                <div class="timeline-new-header">
+                    <h2>Road to <span class="text-blue-accent">SHOWTECH 2027</span></h2>
+                    <p>Mark your calendar for these important milestones</p>
+                </div>
+
+                <div class="timeline-new-track">
+                    <!-- Connecting line -->
+                    <div class="timeline-new-line"></div>
+
+                    <!-- Milestone 1 (past - filled) -->
+                    <div class="timeline-new-item past">
+                        <div class="timeline-new-circle filled">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path
+                                    d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" />
+                            </svg>
+                        </div>
+                        <div class="timeline-new-content">
+                            <span class="timeline-new-date">June 2025</span>
+                            <h4>SHOWTECH 2025</h4>
+                            <p>Our last successful event with 3,500+ attendees</p>
+                        </div>
+                    </div>
+
+                    <!-- Milestone 2 (past - filled) -->
+                    <div class="timeline-new-item past">
+                        <div class="timeline-new-circle filled">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+                                <polyline points="14 2 14 8 20 8" />
+                            </svg>
+                        </div>
+                        <div class="timeline-new-content">
+                            <span class="timeline-new-date">October 2025</span>
+                            <h4>Call for Proposals</h4>
+                            <p>Submit your ideas for workshops and presentations</p>
+                        </div>
+                    </div>
+
+                    <!-- Milestone 3 (future - outline) -->
+                    <div class="timeline-new-item">
+                        <div class="timeline-new-circle outline">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z" />
+                                <path d="M19 10v2a7 7 0 0 1-14 0v-2" />
+                                <line x1="12" y1="19" x2="12" y2="23" />
+                                <line x1="8" y1="23" x2="16" y2="23" />
+                            </svg>
+                        </div>
+                        <div class="timeline-new-content">
+                            <span class="timeline-new-date">January 2026</span>
+                            <h4>Speaker Lineup</h4>
+                            <p>First wave of confirmed speakers announced</p>
+                        </div>
+                    </div>
+
+                    <!-- Milestone 4 (future - outline) -->
+                    <div class="timeline-new-item">
+                        <div class="timeline-new-circle outline">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <circle cx="12" cy="8" r="6" />
+                                <path d="M15.477 12.89L17 22l-5-3-5 3 1.523-9.11" />
+                            </svg>
+                        </div>
+                        <div class="timeline-new-content">
+                            <span class="timeline-new-date">March 2026</span>
+                            <h4>Award Nominations</h4>
+                            <p>Nominate innovations for SHOWTECH Product Awards</p>
+                        </div>
+                    </div>
+
+                    <!-- Milestone 5 (future - outline) -->
+                    <div class="timeline-new-item">
+                        <div class="timeline-new-circle outline">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <rect x="3" y="4" width="18" height="18" rx="2" ry="2" />
+                                <line x1="16" y1="2" x2="16" y2="6" />
+                                <line x1="8" y1="2" x2="8" y2="6" />
+                                <line x1="3" y1="10" x2="21" y2="10" />
+                            </svg>
+                        </div>
+                        <div class="timeline-new-content">
+                            <span class="timeline-new-date">January 2027</span>
+                            <h4>Full Agenda Release</h4>
+                            <p>Complete schedule with all sessions and exhibitors</p>
+                        </div>
+                    </div>
+
+                    <!-- Milestone 6 (event - filled accent) -->
+                    <div class="timeline-new-item event">
+                        <div class="timeline-new-circle filled">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path
+                                    d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" />
+                            </svg>
+                        </div>
+                        <div class="timeline-new-content">
+                            <span class="timeline-new-date">June 1–3, 2027</span>
+                            <h4>SHOWTECH 2027</h4>
+                            <p>The main event at Arena Berlin</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ / Accordion Section - Redesign -->
+        <section class="section-faq-redesign">
+            <div class="container">
+                <div class="faq-grid-layout">
+                    <!-- Left Sidebar: Title & Contact Info -->
+                    <div class="faq-sidebar-info">
+                        <h2>Häufig gestellte Fragen<br>& Antworten</h2>
+
+                        <div class="faq-contact-info">
+                            <div class="contact-node">
+                                <div class="icon-circle-navy">
+                                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                                        <path
+                                            d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.41 2 2 0 0 1 3.6 1.22h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.78a16 16 0 0 0 6.29 6.29l.96-.96a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z" />
+                                    </svg>
+                                </div>
+                                <div class="node-text">
+                                    <span class="label">Telefon</span>
+                                    <span class="value">+49 221 67058 464</span>
+                                </div>
+                            </div>
+
+                            <div class="contact-node">
+                                <div class="icon-circle-navy">
+                                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                                        <path
+                                            d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                                        <polyline points="22,6 12,13 2,6" />
+                                    </svg>
+                                </div>
+                                <div class="node-text">
+                                    <span class="label">E-Mail</span>
+                                    <a href="mailto:info@showtech.dthg.de" class="value">info@showtech.dthg.de</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right Content: Accordion -->
+                    <div class="faq-content-area-dark">
+                        <!-- Preserving audience tabs above accordion for functionality -->
+                        <div class="faq-audience-tabs-dark">
+                            <button class="tab-btn active" data-target="visitor">Besucher</button>
+                            <button class="tab-btn" data-target="exhibitor">Aussteller</button>
+                        </div>
+
+                        <div class="faq-group active" id="faq-visitor">
+                            <div class="accordion-item-dark active">
+                                <div class="accordion-header-dark">
+                                    <h3>Wann und wo findet die SHOWTECH 2027 statt?</h3>
+                                    <span class="acc-icon">&minus;</span>
+                                </div>
+                                <div class="accordion-body-dark" style="max-height: 200px;">
+                                    <p>Die SHOWTECH 2027 findet vom <strong>1. bis 3. Juni 2027</strong> in der Arena
+                                        Berlin, Eichenstra&szlig;e 4, 12435 Berlin statt. Sie ist die internationale
+                                        Fachmesse und Konferenz f&uuml;r Theater-, Veranstaltungs- und
+                                        B&uuml;hnentechnik.</p>
+                                </div>
+                            </div>
+                            <div class="accordion-item-dark">
+                                <div class="accordion-header-dark">
+                                    <h3>Was ist die SHOWTECH?</h3>
+                                    <span class="acc-icon">+</span>
+                                </div>
+                                <div class="accordion-body-dark">
+                                    <p>Die SHOWTECH ist die internationale Fachmesse f&uuml;r Theater- und
+                                        B&uuml;hnentechnik, die alle zwei Jahre in Berlin stattfindet. Im Zentrum steht
+                                        der Gedanke, die unterschiedlichen Disziplinen des Theaters zusammenzubringen
+                                        &ndash; von der Werkstatt &uuml;ber die B&uuml;hne bis hin zu den kreativen
+                                        K&ouml;pfen hinter den Kulissen.</p>
+                                </div>
+                            </div>
+                            <div class="accordion-item-dark">
+                                <div class="accordion-header-dark">
+                                    <h3>Wer kann die SHOWTECH als Besucher*in besuchen?</h3>
+                                    <span class="acc-icon">+</span>
+                                </div>
+                                <div class="accordion-body-dark">
+                                    <p>Die SHOWTECH ist eine Fachveranstaltung, die sich an Profis aus Theater,
+                                        Live-Events, Rundfunk und Unterhaltungstechnik richtet. Eine g&uuml;ltige
+                                        Branchenzugeh&ouml;rigkeit ist f&uuml;r die Anmeldung erforderlich.</p>
+                                </div>
+                            </div>
+                            <div class="accordion-item-dark">
+                                <div class="accordion-header-dark">
+                                    <h3>Was erwartet mich im Kongressprogramm?</h3>
+                                    <span class="acc-icon">+</span>
+                                </div>
+                                <div class="accordion-body-dark">
+                                    <p>Das Kongressprogramm bietet &uuml;ber 90 Programmpunkte mit internationalen
+                                        Expert*innen aus Theater, Technologie und Kunst. Themen sind u.a. Nachhaltigkeit
+                                        &amp; Energie, Theaterarchitektur, immersive Technologien (VR/AR) sowie
+                                        Arbeitssicherheit. Panels, Workshops und Networking-Formate erg&auml;nzen das
+                                        Angebot.</p>
+                                </div>
+                            </div>
+                            <div class="accordion-item-dark">
+                                <div class="accordion-header-dark">
+                                    <h3>Ist die Registrierung f&uuml;r Besucher*innen kostenlos?</h3>
+                                    <span class="acc-icon">+</span>
+                                </div>
+                                <div class="accordion-body-dark">
+                                    <p>Fr&uuml;hbucher-Registrierungen f&uuml;r Fachbesucher*innen sind kostenlos. Nach
+                                        Ablauf der Fr&uuml;hbucherfrist gelten Standardgeb&uuml;hren. Aktuelle Preise
+                                        und Konditionen werden rechtzeitig auf der Website ver&ouml;ffentlicht.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="faq-group" id="faq-exhibitor">
+                            <div class="accordion-item-dark">
+                                <div class="accordion-header-dark">
+                                    <h3>Wie kann ich als Unternehmen ausstellen?</h3>
+                                    <span class="acc-icon">+</span>
+                                </div>
+                                <div class="accordion-body-dark">
+                                    <p>Kontaktieren Sie unser Vertriebsteam &uuml;ber das Kontaktformular oder per
+                                        E-Mail an <a href="mailto:info@showtech.dthg.de"
+                                            style="color:var(--color-accent-blue);">info@showtech.dthg.de</a>.
+                                        Standpakete reichen von kleinen Reihenst&auml;nden bis hin zu gro&szlig;en
+                                        Sonderbauten. Fr&uuml;hbucher erhalten bevorzugte Platzierung.</p>
+                                </div>
+                            </div>
+                            <div class="accordion-item-dark">
+                                <div class="accordion-header-dark">
+                                    <h3>Was ist im Ausstellerpaket enthalten?</h3>
+                                    <span class="acc-icon">+</span>
+                                </div>
+                                <div class="accordion-body-dark">
+                                    <p>Alle Pakete beinhalten Standfl&auml;che, Beschriftung, Grundm&ouml;blierung und
+                                        Ausstellerausweise. Premium-Pakete umfassen zus&auml;tzlich
+                                        Marketingma&szlig;nahmen, Lead-Scanning-Tools und einen priorisierten Eintrag im
+                                        Messef&uuml;hrer.</p>
+                                </div>
+                            </div>
+                            <div class="accordion-item-dark">
+                                <div class="accordion-header-dark">
+                                    <h3>Welche Branchen sind auf der SHOWTECH vertreten?</h3>
+                                    <span class="acc-icon">+</span>
+                                </div>
+                                <div class="accordion-body-dark">
+                                    <p>Auf der SHOWTECH 2025 stellten 92 Unternehmen aus, darunter f&uuml;hrende
+                                        Hersteller und Dienstleister aus den Bereichen B&uuml;hnentechnik, Beleuchtung,
+                                        Beschallung, Rigging, Szenografie, Theaterbau und Planung. Marken wie Riedel,
+                                        ROBE, ETC, GLP, DPA Microphones und viele mehr waren vertreten.</p>
+                                </div>
+                            </div>
+                            <div class="accordion-item-dark">
+                                <div class="accordion-header-dark">
+                                    <h3>Gibt es Networking-M&ouml;glichkeiten f&uuml;r Aussteller?</h3>
+                                    <span class="acc-icon">+</span>
+                                </div>
+                                <div class="accordion-body-dark">
+                                    <p>Ja &ndash; neben dem Messegeschehen bietet die SHOWTECH ein umfangreiches
+                                        Netzwerkprogramm: Panels, Get-togethers und informelle Gespr&auml;che in
+                                        entspannter Atmosph&auml;re. Die Arena Berlin mit ihrer einzigartigen
+                                        Industriearchitektur und dem Badeschiff-Hintergrund schafft den perfekten Rahmen
+                                        f&uuml;r echte Begegnungen.</p>
+                                </div>
+                            </div>
+                            <div class="accordion-item-dark">
+                                <div class="accordion-header-dark">
+                                    <h3>Was kostet ein Messestand?</h3>
+                                    <span class="acc-icon">+</span>
+                                </div>
+                                <div class="accordion-body-dark">
+                                    <p>Die Kosten für eine Standfläche beginnen bei 210 €/m² zzgl. MwSt. für reine
+                                        Fläche (netto, ohne Standbau). Komplettpakete inklusive Standbau starten bei
+                                        3.500 €. Detaillierte Preislisten erhalten Sie über unsere Vertriebsunterlagen.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="accordion-item-dark">
+                                <div class="accordion-header-dark">
+                                    <h3>Bis wann muss ich mich als Aussteller anmelden?</h3>
+                                    <span class="acc-icon">+</span>
+                                </div>
+                                <div class="accordion-body-dark">
+                                    <p>Der offizielle Anmeldeschluss ist der 31. März 2027. Wir empfehlen jedoch eine
+                                        frühzeitige Buchung, da beliebte Platzierungen oft schon Monate im Voraus
+                                        vergeben sind. Late-Booking-Zuschläge gelten ab April 2027.</p>
+                                </div>
+                            </div>
+                            <div class="accordion-item-dark">
+                                <div class="accordion-header-dark">
+                                    <h3>Gibt es Sponsoring-Möglichkeiten?</h3>
+                                    <span class="acc-icon">+</span>
+                                </div>
+                                <div class="accordion-body-dark">
+                                    <p>Ja, wir bieten vielfältige Sponsoring-Pakete an – von Branding auf Lanyards und
+                                        Taschen bis hin zu exklusiven Eventsponsoring-Partnerschaften für die
+                                        Abendveranstaltungen oder Kongressbühnen.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Bottom CTA Section -->
+        <section id="contact" class="section-bottom-cta">
+            <div class="container cta-grid">
+
+                <!-- Newsletter Card -->
+                <div class="card-newsletter-dark">
+                    <h3>Auf dem Laufenden bleiben</h3>
+                    <p>Abonnieren Sie unseren Newsletter für die neuesten SHOWTECH-Nachrichten, Ausstellerinfos und
+                        Frühbucherangebote.</p>
+
+                    <form class="newsletter-inline-form">
+                        <div class="input-wrapper">
+                            <input type="email" placeholder="Ihre E-Mail-Adresse">
+                            <button type="submit" class="btn-subscribe">Anmelden</button>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- Book Call Card -->
+                <div class="card-book-call">
+                    <h3>Noch Fragen?</h3>
+                    <p>Lassen Sie uns in einem kurzen Gespräch klären, wie die SHOWTECH Ihnen helfen kann, die richtige
+                        Zielgruppe zu erreichen.
+                    </p>
+                    <a href="#" class="link-arrow">Gesprächstermin vereinbaren <span
+                            class="circle-arrow">&rarr;</span></a>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <div class="logo">SHOWTECH</div>
+                    <p>Der globale Treffpunkt für Bühnentechnik.</p>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-col">
+                        <h4>Event</h4>
+                        <ul>
+                            <li><a href="#about">Über uns</a></li>
+                            <li><a href="#">Speaker</a></li>
+                            <li><a href="#">Programm</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-col">
+                        <h4>Ausstellen</h4>
+                        <ul>
+                            <li><a href="#exhibit">Warum ausstellen?</a></li>
+                            <li><a href="#venue">Hallenplan</a></li>
+                            <li><a href="#exhibit">Preise</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-col">
+                        <h4>Rechtliches</h4>
+                        <ul>
+                            <li><a href="#">Impressum</a></li>
+                            <li><a href="#">Datenschutz</a></li>
+                            <li><a href="#">AGB</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2027 SHOWTECH. Alle Rechte vorbehalten.</p>
+                <div class="social-links">
+                    <a href="#" aria-label="Facebook">FB</a>
+                    <a href="#" aria-label="Twitter">TW</a>
+                    <a href="#" aria-label="LinkedIn">IN</a>
+                    <a href="#" aria-label="Instagram">IG</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js" type="module"></script>
+</body>
+
+</html>
