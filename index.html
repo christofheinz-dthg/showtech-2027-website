@@ -46,74 +46,60 @@
     <div class="nav-overlay" id="navOverlay" aria-hidden="true">
         <nav class="nav-overlay-inner">
             <ul class="nav-overlay-links">
-                <li><a href="#" class="nav-overlay-link">Startseite</a></li>
-                <li><a href="#exhibit" class="nav-overlay-link">Ausstellen</a></li>
-                <li><a href="#visit" class="nav-overlay-link">Besuchen</a></li>
+                <li><a href="#hero" class="nav-overlay-link">Startseite</a></li>
+                <li><a href="#factsandfigures" class="nav-overlay-link">Facts and Figures</a></li>
+                <li><a href="#exhibitor2027" class="nav-overlay-link">Aussteller 2027</a></li>
+                <li><a href="#moreinfo" class="nav-overlay-link">Mehr erfahren</a></li>
+                <li><a href="#booking" class="nav-overlay-link">Termin</a></li>
+                <li><a href="#stages" class="nav-overlay-link">Bühnen &amp; Formate</a></li>
+                <li><a href="#about" class="nav-overlay-link">Warum SHOWTECH besuchen?</a></li>
                 <li><a href="#venue" class="nav-overlay-link">Location</a></li>
-                <li><a href="#about" class="nav-overlay-link">Über uns</a></li>
+                <li><a href="#timeline" class="nav-overlay-link">Road to SHOWTECH 2027</a></li>
+                <li><a href="#faq" class="nav-overlay-link">Fragen &amp; Antworten</a></li>
                 <li><a href="#contact" class="nav-overlay-link">Kontakt</a></li>
             </ul>
             <div class="nav-overlay-footer">
-                <a href="#exhibit" class="btn btn-primary btn-lg btn-pill">Stand buchen</a>
-                <a href="#visit" class="btn btn-outline btn-lg btn-pill">Ticket sichern</a>
+                <a href="#exhibitor2027" class="btn btn-primary btn-lg btn-pill">Stand buchen</a>
+                <a href="#contact" class="btn btn-outline btn-lg btn-pill">Kontakt</a>
             </div>
         </nav>
     </div>
 
     <main>
         <!-- Hero Section -->
-        <section class="hero-redesign">
+        <section class="hero-redesign" id="hero">
+            <!-- Video Background -->
+            <video class="hero-video-bg" autoplay loop muted playsinline>
+                <source src="assets/videos/WebsiteShowtechTrailer_v1_small.mp4" type="video/mp4">
+            </video>
+            <!-- Colored Overlay -->
+            <div class="hero-overlay"></div>
+
             <div class="container hero-wrapper">
 
-                <!-- Left Content -->
-                <div class="hero-text-side">
+                <!-- Centered Content -->
+                <div class="hero-content-centered">
 
                     <!-- Meta Bar -->
                     <div class="hero-meta-bar">
-                        <span class="meta-pill meta-date">1.–3. Juni 2027 · Arena Berlin</span>
+                        <span class="meta-pill meta-date">1.–3. Juni 2027 · Arena Berlin</span>
                         <button class="meta-pill meta-btn">✓ Zum Kalender</button>
                     </div>
 
-                    <h1 class="hero-title-en">The world of theatre <span class="text-gradient">&amp; stage
-                            technology</span></h1>
+                    <h1 class="hero-title-en">The world of theatre <span class="text-gradient">&amp; stage<br>technology</span></h1>
 
-                    <p class="hero-sub">Der internationale Treffpunkt für die Theater-, Veranstaltungs- und
-                        Bühnenbranche. Technologie erleben, Netzwerke aufbauen, Zukunft gestalten.
-                    </p>
+                    <p class="hero-sub">Der internationale Treffpunkt für die Theater-, Veranstaltungs- und Bühnenbranche. Technologie erleben, Netzwerke aufbauen, Zukunft gestalten.</p>
 
                     <div class="hero-actions">
-                        <a href="#exhibit" class="btn btn-primary btn-lg btn-pill">Stand buchen</a>
-                        <a href="#visit" class="btn btn-outline btn-lg btn-pill">Ticket sichern</a>
+                        <a href="#factsandfigures" class="btn btn-primary btn-lg btn-pill">SHOW MORE</a>
                     </div>
 
-
-                </div>
-
-                <!-- Right Visuals: Collage Grid (As requested) -->
-                <div class="hero-visual-side">
-                    <div class="hero-collage">
-
-                        <!-- Left Column (Stacked) -->
-                        <div class="collage-col-left">
-                            <div class="collage-item">
-                                <img src="assets/Photos_start-hero/20250522-showtec-2025-100.png"
-                                    alt="SHOWTECH Audience Interaction">
-                            </div>
-                            <div class="collage-item">
-                                <img src="assets/Photos_start-hero/20250522-showtec-2025-804.png"
-                                    alt="SHOWTECH Exhibition Detail">
-                            </div>
-                        </div>
-
-                        <!-- Right Column (Tall) -->
-                        <div class="collage-col-right">
-                            <div class="collage-item tall">
-                                <img src="assets/Photos_start-hero/545---20250522-showtec-2025-545.png"
-                                    alt="SHOWTECH Atmosphere">
-                            </div>
-                        </div>
-
-                    </div>
+                    <a href="#factsandfigures" class="hero-scroll-arrow" aria-label="Scroll down">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="bounce-arrow">
+                            <polyline points="7 13 12 18 17 13"></polyline>
+                            <polyline points="7 6 12 11 17 6"></polyline>
+                        </svg>
+                    </a>
                 </div>
 
             </div>
@@ -133,74 +119,274 @@
             </div>
         </section>
 
-        <!-- Latest News Section -->
-        <section id="news" class="section-news">
+        <!-- Facts and Figures Section -->
+        <section id="factsandfigures" class="section-facts">
+            <div id="factsandfugures" style="position: absolute; margin-top: -150px;"></div> <!-- Typo safety anchor -->
             <div class="container">
-                <div class="news-section-header">
-                    <div class="news-header-left">
-                        <span class="section-tag">Stay Updated</span>
-                        <h2>Latest News</h2>
-                        <p>Insights, announcements, and stories from the world of stage technology.</p>
-                    </div>
-                    <a href="#" class="news-view-all">All News &rarr;</a>
+                <div class="facts-section-header">
+                    <span class="section-tag">Zahlen &amp; Fakten</span>
+                    <h2>Facts and Figures</h2>
+                    <p>Erfolge, Stimmen und Zahlen, die für sich sprechen.</p>
                 </div>
-                <div class="news-grid-4">
-                    <!-- Card 1: Day 1 Recap -->
-                    <article class="news-card-v2">
-                        <div class="news-card-image"
-                            style="background-image: url('assets/20250522-showtec-2025-100.png');">
-                            <span class="news-badge news-badge-red">Recap</span>
+                
+                <div class="facts-grid">
+                    <!-- Column 1 -->
+                    <div class="facts-col">
+                        
+                        <!-- Tile 1: 6.500 m² (Pink) -->
+                        <div class="fact-card fact-card-pink">
+                            <div class="fact-icon-wrapper">
+                                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="fact-icon">
+                                    <path d="M5 3H3v18h2M19 3h2v18h-2M9 17v-6l3-2 3 2v6H9z"></path>
+                                </svg>
+                            </div>
+                            <div class="fact-number">6.500 m²</div>
+                            <div class="fact-text">Ausstellungsfläche zum Erkunden!</div>
                         </div>
-                        <div class="news-card-body">
-                            <span class="news-card-date">22. Mai 2025</span>
-                            <h3>SHOWTECH25 Tag 1 – Technologie live erleben</h3>
-                            <p>Eindrückliche Eröffnung, volle Hallen und ein Publikum, das die Innovationen der Branche
-                                hautnah erlebt hat.</p>
-                            <a href="#" class="news-read-more">Weiterlesen &rarr;</a>
+
+                        <!-- Tile 2: Image (Conference Table) -->
+                        <div class="fact-card fact-card-image-only">
+                            <img src="assets/Photos_start-hero/20250522-showtec-2025-804.png" alt="SHOWTECH Exhibition Area">
                         </div>
-                    </article>
-                    <!-- Card 2: Day 2 Recap -->
-                    <article class="news-card-v2">
-                        <div class="news-card-image"
-                            style="background-image: url('assets/545---20250522-showtec-2025-545.png');">
-                            <span class="news-badge news-badge-blue">Kongress</span>
+
+                        <!-- Tile 3: 90+ Aussteller (Blue-Cyan) -->
+                        <div class="fact-card fact-card-cyan">
+                            <div class="fact-icon-wrapper">
+                                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="fact-icon">
+                                    <path d="M5 3H3v18h2M19 3h2v18h-2M12 10a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm-5 8c0-2.5 3-4.5 5-4.5s5 2 5 4.5"></path>
+                                </svg>
+                            </div>
+                            <div class="fact-number">90 +</div>
+                            <div class="fact-text">Aussteller aus den Bereichen Bühnentechnik, Licht, Ton &amp; Akustik, Medien, Video &amp; Projektion, Planung &amp; Beratung, Steuerung, Netzwerk, Software, Bildung uvm.</div>
                         </div>
-                        <div class="news-card-body">
-                            <span class="news-card-date">23. Mai 2025</span>
-                            <h3>SHOWTECH25 Tag 2 – Das neue Theatererlebnis</h3>
-                            <p>Internationales Kongressprogramm mit Expert*innen aus Theater, Technologie und Kunst –
-                                inspirierende Diskussionen und neue Perspektiven.</p>
-                            <a href="#" class="news-read-more">Weiterlesen &rarr;</a>
+
+                        <!-- Tile 4: Two Images Side by Side -->
+                        <div class="fact-card-double-image">
+                            <div class="fact-img-half">
+                                <img src="assets/Photos_start-hero/407---20250522-showtec-2025-407.png" alt="SHOWTECH Networking">
+                            </div>
+                            <div class="fact-img-half">
+                                <img src="assets/Photos_start-hero/119 - 20250522-showtec-2025-119.png" alt="SHOWTECH Live Demo">
+                            </div>
                         </div>
-                    </article>
-                    <!-- Card 3: Tag der Szenografie -->
-                    <article class="news-card-v2">
-                        <div class="news-card-image"
-                            style="background-image: url('assets/Arena Halle von innen.jpeg');">
-                            <span class="news-badge news-badge-teal">Szenografie</span>
+
+                    </div>
+                    
+                    <!-- Column 2 -->
+                    <div class="facts-col">
+
+                        <!-- Tile 6: Quote Card (Kai Uwe Patz) with Background Image & dark overlay -->
+                        <div class="fact-card fact-card-quote-bg" style="background-image: url('assets/Photos_start-hero/20250522-showtec-2025-100.png');">
+                            <div class="card-image-overlay"></div>
+                            <div class="fact-card-inner">
+                                <div class="fact-quote">„Der Standort war wunderschön, die Atmosphäre war durchweg freundlich, und das Publikum war hochkarätig und international – als Aussteller kann man sich nicht mehr wünschen.“</div>
+                                <div class="fact-author">Kai Uwe Patz, Bühnenbau Wertheim GmbH</div>
+                            </div>
                         </div>
-                        <div class="news-card-body">
-                            <span class="news-card-date">24. Mai 2025</span>
-                            <h3>Tag der Szenografie 2025 – Recap</h3>
-                            <p>Fokussession in Kooperation mit der DTHG: Szenografie zwischen Handwerk, Technologie und
-                                künstlerischer Vision.</p>
-                            <a href="#" class="news-read-more">Weiterlesen &rarr;</a>
+
+                        <!-- Tile 7: 7.200 Besucher (Purple) -->
+                        <div class="fact-card fact-card-purple">
+                            <div class="fact-icon-wrapper">
+                                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="fact-icon">
+                                    <path d="M5 3H3v4M19 3h2v4M3 21h2v-4M21 21h-2v-4M12 8a4 4 0 1 0 0 8 4 4 0 0 0 0-8zm0 2.5a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3z"></path>
+                                </svg>
+                            </div>
+                            <div class="fact-number">7.200</div>
+                            <div class="fact-text">Besucher aus 42 Ländern, davon 93 % aus der EU mit einem starken Kernpublikum aus Deutschland und den angrenzenden Ländern.</div>
                         </div>
-                    </article>
-                    <!-- Card 4: Coming Soon -->
-                    <article class="news-card-v2 news-card-coming-soon">
-                        <div class="news-card-image news-card-dark">
-                            <span class="news-badge news-badge-outline">SHOWTECH 2027</span>
-                            <div class="coming-soon-plus">+</div>
+
+                        <!-- Tile 5: Shure Quote (Black with border) -->
+                        <div class="fact-card fact-card-shure">
+                            <div class="shure-logo">SHURE</div>
+                            <div class="fact-quote">„Es war großartig, mit vielen Standbesuchern in Kontakt zu treten. Vielen Dank für die tolle Stimmung vor, während und nach der Show in der Arena Berlin! Ein großes Lob an das SHOWTECH-Team für die reibungslose Organisation und an SAM Konzepte für einen wunderbaren Stand.“</div>
+                            <div class="fact-author">Monika Loreth, Senior Event Specialist</div>
                         </div>
-                        <div class="news-card-body">
-                            <span class="news-card-date">&nbsp;</span>
-                            <h3>Neuigkeiten zu SHOWTECH 2027 folgen</h3>
-                            <p>Bleiben Sie gespannt – Aussteller, Programm und Highlights werden bald bekannt gegeben.
-                            </p>
-                            <a href="#" class="news-read-more">Weiterlesen &rarr;</a>
+
+                    </div>
+
+                    <!-- Column 3 -->
+                    <div class="facts-col">
+
+                        <!-- Tile 8: 3.500+ (Large Blue) -->
+                        <div class="fact-card fact-card-blue-large">
+                            <div class="fact-number">3.500 +</div>
+                            <div class="fact-text">Branchenvertreter*innen kamen zusammen, um die neuesten Entwicklungen in der Bühnen-, Theater- und Showtechnologie zu teilen.</div>
                         </div>
-                    </article>
+
+                        <!-- Tile 9: Image (Projector) -->
+                        <div class="fact-card fact-card-image-only">
+                            <img src="assets/Photos_start-hero/545---20250522-showtec-2025-545.png" alt="SHOWTECH Projector Tech">
+                        </div>
+
+                        <!-- Tile 10: Image (Mixing Desk) -->
+                        <div class="fact-card fact-card-image-only">
+                            <img src="assets/Arena Halle von innen.jpeg" alt="SHOWTECH Audio Console">
+                        </div>
+
+                        <!-- Tile 11: 85+ (Pink) -->
+                        <div class="fact-card fact-card-pink-small">
+                            <div class="fact-icon-wrapper">
+                                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="fact-icon">
+                                    <path d="M5 3H3v4M19 3h2v4M3 21h2v-4M21 21h-2v-4M12 5a3 3 0 0 0-3 3v4a3 3 0 0 0 6 0V8a3 3 0 0 0-3-3z"></path>
+                                    <path d="M19 10v1a7 7 0 0 1-14 0v-1M12 18v4"></path>
+                                </svg>
+                            </div>
+                            <div class="fact-number">85+</div>
+                            <div class="fact-text">kuratierte Veranstaltungen im Programm sorgten für einen hohen Besucherandrang und effektive Sichtbarkeit für Ausstellende - von jungen Talenten bis hin zu etablierten Branchenführenden.</div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Exhibitors 2027 Section -->
+        <section id="exhibitor2027" class="section-exhibitors">
+            <div id="exhibitors2027" style="position: absolute; margin-top: -150px;"></div> <!-- ID variant for flexibility -->
+            <div class="container">
+                <div class="exhibitors-section-header">
+                    <span class="section-tag">Gemeinsam stark</span>
+                    <h2>Aussteller 2027</h2>
+                    <p>Führende Köpfe und innovative Unternehmen, die die Zukunft der Bühnenwelt gestalten.</p>
+                </div>
+            </div>
+            
+            <div class="slider-wrap">
+                <div class="slider-track" id="exhibitorTrack"></div>
+            </div>
+        </section>
+
+        <!-- Mehr Erfahren (Learn More) Section -->
+        <section id="moreinfo" class="section-moreinfo">
+            <div class="container">
+                <div class="moreinfo-section-header">
+                    <span class="section-tag">Entdecken</span>
+                    <h2>Mehr erfahren</h2>
+                    <p>Sie sind neugierig geworden? Hier erhalten Sie mehr Informationen!</p>
+                </div>
+
+                <div class="moreinfo-grid">
+                    <!-- visitor card -->
+                    <div class="moreinfo-card visitor-card">
+                        <div class="card-top">
+                            <span class="card-tag">Für Besucher</span>
+                            <h3>Bühnen &amp; Formate</h3>
+                            <p>Entdecken Sie unser kuratiertes Kongressprogramm, themenspezifische Podiumsdiskussionen und Live-Demonstrationen auf unseren Fachbühnen.</p>
+                        </div>
+                        <a href="#stages" class="btn btn-primary">Mehr erfahren</a>
+                    </div>
+
+                    <!-- exhibitor card -->
+                    <div class="moreinfo-card exhibitor-card">
+                        <div class="card-top">
+                            <span class="card-tag">Für Aussteller</span>
+                            <h3>Downloads &amp; Richtlinien</h3>
+                            <p>Hier finden Sie alle wichtigen Bestellformulare, Factsheets, Standbaurichtlinien und Werbematerialien für Ihren Messeauftritt.</p>
+                        </div>
+                        <a href="https://showtech.me/exhibitor-downloads/" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">Downloads öffnen</a>
+                    </div>
+
+                    <!-- newsletter card (Full Width) -->
+                    <div class="moreinfo-card newsletter-card-full">
+                        <div class="newsletter-grid">
+                            <div class="newsletter-info">
+                                <span class="card-tag">Newsletter</span>
+                                <h3>Immer auf dem Laufenden bleiben</h3>
+                                <p>Melden Sie sich für unseren Newsletter an, um rechtzeitig über Programm-Highlights, Ticket-Angebote und wichtige Termine informiert zu werden.</p>
+                            </div>
+                            <div class="newsletter-form-container">
+                                <!-- Brevo Newsletter Form -->
+                                <div class="sib-form">
+                                    <div id="sib-form-container" class="sib-form-container">
+                                        <!-- Error Message Box -->
+                                        <div id="error-message" class="sib-form-message-panel error-message" style="display: none;">
+                                            <div class="sib-form-message-panel__text">
+                                                <svg viewBox="0 0 512 512" class="sib-icon sib-notification__icon">
+                                                    <path d="M256 40c118.621 0 216 96.075 216 216 0 119.291-96.61 216-216 216-119.244 0-216-96.562-216-216 0-119.203 96.602-216 216-216m0-32C119.043 8 8 119.083 8 256c0 136.997 111.043 248 248 248s248-111.003 248-248C504 119.083 392.957 8 256 8zm-11.49 120h22.979c6.823 0 12.274 5.682 11.99 12.5l-7 168c-.268 6.428-5.556 11.5-11.99 11.5h-8.979c-6.433 0-11.722-5.073-11.99-11.5l-7-168c-.283-6.818 5.167-12.5 11.99-12.5zM256 340c-15.464 0-28 12.536-28 28s12.536 28 28 28 28-12.536 28-28-12.536-28-28-28z" />
+                                                </svg>
+                                                <span class="sib-form-message-panel__inner-text">
+                                                    Deine Anmeldung konnte nicht gespeichert werden. Bitte versuche es erneut.
+                                                </span>
+                                            </div>
+                                        </div>
+
+                                        <!-- Success Message Box -->
+                                        <div id="success-message" class="sib-form-message-panel success-message" style="display: none;">
+                                            <div class="sib-form-message-panel__text">
+                                                <svg viewBox="0 0 512 512" class="sib-icon sib-notification__icon">
+                                                    <path d="M256 8C119.033 8 8 119.033 8 256s111.033 248 248 248 248-111.033 248-248S392.967 8 256 8zm0 464c-118.664 0-216-96.055-216-216 0-118.663 96.055-216 216-216 118.664 0 216 96.055 216 216 0 118.663-96.055 216-216 216zm141.63-274.961L217.15 376.071c-4.705 4.667-12.303 4.637-16.97-.068l-85.878-86.572c-4.667-4.705-4.637-12.303.068-16.97l8.52-8.451c4.705-4.667 12.303-4.637 16.97.068l68.976 69.533 163.441-162.13c4.705-4.667 12.303-4.637 16.97.068l8.451 8.52c4.668 4.705 4.637 12.303-.068 16.97z" />
+                                                </svg>
+                                                <span class="sib-form-message-panel__inner-text">
+                                                    Deine Anmeldung war erfolgreich.
+                                                </span>
+                                            </div>
+                                        </div>
+
+                                        <!-- Form fields wrapper -->
+                                        <div id="sib-container">
+                                            <form id="sib-form" method="POST" action="https://421e8861.sibforms.com/serve/MUIFAI7Ta4MS6vOVEa615Sb_hI1kD63WUC0pa_cAE3muYuuMu-XvCQNhZx2PWwhl2a5Z34OlXvsrQZlpGqPxgQK9jP8xbrf9qhkYoZ33Z363y8HeEqdnBjCSdELhJyJqJSTf0qeX7oTwf2GYkaShPTUIY1E6bNx7nkh2VjdYunDKKRAIiPCoejdjlxfUrBZZDbFVdqgEiHWB3sv8" data-type="subscription">
+                                                <!-- Email input field -->
+                                                <div class="sib-form-row">
+                                                    <div class="sib-input sib-form-block">
+                                                        <div class="form__entry entry_block">
+                                                            <div class="input-inline-group">
+                                                                <input class="input custom-input" type="text" id="EMAIL" name="EMAIL" autocomplete="off" placeholder="E-Mail-Adresse" data-required="true" required />
+                                                                <button class="sib-form-block__button sib-form-block__button-with-loader custom-submit" form="sib-form" type="submit">
+                                                                    Abonnieren
+                                                                </button>
+                                                            </div>
+                                                            <label class="entry__error entry__error--primary"></label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <!-- Checkbox and Opt-In -->
+                                                <div class="sib-form-row">
+                                                    <div class="sib-optin sib-form-block">
+                                                        <div class="form__entry entry_mcq">
+                                                            <div class="entry__choice">
+                                                                <label class="custom-checkbox-container">
+                                                                    <input type="checkbox" class="input_replaced" value="1" id="OPT_IN" name="OPT_IN" required />
+                                                                    <span class="checkbox-box"></span>
+                                                                    <span class="checkbox-label-text">
+                                                                        Ja, ich möchte den SHOWTECH-Newsletter mit weiteren Informationen zur Veranstaltung erhalten.
+                                                                    </span>
+                                                                </label>
+                                                            </div>
+                                                            <label class="entry__error entry__error--primary"></label>
+                                                            <span class="checkbox-spec">Sie können sich jederzeit über den Link in jeder Newsletter-Ausgabe abmelden.</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <!-- Honeypot & Locale parameters -->
+                                                <input type="text" name="email_address_check" value="" class="input--hidden" style="display:none !important;">
+                                                <input type="hidden" name="locale" value="de">
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Appointment Booking (Termin) Section -->
+        <section id="booking" class="section-booking">
+            <div class="container">
+                <div class="booking-section-header">
+                    <span class="section-tag">Terminvereinbarung</span>
+                    <h2>Termin vereinbaren</h2>
+                    <p>Sichern Sie sich Ihr persönliches Gespräch vor Ort oder online und besprechen Sie Ihre Fragen rund um die SHOWTECH 2027.</p>
+                </div>
+                
+                <div class="booking-widget-wrapper">
+                    <!-- Calendly Inline-Widget Beginn -->
+                    <div class="calendly-inline-widget" data-url="https://calendly.com/showtech-info/showtech-2025-prebooking-clone?hide_event_type_details=1&amp;hide_gdpr_banner=1&amp;background_color=0d1b2e&amp;text_color=ffffff&amp;primary_color=e53935" style="min-width:320px; height:700px;"></div>
+                    <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
+                    <!-- Calendly Inline-Widget Ende -->
                 </div>
             </div>
         </section>
@@ -569,8 +755,129 @@
         </section>
 
 
+        <!-- Stages and Formats Section -->
+        <section id="stages" class="section-stages">
+            <div class="container">
+                <div class="stages-section-header">
+                    <span class="section-tag">Erlebnisse vor Ort</span>
+                    <h2>Bühnen &amp; Formate</h2>
+                    <p>Entdecken Sie die vielfältigen Vortragsbereiche, Diskussionsforen und Networking-Zonen der Messe.</p>
+                </div>
+                
+                <div class="stages-grid">
+                    <!-- Card 1: Kongress -->
+                    <div class="flip-card">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front">
+                                <div class="card-image">
+                                    <img src="assets/Photos_start-hero/20250522-showtec-2025-100.png" alt="Kongress">
+                                </div>
+                                <div class="card-title-wrap">
+                                    <h3>Kongress</h3>
+                                </div>
+                            </div>
+                            <div class="flip-card-back">
+                                <h3>Kongress</h3>
+                                <p>Der Kongress bietet ein umfangreiches zweitägiges Programm, das sich auf die Vermittlung von Wissen aus den Bereichen Theater, Technik und Kunst fokussiert.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 2: Innovation Stage -->
+                    <div class="flip-card">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front">
+                                <div class="card-image">
+                                    <img src="assets/Photos_start-hero/170---20250522-showtec-2025-170.png" alt="Innovation Stage">
+                                </div>
+                                <div class="card-title-wrap">
+                                    <h3>Innovation Stage</h3>
+                                </div>
+                            </div>
+                            <div class="flip-card-back">
+                                <h3>Innovation Stage</h3>
+                                <p>Ob neue Werkstoffe, Techniklösungen, kreative Raumkonzepte oder Best Practices – direkt in der Messehalle stellen Aussteller live ihre Innovationen dem Publikum vor.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 3: Immersive Showroom -->
+                    <div class="flip-card">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front">
+                                <div class="card-image">
+                                    <img src="assets/Photos_start-hero/20250522-showtec-2025-506(2).png" alt="Immersive Showroom">
+                                </div>
+                                <div class="card-title-wrap">
+                                    <h3>Immersive Showroom</h3>
+                                </div>
+                            </div>
+                            <div class="flip-card-back">
+                                <h3>Immersive Showroom</h3>
+                                <p>Wie wird das Theater von morgen aussehen? An der Schnittstelle analoger und digitaler Welten erleben Sie umgesetzte und geplante Projekte aus der Theaterwelt.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 4: SoundLab -->
+                    <div class="flip-card">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front">
+                                <div class="card-image">
+                                    <img src="assets/Photos_start-hero/407---20250522-showtec-2025-407.png" alt="SoundLab">
+                                </div>
+                                <div class="card-title-wrap">
+                                    <h3>SoundLab</h3>
+                                </div>
+                            </div>
+                            <div class="flip-card-back">
+                                <h3>SoundLab</h3>
+                                <p>Der (Labor-)Raum bietet die Möglichkeit, Audiotechnologien in Präzision zu erleben und sich mit Fachleuten über praxisnahe Lösungen auszutauschen.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 5: Round Tables -->
+                    <div class="flip-card">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front">
+                                <div class="card-image">
+                                    <img src="assets/Photos_start-hero/20250522-showtec-2025-804.png" alt="Round Tables">
+                                </div>
+                                <div class="card-title-wrap">
+                                    <h3>Round Tables</h3>
+                                </div>
+                            </div>
+                            <div class="flip-card-back">
+                                <h3>Round Tables</h3>
+                                <p>An zwei Round Tables treffen sich Fachgruppen und AGs und sprechen gemeinsam über die aktuellen Herausforderungen und Chancen der Branche.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 6: Rahmenprogramm -->
+                    <div class="flip-card">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front">
+                                <div class="card-image">
+                                    <img src="assets/Photos_start-hero/20250522-showtec-2025-186(1).jpg" alt="Rahmenprogramm">
+                                </div>
+                                <div class="card-title-wrap">
+                                    <h3>Rahmenprogramm</h3>
+                                </div>
+                            </div>
+                            <div class="flip-card-back">
+                                <h3>Rahmenprogramm</h3>
+                                <p>Neben dem offiziellen Messe- und Kongressprogramm werden wieder verschiedene Side Events rund um die SHOWTECH in Berlin angeboten.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <!-- Road to SHOWTECH Timeline -->
-        <section class="section-timeline-new section-timeline-navy">
+        <section class="section-timeline-new section-timeline-navy" id="timeline">
             <div class="container">
                 <div class="timeline-new-header">
                     <h2>Road to <span class="text-blue-accent">SHOWTECH 2027</span></h2>
@@ -685,7 +992,7 @@
         </section>
 
         <!-- FAQ / Accordion Section - Redesign -->
-        <section class="section-faq-redesign">
+        <section class="section-faq-redesign" id="faq">
             <div class="container">
                 <div class="faq-grid-layout">
                     <!-- Left Sidebar: Title & Contact Info -->
@@ -963,6 +1270,28 @@
             </div>
         </div>
     </footer>
+
+    <!-- Brevo Newsletter Configuration & Validation Script -->
+    <script>
+      window.REQUIRED_CODE_ERROR_MESSAGE = 'Wähle bitte einen Ländervorwahl aus.';
+      window.LOCALE = 'de';
+      window.EMAIL_INVALID_MESSAGE = window.SMS_INVALID_MESSAGE = "Die eingegebenen Informationen sind nicht gültig. Bitte überprüfe das Feldformat und versuche es erneut.";
+      window.REQUIRED_ERROR_MESSAGE = "Dieses Feld darf nicht leer sein.";
+      window.GENERIC_INVALID_MESSAGE = "Die eingegebenen Informationen sind nicht gültig. Bitte überprüfe das Feldformat und versuche es erneut.";
+      window.INVALID_NUMBER = "Die eingegebenen Informationen sind nicht gültig. Bitte überprüfe das Feldformat und versuche es erneut.";
+      window.INVALID_DATE = "Bitte gib ein gültiges Datum ein";
+      window.REQUIRED_MULTISELECT_MESSAGE = 'Wähle bitte mindestens eine Option aus';
+      window.translation = {
+        common: {
+          selectedList: '{quantity} Liste ausgewählt',
+          selectedLists: '{quantity} Listen ausgewählt',
+          selectedOption: '{quantity} ausgewählt',
+          selectedOptions: '{quantity} ausgewählt',
+        }
+      };
+      var AUTOHIDE = Boolean(0);
+    </script>
+    <script defer src="https://sibforms.com/forms/end-form/build/main.js"></script>
 
     <script src="js/main.js" type="module"></script>
 </body>

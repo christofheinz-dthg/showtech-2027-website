@@ -1,0 +1,87 @@
+<style>
+.slider-wrap {
+  overflow: hidden;
+  width: 100%;
+  padding: 24px 0;
+  border-top: 0.5px solid var(--color-border-tertiary);
+  border-bottom: 0.5px solid var(--color-border-tertiary);
+  background: var(--color-background-primary);
+  position: relative;
+}
+.slider-wrap::before,
+.slider-wrap::after {
+  content: '';
+  position: absolute;
+  top: 0; bottom: 0;
+  width: 60px;
+  z-index: 2;
+  pointer-events: none;
+}
+.slider-wrap::before { left: 0; background: linear-gradient(to right, var(--color-background-primary), transparent); }
+.slider-wrap::after  { right: 0; background: linear-gradient(to left, var(--color-background-primary), transparent); }
+.slider-track {
+  display: flex;
+  align-items: center;
+  gap: 48px;
+  width: max-content;
+  animation: scroll 38s linear infinite;
+}
+.slider-wrap:hover .slider-track { animation-play-state: paused; }
+@keyframes scroll {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+.logo-item {
+  flex-shrink: 0;
+  height: 52px;
+  display: flex;
+  align-items: center;
+}
+.logo-item img {
+  height: 100%;
+  width: auto;
+  max-width: 140px;
+  object-fit: contain;
+  filter: grayscale(20%);
+  opacity: 0.85;
+  transition: opacity 0.2s, filter 0.2s;
+}
+.logo-item img:hover {
+  opacity: 1;
+  filter: grayscale(0%);
+}
+</style>
+
+<h2 class="sr-only" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)">Partner-Logos der BTT 2026 im automatisch scrollenden Slider</h2>
+
+<p style="font-size: 13px; color: var(--color-text-secondary); margin: 0 0 16px; text-transform: uppercase; letter-spacing: 0.06em;">Partner & Aussteller</p>
+
+<div class="slider-wrap">
+  <div class="slider-track" id="track"></div>
+</div>
+
+<script>
+const logos = [
+  { name: "Gerriets",          url: "https://buehnentechnische-tagung.de/wp-content/uploads/2026/03/Gerriets-Logo-RGB.jpg" },
+  { name: "Multisenses",       url: "https://buehnentechnische-tagung.de/wp-content/uploads/2026/03/multisenses_logo_schwarz_2021-scaled.png" },
+  { name: "Müller BBM",        url: "https://buehnentechnische-tagung.de/wp-content/uploads/2026/04/Mueller_BBM_logo1-2.png" },
+  { name: "VBG",               url: "https://buehnentechnische-tagung.de/wp-content/uploads/2026/03/VBG_Logo.png" },
+  { name: "WilhelmWestholt",   url: "https://buehnentechnische-tagung.de/wp-content/uploads/2026/05/westholt_logo.png" },
+  { name: "PAN Acoustics",     url: "https://buehnentechnische-tagung.de/wp-content/uploads/2026/03/PAN-acoustics_logo.png" },
+  { name: "Shure",             url: "https://buehnentechnische-tagung.de/wp-content/uploads/2026/03/Shure_Logo.svg.png" },
+  { name: "SBS Bühnentechnik", url: "https://buehnentechnische-tagung.de/wp-content/uploads/2026/04/SBS_BT_axial_blau.png" },
+  { name: "Kunkel Consulting", url: "https://buehnentechnische-tagung.de/wp-content/uploads/2026/04/Logo_kunkel.png" },
+  { name: "A. Hausmann GmbH", url: "https://buehnentechnische-tagung.de/wp-content/uploads/2026/05/ahausmann_logo.png" },
+];
+
+const track = document.getElementById('track');
+[...logos, ...logos].forEach(({ name, url }) => {
+  const div = document.createElement('div');
+  div.className = 'logo-item';
+  const img = document.createElement('img');
+  img.src = url;
+  img.alt = name;
+  div.appendChild(img);
+  track.appendChild(div);
+});
+</script>

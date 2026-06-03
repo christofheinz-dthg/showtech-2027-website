@@ -266,4 +266,75 @@ document.addEventListener('DOMContentLoaded', () => {
             header.setAttribute('aria-expanded', !isOpen);
         });
     });
+
+    // ── Exhibitors Slider ────────────────────────────────────────────
+    const exhibitorTrack = document.getElementById('exhibitorTrack');
+    if (exhibitorTrack) {
+        const logos = [
+            { name: "Gerriets",          url: "assets/logos/gerriets.jpg" },
+            { name: "Multisenses",       url: "assets/logos/multisenses.png" },
+            { name: "Müller BBM",        url: "assets/logos/mueller_bbm.png" },
+            { name: "VBG",               url: "assets/logos/vbg.png" },
+            { name: "WilhelmWestholt",   url: "assets/logos/westholt.png" },
+            { name: "PAN Acoustics",     url: "assets/logos/pan_acoustics.png" },
+            { name: "Shure",             url: "assets/logos/shure.png" },
+            { name: "SBS Bühnentechnik", url: "assets/logos/sbs_buehnentechnik.png" },
+            { name: "Kunkel Consulting", url: "assets/logos/kunkel.png" },
+            { name: "A. Hausmann GmbH", url: "assets/logos/hausmann.png" },
+        ];
+        
+        [...logos, ...logos, ...logos].forEach(({ name, url }) => {
+            const div = document.createElement('div');
+            div.className = 'logo-item';
+            const img = document.createElement('img');
+            img.src = url;
+            img.alt = name;
+            div.appendChild(img);
+            exhibitorTrack.appendChild(div);
+        });
+    }
+
+    // ── Mobile Card Flip on Scroll (Stages Section) ──────────────────
+    function handleMobileFlip() {
+        if (window.innerWidth > 768) {
+            // Remove active class on desktop size to allow normal CSS hover
+            document.querySelectorAll('.flip-card').forEach(card => {
+                card.classList.remove('active');
+            });
+            return;
+        }
+
+        const cards = document.querySelectorAll('.flip-card');
+        const centerY = window.innerHeight / 2;
+
+        let closestCard = null;
+        let minDistance = Infinity;
+
+        cards.forEach(card => {
+            const rect = card.getBoundingClientRect();
+            const cardCenterY = rect.top + rect.height / 2;
+            const distance = Math.abs(centerY - cardCenterY);
+
+            if (distance < minDistance) {
+                minDistance = distance;
+                closestCard = card;
+            }
+        });
+
+        cards.forEach(card => {
+            // Only flip the card closest to center, and only if it's reasonably near the center (within 220px)
+            if (card === closestCard && minDistance < 220) {
+                card.classList.add('active');
+            } else {
+                card.classList.remove('active');
+            }
+        });
+    }
+
+    // Attach listeners for scroll and resize
+    window.addEventListener('scroll', handleMobileFlip, { passive: true });
+    window.addEventListener('resize', handleMobileFlip);
+    
+    // Initial trigger
+    handleMobileFlip();
 });
