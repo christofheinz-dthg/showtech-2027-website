@@ -2285,7 +2285,7 @@ label.entry__error {
     width: 100%;
     height: 100%;
     text-align: center;
-    transition: transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transition: transform 1.2s cubic-bezier(0.2, 0.85, 0.3, 1.02);
     transform-style: preserve-3d;
     border-radius: 16px;
     box-shadow: 0 4px 20px rgba(13, 27, 46, 0.05);
@@ -2368,6 +2368,21 @@ label.entry__error {
     justify-content: center;
     align-items: center;
     border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.card-back-icon {
+    width: 42px;
+    height: 42px;
+    margin-bottom: 1.25rem;
+    object-fit: contain;
+    filter: invert(1) brightness(2.5);
+    opacity: 0.9;
+    transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1), opacity 0.3s ease;
+}
+
+.flip-card:hover .card-back-icon {
+    transform: scale(1.1);
+    opacity: 1;
 }
 
 .flip-card-back h3 {
