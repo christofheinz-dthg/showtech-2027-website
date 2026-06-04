@@ -272,16 +272,16 @@ document.addEventListener('DOMContentLoaded', () => {
     if (exhibitorTrack) {
         const baseUrl = window.LANDINGPAGE_URL || '';
         const logos = [
-            { name: "Gerriets",          url: baseUrl + "assets/logos/gerriets.jpg" },
-            { name: "Multisenses",       url: baseUrl + "assets/logos/multisenses.png" },
-            { name: "Müller BBM",        url: baseUrl + "assets/logos/mueller_bbm.png" },
-            { name: "VBG",               url: baseUrl + "assets/logos/vbg.png" },
-            { name: "WilhelmWestholt",   url: baseUrl + "assets/logos/westholt.png" },
-            { name: "PAN Acoustics",     url: baseUrl + "assets/logos/pan_acoustics.png" },
-            { name: "Shure",             url: baseUrl + "assets/logos/shure.png" },
+            { name: "Gerriets", url: baseUrl + "assets/logos/gerriets.jpg" },
+            { name: "Multisenses", url: baseUrl + "assets/logos/multisenses.png" },
+            { name: "Müller BBM", url: baseUrl + "assets/logos/mueller_bbm.png" },
+            { name: "VBG", url: baseUrl + "assets/logos/vbg.png" },
+            { name: "WilhelmWestholt", url: baseUrl + "assets/logos/westholt.png" },
+            { name: "PAN Acoustics", url: baseUrl + "assets/logos/pan_acoustics.png" },
+            { name: "Shure", url: baseUrl + "assets/logos/shure.png" },
             { name: "SBS Bühnentechnik", url: baseUrl + "assets/logos/sbs_buehnentechnik.png" },
             { name: "Kunkel Consulting", url: baseUrl + "assets/logos/kunkel.png" },
-            { name: "A. Hausmann GmbH",  url: baseUrl + "assets/logos/hausmann.png" },
+            { name: "A. Hausmann GmbH", url: baseUrl + "assets/logos/hausmann.png" },
         ];
 
         [...logos, ...logos, ...logos].forEach(({ name, url }) => {
@@ -335,7 +335,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Attach listeners for scroll and resize
     window.addEventListener('scroll', handleMobileFlip, { passive: true });
     window.addEventListener('resize', handleMobileFlip);
-    
+
     // Initial trigger
     handleMobileFlip();
 });
