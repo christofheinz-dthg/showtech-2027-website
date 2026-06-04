@@ -123,8 +123,9 @@
         <section id="factsandfigures" class="section-facts">
             <div id="factsandfugures" style="position: absolute; margin-top: -150px;"></div> <!-- Typo safety anchor -->
             <div class="container">
-                <div class="facts-section-header">
-                    <span class="section-tag">Zahlen &amp; Fakten</span>
+                <!-- Mobile Only Header -->
+                <div class="facts-section-header facts-header-mobile">
+                    <span class="section-tag">WAS IST DIE SHOWTECH?</span>
                     <h2>Facts and Figures</h2>
                     <p>Erfolge, Stimmen und Zahlen, die für sich sprechen.</p>
                 </div>
@@ -152,9 +153,7 @@
                         <!-- Tile 3: 90+ Aussteller (Blue-Cyan) -->
                         <div class="fact-card fact-card-cyan">
                             <div class="fact-icon-wrapper">
-                                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="fact-icon">
-                                    <path d="M5 3H3v18h2M19 3h2v18h-2M12 10a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm-5 8c0-2.5 3-4.5 5-4.5s5 2 5 4.5"></path>
-                                </svg>
+                                <img src="assets/icon_sets/icons_factandfigures/90_Exhibitors.svg" alt="Aussteller Icon" class="fact-icon">
                             </div>
                             <div class="fact-number">90 +</div>
                             <div class="fact-text">Aussteller aus den Bereichen Bühnentechnik, Licht, Ton &amp; Akustik, Medien, Video &amp; Projektion, Planung &amp; Beratung, Steuerung, Netzwerk, Software, Bildung uvm.</div>
@@ -172,13 +171,23 @@
 
                     </div>
                     
-                    <!-- Column 2 -->
+                    <!-- Column 2 (Middle Column) -->
                     <div class="facts-col">
+                        
+                        <!-- Desktop Only Header (Invisible Grid Tile) -->
+                        <div class="facts-section-header facts-header-desktop">
+                            <span class="section-tag">WAS IST DIE SHOWTECH?</span>
+                            <h2>Facts and Figures</h2>
+                            <p>Erfolge, Stimmen und Zahlen, die für sich sprechen.</p>
+                        </div>
 
                         <!-- Tile 6: Quote Card (Kai Uwe Patz) with Background Image & dark overlay -->
-                        <div class="fact-card fact-card-quote-bg" style="background-image: url('assets/Photos_start-hero/20250522-showtec-2025-100.png');">
+                        <div class="fact-card fact-card-quote-bg" style="background-image: url('assets/fotos/fotos_factsandfigures/wertheim_background.jpg');">
                             <div class="card-image-overlay"></div>
                             <div class="fact-card-inner">
+                                <div class="quote-icon-wrapper">
+                                    <img src="assets/icon_sets/icons_factandfigures/Quotes.svg" alt="Quote Icon" class="fact-quote-icon">
+                                </div>
                                 <div class="fact-quote">„Der Standort war wunderschön, die Atmosphäre war durchweg freundlich, und das Publikum war hochkarätig und international – als Aussteller kann man sich nicht mehr wünschen.“</div>
                                 <div class="fact-author">Kai Uwe Patz, Bühnenbau Wertheim GmbH</div>
                             </div>
@@ -187,19 +196,22 @@
                         <!-- Tile 7: 7.200 Besucher (Purple) -->
                         <div class="fact-card fact-card-purple">
                             <div class="fact-icon-wrapper">
-                                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="fact-icon">
-                                    <path d="M5 3H3v4M19 3h2v4M3 21h2v-4M21 21h-2v-4M12 8a4 4 0 1 0 0 8 4 4 0 0 0 0-8zm0 2.5a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3z"></path>
-                                </svg>
+                                <img src="assets/icon_sets/icons_factandfigures/7200_visitors.svg" alt="Besucher Icon" class="fact-icon">
                             </div>
                             <div class="fact-number">7.200</div>
                             <div class="fact-text">Besucher aus 42 Ländern, davon 93 % aus der EU mit einem starken Kernpublikum aus Deutschland und den angrenzenden Ländern.</div>
                         </div>
 
-                        <!-- Tile 5: Shure Quote (Black with border) -->
-                        <div class="fact-card fact-card-shure">
-                            <div class="shure-logo">SHURE</div>
-                            <div class="fact-quote">„Es war großartig, mit vielen Standbesuchern in Kontakt zu treten. Vielen Dank für die tolle Stimmung vor, während und nach der Show in der Arena Berlin! Ein großes Lob an das SHOWTECH-Team für die reibungslose Organisation und an SAM Konzepte für einen wunderbaren Stand.“</div>
-                            <div class="fact-author">Monika Loreth, Senior Event Specialist</div>
+                        <!-- Tile 5: Shure Quote (Black with border & background image) -->
+                        <div class="fact-card fact-card-quote-bg" style="background-image: url('assets/fotos/fotos_factsandfigures/shure_background.jpg');">
+                            <div class="card-image-overlay"></div>
+                            <div class="fact-card-inner">
+                                <div class="quote-icon-wrapper">
+                                    <img src="assets/icon_sets/icons_factandfigures/Quotes.svg" alt="Quote Icon" class="fact-quote-icon">
+                                </div>
+                                <div class="fact-quote">„Es war großartig, mit vielen Standbesuchern in Kontakt zu treten. Vielen Dank für die tolle Stimmung vor, während und nach der Show in der Arena Berlin! Ein großes Lob an das SHOWTECH-Team für die reibungslose Organisation und an SAM Konzepte für einen wunderbaren Stand.“</div>
+                                <div class="fact-author">Monika Loreth, Shure Europe GmbH</div>
+                            </div>
                         </div>
 
                     </div>
@@ -209,6 +221,9 @@
 
                         <!-- Tile 8: 3.500+ (Large Blue) -->
                         <div class="fact-card fact-card-blue-large">
+                            <div class="fact-icon-wrapper">
+                                <img src="assets/icon_sets/icons_factandfigures/3500_Industry.svg" alt="Branchenvertreter Icon" class="fact-icon">
+                            </div>
                             <div class="fact-number">3.500 +</div>
                             <div class="fact-text">Branchenvertreter*innen kamen zusammen, um die neuesten Entwicklungen in der Bühnen-, Theater- und Showtechnologie zu teilen.</div>
                         </div>
@@ -226,15 +241,11 @@
                         <!-- Tile 11: 85+ (Pink) -->
                         <div class="fact-card fact-card-pink-small">
                             <div class="fact-icon-wrapper">
-                                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="fact-icon">
-                                    <path d="M5 3H3v4M19 3h2v4M3 21h2v-4M21 21h-2v-4M12 5a3 3 0 0 0-3 3v4a3 3 0 0 0 6 0V8a3 3 0 0 0-3-3z"></path>
-                                    <path d="M19 10v1a7 7 0 0 1-14 0v-1M12 18v4"></path>
-                                </svg>
+                                <img src="assets/icon_sets/icons_factandfigures/85_Programm.svg" alt="Veranstaltungen Icon" class="fact-icon">
                             </div>
                             <div class="fact-number">85+</div>
                             <div class="fact-text">kuratierte Veranstaltungen im Programm sorgten für einen hohen Besucherandrang und effektive Sichtbarkeit für Ausstellende - von jungen Talenten bis hin zu etablierten Branchenführenden.</div>
                         </div>
-
                     </div>
                 </div>
             </div>

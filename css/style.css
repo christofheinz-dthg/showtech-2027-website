@@ -1403,26 +1403,27 @@ p {
 }
 
 /* Bento Grid */
+/* Bento Grid */
 .facts-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 1.5rem;
+    gap: 1.25rem; /* Reduced from 1.5rem for compactness */
     align-items: start;
 }
 
 .facts-col {
     display: flex;
     flex-direction: column;
-    gap: 1.5rem;
+    gap: 1.25rem; /* Reduced from 1.5rem for compactness */
 }
 
 /* Common Tile Styles */
 .fact-card {
-    border-radius: 20px;
-    padding: 2.25rem;
+    border-radius: 16px; /* Slightly tighter rounding */
+    padding: 1.75rem; /* Reduced from 2.25rem for compactness */
     position: relative;
     overflow: hidden;
-    box-shadow: 0 4px 20px rgba(13, 27, 46, 0.05);
+    box-shadow: 0 4px 15px rgba(13, 27, 46, 0.04);
     transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.3s ease;
     display: flex;
     flex-direction: column;
@@ -1430,32 +1431,34 @@ p {
 
 .fact-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 10px 30px rgba(13, 27, 46, 0.1);
+    box-shadow: 0 10px 25px rgba(13, 27, 46, 0.08);
 }
 
 .fact-icon-wrapper {
-    margin-bottom: 1.5rem;
+    margin-bottom: 1.25rem; /* Reduced from 1.5rem */
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    width: 52px;
-    height: 52px;
+    width: 48px; /* Reduced from 52px */
+    height: 48px; /* Reduced from 52px */
     border-radius: 12px;
     background: rgba(255, 255, 255, 0.15);
     color: #ffffff;
 }
 
-.fact-icon {
+.fact-icon-wrapper img.fact-icon {
     width: 24px;
     height: 24px;
+    object-fit: contain;
+    filter: invert(1) brightness(2.5); /* Invert dark SVG paths to white */
 }
 
 .fact-number {
-    font-size: clamp(2.25rem, 5vw, 3.25rem);
+    font-size: clamp(1.8rem, 4vw, 2.5rem); /* Reduced from 3.25rem */
     font-weight: 800;
     font-family: var(--font-heading);
     line-height: 1.1;
-    margin-bottom: 0.75rem;
+    margin-bottom: 0.5rem;
     letter-spacing: -0.02em;
 }
 
@@ -1477,10 +1480,10 @@ p {
 .fact-card-blue-large {
     background: linear-gradient(135deg, #0288d1 0%, #01579b 100%);
     color: #ffffff;
-    padding: 3rem 2.25rem;
+    padding: 2.25rem 1.75rem; /* Reduced from 3rem */
 }
 .fact-card-blue-large .fact-number {
-    font-size: clamp(3rem, 6vw, 4.5rem);
+    font-size: clamp(2.2rem, 5vw, 3.2rem); /* Reduced from 4.5rem */
 }
 
 /* Cyan/Light Blue Card */
@@ -1493,10 +1496,10 @@ p {
 .fact-card-purple {
     background: linear-gradient(135deg, #8e24aa 0%, #5e35b1 100%);
     color: #ffffff;
-    padding: 3rem 2.25rem;
+    padding: 2.25rem 1.75rem; /* Reduced from 3rem */
 }
 .fact-card-purple .fact-number {
-    font-size: clamp(2.5rem, 5vw, 3.75rem);
+    font-size: clamp(2rem, 4.5vw, 2.8rem); /* Reduced from 3.75rem */
 }
 
 /* Pink small Card */
@@ -1529,7 +1532,7 @@ p {
     gap: 1rem;
 }
 .fact-img-half {
-    border-radius: 20px;
+    border-radius: 16px;
     overflow: hidden;
     aspect-ratio: 1;
     box-shadow: 0 4px 20px rgba(13, 27, 46, 0.05);
@@ -1549,87 +1552,139 @@ p {
     transform: translateY(-3px);
 }
 
-/* Shure Quote Card (Black background, white border) */
-.fact-card-shure {
-    background: #000000;
-    color: #ffffff;
-    border: 1px solid rgba(255, 255, 255, 0.2);
-}
-.shure-logo {
-    font-size: 1.25rem;
-    font-weight: 900;
-    letter-spacing: 0.15em;
-    margin-bottom: 1.5rem;
-    font-family: var(--font-heading);
-    position: relative;
-    display: inline-block;
-    padding-bottom: 4px;
-}
-.shure-logo::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 40px;
-    height: 2px;
-    background-color: var(--color-accent-blue);
-}
-.fact-quote {
-    font-size: 1.05rem;
-    line-height: 1.6;
-    font-style: italic;
-    font-weight: 300;
-    margin-bottom: 1.5rem;
-    opacity: 0.9;
-}
-.fact-author {
-    font-size: 0.85rem;
-    font-weight: 600;
-    color: var(--color-accent-blue);
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-}
-
-/* Quote Card with background image (Kai Uwe Patz) */
+/* Quote Card with background image & overlay ( Kai Uwe Patz & Monika Loreth ) */
 .fact-card-quote-bg {
     position: relative;
-    padding: 3rem 2.25rem;
-    min-height: 380px;
+    padding: 2.25rem 1.75rem;
+    min-height: 340px; /* Reduced from 380px to save scroll height */
     background-size: cover;
     background-position: center;
+    background-color: #000000;
+    border: 1px solid rgba(255, 255, 255, 0.15); /* Sleek outline border for both quotes */
+    border-radius: 16px;
     display: flex;
     align-items: flex-end;
-    border-radius: 20px;
     overflow: hidden;
-    box-shadow: 0 4px 20px rgba(13, 27, 46, 0.05);
 }
+
 .card-image-overlay {
     position: absolute;
     inset: 0;
-    background: linear-gradient(to bottom, rgba(13, 27, 46, 0.4) 0%, rgba(13, 27, 46, 0.9) 100%);
+    background: linear-gradient(to bottom, rgba(13, 27, 46, 0.5) 0%, rgba(13, 27, 46, 0.9) 100%);
     z-index: 1;
 }
+
 .fact-card-quote-bg .fact-card-inner {
     position: relative;
     z-index: 2;
     color: #ffffff;
+    width: 100%;
 }
+
+.quote-icon-wrapper {
+    margin-bottom: 1rem;
+    display: inline-flex;
+}
+
+.fact-quote-icon {
+    width: 32px;
+    height: 32px;
+    object-fit: contain;
+    filter: invert(1) brightness(2.5);
+    opacity: 0.85;
+}
+
 .fact-card-quote-bg .fact-quote {
-    font-size: 1.15rem;
-    line-height: 1.6;
+    font-size: 1rem;
+    line-height: 1.5;
     font-style: normal;
-    margin-bottom: 1.5rem;
-    text-shadow: 0 2px 10px rgba(0,0,0,0.5);
+    margin-bottom: 1.25rem;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.6);
 }
+
 .fact-card-quote-bg .fact-author {
-    color: #ffffff;
-    opacity: 0.9;
-    font-size: 0.9rem;
-    text-shadow: 0 2px 10px rgba(0,0,0,0.5);
+    color: var(--color-accent-blue);
+    font-size: 0.8rem;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.6);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+/* Double Header display toggles */
+.facts-header-mobile {
+    display: none;
+}
+
+.facts-header-desktop {
+    text-align: center;
+    padding: 1.5rem 1rem;
+    margin-bottom: 0.5rem;
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    transform: none !important;
+}
+
+.facts-header-desktop .section-tag {
+    display: inline-block;
+    color: var(--color-accent);
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 0.5rem;
+}
+
+.facts-header-desktop h2 {
+    font-size: clamp(2rem, 3.5vw, 2.5rem);
+    font-weight: 800;
+    color: var(--color-text-primary);
+    font-family: var(--font-heading);
+    margin: 0 0 0.5rem 0;
+}
+
+.facts-header-desktop p {
+    color: var(--color-text-secondary);
+    font-size: 0.95rem;
+    margin: 0;
 }
 
 /* Responsive adjustments */
 @media (max-width: 992px) {
+    .facts-header-mobile {
+        display: block;
+        text-align: center;
+        margin-bottom: 3rem;
+    }
+    .facts-header-mobile .section-tag {
+        display: inline-block;
+        color: var(--color-accent);
+        font-size: 0.75rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        margin-bottom: 0.5rem;
+    }
+    .facts-header-mobile h2 {
+        font-size: clamp(2.25rem, 4vw, 2.75rem);
+        font-weight: 800;
+        color: var(--color-text-primary);
+        font-family: var(--font-heading);
+        margin: 0 0 0.75rem 0;
+    }
+    .facts-header-mobile p {
+        color: var(--color-text-secondary);
+        font-size: 1.05rem;
+        max-width: 600px;
+        line-height: 1.5;
+        margin: 0 auto;
+    }
+    
+    .facts-header-desktop {
+        display: none;
+    }
+
     .facts-grid {
         grid-template-columns: repeat(2, 1fr);
     }
@@ -1641,10 +1696,10 @@ p {
     }
     .facts-grid {
         grid-template-columns: 1fr;
-        gap: 1.5rem;
+        gap: 1.25rem;
     }
     .facts-col {
-        gap: 1.5rem;
+        gap: 1.25rem;
     }
     .fact-card-quote-bg {
         min-height: 300px;
