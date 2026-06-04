@@ -1470,6 +1470,13 @@ p {
 
 /* Specific Card Themes */
 
+/* Introduction Card (Deep Navy base with subtle border) */
+.fact-card-intro {
+    background: linear-gradient(135deg, #0d1b2e 0%, #172a45 100%);
+    color: #ffffff;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
 /* Magenta/Pink Card */
 .fact-card-pink {
     background: linear-gradient(135deg, #d81b60 0%, #ad1457 100%);
@@ -1488,7 +1495,7 @@ p {
 
 /* Cyan/Light Blue Card */
 .fact-card-cyan {
-    background: linear-gradient(135deg, #00b0ff 0%, #0091ea 100%);
+    background: linear-gradient(135deg, #29b6f6 0%, #028bcf 100%);
     color: #ffffff;
 }
 
@@ -1570,7 +1577,7 @@ p {
 .card-image-overlay {
     position: absolute;
     inset: 0;
-    background: linear-gradient(to bottom, rgba(13, 27, 46, 0.5) 0%, rgba(13, 27, 46, 0.9) 100%);
+    background: linear-gradient(to bottom, rgba(13, 27, 46, 0.75) 0%, rgba(13, 27, 46, 0.95) 100%);
     z-index: 1;
 }
 
@@ -1618,7 +1625,7 @@ p {
 
 .facts-header-desktop {
     text-align: center;
-    padding: 1.5rem 1rem;
+    padding: 5rem 1rem 1.5rem 1rem; /* Shifting the title down to align vertically with flanking cards */
     margin-bottom: 0.5rem;
     background: transparent !important;
     border: none !important;
@@ -1639,15 +1646,22 @@ p {
 .facts-header-desktop h2 {
     font-size: clamp(2rem, 3.5vw, 2.5rem);
     font-weight: 800;
-    color: var(--color-text-primary);
+    color: var(--color-text-dark); /* Restored to dark navy */
     font-family: var(--font-heading);
     margin: 0 0 0.5rem 0;
 }
 
 .facts-header-desktop p {
-    color: var(--color-text-secondary);
+    color: #5a7a9a; /* Restored to readable slate blue */
     font-size: 0.95rem;
     margin: 0;
+}
+
+/* Shift the top-left card down slightly on desktop for vertical grid balance */
+@media (min-width: 993px) {
+    .facts-grid .facts-col:first-child .fact-card:first-child {
+        margin-top: 2.25rem;
+    }
 }
 
 /* Responsive adjustments */
@@ -1669,12 +1683,12 @@ p {
     .facts-header-mobile h2 {
         font-size: clamp(2.25rem, 4vw, 2.75rem);
         font-weight: 800;
-        color: var(--color-text-primary);
+        color: var(--color-text-dark); /* Restored to dark navy */
         font-family: var(--font-heading);
         margin: 0 0 0.75rem 0;
     }
     .facts-header-mobile p {
-        color: var(--color-text-secondary);
+        color: #5a7a9a; /* Restored to readable slate blue */
         font-size: 1.05rem;
         max-width: 600px;
         line-height: 1.5;
@@ -3774,5 +3788,121 @@ Let's make marker part of flow? No, absolute in item easiest.
         flex-direction: column;
         text-align: center;
         gap: 2rem;
+    }
+}
+
+/* Header Middle Navigation Pills */
+.header-middle-pills {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    z-index: 10;
+}
+
+.header-pill {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.35rem 0.9rem;
+    border-radius: var(--radius-pill);
+    font-weight: 700;
+    font-size: 0.8rem;
+    color: var(--color-text-primary) !important;
+    background-color: var(--color-accent);
+    text-decoration: none !important;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.header-pill:hover {
+    background-color: var(--color-accent-hover);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 10px rgba(229, 57, 53, 0.4);
+}
+
+/* Hide on scroll (sticky state) */
+.site-header.scrolled .header-middle-pills {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+@media (max-width: 992px) {
+    .header-middle-pills {
+        display: none !important;
+    }
+}
+
+/* Back to Top Button */
+.back-to-top-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5rem 0;
+}
+
+.btn-back-to-top {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 1rem 2.25rem;
+    background: linear-gradient(135deg, var(--color-accent) 0%, var(--color-accent-hover) 100%);
+    color: #ffffff !important;
+    font-weight: 700;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    border-radius: var(--radius-pill);
+    text-decoration: none !important;
+    box-shadow: 0 4px 15px rgba(229, 57, 53, 0.3);
+    transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-back-to-top::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0) 100%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.btn-back-to-top:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(229, 57, 53, 0.5);
+    color: #ffffff !important;
+}
+
+.btn-back-to-top:hover::after {
+    opacity: 1;
+}
+
+/* Bouncing arrow animation */
+.btn-back-to-top .arrow-up {
+    display: inline-block;
+    font-size: 1.3rem;
+    line-height: 1;
+    transition: transform 0.3s ease;
+    animation: backToTopBounce 2s infinite;
+}
+
+.btn-back-to-top:hover .arrow-up {
+    transform: translateY(-3px);
+    animation-play-state: paused;
+}
+
+@keyframes backToTopBounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-4px);
     }
 }

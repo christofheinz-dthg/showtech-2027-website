@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//DTHG//SHOWTECH 2027//DE
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:showtech-2027-event@dthg.de
+DTSTART;TZID=Europe/Berlin:20270601T090000
+DTEND;TZID=Europe/Berlin:20270603T180000
+SUMMARY:SHOWTECH 2027
+DESCRIPTION:Der internationale Treffpunkt für die Theater-\, Veranstaltungs- und Bühnenbranche. Technologie erleben\, Netzwerke aufbauen\, Zukunft gestalten.
+LOCATION:Arena Berlin\, Eichenstraße 4\, 12435 Berlin\, Germany
+URL:https://showtech.dthg.de
+STATUS:CONFIRMED
+SEQUENCE:0
+TRANSP:OPAQUE
+END:VEVENT
+END:VCALENDAR
