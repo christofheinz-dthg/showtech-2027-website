@@ -40,7 +40,7 @@
                     <span class="lang-sep">/</span>
                     <button class="lang-btn" data-lang="de">DE</button>
                 </div>
-                <a href="#contact" class="btn btn-primary btn-sm">Kontakt</a>
+                <a href="mailto:info@showtech.dthg.de?subject=SHOWTECH%202027%20-%20Kontaktanfrage" class="btn btn-primary btn-sm">Kontakt</a>
                 <button class="mobile-menu-toggle" id="menuToggle" aria-label="Toggle Menu" aria-expanded="false">
                     <span></span>
                     <span></span>
@@ -53,20 +53,36 @@
     <div class="nav-overlay" id="navOverlay" aria-hidden="true">
         <nav class="nav-overlay-inner">
             <ul class="nav-overlay-links">
-                <li><a href="#hero" class="nav-overlay-link">Startseite</a></li>
+                <li><a href="#hero" class="nav-overlay-link">Start</a></li>
                 <li><a href="#factsandfigures" class="nav-overlay-link">Facts and Figures</a></li>
                 <li><a href="#exhibitor2027" class="nav-overlay-link">Aussteller 2027</a></li>
-                <li><a href="#moreinfo" class="nav-overlay-link">Mehr erfahren</a></li>
-                <li><a href="#booking" class="nav-overlay-link">Termin</a></li>
+                <li><a href="#moreinfo" class="nav-overlay-link">Über das Event</a></li>
+                <li><a href="#booking" class="nav-overlay-link">Aussteller werden</a></li>
                 <li><a href="#stages" class="nav-overlay-link">Bühnen &amp; Formate</a></li>
                 <li><a href="#venue" class="nav-overlay-link">Location</a></li>
                 <li><a href="#timeline" class="nav-overlay-link">Road to SHOWTECH 2027</a></li>
                 <li><a href="#faq" class="nav-overlay-link">Fragen &amp; Antworten</a></li>
-                <li><a href="#contact" class="nav-overlay-link">Kontakt</a></li>
+                <li><a href="mailto:info@showtech.dthg.de?subject=SHOWTECH%202027%20-%20Kontaktanfrage" class="nav-overlay-link">Kontakt</a></li>
             </ul>
-            <div class="nav-overlay-footer">
-                <a href="#exhibitor2027" class="btn btn-primary btn-lg btn-pill">Stand buchen</a>
-                <a href="#contact" class="btn btn-outline btn-lg btn-pill">Kontakt</a>
+            <div class="nav-overlay-contact">
+                <a href="tel:+4922167058464" class="contact-pill">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path
+                            d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.41 2 2 0 0 1 3.6 1.22h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.78a16 16 0 0 0 6.29 6.29l.96-.96a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z" />
+                    </svg>
+                    <span>+49 221 67058 464</span>
+                </a>
+
+                <a href="mailto:info@showtech.dthg.de" class="contact-pill">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path
+                            d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                        <polyline points="22,6 12,13 2,6" />
+                    </svg>
+                    <span>info@showtech.dthg.de</span>
+                </a>
             </div>
         </nav>
     </div>
@@ -305,29 +321,37 @@
             <div class="container">
                 <div class="moreinfo-section-header">
                     <span class="section-tag">Entdecken</span>
-                    <h2>Mehr erfahren</h2>
+                    <h2>Über das Event</h2>
                     <p>Sie sind neugierig geworden? Hier erhalten Sie mehr Informationen!</p>
                 </div>
 
                 <div class="moreinfo-grid">
                     <!-- visitor card -->
                     <div class="moreinfo-card visitor-card">
-                        <div class="card-top">
-                            <span class="card-tag">Für Besucher</span>
-                            <h3>Bühnen &amp; Formate</h3>
-                            <p>Entdecken Sie unser kuratiertes Kongressprogramm, themenspezifische Podiumsdiskussionen und Live-Demonstrationen auf unseren Fachbühnen.</p>
+                        <div class="card-header-banner">
+                            <span class="card-tag">BESUCHER</span>
                         </div>
-                        <a href="#stages" class="btn btn-primary">Mehr erfahren</a>
+                        <div class="card-body-content">
+                            <div class="card-top">
+                                <h3>Bühnen &amp; Formate</h3>
+                                <p>Entdecken Sie unser kuratiertes Kongressprogramm, themenspezifische Podiumsdiskussionen und Live-Demonstrationen auf unseren Fachbühnen.</p>
+                            </div>
+                            <a href="#stages" class="btn btn-primary">Mehr erfahren</a>
+                        </div>
                     </div>
 
                     <!-- exhibitor card -->
                     <div class="moreinfo-card exhibitor-card">
-                        <div class="card-top">
-                            <span class="card-tag">Für Aussteller</span>
-                            <h3>Downloads &amp; Richtlinien</h3>
-                            <p>Hier finden Sie alle wichtigen Bestellformulare, Factsheets, Standbaurichtlinien und Werbematerialien für Ihren Messeauftritt.</p>
+                        <div class="card-header-banner">
+                            <span class="card-tag">AUSSTELLER</span>
                         </div>
-                        <a href="https://showtech.me/exhibitor-downloads/" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">Downloads öffnen</a>
+                        <div class="card-body-content">
+                            <div class="card-top">
+                                <h3>Downloads &amp; Richtlinien</h3>
+                                <p>Hier finden Sie alle wichtigen Bestellformulare, Factsheets, Standbaurichtlinien und Werbematerialien für Ihren Messeauftritt.</p>
+                            </div>
+                            <a href="https://showtech.me/exhibitor-downloads/" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">Downloads öffnen</a>
+                        </div>
                     </div>
 
                     <!-- newsletter card (Full Width) -->
@@ -369,6 +393,22 @@
                                         <!-- Form fields wrapper -->
                                         <div id="sib-container">
                                             <form id="sib-form" method="POST" action="https://421e8861.sibforms.com/serve/MUIFAI7Ta4MS6vOVEa615Sb_hI1kD63WUC0pa_cAE3muYuuMu-XvCQNhZx2PWwhl2a5Z34OlXvsrQZlpGqPxgQK9jP8xbrf9qhkYoZ33Z363y8HeEqdnBjCSdELhJyJqJSTf0qeX7oTwf2GYkaShPTUIY1E6bNx7nkh2VjdYunDKKRAIiPCoejdjlxfUrBZZDbFVdqgEiHWB3sv8" data-type="subscription">
+                                                <!-- Name fields (Vorname & Nachname) -->
+                                                <div class="sib-form-row-names">
+                                                    <div class="sib-input sib-form-block">
+                                                        <div class="form__entry entry_block">
+                                                            <input class="input custom-input" type="text" id="VORNAME" name="VORNAME" autocomplete="off" placeholder="Vorname" data-required="true" required />
+                                                            <label class="entry__error entry__error--primary"></label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="sib-input sib-form-block">
+                                                        <div class="form__entry entry_block">
+                                                            <input class="input custom-input" type="text" id="NACHNAME" name="NACHNAME" autocomplete="off" placeholder="Nachname" data-required="true" required />
+                                                            <label class="entry__error entry__error--primary"></label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
                                                 <!-- Email input field -->
                                                 <div class="sib-form-row">
                                                     <div class="sib-input sib-form-block">
@@ -422,15 +462,20 @@
             <div class="container">
                 <div class="booking-section-header">
                     <span class="section-tag">Terminvereinbarung</span>
-                    <h2>Termin vereinbaren</h2>
-                    <p>Sichern Sie sich Ihr persönliches Gespräch vor Ort oder online und besprechen Sie Ihre Fragen rund um die SHOWTECH 2027.</p>
+                    <h2>Aussteller werden</h2>
+                    <p class="booking-intro-text">Buchen Sie hier Ihren persönlichen Online-Beratungstermin zur SHOWTECH 2027. In einem kurzen Gespräch (ca. 15 min.) informieren wir Sie über Standoptionen, mögliche Platzierungen und beantworten Ihre Fragen. Gerne können wir dabei auch über Ihre Wünsche und Ideen für 2027 sprechen.</p>
+                    <p class="booking-note-text">Bitte geben Sie bei der Terminbuchung Ihren Firmennamen, den Ansprechpartner sowie eine ungefähr gewünschte Flächengröße an:</p>
                 </div>
                 
                 <div class="booking-widget-wrapper">
                     <!-- Calendly Inline-Widget Beginn -->
-                    <div class="calendly-inline-widget" data-url="https://calendly.com/showtech-info/showtech-2025-prebooking-clone?hide_event_type_details=1&amp;hide_gdpr_banner=1&amp;background_color=0d1b2e&amp;text_color=ffffff&amp;primary_color=e53935" style="min-width:320px; height:700px;"></div>
+                    <div class="calendly-inline-widget" data-url="https://calendly.com/showtech-info/showtech-2025-prebooking-clone?hide_event_type_details=1&amp;hide_gdpr_banner=1&amp;background_color=ffffff&amp;text_color=0d1b2e&amp;primary_color=e53935" style="min-width:320px; height:700px;"></div>
                     <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
                     <!-- Calendly Inline-Widget Ende -->
+                </div>
+
+                <div class="booking-alternative-cta">
+                    <a href="mailto:info@showtech.dthg.de?subject=SHOWTECH%202027%20-%20Requesting%20information%20about%20stand%20reservations" class="btn">Oder hier per E-Mail</a>
                 </div>
             </div>
         </section>
@@ -787,22 +832,6 @@
                     <!-- Connecting line -->
                     <div class="timeline-new-line"></div>
 
-                    <!-- Milestone 1 (past - filled) -->
-                    <div class="timeline-new-item past">
-                        <div class="timeline-new-circle filled">
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="2">
-                                <path
-                                    d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" />
-                            </svg>
-                        </div>
-                        <div class="timeline-new-content">
-                            <span class="timeline-new-date">June 2025</span>
-                            <h4>SHOWTECH 2025</h4>
-                            <p>Our last successful event with 3,500+ attendees</p>
-                        </div>
-                    </div>
-
                     <!-- Milestone 2 (past - filled) -->
                     <div class="timeline-new-item past">
                         <div class="timeline-new-circle filled">
@@ -934,8 +963,8 @@
                     <div class="faq-content-area-dark">
                         <!-- Preserving audience tabs above accordion for functionality -->
                         <div class="faq-audience-tabs-dark">
-                            <button class="tab-btn active" data-target="visitor">Besucher</button>
-                            <button class="tab-btn" data-target="exhibitor">Aussteller</button>
+                            <button class="tab-btn tab-btn-visitor active" data-target="visitor">Besucher</button>
+                            <button class="tab-btn tab-btn-exhibitor" data-target="exhibitor">Aussteller</button>
                         </div>
 
                         <div class="faq-group active" id="faq-visitor">
@@ -1086,47 +1115,54 @@
                                         Abendveranstaltungen oder Kongressbühnen.</p>
                                 </div>
                             </div>
-                           <!-- Bottom CTA Section / Back to Top -->
-        <section id="contact" class="section-bottom-cta">
-            <div class="container back-to-top-wrapper">
-                <a href="#hero" class="btn-back-to-top">
-                    <span class="arrow-up">&uarr;</span>
-                    <span class="btn-text">Zurück zum Anfang</span>
-                </a>
-            </div>
-        </section>
+                        </div> <!-- closes faq-group -->
+                    </div> <!-- closes faq-content-area-dark -->
+                </div> <!-- closes faq-grid-layout -->
+                
+                <!-- Back to Top Button -->
+                <div class="back-to-top-wrapper">
+                    <a href="#hero" class="btn-back-to-top">
+                        <span class="arrow-up">&uarr;</span>
+                        <span class="btn-text">Zurück zum Anfang</span>
+                    </a>
+                </div>
+            </div> <!-- closes container -->
+        </section> <!-- closes section-faq-redesign -->
     </main>
 
     <footer class="site-footer">
         <div class="container">
             <div class="footer-top">
                 <div class="footer-brand">
-                    <div class="logo">SHOWTECH</div>
-                    <p>Der globale Treffpunkt für Bühnentechnik.</p>
+                    <a href="#hero" class="footer-logo-link">
+                        <img src="assets/SHOWTECH27_logo.png" alt="SHOWTECH 2027 Logo" class="footer-logo-img">
+                    </a>
+                    <p>Der globale Treffpunkt für Bühnen-, Theater- und Eventtechnologie.</p>
                 </div>
                 <div class="footer-links">
                     <div class="footer-col">
                         <h4>Event</h4>
                         <ul>
-                            <li><a href="#factsandfigures">Über uns</a></li>
-                            <li><a href="#">Speaker</a></li>
-                            <li><a href="#">Programm</a></li>
+                            <li><a href="#moreinfo">Über das Event</a></li>
+                            <li><a href="#factsandfigures">Facts &amp; Figures</a></li>
+                            <li><a href="#stages">Bühnen &amp; Formate</a></li>
                         </ul>
                     </div>
                     <div class="footer-col">
-                        <h4>Ausstellen</h4>
+                        <h4>Teilnahme</h4>
                         <ul>
-                            <li><a href="#exhibit">Warum ausstellen?</a></li>
-                            <li><a href="#venue">Hallenplan</a></li>
-                            <li><a href="#exhibit">Preise</a></li>
+                            <li><a href="#booking">Aussteller werden</a></li>
+                            <li><a href="#exhibitor2027">Unsere Aussteller</a></li>
+                            <li><a href="#timeline">Road to SHOWTECH</a></li>
+                            <li><a href="#venue">Location</a></li>
                         </ul>
                     </div>
                     <div class="footer-col">
-                        <h4>Rechtliches</h4>
+                        <h4>Info</h4>
                         <ul>
-                            <li><a href="#">Impressum</a></li>
-                            <li><a href="#">Datenschutz</a></li>
-                            <li><a href="#">AGB</a></li>
+                            <li><a href="#faq">Fragen &amp; Antworten</a></li>
+                            <li><a href="https://showtech.me/datenschutzerklaerung/" target="_blank" rel="noopener noreferrer">Impressum</a></li>
+                            <li><a href="https://showtech.me/datenschutzerklaerung/" target="_blank" rel="noopener noreferrer">Datenschutz</a></li>
                         </ul>
                     </div>
                 </div>
@@ -1134,10 +1170,21 @@
             <div class="footer-bottom">
                 <p>&copy; 2027 SHOWTECH. Alle Rechte vorbehalten.</p>
                 <div class="social-links">
-                    <a href="#" aria-label="Facebook">FB</a>
-                    <a href="#" aria-label="Twitter">TW</a>
-                    <a href="#" aria-label="LinkedIn">IN</a>
-                    <a href="#" aria-label="Instagram">IG</a>
+                    <a href="https://www.facebook.com/dthgev/" aria-label="Facebook" title="Facebook" target="_blank" rel="noopener noreferrer">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+                    </a>
+                    <a href="https://www.youtube.com/channel/UCl7KAGuAkLdZKngBbwQpfDA" aria-label="YouTube" title="YouTube" target="_blank" rel="noopener noreferrer">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"/>
+                            <polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"/>
+                        </svg>
+                    </a>
+                    <a href="https://de.linkedin.com/showcase/showtech-berlin/" aria-label="LinkedIn" title="LinkedIn" target="_blank" rel="noopener noreferrer">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+                    </a>
+                    <a href="https://www.instagram.com/showtech_berlin" aria-label="Instagram" title="Instagram" target="_blank" rel="noopener noreferrer">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+                    </a>
                 </div>
             </div>
         </div>

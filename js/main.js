@@ -332,10 +332,50 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    // ── Mobile Timeline Highlight on Scroll (Road to Showtech Section) ────
+    function handleMobileTimelineActive() {
+        if (window.innerWidth > 768) {
+            // Remove active-scroll class on desktop size to allow normal CSS hover
+            document.querySelectorAll('.timeline-new-item').forEach(item => {
+                item.classList.remove('active-scroll');
+            });
+            return;
+        }
+
+        const items = document.querySelectorAll('.timeline-new-item');
+        const centerY = window.innerHeight / 2;
+
+        let closestItem = null;
+        let minDistance = Infinity;
+
+        items.forEach(item => {
+            const rect = item.getBoundingClientRect();
+            const itemCenterY = rect.top + rect.height / 2;
+            const distance = Math.abs(centerY - itemCenterY);
+
+            if (distance < minDistance) {
+                minDistance = distance;
+                closestItem = item;
+            }
+        });
+
+        items.forEach(item => {
+            // Only highlight the item closest to center, and only if it's reasonably near the center (within 250px)
+            if (item === closestItem && minDistance < 250) {
+                item.classList.add('active-scroll');
+            } else {
+                item.classList.remove('active-scroll');
+            }
+        });
+    }
+
     // Attach listeners for scroll and resize
     window.addEventListener('scroll', handleMobileFlip, { passive: true });
     window.addEventListener('resize', handleMobileFlip);
+    window.addEventListener('scroll', handleMobileTimelineActive, { passive: true });
+    window.addEventListener('resize', handleMobileTimelineActive);
 
     // Initial trigger
     handleMobileFlip();
+    handleMobileTimelineActive();
 });

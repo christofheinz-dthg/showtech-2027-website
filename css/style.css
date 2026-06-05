@@ -353,6 +353,39 @@ p {
     color: var(--color-text-secondary);
 }
 
+/* Hover & Active scroll state for timeline items - Red accent styling */
+.section-timeline-navy .timeline-new-item:hover .timeline-new-circle.filled,
+.section-timeline-navy .timeline-new-item.active-scroll .timeline-new-circle.filled {
+    background: var(--color-accent) !important;
+}
+
+.section-timeline-navy .timeline-new-item.event:hover .timeline-new-circle.filled,
+.section-timeline-navy .timeline-new-item.event.active-scroll .timeline-new-circle.filled {
+    background: var(--color-accent) !important;
+    box-shadow: 0 0 0 8px rgba(229, 57, 53, 0.25) !important;
+}
+
+.section-timeline-navy .timeline-new-item:hover .timeline-new-circle.outline,
+.section-timeline-navy .timeline-new-item.active-scroll .timeline-new-circle.outline {
+    border-color: var(--color-accent) !important;
+    color: var(--color-accent) !important;
+}
+
+.section-timeline-navy .timeline-new-item:hover .timeline-new-circle.outline svg,
+.section-timeline-navy .timeline-new-item.active-scroll .timeline-new-circle.outline svg {
+    stroke: var(--color-accent) !important;
+}
+
+.section-timeline-navy .timeline-new-item:hover .timeline-new-date,
+.section-timeline-navy .timeline-new-item.active-scroll .timeline-new-date {
+    color: var(--color-accent) !important;
+}
+
+.section-timeline-navy .timeline-new-item:hover h4,
+.section-timeline-navy .timeline-new-item.active-scroll h4 {
+    color: var(--color-accent) !important;
+}
+
 /* main-nav removed — navigation lives in the overlay */
 .main-nav {
     display: none;
@@ -421,11 +454,47 @@ p {
     transform: translateY(-2px); /* Premium vertical transition */
 }
 
-.nav-overlay-footer {
+/* Navigation Overlay Contact Info - Blue Pills */
+.nav-overlay-contact {
     display: flex;
+    flex-direction: column;
     gap: 1rem;
-    flex-wrap: wrap;
+    margin-top: 1.5rem;
+    align-items: center;
+    width: 100%;
+}
+
+.contact-pill {
+    display: inline-flex;
+    align-items: center;
     justify-content: center;
+    gap: 0.75rem;
+    padding: 0.75rem 1.75rem;
+    background: #0d1b2e; /* dark blue background matching the icons/FAQ cards */
+    border: 1.5px solid rgba(41, 182, 246, 0.3); /* blue outline border */
+    color: var(--color-accent-blue) !important; /* light blue/cyan text and icon color */
+    font-weight: 700;
+    font-size: 0.95rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    border-radius: var(--radius-pill);
+    text-decoration: none !important;
+    box-shadow: 0 4px 12px rgba(41, 182, 246, 0.1);
+    transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+    width: 290px; /* fixed width so both pills are identical size */
+}
+
+.contact-pill:hover {
+    transform: translateY(-3px);
+    background: rgba(41, 182, 246, 0.1); /* light blue overlay background */
+    border-color: var(--color-accent-blue); /* leuchtende outline */
+    color: #ffffff !important; /* white text on hover for premium contrast */
+    box-shadow: 0 8px 20px rgba(41, 182, 246, 0.35); /* leuchtender shadow glow */
+}
+
+.contact-pill svg {
+    flex-shrink: 0;
+    stroke-width: 2.5;
 }
 
 /* Burger → X animation */
@@ -1724,9 +1793,7 @@ p {
    ============================================ */
 .section-exhibitors {
     padding: 6rem 0;
-    background-color: var(--color-bg-base); /* Dark background to transition nicely */
-    border-top: 1px solid rgba(255, 255, 255, 0.05);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    background-color: #ffffff; /* Clean white background */
     overflow: hidden;
     position: relative;
 }
@@ -1749,13 +1816,13 @@ p {
 .exhibitors-section-header h2 {
     font-size: clamp(2.25rem, 4vw, 2.75rem);
     font-weight: 800;
-    color: var(--color-text-primary);
+    color: var(--color-text-dark);
     margin: 0 0 0.75rem 0;
     font-family: var(--font-heading);
 }
 
 .exhibitors-section-header p {
-    color: var(--color-text-secondary);
+    color: #5a7a9a;
     font-size: 1.05rem;
     max-width: 600px;
     line-height: 1.5;
@@ -1766,10 +1833,8 @@ p {
     overflow: hidden;
     width: 100%;
     padding: 30px 0;
-    background: rgba(255, 255, 255, 0.01);
+    background: #ffffff;
     position: relative;
-    border-top: 1px solid rgba(255, 255, 255, 0.05);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 /* Edge Fading Overlays for Seamless Merging */
@@ -1784,11 +1849,11 @@ p {
 }
 .slider-wrap::before { 
     left: 0; 
-    background: linear-gradient(to right, #0d1b2e 0%, rgba(13, 27, 46, 0) 100%); 
+    background: linear-gradient(to right, #ffffff 0%, rgba(255, 255, 255, 0) 100%); 
 }
 .slider-wrap::after  { 
     right: 0; 
-    background: linear-gradient(to left, #0d1b2e 0%, rgba(13, 27, 46, 0) 100%); 
+    background: linear-gradient(to left, #ffffff 0%, rgba(255, 255, 255, 0) 100%); 
 }
 
 .slider-track {
@@ -1846,7 +1911,7 @@ p {
    ============================================ */
 .section-moreinfo {
     padding: 6rem 0;
-    background-color: var(--color-bg-light); /* Light blue-gray section bg */
+    background: linear-gradient(135deg, var(--color-bg-surface) 0%, var(--color-bg-base) 100%);
     position: relative;
     z-index: 1;
 }
@@ -1858,7 +1923,7 @@ p {
 
 .moreinfo-section-header .section-tag {
     display: inline-block;
-    color: var(--color-accent);
+    color: var(--color-accent-blue);
     font-size: 0.75rem;
     font-weight: 700;
     text-transform: uppercase;
@@ -1869,13 +1934,13 @@ p {
 .moreinfo-section-header h2 {
     font-size: clamp(2.25rem, 4vw, 2.75rem);
     font-weight: 800;
-    color: var(--color-text-dark);
+    color: var(--color-text-primary);
     margin: 0 0 0.75rem 0;
     font-family: var(--font-heading);
 }
 
 .moreinfo-section-header p {
-    color: #5a7a9a;
+    color: var(--color-text-secondary);
     font-size: 1.05rem;
     max-width: 600px;
     line-height: 1.5;
@@ -1892,41 +1957,81 @@ p {
 }
 
 .moreinfo-card {
-    background-color: #ffffff;
+    background-color: var(--color-bg-surface);
+    border: 1px solid rgba(255, 255, 255, 0.06);
     border-radius: var(--radius-md);
     padding: 3rem;
-    box-shadow: 0 10px 30px rgba(13, 27, 46, 0.04);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+    transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.3s cubic-bezier(0.25, 1, 0.5, 1), border-color 0.3s ease;
     position: relative;
     overflow: hidden;
 }
 
-.moreinfo-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 20px 40px rgba(13, 27, 46, 0.08);
-}
-
-.moreinfo-card.visitor-card {
-    border-top: 5px solid var(--color-accent);
-}
-
+.moreinfo-card.visitor-card,
 .moreinfo-card.exhibitor-card {
-    border-top: 5px solid var(--color-accent-blue);
+    padding: 0;
+}
+
+.moreinfo-card.visitor-card:hover {
+    transform: none;
+    box-shadow: 0 0 30px rgba(229, 57, 53, 0.35);
+    border-color: rgba(229, 57, 53, 0.5);
+}
+
+.moreinfo-card.exhibitor-card:hover {
+    transform: none;
+    box-shadow: 0 0 30px rgba(41, 182, 246, 0.35);
+    border-color: rgba(41, 182, 246, 0.5);
+}
+
+.card-header-banner {
+    padding: 1.5rem 2.5rem;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 70px;
+}
+
+.visitor-card .card-header-banner {
+    background-color: var(--color-accent);
+}
+
+.exhibitor-card .card-header-banner {
+    background-color: var(--color-accent-blue);
+}
+
+.card-header-banner .card-tag {
+    color: #ffffff !important;
+    font-size: 1.35rem; /* Larger font size as requested */
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    margin-bottom: 0;
+    font-family: var(--font-heading);
+}
+
+.card-body-content {
+    padding: 2.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex-grow: 1;
 }
 
 .moreinfo-card h3 {
     font-family: var(--font-heading);
     font-size: 1.85rem;
     font-weight: 700;
-    color: var(--color-text-dark);
+    color: var(--color-text-primary);
     margin: 0 0 1.25rem 0;
 }
 
 .moreinfo-card p {
-    color: #5a7a9a;
+    color: var(--color-text-secondary);
     font-size: 1rem;
     line-height: 1.6;
     margin: 0 0 2.5rem 0;
@@ -1942,10 +2047,6 @@ p {
     margin-bottom: 0.75rem;
 }
 
-.moreinfo-card.visitor-card .card-tag {
-    color: var(--color-accent);
-}
-
 .moreinfo-card .btn {
     align-self: flex-start;
     padding: 1rem 2.25rem;
@@ -1959,16 +2060,15 @@ p {
 /* Newsletter Card - Full Width styling */
 .moreinfo-card.newsletter-card-full {
     grid-column: span 2;
-    background: linear-gradient(135deg, var(--color-bg-surface) 0%, var(--color-bg-base) 100%);
-    border: 1px solid rgba(255, 255, 255, 0.05);
+    background: var(--color-bg-base);
+    border: 1px solid rgba(255, 255, 255, 0.06);
     padding: 4rem;
-    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
-    border-top: none;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
 }
 
 .moreinfo-card.newsletter-card-full:hover {
     transform: none;
-    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.25);
 }
 
 .newsletter-grid {
@@ -2011,12 +2111,12 @@ p {
     width: 100%;
 }
 
-.input-inline-group .custom-input {
-    flex-grow: 1;
+.custom-input {
+    width: 100%;
     background-color: rgba(255, 255, 255, 0.04);
     border: 1.5px solid rgba(255, 255, 255, 0.12);
     border-radius: var(--radius-pill);
-    padding: 1rem 11rem 1rem 1.5rem;
+    padding: 1rem 1.5rem;
     font-size: 0.95rem;
     color: var(--color-text-primary);
     font-family: var(--font-main);
@@ -2025,11 +2125,27 @@ p {
     box-sizing: border-box;
 }
 
-.input-inline-group .custom-input:focus {
+.custom-input:focus {
     border-color: var(--color-accent-blue);
     background-color: rgba(255, 255, 255, 0.08);
     box-shadow: 0 0 0 3px rgba(41, 182, 246, 0.15);
     outline: none;
+}
+
+.input-inline-group .custom-input {
+    flex-grow: 1;
+    padding-right: 11rem;
+}
+
+.sib-form-row-names {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.25rem;
+    margin-bottom: 1.25rem;
+}
+
+.sib-form-row {
+    margin-bottom: 1.25rem;
 }
 
 .input-inline-group .custom-submit {
@@ -2205,6 +2321,24 @@ label.entry__error {
         padding: 2.5rem 1.5rem;
     }
     
+    .moreinfo-card.visitor-card,
+    .moreinfo-card.exhibitor-card {
+        padding: 0;
+    }
+    
+    .card-body-content {
+        padding: 2rem 1.5rem;
+    }
+    
+    .card-header-banner {
+        padding: 1rem 1.5rem;
+    }
+    
+    .sib-form-row-names {
+        grid-template-columns: 1fr;
+        gap: 0.75rem;
+    }
+    
     .input-inline-group {
         flex-direction: column;
         gap: 0.75rem;
@@ -2231,11 +2365,9 @@ label.entry__error {
    ============================================ */
 .section-booking {
     padding: 6rem 0;
-    background: linear-gradient(180deg, var(--color-bg-base) 0%, var(--color-bg-surface) 100%);
+    background: var(--color-bg-light); /* Light design background */
     position: relative;
     z-index: 1;
-    border-top: 1px solid rgba(255, 255, 255, 0.03);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.03);
 }
 
 .booking-section-header {
@@ -2245,7 +2377,7 @@ label.entry__error {
 
 .booking-section-header .section-tag {
     display: inline-block;
-    color: var(--color-accent-blue);
+    color: var(--color-accent);
     font-size: 0.75rem;
     font-weight: 700;
     text-transform: uppercase;
@@ -2256,27 +2388,71 @@ label.entry__error {
 .booking-section-header h2 {
     font-size: clamp(2.25rem, 4vw, 2.75rem);
     font-weight: 800;
-    color: var(--color-text-primary);
+    color: var(--color-text-dark);
     margin: 0 0 0.75rem 0;
     font-family: var(--font-heading);
 }
 
 .booking-section-header p {
-    color: var(--color-text-secondary);
+    color: #5a7a9a;
     font-size: 1.05rem;
-    max-width: 600px;
+    max-width: 1000px;
     line-height: 1.5;
     margin: 0 auto;
 }
 
+.booking-intro-text {
+    max-width: 1000px;
+    margin: 0 auto 1.5rem !important;
+    font-size: 1.05rem;
+    line-height: 1.6;
+    color: #5a7a9a;
+}
+
+.booking-note-text {
+    max-width: 1000px;
+    margin: 0 auto 2.5rem !important;
+    font-size: 1.05rem;
+    font-weight: 700;
+    line-height: 1.6;
+    color: #5a7a9a;
+}
+
 .booking-widget-wrapper {
-    background-color: var(--color-bg-surface);
-    border-radius: var(--radius-md);
-    border: 1px solid rgba(255, 255, 255, 0.08);
+    background-color: transparent;
+    border-radius: 0;
+    border: none;
     overflow: hidden;
     max-width: 1000px;
     margin: 0 auto;
-    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+    box-shadow: none;
+}
+
+.booking-alternative-cta {
+    text-align: center;
+    margin-top: 3rem;
+}
+
+.booking-alternative-cta .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    border: 2px solid var(--color-bg-base);
+    color: var(--color-bg-base) !important;
+    background: transparent;
+    padding: 0.85rem 2.25rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    letter-spacing: 0.05em;
+    border-radius: var(--radius-pill);
+    transition: all 0.3s ease;
+}
+
+.booking-alternative-cta .btn:hover {
+    background: var(--color-bg-base);
+    color: #ffffff !important;
+    box-shadow: 0 5px 15px rgba(13, 27, 46, 0.15);
 }
 
 .calendly-inline-widget {
@@ -2290,7 +2466,9 @@ label.entry__error {
     }
     
     .booking-widget-wrapper {
-        border-radius: var(--radius-sm);
+        border-radius: 0;
+        border: none;
+        box-shadow: none;
     }
 }
 
@@ -2563,7 +2741,7 @@ label.entry__error {
     justify-content: center;
     margin-bottom: 1.25rem;
     flex-shrink: 0;
-    transition: transform 0.2s ease;
+    transition: transform 0.2s ease, background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .timeline-new-circle.filled {
@@ -2599,6 +2777,7 @@ label.entry__error {
     letter-spacing: 0.08em;
     color: #7c3aed;
     margin-bottom: 0.4rem;
+    transition: color 0.3s ease;
 }
 
 .timeline-new-item h4 {
@@ -2607,6 +2786,7 @@ label.entry__error {
     color: var(--color-text-dark);
     margin: 0 0 0.35rem 0;
     line-height: 1.3;
+    transition: color 0.3s ease;
 }
 
 .timeline-new-item p {
@@ -2836,7 +3016,7 @@ Let's make marker part of flow? No, absolute in item easiest.
 /* FAQ REDESIGN - Navy Colorway */
 .section-faq-redesign {
     background: var(--color-bg-base);
-    padding: 6rem 0;
+    padding: 6rem 0 3rem;
     color: var(--color-text-primary);
 }
 
@@ -2930,11 +3110,18 @@ Let's make marker part of flow? No, absolute in item easiest.
     transition: all 0.25s;
 }
 
-.tab-btn.active,
-.tab-btn:hover {
-    background: var(--color-accent-blue);
-    border-color: var(--color-accent-blue);
-    color: #fff;
+.tab-btn.tab-btn-visitor.active,
+.tab-btn.tab-btn-visitor:hover {
+    background: var(--color-accent) !important;
+    border-color: var(--color-accent) !important;
+    color: #fff !important;
+}
+
+.tab-btn.tab-btn-exhibitor.active,
+.tab-btn.tab-btn-exhibitor:hover {
+    background: var(--color-accent-blue) !important;
+    border-color: var(--color-accent-blue) !important;
+    color: #fff !important;
 }
 
 .faq-group {
@@ -2976,13 +3163,22 @@ Let's make marker part of flow? No, absolute in item easiest.
     transition: color 0.25s;
 }
 
-/* Active accordion state */
+/* Active accordion state - Default to blue (Exhibitor) */
 .accordion-item-dark.active .accordion-header-dark h3 {
     color: var(--color-accent-blue);
 }
 
 .accordion-item-dark.active .acc-icon {
     color: var(--color-accent-blue);
+}
+
+/* Red color only for Besucher active accordion items */
+#faq-visitor .accordion-item-dark.active .accordion-header-dark h3 {
+    color: var(--color-accent);
+}
+
+#faq-visitor .accordion-item-dark.active .acc-icon {
+    color: var(--color-accent);
 }
 
 .accordion-body-dark {
@@ -3246,7 +3442,11 @@ Let's make marker part of flow? No, absolute in item easiest.
 }
 
 .venue-acc-item.open .venue-acc-header {
-    color: var(--color-accent-blue);
+    color: var(--color-accent);
+}
+
+.venue-acc-item.open .venue-acc-icon {
+    color: var(--color-accent);
 }
 
 .venue-acc-body {
@@ -3449,49 +3649,75 @@ Let's make marker part of flow? No, absolute in item easiest.
 /* FOOTER */
 
 .site-footer {
-    background-color: var(--color-bg-darker);
-    color: var(--color-text-light);
-    padding: var(--spacing-xl) 0 var(--spacing-md);
-    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    background-color: #070f1a;
+    color: var(--color-text-secondary);
+    padding: 2.5rem 0 3rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
 }
 
 .footer-top {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    flex-wrap: wrap;
-    gap: var(--spacing-lg);
-    margin-bottom: var(--spacing-lg);
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 5rem;
+    margin-bottom: 4rem;
 }
 
-.footer-brand .logo {
-    color: var(--color-white);
-    margin-bottom: var(--spacing-sm);
+.footer-brand {
+    max-width: 320px;
+}
+
+.footer-logo-link {
+    display: inline-block;
+    margin-bottom: 1.25rem;
+    height: 48px;
+}
+
+.footer-logo-img {
+    height: 100%;
+    width: auto;
+    object-fit: contain;
     display: block;
 }
 
+.footer-brand p {
+    color: var(--color-text-secondary);
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
 .footer-links {
-    display: flex;
-    gap: var(--spacing-xl);
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3rem;
 }
 
 .footer-col h4 {
-    color: var(--color-white);
-    margin-bottom: var(--spacing-sm);
-    font-size: 1rem;
+    color: #ffffff;
+    font-size: 0.95rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: 1.5rem;
+}
+
+.footer-col ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
 }
 
 .footer-col ul li {
-    margin-bottom: 8px;
+    margin-bottom: 0.85rem;
 }
 
 .footer-col ul li a {
     font-size: 0.9rem;
+    color: var(--color-text-secondary);
+    transition: color 0.2s ease;
 }
 
 .footer-col ul li a:hover {
-    color: var(--color-highlight-blue);
+    color: var(--color-accent-blue);
 }
 
 .footer-bottom {
@@ -3499,7 +3725,7 @@ Let's make marker part of flow? No, absolute in item easiest.
     justify-content: space-between;
     align-items: center;
     padding-top: var(--spacing-md);
-    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
     font-size: 0.875rem;
 }
 
@@ -3509,19 +3735,58 @@ Let's make marker part of flow? No, absolute in item easiest.
 }
 
 .social-links a {
-    width: 32px;
-    height: 32px;
-    background: rgba(255, 255, 255, 0.1);
+    width: 38px;
+    height: 38px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
     display: flex;
     align-items: center;
     justify-content: center;
     border-radius: 50%;
-    font-size: 0.75rem;
-    color: var(--color-white);
+    color: var(--color-text-secondary);
+    transition: all 0.3s ease;
+}
+
+.social-links a svg {
+    width: 16px;
+    height: 16px;
+    stroke-width: 2px;
+    transition: transform 0.3s ease;
 }
 
 .social-links a:hover {
-    background: var(--color-highlight-blue);
+    background: var(--color-accent-blue);
+    border-color: var(--color-accent-blue);
+    color: #ffffff !important;
+    box-shadow: 0 0 12px rgba(41, 182, 246, 0.4);
+}
+
+.social-links a:hover svg {
+    transform: scale(1.1);
+}
+
+@media (max-width: 768px) {
+    .footer-top {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+        text-align: center;
+    }
+    
+    .footer-brand {
+        max-width: none;
+        margin: 0 auto;
+    }
+    
+    .footer-links {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+    }
+    
+    .footer-bottom {
+        flex-direction: column-reverse;
+        gap: 1.5rem;
+        text-align: center;
+    }
 }
 
 
@@ -3841,9 +4106,9 @@ Let's make marker part of flow? No, absolute in item easiest.
 /* Back to Top Button */
 .back-to-top-wrapper {
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
-    padding: 5rem 0;
+    padding: 3rem 0 0;
 }
 
 .btn-back-to-top {
@@ -3904,5 +4169,94 @@ Let's make marker part of flow? No, absolute in item easiest.
     }
     50% {
         transform: translateY(-4px);
+    }
+}
+
+/* ==========================================================================
+   MOBILE RESPONSIVENESS OVERRIDES (VENUE, TIMELINE, FAQ)
+   ========================================================================== */
+
+/* --- Venue (Location) Section --- */
+@media (max-width: 992px) {
+    .venue-grid {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+    
+    .venue-slider-wrap {
+        order: -1; /* Display photos above info/accordion */
+    }
+    
+    .venue-info {
+        order: 1;
+    }
+}
+
+@media (max-width: 768px) {
+    .venue-slider {
+        min-height: 300px;
+        height: 300px;
+    }
+}
+
+/* --- Timeline Section (Vertical on Mobile) --- */
+@media (max-width: 768px) {
+    .timeline-new-track {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 2.5rem;
+        padding-left: 0;
+        position: relative;
+    }
+    
+    .timeline-new-line {
+        position: absolute;
+        top: 32px;
+        bottom: 32px;
+        left: 32px; /* Align with center of the 64px circle */
+        width: 2px;
+        height: auto;
+        right: auto;
+    }
+    
+    .timeline-new-item {
+        flex-direction: row;
+        align-items: flex-start;
+        text-align: left;
+        width: 100%;
+        gap: 1.5rem;
+    }
+    
+    .timeline-new-circle {
+        margin-bottom: 0;
+    }
+    
+    .timeline-new-content {
+        max-width: none;
+        padding-top: 8px;
+    }
+}
+
+/* --- FAQ Section --- */
+@media (max-width: 992px) {
+    .faq-grid-layout {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+    }
+    
+    .faq-sidebar-info h2 {
+        margin-bottom: 1.5rem;
+        text-align: center;
+    }
+    
+    .faq-contact-info {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 2rem;
+    }
+    
+    .faq-audience-tabs-dark {
+        justify-content: center;
     }
 }
