@@ -233,22 +233,7 @@ document.addEventListener('DOMContentLoaded', () => {
         startVenueAuto();
     }
 
-    // ── Venue Video Play Button ──────────────────────────────────────
-    const venuePlayBtn = document.getElementById('venuePlayBtn');
-    const venueVideoThumb = document.getElementById('venueVideoThumb');
-    const venueVideoFrame = document.getElementById('venueVideoFrame');
-    const venueYouTube = document.getElementById('venueYouTube');
 
-    if (venuePlayBtn) {
-        venuePlayBtn.addEventListener('click', () => {
-            // Load the iframe src (triggers autoplay)
-            venueYouTube.src = venueYouTube.dataset.src;
-            venueVideoThumb.style.display = 'none';
-            venueVideoFrame.style.display = 'block';
-            // Pause auto-advance while video is playing
-            clearInterval(venueTimer);
-        });
-    }
 
     // ── Hero Collage: One-time Init (Static) ──────────
     // Auto-rotation disabled per user request. 
