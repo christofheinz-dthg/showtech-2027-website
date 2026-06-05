@@ -1730,7 +1730,7 @@ p {
 @media (min-width: 993px) {
     .facts-grid .facts-col:first-child > :first-child,
     .facts-grid .facts-col:last-child > :first-child {
-        margin-top: 6.5rem;
+        margin-top: 9.5rem;
     }
 }
 
