@@ -4260,3 +4260,10 @@ Let's make marker part of flow? No, absolute in item easiest.
         justify-content: center;
     }
 }
+
+/* Centering Back to top button on mobile */
+@media (max-width: 768px) {
+    .back-to-top-wrapper {
+        justify-content: center;
+    }
+}
