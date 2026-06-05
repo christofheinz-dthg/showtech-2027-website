@@ -1726,10 +1726,11 @@ p {
     margin: 0;
 }
 
-/* Shift the top-left card down slightly on desktop for vertical grid balance */
+/* Shift the first and third column top cards down on desktop so middle header sits slightly higher */
 @media (min-width: 993px) {
-    .facts-grid .facts-col:first-child .fact-card:first-child {
-        margin-top: 2.25rem;
+    .facts-grid .facts-col:first-child > :first-child,
+    .facts-grid .facts-col:last-child > :first-child {
+        margin-top: 6.5rem;
     }
 }
 
