@@ -1829,6 +1829,12 @@ p {
     margin: 0 auto;
 }
 
+.exhibitors-cta-wrap {
+    text-align: center;
+    margin-top: -2rem;
+    margin-bottom: 3rem;
+}
+
 .slider-wrap {
     overflow: hidden;
     width: 100%;
@@ -2430,7 +2436,7 @@ label.entry__error {
 
 .booking-alternative-cta {
     text-align: center;
-    margin-top: 3rem;
+    margin-top: 0.6rem;
 }
 
 .booking-alternative-cta .btn {
@@ -2523,7 +2529,7 @@ label.entry__error {
 .flip-card {
     background-color: transparent;
     perspective: 1000px; /* Enable 3D depth */
-    height: 380px;
+    height: 300px;
     border-radius: 16px;
 }
 
@@ -2565,13 +2571,13 @@ label.entry__error {
 
 /* Card Front Styling */
 .flip-card-front {
-    background-color: #ffffff;
-    color: var(--color-text-dark);
-    border: 1px solid rgba(13, 27, 46, 0.06);
+    background-color: transparent;
+    color: #ffffff;
+    border: none;
 }
 
 .flip-card-front .card-image {
-    height: 70%;
+    height: 67%;
     width: 100%;
     overflow: hidden;
     background-color: #f5f7fa;
@@ -2590,20 +2596,43 @@ label.entry__error {
 }
 
 .flip-card-front .card-title-wrap {
-    height: 30%;
+    height: 33%;
     display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 1rem;
-    background: #f7d7d6;
+    align-items: flex-end;
+    justify-content: flex-start;
+    padding: 1.25rem;
+    box-sizing: border-box;
 }
 
 .flip-card-front h3 {
-    font-size: 1.25rem;
-    font-weight: 700;
-    color: var(--color-text-dark);
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: #ffffff;
     margin: 0;
+    text-transform: uppercase;
     font-family: var(--font-heading);
+    letter-spacing: 0.02em;
+    text-align: left;
+}
+
+/* Specific Card Background Colors (Mockup) */
+.bg-stage-blue {
+    background-color: #0088ff !important;
+}
+.bg-stage-magenta {
+    background-color: #a6265d !important;
+}
+.bg-stage-red {
+    background-color: #e53935 !important;
+}
+.bg-stage-purple {
+    background-color: #8a2be2 !important;
+}
+.bg-stage-navy {
+    background-color: #12233f !important;
+}
+.bg-stage-skyblue {
+    background-color: #29b6f6 !important;
 }
 
 /* Card Back Styling */
@@ -2668,7 +2697,7 @@ label.entry__error {
         gap: 1.5rem;
     }
     .flip-card {
-        height: 320px; /* slightly smaller on mobile */
+        height: 300px; /* match desktop size for aspect ratio */
     }
 }
 
@@ -4265,5 +4294,89 @@ Let's make marker part of flow? No, absolute in item easiest.
 @media (max-width: 768px) {
     .back-to-top-wrapper {
         justify-content: center;
+    }
+}
+
+/* Sticky Header relative container positioning */
+.header-inner {
+    position: relative;
+}
+
+/* Shrink logo-link width on scroll to make space for centered indicator */
+.site-header.scrolled .logo-link {
+    width: 60px;
+}
+
+/* Active Section Indicator Pill in Sticky Nav */
+.header-section-indicator {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%) scale(0.9);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1.25rem;
+    background: rgba(41, 182, 246, 0.1); /* light blue overlay background */
+    border: 1.5px solid var(--color-accent-blue); /* glowing outline border */
+    color: #ffffff !important; /* white text */
+    font-weight: 700;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    border-radius: var(--radius-pill);
+    cursor: pointer;
+    box-shadow: none; /* no glowing shadow by default */
+    z-index: 100;
+    opacity: 0;
+    pointer-events: none;
+    visibility: hidden;
+    transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease, color 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+}
+
+/* Hamburger indicator overlay inside the pill */
+.header-section-indicator::after {
+    content: '☰';
+    font-size: 0.8rem;
+    margin-left: 0.5rem;
+    opacity: 0.7;
+}
+
+.header-section-indicator.visible {
+    opacity: 1;
+    pointer-events: auto;
+    visibility: visible;
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.header-section-indicator:hover {
+    background: rgba(41, 182, 246, 0.15);
+    border-color: var(--color-accent-blue);
+    color: var(--color-accent-blue) !important; /* blue text on hover */
+    box-shadow: 0 8px 20px rgba(41, 182, 246, 0.35); /* glowing shadow glow */
+    transform: translate(-50%, -52%) scale(1.02);
+}
+
+/* Active Highlight in Blue for current section inside full-screen nav overlay */
+.nav-overlay-link.active {
+    color: var(--color-accent-blue) !important; /* highlight blue */
+    opacity: 1;
+}
+
+/* Hover Highlight in Red inside full-screen nav overlay */
+.nav-overlay-link:hover {
+    color: var(--color-accent) !important; /* highlight red on hover */
+    opacity: 1;
+}
+
+@media (max-width: 768px) {
+    .header-section-indicator {
+        font-size: 0.75rem;
+        padding: 0.4rem 1rem;
+        max-width: 45vw;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
     }
 }

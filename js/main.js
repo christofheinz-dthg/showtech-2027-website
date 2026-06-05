@@ -354,13 +354,110 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    // ── Sticky Navigation Section Indicator ──────────────────────────
+    function handleStickyHeaderIndicator() {
+        const sectionIds = [
+            'factsandfigures',
+            'exhibitor2027',
+            'moreinfo',
+            'booking',
+            'stages',
+            'venue',
+            'timeline',
+            'faq'
+        ];
+
+        let activeSectionId = null;
+        const threshold = 120;
+        
+        sectionIds.forEach(id => {
+            const el = document.getElementById(id);
+            if (el) {
+                const rect = el.getBoundingClientRect();
+                if (el.id === 'factsandfigures') {
+                    // Slight adjustments for facts section boundaries
+                    if (rect.top <= threshold + 50 && rect.bottom >= threshold) {
+                        activeSectionId = id;
+                    }
+                } else {
+                    if (rect.top <= threshold && rect.bottom >= threshold) {
+                        activeSectionId = id;
+                    }
+                }
+            }
+        });
+
+        if (!activeSectionId && window.scrollY > 300) {
+            let closestSec = null;
+            let closestDist = Infinity;
+            sectionIds.forEach(id => {
+                const el = document.getElementById(id);
+                if (el) {
+                    const rect = el.getBoundingClientRect();
+                    const dist = Math.abs(rect.top - threshold);
+                    if (dist < closestDist) {
+                        closestDist = dist;
+                        closestSec = id;
+                    }
+                }
+            });
+            activeSectionId = closestSec;
+        }
+
+        const heroEl = document.getElementById('hero');
+        if (heroEl) {
+            const rect = heroEl.getBoundingClientRect();
+            if (rect.bottom > threshold) {
+                activeSectionId = null;
+            }
+        }
+
+        const indicator = document.getElementById('headerSectionIndicator');
+        const indicatorText = indicator ? indicator.querySelector('.indicator-text') : null;
+
+        const overlayLinks = document.querySelectorAll('.nav-overlay-inner a.nav-overlay-link');
+        overlayLinks.forEach(link => {
+            link.classList.remove('active');
+        });
+
+        if (activeSectionId) {
+            header.classList.add('has-active-section');
+            if (indicator) {
+                indicator.classList.add('visible');
+                
+                const navLink = document.querySelector(`.nav-overlay-inner a[href="#${activeSectionId}"]`);
+                if (navLink) {
+                    navLink.classList.add('active');
+                    if (indicatorText) {
+                        indicatorText.textContent = navLink.textContent.trim();
+                    }
+                }
+            }
+        } else {
+            header.classList.remove('has-active-section');
+            if (indicator) {
+                indicator.classList.remove('visible');
+            }
+        }
+    }
+
+    const activeIndicator = document.getElementById('headerSectionIndicator');
+    if (activeIndicator) {
+        activeIndicator.addEventListener('click', () => {
+            openMenu();
+        });
+    }
+
     // Attach listeners for scroll and resize
     window.addEventListener('scroll', handleMobileFlip, { passive: true });
     window.addEventListener('resize', handleMobileFlip);
     window.addEventListener('scroll', handleMobileTimelineActive, { passive: true });
     window.addEventListener('resize', handleMobileTimelineActive);
+    window.addEventListener('scroll', handleStickyHeaderIndicator, { passive: true });
+    window.addEventListener('resize', handleStickyHeaderIndicator);
 
     // Initial trigger
     handleMobileFlip();
     handleMobileTimelineActive();
+    handleStickyHeaderIndicator();
 });
