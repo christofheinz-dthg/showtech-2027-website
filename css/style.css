@@ -3668,8 +3668,8 @@ Let's make marker part of flow? No, absolute in item easiest.
 
 .footer-logo-link {
     display: inline-block;
-    margin-bottom: 1.25rem;
-    height: 48px;
+    margin-bottom: 0;
+    height: 80px;
 }
 
 .footer-logo-img {
