@@ -491,47 +491,23 @@ document.addEventListener('DOMContentLoaded', () => {
             link.classList.remove('active');
         });
 
-        // Mobile vs Desktop handling
-        if (window.innerWidth <= 768) {
-            // On mobile, indicator is always visible as the main navigation pill since burger menu is hidden
+        if (activeSectionId) {
+            header.classList.add('has-active-section');
             if (indicator) {
                 indicator.classList.add('visible');
-                header.classList.add('has-active-section');
-                if (activeSectionId) {
-                    const navLink = document.querySelector(`.nav-overlay-inner a[href="#${activeSectionId}"]`);
-                    if (navLink) {
-                        navLink.classList.add('active');
-                        if (indicatorText) {
-                            indicatorText.textContent = navLink.textContent.trim();
-                        }
-                    }
-                } else {
-                    // Display default menu text when at the top
+                
+                const navLink = document.querySelector(`.nav-overlay-inner a[href="#${activeSectionId}"]`);
+                if (navLink) {
+                    navLink.classList.add('active');
                     if (indicatorText) {
-                        indicatorText.textContent = 'Menü';
+                        indicatorText.textContent = navLink.textContent.trim();
                     }
                 }
             }
         } else {
-            // Desktop behavior
-            if (activeSectionId) {
-                header.classList.add('has-active-section');
-                if (indicator) {
-                    indicator.classList.add('visible');
-                    
-                    const navLink = document.querySelector(`.nav-overlay-inner a[href="#${activeSectionId}"]`);
-                    if (navLink) {
-                        navLink.classList.add('active');
-                        if (indicatorText) {
-                            indicatorText.textContent = navLink.textContent.trim();
-                        }
-                    }
-                }
-            } else {
-                header.classList.remove('has-active-section');
-                if (indicator) {
-                    indicator.classList.remove('visible');
-                }
+            header.classList.remove('has-active-section');
+            if (indicator) {
+                indicator.classList.remove('visible');
             }
         }
     }
