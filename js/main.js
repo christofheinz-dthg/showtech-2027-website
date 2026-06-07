@@ -491,23 +491,53 @@ document.addEventListener('DOMContentLoaded', () => {
             link.classList.remove('active');
         });
 
-        if (activeSectionId) {
-            header.classList.add('has-active-section');
+        // Mobile vs Desktop handling
+        if (window.innerWidth <= 768) {
+            // On mobile, indicator is visible if the header is scrolled (sticky state active)
+            const isHeaderScrolled = header && header.classList.contains('scrolled');
             if (indicator) {
-                indicator.classList.add('visible');
-                
-                const navLink = document.querySelector(`.nav-overlay-inner a[href="#${activeSectionId}"]`);
-                if (navLink) {
-                    navLink.classList.add('active');
-                    if (indicatorText) {
-                        indicatorText.textContent = navLink.textContent.trim();
+                if (isHeaderScrolled) {
+                    indicator.classList.add('visible');
+                    header.classList.add('has-active-section');
+                    if (activeSectionId) {
+                        const navLink = document.querySelector(`.nav-overlay-inner a[href="#${activeSectionId}"]`);
+                        if (navLink) {
+                            navLink.classList.add('active');
+                            if (indicatorText) {
+                                indicatorText.textContent = navLink.textContent.trim();
+                            }
+                        }
+                    } else {
+                        // Display default menu text when at the top of the scrolled page
+                        if (indicatorText) {
+                            indicatorText.textContent = 'Menü';
+                        }
                     }
+                } else {
+                    indicator.classList.remove('visible');
+                    header.classList.remove('has-active-section');
                 }
             }
         } else {
-            header.classList.remove('has-active-section');
-            if (indicator) {
-                indicator.classList.remove('visible');
+            // Desktop behavior: only visible when activeSectionId is set (scrolled past hero)
+            if (activeSectionId) {
+                header.classList.add('has-active-section');
+                if (indicator) {
+                    indicator.classList.add('visible');
+                    
+                    const navLink = document.querySelector(`.nav-overlay-inner a[href="#${activeSectionId}"]`);
+                    if (navLink) {
+                        navLink.classList.add('active');
+                        if (indicatorText) {
+                            indicatorText.textContent = navLink.textContent.trim();
+                        }
+                    }
+                }
+            } else {
+                header.classList.remove('has-active-section');
+                if (indicator) {
+                    indicator.classList.remove('visible');
+                }
             }
         }
     }
