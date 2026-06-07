@@ -65,15 +65,50 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // 3c. Language Switcher
-    const langBtns = document.querySelectorAll('.lang-btn');
-    langBtns.forEach(btn => {
-        btn.addEventListener('click', () => {
-            langBtns.forEach(b => b.classList.remove('active'));
-            btn.classList.add('active');
-            // Future: swap content based on btn.dataset.lang
+    // 3c. Language Switcher Dropdown
+    const langSwitcherDropdown = document.getElementById('langSwitcherDropdown');
+    const langSwitcherBtn = document.getElementById('langSwitcherBtn');
+    const langDropdownItems = document.querySelectorAll('.lang-dropdown-item');
+    const currentLangText = document.querySelector('.current-lang');
+
+    if (langSwitcherBtn && langSwitcherDropdown) {
+        langSwitcherBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            const isOpen = langSwitcherDropdown.classList.contains('open');
+            if (isOpen) {
+                langSwitcherDropdown.classList.remove('open');
+                langSwitcherBtn.setAttribute('aria-expanded', 'false');
+            } else {
+                langSwitcherDropdown.classList.add('open');
+                langSwitcherBtn.setAttribute('aria-expanded', 'true');
+            }
         });
-    });
+
+        // Click on item
+        langDropdownItems.forEach(item => {
+            item.addEventListener('click', () => {
+                langDropdownItems.forEach(b => b.classList.remove('active'));
+                item.classList.add('active');
+                
+                const lang = item.getAttribute('data-lang');
+                if (currentLangText) {
+                    currentLangText.textContent = lang.toUpperCase();
+                }
+
+                // Close dropdown
+                langSwitcherDropdown.classList.remove('open');
+                langSwitcherBtn.setAttribute('aria-expanded', 'false');
+            });
+        });
+
+        // Close dropdown when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!langSwitcherDropdown.contains(e.target)) {
+                langSwitcherDropdown.classList.remove('open');
+                langSwitcherBtn.setAttribute('aria-expanded', 'false');
+            }
+        });
+    }
 
     // 4. Scroll-Driven Timeline (IntersectionObserver)
     const timelineSteps = document.querySelectorAll('.timeline-step');
@@ -166,21 +201,45 @@ document.addEventListener('DOMContentLoaded', () => {
     // 5. Nav Overlay Toggle
     const menuToggle = document.getElementById('menuToggle');
     const navOverlay = document.getElementById('navOverlay');
+    const activeIndicator = document.getElementById('headerSectionIndicator');
 
     function openMenu() {
         navOverlay.classList.add('open');
-        menuToggle.classList.add('open');
-        menuToggle.setAttribute('aria-expanded', 'true');
+        if (header) {
+            header.classList.add('menu-active');
+        }
+        if (menuToggle) {
+            menuToggle.classList.add('open');
+            menuToggle.setAttribute('aria-expanded', 'true');
+        }
         navOverlay.setAttribute('aria-hidden', 'false');
         document.body.style.overflow = 'hidden';
+        if (activeIndicator) {
+            activeIndicator.classList.add('menu-open');
+            activeIndicator.classList.add('visible');
+            const indicatorText = activeIndicator.querySelector('.indicator-text');
+            if (indicatorText && !indicatorText.textContent.trim()) {
+                indicatorText.textContent = 'Menü';
+            }
+        }
     }
 
     function closeMenu() {
         navOverlay.classList.remove('open');
-        menuToggle.classList.remove('open');
-        menuToggle.setAttribute('aria-expanded', 'false');
+        if (header) {
+            header.classList.remove('menu-active');
+        }
+        if (menuToggle) {
+            menuToggle.classList.remove('open');
+            menuToggle.setAttribute('aria-expanded', 'false');
+        }
         navOverlay.setAttribute('aria-hidden', 'true');
         document.body.style.overflow = '';
+        if (activeIndicator) {
+            activeIndicator.classList.remove('menu-open');
+        }
+        // Recalculate sticky indicator visibility based on current scroll position
+        handleStickyHeaderIndicator();
     }
 
     if (menuToggle && navOverlay) {
@@ -356,6 +415,21 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // ── Sticky Navigation Section Indicator ──────────────────────────
     function handleStickyHeaderIndicator() {
+        // If the menu is open, make sure the indicator remains visible and is not modified by scroll events
+        const indicator = document.getElementById('headerSectionIndicator');
+        const indicatorText = indicator ? indicator.querySelector('.indicator-text') : null;
+        
+        if (navOverlay && navOverlay.classList.contains('open')) {
+            if (indicator) {
+                indicator.classList.add('visible');
+                // Ensure text is not empty
+                if (indicatorText && !indicatorText.textContent.trim()) {
+                    indicatorText.textContent = 'Menü';
+                }
+            }
+            return;
+        }
+
         const sectionIds = [
             'factsandfigures',
             'exhibitor2027',
@@ -412,39 +486,63 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         }
 
-        const indicator = document.getElementById('headerSectionIndicator');
-        const indicatorText = indicator ? indicator.querySelector('.indicator-text') : null;
-
         const overlayLinks = document.querySelectorAll('.nav-overlay-inner a.nav-overlay-link');
         overlayLinks.forEach(link => {
             link.classList.remove('active');
         });
 
-        if (activeSectionId) {
-            header.classList.add('has-active-section');
+        // Mobile vs Desktop handling
+        if (window.innerWidth <= 768) {
+            // On mobile, indicator is always visible as the main navigation pill since burger menu is hidden
             if (indicator) {
                 indicator.classList.add('visible');
-                
-                const navLink = document.querySelector(`.nav-overlay-inner a[href="#${activeSectionId}"]`);
-                if (navLink) {
-                    navLink.classList.add('active');
+                header.classList.add('has-active-section');
+                if (activeSectionId) {
+                    const navLink = document.querySelector(`.nav-overlay-inner a[href="#${activeSectionId}"]`);
+                    if (navLink) {
+                        navLink.classList.add('active');
+                        if (indicatorText) {
+                            indicatorText.textContent = navLink.textContent.trim();
+                        }
+                    }
+                } else {
+                    // Display default menu text when at the top
                     if (indicatorText) {
-                        indicatorText.textContent = navLink.textContent.trim();
+                        indicatorText.textContent = 'Menü';
                     }
                 }
             }
         } else {
-            header.classList.remove('has-active-section');
-            if (indicator) {
-                indicator.classList.remove('visible');
+            // Desktop behavior
+            if (activeSectionId) {
+                header.classList.add('has-active-section');
+                if (indicator) {
+                    indicator.classList.add('visible');
+                    
+                    const navLink = document.querySelector(`.nav-overlay-inner a[href="#${activeSectionId}"]`);
+                    if (navLink) {
+                        navLink.classList.add('active');
+                        if (indicatorText) {
+                            indicatorText.textContent = navLink.textContent.trim();
+                        }
+                    }
+                }
+            } else {
+                header.classList.remove('has-active-section');
+                if (indicator) {
+                    indicator.classList.remove('visible');
+                }
             }
         }
     }
 
-    const activeIndicator = document.getElementById('headerSectionIndicator');
     if (activeIndicator) {
         activeIndicator.addEventListener('click', () => {
-            openMenu();
+            if (navOverlay && navOverlay.classList.contains('open')) {
+                closeMenu();
+            } else {
+                openMenu();
+            }
         });
     }
 
