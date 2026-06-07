@@ -1,3 +1,5 @@
+import translations from './translations.js';
+
 document.addEventListener('DOMContentLoaded', () => {
 
     // ── Sticky Header (Simplified & Robust) ─────────
@@ -71,6 +73,57 @@ document.addEventListener('DOMContentLoaded', () => {
     const langDropdownItems = document.querySelectorAll('.lang-dropdown-item');
     const currentLangText = document.querySelector('.current-lang');
 
+    function applyTranslations(lang) {
+        const elements = document.querySelectorAll('[data-i18n]');
+        elements.forEach(el => {
+            const key = el.getAttribute('data-i18n');
+            const text = translations[lang] ? translations[lang][key] : null;
+            if (text !== null && text !== undefined) {
+                if (el.tagName === 'INPUT') {
+                    el.placeholder = text;
+                } else if (el.tagName === 'IMG') {
+                    el.alt = text;
+                } else if (el.hasAttribute('aria-label')) {
+                    el.setAttribute('aria-label', text);
+                } else {
+                    el.innerHTML = text;
+                }
+            }
+        });
+        
+        // Update language toggle buttons visual state
+        langDropdownItems.forEach(item => {
+            if (item.getAttribute('data-lang') === lang) {
+                item.classList.add('active');
+            } else {
+                item.classList.remove('active');
+            }
+        });
+        if (currentLangText) {
+            currentLangText.textContent = lang.toUpperCase();
+        }
+        
+        // Update active indicator if it's currently showing Menu/Menü or if it needs to update a section name
+        const activeIndicator = document.getElementById('headerSectionIndicator');
+        if (activeIndicator) {
+            const indicatorText = activeIndicator.querySelector('.indicator-text');
+            if (indicatorText) {
+                const textVal = indicatorText.textContent.trim();
+                if (textVal === 'Menu' || textVal === 'Menü' || !textVal) {
+                    indicatorText.textContent = lang === 'en' ? 'Menu' : 'Menü';
+                } else {
+                    const activeLink = document.querySelector('.nav-overlay-inner a.nav-overlay-link.active');
+                    if (activeLink) {
+                        indicatorText.textContent = activeLink.textContent.trim();
+                    }
+                }
+            }
+        }
+
+        // Save lang selection in localStorage
+        localStorage.setItem('showtech_lang', lang);
+    }
+
     if (langSwitcherBtn && langSwitcherDropdown) {
         langSwitcherBtn.addEventListener('click', (e) => {
             e.stopPropagation();
@@ -87,13 +140,8 @@ document.addEventListener('DOMContentLoaded', () => {
         // Click on item
         langDropdownItems.forEach(item => {
             item.addEventListener('click', () => {
-                langDropdownItems.forEach(b => b.classList.remove('active'));
-                item.classList.add('active');
-                
                 const lang = item.getAttribute('data-lang');
-                if (currentLangText) {
-                    currentLangText.textContent = lang.toUpperCase();
-                }
+                applyTranslations(lang);
 
                 // Close dropdown
                 langSwitcherDropdown.classList.remove('open');
@@ -109,6 +157,10 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     }
+
+    // Load saved language or fallback to 'de'
+    const savedLang = localStorage.getItem('showtech_lang') || 'de';
+    applyTranslations(savedLang);
 
     // 4. Scroll-Driven Timeline (IntersectionObserver)
     const timelineSteps = document.querySelectorAll('.timeline-step');
@@ -219,7 +271,8 @@ document.addEventListener('DOMContentLoaded', () => {
             activeIndicator.classList.add('visible');
             const indicatorText = activeIndicator.querySelector('.indicator-text');
             if (indicatorText && !indicatorText.textContent.trim()) {
-                indicatorText.textContent = 'Menü';
+                const currentLang = localStorage.getItem('showtech_lang') || 'de';
+                indicatorText.textContent = currentLang === 'en' ? 'Menu' : 'Menü';
             }
         }
     }
@@ -510,7 +563,8 @@ document.addEventListener('DOMContentLoaded', () => {
                     } else {
                         // Display default menu text when at the top of the scrolled page
                         if (indicatorText) {
-                            indicatorText.textContent = 'Menü';
+                            const currentLang = localStorage.getItem('showtech_lang') || 'de';
+                            indicatorText.textContent = currentLang === 'en' ? 'Menu' : 'Menü';
                         }
                     }
                 } else {

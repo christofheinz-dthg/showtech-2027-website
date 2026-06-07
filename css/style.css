@@ -353,37 +353,60 @@ p {
     color: var(--color-text-secondary);
 }
 
-/* Hover & Active scroll state for timeline items - Red accent styling */
-.section-timeline-navy .timeline-new-item:hover .timeline-new-circle.filled,
+/* Active scroll state for timeline items - Red accent styling */
 .section-timeline-navy .timeline-new-item.active-scroll .timeline-new-circle.filled {
     background: var(--color-accent) !important;
 }
 
-.section-timeline-navy .timeline-new-item.event:hover .timeline-new-circle.filled,
 .section-timeline-navy .timeline-new-item.event.active-scroll .timeline-new-circle.filled {
     background: var(--color-accent) !important;
     box-shadow: 0 0 0 8px rgba(229, 57, 53, 0.25) !important;
 }
 
-.section-timeline-navy .timeline-new-item:hover .timeline-new-circle.outline,
 .section-timeline-navy .timeline-new-item.active-scroll .timeline-new-circle.outline {
     border-color: var(--color-accent) !important;
     color: var(--color-accent) !important;
 }
 
-.section-timeline-navy .timeline-new-item:hover .timeline-new-circle.outline svg,
 .section-timeline-navy .timeline-new-item.active-scroll .timeline-new-circle.outline svg {
     stroke: var(--color-accent) !important;
 }
 
-.section-timeline-navy .timeline-new-item:hover .timeline-new-date,
 .section-timeline-navy .timeline-new-item.active-scroll .timeline-new-date {
     color: var(--color-accent) !important;
 }
 
-.section-timeline-navy .timeline-new-item:hover h4,
 .section-timeline-navy .timeline-new-item.active-scroll h4 {
     color: var(--color-accent) !important;
+}
+
+/* Hover state for timeline items (only on desktop/pointer devices) */
+@media (hover: hover) {
+    .section-timeline-navy .timeline-new-item:hover .timeline-new-circle.filled {
+        background: var(--color-accent) !important;
+    }
+
+    .section-timeline-navy .timeline-new-item.event:hover .timeline-new-circle.filled {
+        background: var(--color-accent) !important;
+        box-shadow: 0 0 0 8px rgba(229, 57, 53, 0.25) !important;
+    }
+
+    .section-timeline-navy .timeline-new-item:hover .timeline-new-circle.outline {
+        border-color: var(--color-accent) !important;
+        color: var(--color-accent) !important;
+    }
+
+    .section-timeline-navy .timeline-new-item:hover .timeline-new-circle.outline svg {
+        stroke: var(--color-accent) !important;
+    }
+
+    .section-timeline-navy .timeline-new-item:hover .timeline-new-date {
+        color: var(--color-accent) !important;
+    }
+
+    .section-timeline-navy .timeline-new-item:hover h4 {
+        color: var(--color-accent) !important;
+    }
 }
 
 /* main-nav removed — navigation lives in the overlay */
@@ -824,8 +847,9 @@ p {
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
-    display: inline-block;
-    /* Fix for gradient cut-off */
+    display: inline;
+    -webkit-box-decoration-break: clone;
+    box-decoration-break: clone;
 }
 
 .hero-sub {
@@ -2850,8 +2874,10 @@ label.entry__error {
     box-shadow: 0 0 0 8px rgba(124, 58, 237, 0.15);
 }
 
-.timeline-new-item:hover .timeline-new-circle {
-    transform: scale(1.08);
+@media (hover: hover) {
+    .timeline-new-item:hover .timeline-new-circle {
+        transform: scale(1.08);
+    }
 }
 
 /* Content below circle */
