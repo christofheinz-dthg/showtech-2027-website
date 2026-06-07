@@ -850,10 +850,12 @@ p {
     background: linear-gradient(135deg, #fff 30%, var(--color-accent-blue) 100%);
     -webkit-background-clip: text;
     background-clip: text;
-    -webkit-text-fill-color: transparent;
+    -webkit-text-fill-color: transparent !important;
+    color: var(--color-accent-blue); /* Fallback color for browsers that override transparency or fail to load gradient */
     display: inline;
     -webkit-box-decoration-break: clone;
     box-decoration-break: clone;
+    color-scheme: only light; /* Instructs mobile auto-dark-mode engines not to invert or blacken this gradient text */
 }
 
 .hero-sub {
@@ -4610,10 +4612,17 @@ Let's make marker part of flow? No, absolute in item easiest.
     }
 }
 
-/* Centering Back to top button on mobile */
+/* Centering and aligning elements on mobile */
 @media (max-width: 768px) {
     .back-to-top-wrapper {
         justify-content: center;
+    }
+    .faq-contact-info {
+        flex-direction: column !important;
+        align-items: flex-start !important;
+        width: fit-content;
+        margin: 0 auto;
+        gap: 1.5rem;
     }
 }
 
@@ -4656,14 +4665,14 @@ Let's make marker part of flow? No, absolute in item easiest.
 }
 
 /* Hamburger indicator overlay inside the pill */
-.header-section-indicator::after {
+.header-section-indicator::before {
     content: '☰';
     font-size: 0.8rem;
-    margin-left: 0.5rem;
+    margin-right: 0.5rem;
     opacity: 0.7;
 }
 
-.header-section-indicator.menu-open::after {
+.header-section-indicator.menu-open::before {
     content: '✕';
 }
 
