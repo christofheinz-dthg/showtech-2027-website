@@ -1996,6 +1996,36 @@ p {
         box-shadow: 0 6px 16px rgba(13, 27, 46, 0.06);
     }
 
+    /* Native & Forced Dark Mode support to keep inactive icons and buttons legible */
+    @media (prefers-color-scheme: dark) {
+        .facts-mobile-tab-btn {
+            background: rgba(255, 255, 255, 0.08) !important;
+            border-color: rgba(255, 255, 255, 0.15) !important;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2) !important;
+        }
+
+        .facts-mobile-tab-btn img {
+            filter: invert(0.9) brightness(1.5) !important;
+        }
+
+        .facts-mobile-tab-btn svg {
+            stroke: rgba(255, 255, 255, 0.7) !important;
+        }
+        
+        /* Retain vibrant theme color backgrounds/glows on active buttons in dark mode */
+        .facts-mobile-tab-btn.active {
+            background: var(--theme-gradient) !important;
+            border-color: var(--theme-color) !important;
+            box-shadow: 0 0 18px var(--theme-glow) !important;
+        }
+        .facts-mobile-tab-btn.active img {
+            filter: invert(1) brightness(2.5) !important;
+        }
+        .facts-mobile-tab-btn.active svg {
+            stroke: #ffffff !important;
+        }
+    }
+
     .facts-mobile-tab-btn.active {
         transform: scale(1.08) translateY(-2px);
         border-color: var(--theme-color);
