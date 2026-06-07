@@ -1862,19 +1862,247 @@ p {
     }
 }
 
+/* Mobile Facts Section Helpers */
+.facts-mobile-images-slider {
+    display: none;
+}
+.facts-mobile-tabs-container {
+    display: none;
+}
+
 @media (max-width: 768px) {
     .section-facts {
         padding: 4rem 0;
     }
+    .section-facts .container {
+        padding: 0 1.5rem !important; /* Larger screen padding on mobile to keep cards away from screen edges */
+    }
+    
+    /* Hide desktop-only tiles */
+    .facts-grid .fact-card-image-only,
+    .facts-grid .fact-card-double-image {
+        display: none !important;
+    }
+
+    /* Infinite Marquee Slider (Left to Right) */
+    .facts-mobile-images-slider {
+        display: block !important;
+        overflow: hidden;
+        width: 100vw;
+        position: relative;
+        left: 50%;
+        right: 50%;
+        margin-left: -50vw;
+        margin-right: -50vw;
+        margin-bottom: 2rem;
+        padding: 0.5rem 0;
+        background: transparent;
+    }
+
+    .facts-images-track {
+        display: flex;
+        gap: 1.25rem;
+        width: max-content;
+        animation: scroll-marquee-reverse 35s linear infinite;
+        padding: 0 1.25rem;
+    }
+
+    /* Pause animation on touch/interaction */
+    .facts-mobile-images-slider:active .facts-images-track,
+    .facts-mobile-images-slider:hover .facts-images-track {
+        animation-play-state: paused;
+    }
+
+    .facts-images-track .fact-card-double-image {
+        display: grid !important; /* Override hide */
+        grid-template-columns: 1fr 1fr;
+        gap: 0.75rem;
+        width: 260px;
+        flex-shrink: 0;
+    }
+
+    .facts-images-track .fact-img-half {
+        border-radius: 16px;
+        overflow: hidden;
+        aspect-ratio: 1;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    }
+
+    .facts-images-track .fact-img-half img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+    }
+
+    @keyframes scroll-marquee-reverse {
+        0% { transform: translateX(-33.3333%); }
+        100% { transform: translateX(0); }
+    }
+
+    /* Tabs & App-Icon Styling */
+    .facts-mobile-tabs-container {
+        display: block !important;
+        margin: 0 auto 2.5rem auto;
+        max-width: 360px;
+        padding: 0 1rem;
+    }
+
+    .facts-mobile-tabs-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 0.75rem;
+        justify-content: center;
+    }
+
+    .facts-mobile-tab-btn {
+        aspect-ratio: 1;
+        border-radius: 16px;
+        border: 1px solid rgba(13, 27, 46, 0.08);
+        background: rgba(255, 255, 255, 0.6);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        padding: 0.75rem;
+        box-shadow: 0 4px 12px rgba(13, 27, 46, 0.03);
+    }
+
+    .facts-mobile-tab-btn svg,
+    .facts-mobile-tab-btn img {
+        width: 24px;
+        height: 24px;
+        object-fit: contain;
+        transition: transform 0.3s ease;
+    }
+
+    /* Default icon styles: dark SVGs need to be visible but not too stark */
+    .facts-mobile-tab-btn img {
+        filter: invert(0.2) brightness(0.5);
+    }
+    
+    .facts-mobile-tab-btn svg {
+        stroke: #5a7a9a;
+        fill: none;
+    }
+
+    .facts-mobile-tab-btn:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 16px rgba(13, 27, 46, 0.06);
+    }
+
+    .facts-mobile-tab-btn.active {
+        transform: scale(1.08) translateY(-2px);
+        border-color: var(--theme-color);
+        background: var(--theme-gradient);
+        box-shadow: 0 0 18px var(--theme-glow);
+    }
+
+    .facts-mobile-tab-btn.active svg {
+        stroke: #ffffff !important;
+        transform: scale(1.1);
+    }
+    
+    .facts-mobile-tab-btn.active img {
+        filter: invert(1) brightness(2.5) !important;
+        transform: scale(1.1);
+    }
+
+    /* Tab Themes (App-Icon Active States) */
+    .facts-mobile-tab-btn.theme-intro {
+        --theme-color: #0d1b2e;
+        --theme-gradient: linear-gradient(135deg, #0d1b2e 0%, #172a45 100%);
+        --theme-glow: rgba(13, 27, 46, 0.4);
+    }
+    .facts-mobile-tab-btn.theme-pink {
+        --theme-color: #d81b60;
+        --theme-gradient: linear-gradient(135deg, #d81b60 0%, #ad1457 100%);
+        --theme-glow: rgba(216, 27, 96, 0.45);
+    }
+    .facts-mobile-tab-btn.theme-cyan {
+        --theme-color: #028bcf;
+        --theme-gradient: linear-gradient(135deg, #29b6f6 0%, #028bcf 100%);
+        --theme-glow: rgba(2, 139, 207, 0.45);
+    }
+    .facts-mobile-tab-btn.theme-purple {
+        --theme-color: #8e24aa;
+        --theme-gradient: linear-gradient(135deg, #8e24aa 0%, #5e35b1 100%);
+        --theme-glow: rgba(142, 36, 170, 0.45);
+    }
+    .facts-mobile-tab-btn.theme-blue {
+        --theme-color: #0288d1;
+        --theme-gradient: linear-gradient(135deg, #0288d1 0%, #01579b 100%);
+        --theme-glow: rgba(2, 136, 209, 0.45);
+    }
+    .facts-mobile-tab-btn.theme-pink-small {
+        --theme-color: #c2185b;
+        --theme-gradient: linear-gradient(135deg, #c2185b 0%, #880e4f 100%);
+        --theme-glow: rgba(194, 24, 91, 0.45);
+    }
+    .facts-mobile-tab-btn.theme-quote-wertheim,
+    .facts-mobile-tab-btn.theme-quote-shure {
+        --theme-color: #475569;         /* Slate theme matching the dark look of the quote cards */
+        --theme-gradient: linear-gradient(135deg, #334155 0%, #475569 100%);
+        --theme-glow: rgba(71, 85, 105, 0.4);
+    }
+
+    /* Grid Flattening & Text Cards Display (with 3D perspective) */
     .facts-grid {
-        grid-template-columns: 1fr;
-        gap: 1.25rem;
+        grid-template-columns: 1fr !important;
+        margin-top: 0;
+        display: block !important;
+        position: relative;
+        perspective: 1200px;            /* Enable 3D depth for flip transitions */
     }
-    .facts-col {
-        gap: 1.25rem;
+
+    .facts-grid .facts-col {
+        display: contents !important;
     }
-    .fact-card-quote-bg {
-        min-height: 300px;
+
+    .facts-grid .fact-card,
+    .facts-grid .fact-card-quote-bg {
+        display: none !important;
+        opacity: 0;
+        transform: rotateY(-90deg) scale(0.95);
+        margin-bottom: 0;
+        height: 300px !important;       /* Increased uniform height to prevent layout shifts & improve breathing room */
+        min-height: 300px !important;   /* Force override any desktop min-height */
+        padding: 2.25rem 2rem !important; /* Increased padding inside the card on mobile */
+        box-sizing: border-box;
+        transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1), opacity 0.3s ease;
+        transform-style: preserve-3d;
+        backface-visibility: hidden;
+        -webkit-backface-visibility: hidden;
+    }
+
+    .facts-grid .fact-card {
+        justify-content: center;        /* Vertically center the text facts */
+    }
+
+    /* Active Flat State */
+    .facts-grid .fact-card.mobile-active,
+    .facts-grid .fact-card-quote-bg.mobile-active {
+        display: flex !important;
+        opacity: 1;
+        transform: rotateY(0deg) scale(1);
+    }
+
+    /* Flipping Out State (Active card rotates to 90 degrees) */
+    .facts-grid.flipping-out .fact-card.mobile-active,
+    .facts-grid.flipping-out .fact-card-quote-bg.mobile-active {
+        transform: rotateY(90deg) scale(0.95) !important;
+        opacity: 0 !important;
+    }
+
+    /* Flipping In State (Incoming card starts at -90 degrees) */
+    .facts-grid.flipping-in .fact-card.mobile-active,
+    .facts-grid.flipping-in .fact-card-quote-bg.mobile-active {
+        transform: rotateY(-90deg) scale(0.95) !important;
+        opacity: 0 !important;
+        display: flex !important;
     }
 }
 /* ============================================

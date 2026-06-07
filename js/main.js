@@ -606,6 +606,150 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    // ── Mobile Facts & Figures Carousel ──────────────────────────────
+    function initMobileFactsCarousel() {
+        const tabsGrid = document.getElementById('factsMobileTabsGrid');
+        if (!tabsGrid) return;
+
+        const cards = Array.from(document.querySelectorAll(
+            '.facts-grid .fact-card:not(.fact-card-image-only), .facts-grid .fact-card-quote-bg'
+        ));
+
+        if (!cards.length) return;
+
+        let currentIndex = 0;
+        let autoplayInterval = null;
+        let userInteracted = false;
+        const tabButtons = [];
+
+        // Clear existing tabs if any (re-init safety)
+        tabsGrid.innerHTML = '';
+
+        cards.forEach((card, idx) => {
+            const btn = document.createElement('button');
+            btn.className = 'facts-mobile-tab-btn';
+            btn.setAttribute('aria-label', `Fact tab ${idx + 1}`);
+
+            // Class mapping for themes
+            if (card.classList.contains('fact-card-intro')) {
+                btn.classList.add('theme-intro');
+            } else if (card.classList.contains('fact-card-pink')) {
+                btn.classList.add('theme-pink');
+            } else if (card.classList.contains('fact-card-cyan')) {
+                btn.classList.add('theme-cyan');
+            } else if (card.getAttribute('data-mobile-theme') === 'quote-wertheim') {
+                btn.classList.add('theme-quote-wertheim');
+            } else if (card.classList.contains('fact-card-purple')) {
+                btn.classList.add('theme-purple');
+            } else if (card.getAttribute('data-mobile-theme') === 'quote-shure') {
+                btn.classList.add('theme-quote-shure');
+            } else if (card.classList.contains('fact-card-blue-large')) {
+                btn.classList.add('theme-blue');
+            } else if (card.classList.contains('fact-card-pink-small')) {
+                btn.classList.add('theme-pink-small');
+            }
+
+            // Clone Icon
+            const iconWrapper = card.querySelector('.fact-icon-wrapper, .quote-icon-wrapper');
+            if (iconWrapper) {
+                const icon = iconWrapper.querySelector('svg, img');
+                if (icon) {
+                    const clonedIcon = icon.cloneNode(true);
+                    btn.appendChild(clonedIcon);
+                }
+            }
+
+            btn.addEventListener('click', () => {
+                userInteracted = true;
+                stopAutoplay();
+                setActiveFact(idx);
+            });
+
+            tabsGrid.appendChild(btn);
+            tabButtons.push(btn);
+        });
+
+        function setActiveFact(index) {
+            // Check if there is an active tab already
+            const hasActiveTab = tabButtons.some(btn => btn.classList.contains('active'));
+            const grid = document.querySelector('.facts-grid');
+
+            if (hasActiveTab && grid && window.innerWidth <= 768) {
+                grid.classList.add('flipping-out');
+                
+                setTimeout(() => {
+                    updateStates(index);
+                    grid.classList.remove('flipping-out');
+                    grid.classList.add('flipping-in');
+                    
+                    // Force browser reflow to register the flipping-in initial state
+                    void grid.offsetHeight;
+                    
+                    grid.classList.remove('flipping-in');
+                }, 300);
+            } else {
+                updateStates(index);
+            }
+        }
+
+        function updateStates(index) {
+            currentIndex = index;
+            
+            // Toggle active classes on buttons
+            tabButtons.forEach((btn, idx) => {
+                if (idx === index) {
+                    btn.classList.add('active');
+                    btn.setAttribute('aria-selected', 'true');
+                } else {
+                    btn.classList.remove('active');
+                    btn.setAttribute('aria-selected', 'false');
+                }
+            });
+
+            // Toggle active classes on cards
+            cards.forEach((card, idx) => {
+                if (idx === index) {
+                    card.classList.add('mobile-active');
+                } else {
+                    card.classList.remove('mobile-active');
+                }
+            });
+        }
+
+        function startAutoplay() {
+            if (autoplayInterval || userInteracted) return;
+            autoplayInterval = setInterval(() => {
+                const nextIndex = (currentIndex + 1) % cards.length;
+                setActiveFact(nextIndex);
+            }, 6000);
+        }
+
+        function stopAutoplay() {
+            if (autoplayInterval) {
+                clearInterval(autoplayInterval);
+                autoplayInterval = null;
+            }
+        }
+
+        // Initialize active state
+        setActiveFact(0);
+
+        // Manage autoplay based on screen size and visibility
+        function handleAutoplayState() {
+            if (window.innerWidth <= 768 && !userInteracted) {
+                startAutoplay();
+            } else {
+                stopAutoplay();
+            }
+        }
+
+        // Start autoplay on load if on mobile
+        handleAutoplayState();
+
+        // Listen for window resize to start/stop autoplay appropriately
+        window.addEventListener('resize', handleAutoplayState);
+    }
+
     // Attach listeners for scroll and resize
     window.addEventListener('scroll', handleMobileFlip, { passive: true });
     window.addEventListener('resize', handleMobileFlip);
@@ -618,4 +762,5 @@ document.addEventListener('DOMContentLoaded', () => {
     handleMobileFlip();
     handleMobileTimelineActive();
     handleStickyHeaderIndicator();
+    initMobileFactsCarousel();
 });

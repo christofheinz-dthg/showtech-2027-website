@@ -156,11 +156,101 @@
             <div id="factsandfugures" style="position: absolute; margin-top: -150px;"></div> <!-- Typo safety anchor -->
             
             <div class="container">
+                <!-- Mobile Images Slider (Only visible on mobile, moves left to right) -->
+                <div class="facts-mobile-images-slider">
+                    <div class="facts-images-track">
+                        <!-- Copy 1 -->
+                        <div class="fact-card-double-image">
+                            <div class="fact-img-half">
+                                <img src="assets/Photos_start-hero/performer_facts.jpg" alt="SHOWTECH Live Performer">
+                            </div>
+                            <div class="fact-img-half">
+                                <img src="assets/Photos_start-hero/workshop_facts.jpg" alt="SHOWTECH Workshop Presentation">
+                            </div>
+                        </div>
+                        <div class="fact-card-double-image">
+                            <div class="fact-img-half">
+                                <img src="assets/Photos_start-hero/407---20250522-showtec-2025-407.png" alt="SHOWTECH Networking">
+                            </div>
+                            <div class="fact-img-half">
+                                <img src="assets/Photos_start-hero/119 - 20250522-showtec-2025-119.png" alt="SHOWTECH Live Demo">
+                            </div>
+                        </div>
+                        <div class="fact-card-double-image">
+                            <div class="fact-img-half">
+                                <img src="assets/Photos_start-hero/projector_close.jpg" alt="SHOWTECH Projector Tech Close">
+                            </div>
+                            <div class="fact-img-half">
+                                <img src="assets/Photos_start-hero/mixing_close.jpg" alt="SHOWTECH Mixing Console Close">
+                            </div>
+                        </div>
+
+                        <!-- Copy 2 -->
+                        <div class="fact-card-double-image">
+                            <div class="fact-img-half">
+                                <img src="assets/Photos_start-hero/performer_facts.jpg" alt="SHOWTECH Live Performer">
+                            </div>
+                            <div class="fact-img-half">
+                                <img src="assets/Photos_start-hero/workshop_facts.jpg" alt="SHOWTECH Workshop Presentation">
+                            </div>
+                        </div>
+                        <div class="fact-card-double-image">
+                            <div class="fact-img-half">
+                                <img src="assets/Photos_start-hero/407---20250522-showtec-2025-407.png" alt="SHOWTECH Networking">
+                            </div>
+                            <div class="fact-img-half">
+                                <img src="assets/Photos_start-hero/119 - 20250522-showtec-2025-119.png" alt="SHOWTECH Live Demo">
+                            </div>
+                        </div>
+                        <div class="fact-card-double-image">
+                            <div class="fact-img-half">
+                                <img src="assets/Photos_start-hero/projector_close.jpg" alt="SHOWTECH Projector Tech Close">
+                            </div>
+                            <div class="fact-img-half">
+                                <img src="assets/Photos_start-hero/mixing_close.jpg" alt="SHOWTECH Mixing Console Close">
+                            </div>
+                        </div>
+
+                        <!-- Copy 3 -->
+                        <div class="fact-card-double-image">
+                            <div class="fact-img-half">
+                                <img src="assets/Photos_start-hero/performer_facts.jpg" alt="SHOWTECH Live Performer">
+                            </div>
+                            <div class="fact-img-half">
+                                <img src="assets/Photos_start-hero/workshop_facts.jpg" alt="SHOWTECH Workshop Presentation">
+                            </div>
+                        </div>
+                        <div class="fact-card-double-image">
+                            <div class="fact-img-half">
+                                <img src="assets/Photos_start-hero/407---20250522-showtec-2025-407.png" alt="SHOWTECH Networking">
+                            </div>
+                            <div class="fact-img-half">
+                                <img src="assets/Photos_start-hero/119 - 20250522-showtec-2025-119.png" alt="SHOWTECH Live Demo">
+                            </div>
+                        </div>
+                        <div class="fact-card-double-image">
+                            <div class="fact-img-half">
+                                <img src="assets/Photos_start-hero/projector_close.jpg" alt="SHOWTECH Projector Tech Close">
+                            </div>
+                            <div class="fact-img-half">
+                                <img src="assets/Photos_start-hero/mixing_close.jpg" alt="SHOWTECH Mixing Console Close">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
                 <!-- Mobile Only Header -->
                 <div class="facts-section-header facts-header-mobile">
                     <span class="section-tag" data-i18n="facts_section_tag">WAS IST DIE SHOWTECH?</span>
                     <h2 data-i18n="facts_section_title">Facts and Figures</h2>
                     <p data-i18n="facts_section_subtitle">Erfolge, Stimmen und Zahlen, die für sich sprechen.</p>
+                </div>
+
+                <!-- Mobile Tabs Container (App library style) -->
+                <div class="facts-mobile-tabs-container">
+                    <div class="facts-mobile-tabs-grid" id="factsMobileTabsGrid">
+                        <!-- Dynamically populated by main.js -->
+                    </div>
                 </div>
                 
                 <div class="facts-grid">
@@ -223,7 +313,7 @@
                         </div>
 
                         <!-- Tile 6: Quote Card (Kai Uwe Patz) with Background Image & dark overlay -->
-                        <div class="fact-card fact-card-quote-bg" style="background-image: url('assets/fotos/fotos_factsandfigures/wertheim_background.jpg');">
+                        <div class="fact-card fact-card-quote-bg" data-mobile-theme="quote-wertheim" style="background-image: url('assets/fotos/fotos_factsandfigures/wertheim_background.jpg');">
                             <div class="card-image-overlay"></div>
                             <div class="fact-card-inner">
                                 <div class="quote-icon-wrapper">
@@ -254,7 +344,7 @@
                         </div>
 
                         <!-- Tile 5: Shure Quote (Black with border & background image) -->
-                        <div class="fact-card fact-card-quote-bg" style="background-image: url('assets/fotos/fotos_factsandfigures/shure_background.jpg');">
+                        <div class="fact-card fact-card-quote-bg" data-mobile-theme="quote-shure" style="background-image: url('assets/fotos/fotos_factsandfigures/shure_background.jpg');">
                             <div class="card-image-overlay"></div>
                             <div class="fact-card-inner">
                                 <div class="quote-icon-wrapper">
