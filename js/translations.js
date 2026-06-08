@@ -139,6 +139,8 @@ const translations = {
         stages_card_5_description: "Feiern und Netzwerken vor der Skyline Berlins: Werden Sie Teil der Branchen-Party im Beach-Flair des Badeschiffs – direkt an der Spree. Mit Live-Musik, Pool und anschließender Party im ARENA Club!",
         stages_card_6_title: "Rahmenprogramm",
         stages_card_6_description: "Neben dem offiziellen Messe- und Kongressprogramm werden wieder verschiedene Side Events rund um die SHOWTECH in Berlin angeboten.",
+        stages_card_7_title: "Immersive Showroom",
+        stages_card_7_description: "Ein interaktiver Einblick in künstlerische Nachwuchsprojekte, die neue Technologien wie AR, VR, AI, Motion Capturing einsetzen.",
 
         // Road to SHOWTECH Timeline
         timeline_title: "Road to <span class=\"text-blue-accent\">SHOWTECH 2027</span>",
@@ -347,6 +349,8 @@ const translations = {
         stages_card_5_description: "Celebrate and network against the Berlin skyline: join the industry party with a beach vibe at the Badeschiff – right on the Spree. With live music, a pool and an afterparty at the ARENA Club!",
         stages_card_6_title: "Fringe Programme",
         stages_card_6_description: "Alongside the official trade fair and congress programme, various side events around SHOWTECH will again be offered throughout Berlin.",
+        stages_card_7_title: "Immersive Showroom",
+        stages_card_7_description: "An interactive insight into artistic newcomer projects that use new technologies such as AR, VR, AI, and motion capturing.",
 
         // Road to SHOWTECH Timeline
         timeline_title: "Road to <span class=\"text-blue-accent\">SHOWTECH 2027</span>",

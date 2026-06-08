@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Ebene_2" data-name="Ebene 2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 77.91 73.85">
+  <defs>
+    <style>
+      .cls-1, .cls-2 {
+        fill: none;
+      }
+
+      .cls-2 {
+        stroke: #fff;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        stroke-width: 3px;
+      }
+
+      .cls-3 {
+        clip-path: url(#clippath);
+      }
+    </style>
+    <clipPath id="clippath">
+      <rect class="cls-1" width="77.91" height="73.85"/>
+    </clipPath>
+  </defs>
+  <g id="Ebene_1-2" data-name="Ebene 1">
+    <g id="Gruppe_2072" data-name="Gruppe 2072">
+      <g class="cls-3">
+        <g id="Gruppe_2067" data-name="Gruppe 2067">
+          <g id="Gruppe_2066" data-name="Gruppe 2066">
+            <path id="Pfad_3971" data-name="Pfad 3971" class="cls-2" d="M2.45,52.8v-31.75c0-4.81,2.83-9.17,7.22-11.12l5.45-2.42C30.29.76,47.62.76,62.8,7.51l5.44,2.42c4.4,1.95,7.23,6.31,7.23,11.12v31.75c0,4.81-2.83,9.16-7.22,11.12l-5.45,2.42c-15.18,6.75-32.5,6.75-47.68,0l-5.45-2.42c-4.39-1.96-7.22-6.31-7.22-11.12Z"/>
+          </g>
+        </g>
+      </g>
+      <g id="Gruppe_2068" data-name="Gruppe 2068">
+        <path id="Pfad_3973" data-name="Pfad 3973" class="cls-2" d="M38.64,8.77v11.53"/>
+      </g>
+      <g id="Gruppe_2069" data-name="Gruppe 2069">
+        <path id="Pfad_3974" data-name="Pfad 3974" class="cls-2" d="M58,55.51l-8.15-8.15,8.15,8.15ZM19.29,16.8l8.15,8.14"/>
+      </g>
+      <g id="Gruppe_2070" data-name="Gruppe 2070">
+        <path id="Pfad_3975" data-name="Pfad 3975" class="cls-2" d="M11.27,36.15h11.53"/>
+      </g>
+      <g id="Gruppe_2071" data-name="Gruppe 2071">
+        <path id="Pfad_3976" data-name="Pfad 3976" class="cls-2" d="M58,16.79l-8.15,8.15,8.15-8.15ZM19.29,55.5l8.15-8.15M49.12,61.44l-2.21-5.32,2.21,5.32ZM28.17,10.86l2.2,5.33M63.94,46.62l-5.33-2.2,5.33,2.2ZM13.35,25.67l5.32,2.21M63.94,25.67l-5.33,2.21,5.33-2.21ZM13.35,46.62l5.32-2.2M49.12,10.86l-2.21,5.33,2.21-5.33ZM28.17,61.44l2.2-5.32"/>
+      </g>
+    </g>
+  </g>
+</svg>

@@ -564,22 +564,33 @@
         <!-- Appointment Booking (Termin) Section -->
         <section id="booking" class="section-booking">
             <div class="container">
-                <div class="booking-section-header">
-                    <span class="section-tag" data-i18n="booking_section_tag">Terminvereinbarung</span>
-                    <h2 data-i18n="booking_section_title">Aussteller werden</h2>
-                    <p class="booking-intro-text" data-i18n="booking_intro_text">Buchen Sie hier Ihren persönlichen Online-Beratungstermin zur SHOWTECH 2027. In einem kurzen Gespräch (ca. 15 min.) informieren wir Sie über Standoptionen, mögliche Platzierungen und beantworten Ihre Fragen. Gerne können wir dabei auch über Ihre Wünsche und Ideen für 2027 sprechen.</p>
-                    <p class="booking-note-text" data-i18n="booking_note_text">Bitte geben Sie bei der Terminbuchung Ihren Firmennamen, den Ansprechpartner sowie eine ungefähr gewünschte Flächengröße an:</p>
-                </div>
-                
-                <div class="booking-widget-wrapper">
-                    <!-- Calendly Inline-Widget Beginn -->
-                    <div class="calendly-inline-widget" data-url="https://calendly.com/showtech-info/showtech-2025-prebooking-clone?hide_event_type_details=1&amp;hide_gdpr_banner=1&amp;background_color=ffffff&amp;text_color=0d1b2e&amp;primary_color=e53935" style="min-width:320px; height:700px;"></div>
-                    <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
-                    <!-- Calendly Inline-Widget Ende -->
-                </div>
+                <div class="booking-grid">
+                    <!-- Left: Description Card (Styled like blue exhibitor card) -->
+                    <div class="moreinfo-card exhibitor-card booking-info-card">
+                        <div class="card-header-banner">
+                            <span class="card-tag" data-i18n="booking_section_tag">Terminvereinbarung</span>
+                        </div>
+                        <div class="card-body-content">
+                            <div class="card-top">
+                                <h3 data-i18n="booking_section_title">Aussteller werden</h3>
+                                <p class="booking-intro-text" data-i18n="booking_intro_text">Buchen Sie hier Ihren persönlichen Online-Beratungstermin zur SHOWTECH 2027. In einem kurzen Gespräch (ca. 15 min.) informieren wir Sie über Standoptionen, mögliche Platzierungen und beantworten Ihre Fragen. Gerne können wir dabei auch über Ihre Wünsche und Ideen für 2027 sprechen.</p>
+                                <div class="booking-card-note">
+                                    <p class="booking-note-text" data-i18n="booking_note_text">Bitte geben Sie bei der Terminbuchung Ihren Firmennamen, den Ansprechpartner sowie eine ungefähr gewünschte Flächengröße an:</p>
+                                </div>
+                            </div>
+                            <div class="booking-card-footer">
+                                <a href="mailto:info@showtech.dthg.de?subject=SHOWTECH%202027%20-%20Requesting%20information%20about%20stand%20reservations" class="btn btn-secondary" data-i18n="booking_alternative_cta">Oder hier per E-Mail</a>
+                            </div>
+                        </div>
+                    </div>
 
-                <div class="booking-alternative-cta">
-                    <a href="mailto:info@showtech.dthg.de?subject=SHOWTECH%202027%20-%20Requesting%20information%20about%20stand%20reservations" class="btn" data-i18n="booking_alternative_cta">Oder hier per E-Mail</a>
+                    <!-- Right: Calendly Widget -->
+                    <div class="booking-widget-wrapper">
+                        <!-- Calendly Inline-Widget Beginn -->
+                        <div class="calendly-inline-widget" data-url="https://calendly.com/showtech-info/showtech-2025-prebooking-clone?hide_event_type_details=1&amp;hide_gdpr_banner=1&amp;background_color=ffffff&amp;text_color=0d1b2e&amp;primary_color=e53935" style="min-width:320px; height:700px;"></div>
+                        <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
+                        <!-- Calendly Inline-Widget Ende -->
+                    </div>
                 </div>
             </div>
         </section>
@@ -809,116 +820,123 @@
                 </div>
                 
                 <div class="stages-grid">
-                    <!-- Card 1: Main Stage -->
-                    <div class="flip-card">
-                        <div class="flip-card-inner">
-                            <div class="flip-card-front">
-                                <div class="card-image">
-                                    <img src="assets/fotos/fotos_buehnenformate/main_stage.jpg" alt="Main Stage">
-                                </div>
-                                <div class="card-title-wrap bg-stage-blue">
-                                    <h3 data-i18n="stages_card_1_title">Main Stage</h3>
-                                </div>
+                    <!-- Column 1 (Left): 2 Elements -->
+                    <div class="stages-col">
+                        <!-- Card 1: Main Stage -->
+                        <div class="stage-card">
+                            <div class="stage-card-image">
+                                <img src="assets/fotos/fotos_buehnenformate/ST27_img_mainstage.png" alt="Main Stage">
                             </div>
-                            <div class="flip-card-back">
-                                <img src="assets/icon_sets/icons_buehnenformate/Kongress.svg" alt="Main Stage Icon" class="card-back-icon">
-                                <h3 data-i18n="stages_card_1_title">Main Stage</h3>
-                                <p data-i18n="stages_card_1_description">Der Kongress im Glashaus und der Main Stage bietet ein umfangreiges zweitägiges Programm, das sich auf die Vermittlung von Wissen aus den Bereichen Theater, Technik und Kunst fokussiert.</p>
+                            <div class="stage-card-overlay"></div>
+                            <div class="stage-card-content">
+                                <div class="stage-card-icon-wrapper">
+                                    <img src="assets/icon_sets/icons_buehnenformate/ST27_icon_Mainstage.svg" alt="Main Stage Icon" class="stage-card-icon">
+                                </div>
+                                <h3 class="stage-card-title" data-i18n="stages_card_1_title">Main Stage</h3>
+                                <div class="stage-card-divider"></div>
+                                <p class="stage-card-description" data-i18n="stages_card_1_description">Der Kongress im Glashaus und der Main Stage bietet ein umfangreiges zweitägiges Programm, das sich auf die Vermittlung von Wissen aus den Bereichen Theater, Technik und Kunst fokussiert.</p>
+                            </div>
+                        </div>
+
+                        <!-- Card 7: Immersive Showroom -->
+                        <div class="stage-card">
+                            <div class="stage-card-image">
+                                <img src="assets/fotos/fotos_buehnenformate/ST27_img_ImmersiveShowroom.png" alt="Immersive Showroom">
+                            </div>
+                            <div class="stage-card-overlay"></div>
+                            <div class="stage-card-content">
+                                <div class="stage-card-icon-wrapper">
+                                    <img src="assets/icon_sets/icons_buehnenformate/ST27_icon_ImmersiveSHowroom.svg" alt="Immersive Showroom Icon" class="stage-card-icon">
+                                </div>
+                                <h3 class="stage-card-title" data-i18n="stages_card_7_title">Immersive Showroom</h3>
+                                <div class="stage-card-divider"></div>
+                                <p class="stage-card-description" data-i18n="stages_card_7_description">Ein interaktiver Einblick in künstlerische Nachwuchsprojekte, die neue Technologien wie AR, VR, AI, Motion Capturing einsetzen.</p>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Card 2: Innovation Stage -->
-                    <div class="flip-card">
-                        <div class="flip-card-inner">
-                            <div class="flip-card-front">
-                                <div class="card-image">
-                                    <img src="assets/fotos/fotos_buehnenformate/innovation_stage.jpg" alt="Innovation Stage">
-                                </div>
-                                <div class="card-title-wrap bg-stage-magenta">
-                                    <h3 data-i18n="stages_card_2_title">Innovation Stage</h3>
-                                </div>
+                    <!-- Column 2 (Middle): 3 Elements -->
+                    <div class="stages-col">
+                        <!-- Card 2: Innovation Stage -->
+                        <div class="stage-card">
+                            <div class="stage-card-image">
+                                <img src="assets/fotos/fotos_buehnenformate/ST27_img_innostage.png" alt="Innovation Stage">
                             </div>
-                            <div class="flip-card-back">
-                                <img src="assets/icon_sets/icons_buehnenformate/Innovation_stage.svg" alt="Innovation Stage Icon" class="card-back-icon">
-                                <h3 data-i18n="stages_card_2_title">Innovation Stage</h3>
-                                <p data-i18n="stages_card_2_description">Ob neue Werkstoffe, Techniklösungen, kreative Raumkonzepte oder Best Practices – direkt in der Messehalle stellen Aussteller live ihre Innovationen dem Publikum vor.</p>
+                            <div class="stage-card-overlay"></div>
+                            <div class="stage-card-content">
+                                <div class="stage-card-icon-wrapper">
+                                    <img src="assets/icon_sets/icons_buehnenformate/ST27_Icon_InnovationStage.svg" alt="Innovation Stage Icon" class="stage-card-icon">
+                                </div>
+                                <h3 class="stage-card-title" data-i18n="stages_card_2_title">Innovation Stage</h3>
+                                <div class="stage-card-divider"></div>
+                                <p class="stage-card-description" data-i18n="stages_card_2_description">Ob neue Werkstoffe, Techniklösungen, kreative Raumkonzepte oder Best Practices – direkt in der Messehalle stellen Aussteller live ihre Innovationen dem Publikum vor.</p>
+                            </div>
+                        </div>
+
+                        <!-- Card 4: Round Tables -->
+                        <div class="stage-card">
+                            <div class="stage-card-image">
+                                <img src="assets/fotos/fotos_buehnenformate/ST27_img_roundtables.png" alt="Round Tables">
+                            </div>
+                            <div class="stage-card-overlay"></div>
+                            <div class="stage-card-content">
+                                <div class="stage-card-icon-wrapper">
+                                    <img src="assets/icon_sets/icons_buehnenformate/ST27_icon_Roundtables.svg" alt="Round Tables Icon" class="stage-card-icon">
+                                </div>
+                                <h3 class="stage-card-title" data-i18n="stages_card_4_title">Round Tables</h3>
+                                <div class="stage-card-divider"></div>
+                                <p class="stage-card-description" data-i18n="stages_card_4_description">An zwei Round Tables treffen sich Fachgruppen und AGs und sprechen gemeinsam über die aktuellen Herausforderungen und Chancen der Branche.</p>
+                            </div>
+                        </div>
+
+                        <!-- Card 5: SHOWTECH Night -->
+                        <div class="stage-card">
+                            <div class="stage-card-image">
+                                <img src="assets/fotos/fotos_buehnenformate/ST27_img_night.png" alt="SHOWTECH Night">
+                            </div>
+                            <div class="stage-card-overlay"></div>
+                            <div class="stage-card-content">
+                                <div class="stage-card-icon-wrapper">
+                                    <img src="assets/icon_sets/icons_buehnenformate/ST27_icon_ShowtechNight.svg" alt="SHOWTECH Night Icon" class="stage-card-icon">
+                                </div>
+                                <h3 class="stage-card-title" data-i18n="stages_card_5_title">SHOWTECH Night</h3>
+                                <div class="stage-card-divider"></div>
+                                <p class="stage-card-description" data-i18n="stages_card_5_description">Feiern und Netzwerken vor der Skyline Berlins: Werden Sie Teil der Branchen-Party im Beach-Flair des Badeschiffs – direkt an der Spree. Mit Live-Musik, Pool und anschließender Party im ARENA Club!</p>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Card 3: SoundLab -->
-                    <div class="flip-card">
-                        <div class="flip-card-inner">
-                            <div class="flip-card-front">
-                                <div class="card-image">
-                                    <img src="assets/fotos/fotos_buehnenformate/soundlab.jpg" alt="SoundLab">
-                                </div>
-                                <div class="card-title-wrap bg-stage-red">
-                                    <h3 data-i18n="stages_card_3_title">SoundLab</h3>
-                                </div>
+                    <!-- Column 3 (Right): 2 Elements -->
+                    <div class="stages-col">
+                        <!-- Card 3: SoundLab -->
+                        <div class="stage-card">
+                            <div class="stage-card-image">
+                                <img src="assets/fotos/fotos_buehnenformate/ST27_img_soundlab.png" alt="SoundLab">
                             </div>
-                            <div class="flip-card-back">
-                                <img src="assets/icon_sets/icons_buehnenformate/SoundLab.svg" alt="SoundLab Icon" class="card-back-icon">
-                                <h3 data-i18n="stages_card_3_title">SoundLab</h3>
-                                <p data-i18n="stages_card_3_description">Der (Labor-)Raum bietet die Möglichkeit, Audiotechnologien in Präzision zu erleben und sich mit Fachleuten über praxisnahe Lösungen auszutauschen.</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Card 4: Round Tables -->
-                    <div class="flip-card">
-                        <div class="flip-card-inner">
-                            <div class="flip-card-front">
-                                <div class="card-image">
-                                    <img src="assets/fotos/fotos_buehnenformate/round_tables.jpg" alt="Round Tables">
+                            <div class="stage-card-overlay"></div>
+                            <div class="stage-card-content">
+                                <div class="stage-card-icon-wrapper">
+                                    <img src="assets/icon_sets/icons_buehnenformate/ST27_Icon_SoundLab.svg" alt="SoundLab Icon" class="stage-card-icon">
                                 </div>
-                                <div class="card-title-wrap bg-stage-purple">
-                                    <h3 data-i18n="stages_card_4_title">Round Tables</h3>
-                                </div>
-                            </div>
-                            <div class="flip-card-back">
-                                <img src="assets/icon_sets/icons_buehnenformate/Round_tables.svg" alt="Round Tables Icon" class="card-back-icon">
-                                <h3 data-i18n="stages_card_4_title">Round Tables</h3>
-                                <p data-i18n="stages_card_4_description">An zwei Round Tables treffen sich Fachgruppen und AGs und sprechen gemeinsam über die aktuellen Herausforderungen und Chancen der Branche.</p>
+                                <h3 class="stage-card-title" data-i18n="stages_card_3_title">SoundLab</h3>
+                                <div class="stage-card-divider"></div>
+                                <p class="stage-card-description" data-i18n="stages_card_3_description">Der (Labor-)Raum bietet die Möglichkeit, Audiotechnologien in Präzision zu erleben und sich mit Fachleuten über praxisnahe Lösungen auszutauschen.</p>
                             </div>
                         </div>
-                    </div>
 
-                    <!-- Card 5: SHOWTECH Night -->
-                    <div class="flip-card">
-                        <div class="flip-card-inner">
-                            <div class="flip-card-front">
-                                <div class="card-image">
-                                    <img src="assets/fotos/fotos_buehnenformate/ShowtechNight.jpg" alt="SHOWTECH Night">
-                                </div>
-                                <div class="card-title-wrap bg-stage-navy">
-                                    <h3 data-i18n="stages_card_5_title">SHOWTECH Night</h3>
-                                </div>
+                        <!-- Card 6: Rahmenprogramm -->
+                        <div class="stage-card">
+                            <div class="stage-card-image">
+                                <img src="assets/fotos/fotos_buehnenformate/ST27_img_sideevents.png" alt="Rahmenprogramm">
                             </div>
-                            <div class="flip-card-back">
-                                <img src="assets/icon_sets/icons_buehnenformate/ShowtechNight.svg" alt="SHOWTECH Night Icon" class="card-back-icon">
-                                <h3 data-i18n="stages_card_5_title">SHOWTECH Night</h3>
-                                <p data-i18n="stages_card_5_description">Feiern und Netzwerken vor der Skyline Berlins: Werden Sie Teil der Branchen-Party im Beach-Flair des Badeschiffs – direkt an der Spree. Mit Live-Musik, Pool und anschließender Party im ARENA Club!</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Card 6: Rahmenprogramm -->
-                    <div class="flip-card">
-                        <div class="flip-card-inner">
-                            <div class="flip-card-front">
-                                <div class="card-image">
-                                    <img src="assets/fotos/fotos_buehnenformate/rahmenprogramm.jpg" alt="Rahmenprogramm">
+                            <div class="stage-card-overlay"></div>
+                            <div class="stage-card-content">
+                                <div class="stage-card-icon-wrapper">
+                                    <img src="assets/icon_sets/icons_buehnenformate/ST27_icon_sideevents.svg" alt="Rahmenprogramm Icon" class="stage-card-icon">
                                 </div>
-                                <div class="card-title-wrap bg-stage-skyblue">
-                                    <h3 data-i18n="stages_card_6_title">Rahmenprogramm</h3>
-                                </div>
-                            </div>
-                            <div class="flip-card-back">
-                                <img src="assets/icon_sets/icons_buehnenformate/rahmenprogramm.svg" alt="Rahmenprogramm Icon" class="card-back-icon">
-                                <h3 data-i18n="stages_card_6_title">Rahmenprogramm</h3>
-                                <p data-i18n="stages_card_6_description">Neben dem offiziellen Messe- und Kongressprogramm werden wieder verschiedene Side Events rund um die SHOWTECH in Berlin angeboten.</p>
+                                <h3 class="stage-card-title" data-i18n="stages_card_6_title">Rahmenprogramm</h3>
+                                <div class="stage-card-divider"></div>
+                                <p class="stage-card-description" data-i18n="stages_card_6_description">Neben dem offiziellen Messe- und Kongressprogramm werden wieder verschiedene Side Events rund um die SHOWTECH in Berlin angeboten.</p>
                             </div>
                         </div>
                     </div>

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Ebene_2" data-name="Ebene 2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 105 105">
+  <defs>
+    <style>
+      .cls-1, .cls-2 {
+        fill: none;
+      }
+
+      .cls-2 {
+        stroke: #fff;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        stroke-width: 3px;
+      }
+
+      .cls-3 {
+        clip-path: url(#clippath);
+      }
+    </style>
+    <clipPath id="clippath">
+      <rect class="cls-1" width="105" height="105"/>
+    </clipPath>
+  </defs>
+  <g id="Ebene_1-2" data-name="Ebene 1">
+    <g id="Gruppe_2076" data-name="Gruppe 2076">
+      <g class="cls-3">
+        <g id="Gruppe_2075" data-name="Gruppe 2075">
+          <path id="Pfad_3978" data-name="Pfad 3978" class="cls-2" d="M85.7,85.71c2.87-2.88,2.86-7.54-.02-10.41-2.88-2.87-7.54-2.86-10.41.02-2.86,2.87-2.86,7.52,0,10.39,2.85,2.88,7.49,2.9,10.36.06.02-.02.04-.04.06-.06"/>
+          <path id="Pfad_3979" data-name="Pfad 3979" class="cls-2" d="M74.74,20.26c-8.49-5.85-18.96-8.08-29.1-6.21"/>
+          <path id="Pfad_3980" data-name="Pfad 3980" class="cls-2" d="M80.49,17.45c-4.06,0-7.34,3.31-7.33,7.37,0,4.06,3.31,7.34,7.37,7.33,4.05,0,7.33-3.29,7.33-7.35,0-4.06-3.29-7.35-7.35-7.35,0,0-.01,0-.02,0"/>
+          <path id="Pfad_3981" data-name="Pfad 3981" class="cls-2" d="M20.27,30.53c-5.86,8.47-8.1,18.92-6.22,29.04"/>
+          <path id="Pfad_3982" data-name="Pfad 3982" class="cls-2" d="M17.46,24.8c0,4.07,3.29,7.37,7.35,7.38,4.07,0,7.37-3.29,7.38-7.35,0-4.07-3.29-7.37-7.35-7.38,0,0,0,0,0,0-4.06-.01-7.36,3.27-7.37,7.32,0,.01,0,.02,0,.03"/>
+          <path id="Pfad_3983" data-name="Pfad 3983" class="cls-2" d="M85.04,74.78c4.48-6.51,6.88-14.22,6.88-22.12-.01-2.32-.23-4.63-.65-6.91"/>
+          <path id="Pfad_3984" data-name="Pfad 3984" class="cls-2" d="M87.86,80.52c0-4.07-3.28-7.37-7.35-7.38s-7.37,3.28-7.38,7.35,3.28,7.37,7.35,7.38c0,0,0,0,.01,0,4.06.01,7.36-3.27,7.37-7.33,0,0,0-.02,0-.03"/>
+          <path id="Pfad_3985" data-name="Pfad 3985" class="cls-2" d="M30.57,85.06c6.53,4.48,14.26,6.87,22.17,6.86,2.32-.01,4.64-.23,6.93-.65"/>
+          <path id="Pfad_3986" data-name="Pfad 3986" class="cls-2" d="M24.83,87.86c4.06,0,7.34-3.31,7.33-7.37,0-4.06-3.31-7.34-7.37-7.33-4.05,0-7.33,3.29-7.33,7.35,0,4.06,3.29,7.35,7.35,7.35,0,0,.01,0,.02,0"/>
+          <rect id="Rechteck_1727" data-name="Rechteck 1727" class="cls-2" x="39" y="39" width="27" height="27" rx="1.4" ry="1.4"/>
+          <line id="Linie_640" data-name="Linie 640" class="cls-2" x1="46.11" y1="35.21" x2="46.11" y2="39.57"/>
+          <line id="Linie_641" data-name="Linie 641" class="cls-2" x1="59.2" y1="35.21" x2="59.2" y2="39.57"/>
+          <line id="Linie_642" data-name="Linie 642" class="cls-2" x1="46.11" y1="65.74" x2="46.11" y2="70.1"/>
+          <line id="Linie_643" data-name="Linie 643" class="cls-2" x1="59.2" y1="65.74" x2="59.2" y2="70.1"/>
+          <line id="Linie_644" data-name="Linie 644" class="cls-2" x1="35.21" y1="59.2" x2="39.57" y2="59.2"/>
+          <line id="Linie_645" data-name="Linie 645" class="cls-2" x1="35.21" y1="46.11" x2="39.57" y2="46.11"/>
+          <line id="Linie_646" data-name="Linie 646" class="cls-2" x1="65.74" y1="59.2" x2="70.11" y2="59.2"/>
+          <line id="Linie_647" data-name="Linie 647" class="cls-2" x1="65.74" y1="46.11" x2="70.11" y2="46.11"/>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

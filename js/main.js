@@ -392,17 +392,17 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // ── Mobile Card Flip on Scroll (Stages Section) ──────────────────
+    // ── Mobile Card Hover on Scroll (Stages Section) ──────────────────
     function handleMobileFlip() {
         if (window.innerWidth > 768) {
             // Remove active class on desktop size to allow normal CSS hover
-            document.querySelectorAll('.flip-card').forEach(card => {
+            document.querySelectorAll('.stage-card').forEach(card => {
                 card.classList.remove('active');
             });
             return;
         }
 
-        const cards = document.querySelectorAll('.flip-card');
+        const cards = document.querySelectorAll('.stage-card');
         const centerY = window.innerHeight / 2;
 
         let closestCard = null;
@@ -420,7 +420,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
 
         cards.forEach(card => {
-            // Only flip the card closest to center, and only if it's reasonably near the center (within 220px)
+            // Only activate the card closest to center, and only if it's reasonably near the center (within 220px)
             if (card === closestCard && minDistance < 220) {
                 card.classList.add('active');
             } else {
