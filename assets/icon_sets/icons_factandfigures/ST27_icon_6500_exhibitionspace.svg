@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Ebene_2" data-name="Ebene 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+  <defs>
+    <style>
+      .cls-1, .cls-2 {
+        fill: none;
+      }
+
+      .cls-2 {
+        stroke: #323232;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        stroke-width: 1.5px;
+      }
+    </style>
+  </defs>
+  <g id="Icons">
+    <g>
+      <g>
+        <polyline class="cls-2" points="17 3 21 3 21 7"/>
+        <line class="cls-2" x1="15" y1="9" x2="21" y2="3"/>
+        <polyline class="cls-2" points="7 21 3 21 3 17"/>
+        <line class="cls-2" x1="9" y1="15" x2="3" y2="21"/>
+        <path class="cls-2" d="M4,11v-5c0-1.11.89-2,2-2h5"/>
+        <path class="cls-2" d="M20,13v5c0,1.1-.9,2-2,2h-6"/>
+      </g>
+      <rect id="_Transparent_Rectangle_" data-name=" Transparent Rectangle " class="cls-1" width="24" height="24"/>
+    </g>
+  </g>
+</svg>

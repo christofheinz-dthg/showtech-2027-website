@@ -2333,12 +2333,12 @@ p {
 
 .card-header-banner .card-tag {
     color: #ffffff !important;
-    font-size: 1.35rem; /* Larger font size as requested */
-    font-weight: 800;
-    text-transform: uppercase;
-    letter-spacing: 0.12em;
-    margin-bottom: 0;
-    font-family: var(--font-heading);
+    font-size: 1.35rem !important; /* Larger font size as requested */
+    font-weight: 800 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.12em !important;
+    margin-bottom: 0 !important;
+    font-family: var(--font-heading) !important;
 }
 
 .card-body-content {
@@ -2407,6 +2407,39 @@ p {
 
 .newsletter-info .card-tag {
     color: var(--color-accent);
+}
+
+.newsletter-audience-tabs {
+    margin-top: 1rem;
+    margin-bottom: 1.5rem;
+    display: flex;
+    gap: 0.75rem;
+}
+
+.news-tab-btn {
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    color: var(--color-text-secondary);
+    padding: 8px 20px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 0.85rem;
+    font-weight: 600;
+    transition: all 0.25s;
+}
+
+.news-tab-btn.news-tab-btn-visitor.active,
+.news-tab-btn.news-tab-btn-visitor:hover {
+    background: var(--color-accent) !important;
+    border-color: var(--color-accent) !important;
+    color: #fff !important;
+}
+
+.news-tab-btn.news-tab-btn-exhibitor.active,
+.news-tab-btn.news-tab-btn-exhibitor:hover {
+    background: var(--color-accent-blue) !important;
+    border-color: var(--color-accent-blue) !important;
+    color: #fff !important;
 }
 
 .newsletter-info h3 {
@@ -2698,19 +2731,24 @@ label.entry__error {
 }
 
 .booking-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 2.5rem;
+    display: block;
     max-width: 1200px;
     margin: 0 auto;
-    align-items: stretch;
 }
 
-.booking-info-card {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    height: 700px; /* same as Calendly widget */
+.booking-info-card.booking-full-card {
+    height: auto;
+}
+
+.booking-two-columns {
+    display: grid;
+    grid-template-columns: 1.1fr 1fr;
+    gap: 3rem;
+    align-items: start;
+}
+
+.booking-text-column {
+    max-width: 480px;
 }
 
 .booking-info-card h3 {
@@ -2733,7 +2771,7 @@ label.entry__error {
     border-left: 4px solid var(--color-accent-blue);
     padding: 1.25rem 1.5rem;
     border-radius: 8px;
-    margin-bottom: 2rem;
+    margin-bottom: 0;
 }
 
 .booking-card-note .booking-note-text {
@@ -2744,15 +2782,11 @@ label.entry__error {
     margin: 0 !important;
 }
 
-.booking-card-footer {
-    margin-top: auto;
-}
-
-.booking-widget-wrapper {
+.booking-widget-wrapper-inner {
     background-color: #ffffff; /* Calendly widget base is white */
-    border-radius: var(--radius-md, 16px);
+    border-radius: 12px;
     overflow: hidden;
-    height: 700px;
+    height: 680px;
     border: 1px solid rgba(0, 0, 0, 0.08);
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
 }
@@ -2764,12 +2798,9 @@ label.entry__error {
 
 /* Tablet & Mobile Layouts */
 @media (max-width: 992px) {
-    .booking-grid {
+    .booking-two-columns {
         grid-template-columns: 1fr;
-        gap: 2rem;
-    }
-    .booking-info-card {
-        height: auto; /* auto height on smaller screens to prevent truncation */
+        gap: 2.5rem;
     }
 }
 
@@ -2780,7 +2811,7 @@ label.entry__error {
     .booking-info-card .card-body-content {
         padding: 2rem 1.5rem;
     }
-    .booking-widget-wrapper {
+    .booking-widget-wrapper-inner {
         height: 600px; /* slightly shorter on mobile to fit the screen */
     }
 }
@@ -4467,7 +4498,45 @@ Let's make marker part of flow? No, absolute in item easiest.
     display: flex;
     justify-content: flex-start;
     align-items: center;
+    gap: 1.5rem;
     padding: 3rem 0 0;
+}
+
+.btn-become-exhibitor-footer {
+    display: inline-flex;
+    align-items: center;
+    padding: 1rem 2.25rem;
+    background: linear-gradient(135deg, var(--color-accent-blue) 0%, #039be5 100%);
+    color: #ffffff !important;
+    font-weight: 700;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    border-radius: var(--radius-pill);
+    text-decoration: none !important;
+    box-shadow: 0 4px 15px rgba(3, 155, 229, 0.3);
+    transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-become-exhibitor-footer::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0) 100%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.btn-become-exhibitor-footer:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(3, 155, 229, 0.5);
+    color: #ffffff !important;
+}
+
+.btn-become-exhibitor-footer:hover::after {
+    opacity: 1;
 }
 
 .btn-back-to-top {
@@ -4624,6 +4693,9 @@ Let's make marker part of flow? No, absolute in item easiest.
 @media (max-width: 768px) {
     .back-to-top-wrapper {
         justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
     }
     .faq-contact-info {
         flex-direction: column !important;

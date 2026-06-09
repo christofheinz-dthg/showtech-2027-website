@@ -185,7 +185,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // 5. FAQ Editorial Accordion & Switch (Updated for new markup)
-    const faqSwitchBtns = document.querySelectorAll('.tab-btn');
+    const faqSwitchBtns = document.querySelectorAll('.faq-audience-tabs-dark .tab-btn');
     const faqGroups = document.querySelectorAll('.faq-group');
 
     // Switch Logic (Visitor / Exhibitor)
@@ -551,7 +551,7 @@ document.addEventListener('DOMContentLoaded', () => {
             if (indicator) {
                 if (isHeaderScrolled) {
                     indicator.classList.add('visible');
-                    header.classList.add('has-active-section');
+                    if (header) header.classList.add('has-active-section');
                     if (activeSectionId) {
                         const navLink = document.querySelector(`.nav-overlay-inner a[href="#${activeSectionId}"]`);
                         if (navLink) {
@@ -569,13 +569,13 @@ document.addEventListener('DOMContentLoaded', () => {
                     }
                 } else {
                     indicator.classList.remove('visible');
-                    header.classList.remove('has-active-section');
+                    if (header) header.classList.remove('has-active-section');
                 }
             }
         } else {
             // Desktop behavior: only visible when activeSectionId is set (scrolled past hero)
             if (activeSectionId) {
-                header.classList.add('has-active-section');
+                if (header) header.classList.add('has-active-section');
                 if (indicator) {
                     indicator.classList.add('visible');
                     
@@ -588,7 +588,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     }
                 }
             } else {
-                header.classList.remove('has-active-section');
+                if (header) header.classList.remove('has-active-section');
                 if (indicator) {
                     indicator.classList.remove('visible');
                 }
@@ -763,4 +763,5 @@ document.addEventListener('DOMContentLoaded', () => {
     handleMobileTimelineActive();
     handleStickyHeaderIndicator();
     initMobileFactsCarousel();
+
 });

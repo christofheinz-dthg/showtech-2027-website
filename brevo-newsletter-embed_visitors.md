@@ -158,7 +158,7 @@
               <div class="form__label-row ">
 
 
-                <label class="entry__label" style="font-weight: 700; text-align: left; font-family:Helvetica, sans-serif; font-size:16px; font-weight:700; text-align:left; color:#3c4858;" for="NACHNAME" data-required="*">Gib dein(e) NACHNAME ein</label>
+                <label class="entry__label" style="font-weight: 700; text-align: left; font-family:Helvetica, sans-serif; font-size:16px; font-weight:700; text-align:left; color:#3c4858;" for="NACHNAME" data-required="*">Nachname</label>
 
 
 

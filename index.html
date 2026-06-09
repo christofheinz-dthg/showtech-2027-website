@@ -114,7 +114,10 @@
                     <!-- Meta Bar -->
                     <div class="hero-meta-bar">
                         <span class="meta-pill meta-date" data-i18n="hero_date_location">1.–3. Juni 2027 · Arena Berlin</span>
-                        <a href="showtech-2027.ics" download="showtech-2027.ics" class="meta-pill meta-btn" style="text-decoration: none;" data-i18n="hero_calendar_btn">✓ Zum Kalender</a>
+                        <a href="showtech-2027.ics" download="showtech-2027.ics" class="meta-pill meta-btn" style="text-decoration: none;">
+                            <img src="assets/icon_sets/other/ST27_icon_Addtocalendar.svg" alt="" style="width: 14px; height: 14px; filter: brightness(0) invert(1);">
+                            <span data-i18n="hero_calendar_btn">Zum Kalender</span>
+                        </a>
                     </div>
 
                     <h1 class="hero-title-en" data-i18n="hero_title">The world of theatre <span class="text-gradient">&amp; stage<br>technology</span></h1>
@@ -277,9 +280,7 @@
                         <!-- Tile 1: 6.500 m² (Pink) -->
                         <div class="fact-card fact-card-pink">
                             <div class="fact-icon-wrapper">
-                                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="fact-icon">
-                                    <path d="M5 3H3v18h2M19 3h2v18h-2M9 17v-6l3-2 3 2v6H9z"></path>
-                                </svg>
+                                <img src="assets/icon_sets/icons_factandfigures/ST27_icon_6500_exhibitionspace.svg" alt="Ausstellungsfläche Icon" class="fact-icon">
                             </div>
                             <div class="fact-number" data-i18n="facts_card_1_number">6.500 m²</div>
                             <div class="fact-text" data-i18n="facts_card_1_text">Ausstellungsfläche zum Erkunden!</div>
@@ -316,7 +317,7 @@
                             <div class="card-image-overlay"></div>
                             <div class="fact-card-inner">
                                 <div class="quote-icon-wrapper">
-                                    <img src="assets/icon_sets/icons_factandfigures/Quotes.svg" alt="Quote Icon" class="fact-quote-icon">
+                                    <img src="assets/icon_sets/icons_factandfigures/ST27_icon_Quotes.svg" alt="Quote Icon" class="fact-quote-icon">
                                 </div>
                                 <div class="fact-quote" data-i18n="facts_quote_1_text">„Der Standort war wunderschön, die Atmosphäre war durchweg freundlich, und das Publikum war hochkarätig und international – als Aussteller kann man sich nicht mehr wünschen.“</div>
                                 <div class="fact-author" data-i18n="facts_quote_1_author">Kai Uwe Patz, Bühnenbau Wertheim GmbH</div>
@@ -347,7 +348,7 @@
                             <div class="card-image-overlay"></div>
                             <div class="fact-card-inner">
                                 <div class="quote-icon-wrapper">
-                                    <img src="assets/icon_sets/icons_factandfigures/Quotes.svg" alt="Quote Icon" class="fact-quote-icon">
+                                    <img src="assets/icon_sets/icons_factandfigures/ST27_icon_Quotes.svg" alt="Quote Icon" class="fact-quote-icon">
                                 </div>
                                 <div class="fact-quote" data-i18n="facts_quote_2_text">„Es war großartig, mit vielen Standbesuchern in Kontakt zu treten. Vielen Dank für die tolle Stimmung vor, während und nach der Show in der Arena Berlin! Ein großes Lob an das SHOWTECH-Team für die reibungslose Organisation und an SAM Konzepte für einen wunderbaren Stand.“</div>
                                 <div class="fact-author" data-i18n="facts_quote_2_author">Monika Loreth, Shure Europe GmbH</div>
@@ -463,6 +464,10 @@
                         <div class="newsletter-grid">
                             <div class="newsletter-info">
                                 <span class="card-tag" data-i18n="moreinfo_card_3_tag">Newsletter</span>
+                                <div class="newsletter-audience-tabs">
+                                    <button type="button" class="news-tab-btn news-tab-btn-visitor active" id="newsletter-tab-visitor" data-i18n="faq_tab_visitor" onclick="switchNewsletterTab('visitor')">Besucher</button>
+                                    <button type="button" class="news-tab-btn news-tab-btn-exhibitor" id="newsletter-tab-exhibitor" data-i18n="faq_tab_exhibitor" onclick="switchNewsletterTab('exhibitor')">Aussteller</button>
+                                </div>
                                 <h3 data-i18n="moreinfo_card_3_title">Immer auf dem Laufenden bleiben</h3>
                                 <p data-i18n="moreinfo_card_3_text">Melden Sie sich für unseren Newsletter an, um rechtzeitig über Programm-Highlights, Ticket-Angebote und wichtige Termine informiert zu werden.</p>
                             </div>
@@ -508,6 +513,16 @@
                                                     <div class="sib-input sib-form-block">
                                                         <div class="form__entry entry_block">
                                                             <input class="input custom-input" type="text" id="NACHNAME" name="NACHNAME" autocomplete="off" placeholder="Nachname" data-required="true" required data-i18n="moreinfo_newsletter_placeholder_lname" />
+                                                            <label class="entry__error entry__error--primary"></label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <!-- Company field (only visible for exhibitors) -->
+                                                <div class="sib-form-row" id="newsletter-company-row" style="display: none; margin-bottom: 1rem;">
+                                                    <div class="sib-input sib-form-block">
+                                                        <div class="form__entry entry_block">
+                                                            <input class="input custom-input" type="text" id="name" name="COMPANY:name" autocomplete="off" placeholder="Firma" data-i18n="moreinfo_newsletter_placeholder_company" />
                                                             <label class="entry__error entry__error--primary"></label>
                                                         </div>
                                                     </div>
@@ -565,31 +580,31 @@
         <section id="booking" class="section-booking">
             <div class="container">
                 <div class="booking-grid">
-                    <!-- Left: Description Card (Styled like blue exhibitor card) -->
-                    <div class="moreinfo-card exhibitor-card booking-info-card">
+                    <div class="moreinfo-card exhibitor-card booking-info-card booking-full-card">
                         <div class="card-header-banner">
                             <span class="card-tag" data-i18n="booking_section_tag">Terminvereinbarung</span>
                         </div>
                         <div class="card-body-content">
-                            <div class="card-top">
-                                <h3 data-i18n="booking_section_title">Aussteller werden</h3>
-                                <p class="booking-intro-text" data-i18n="booking_intro_text">Buchen Sie hier Ihren persönlichen Online-Beratungstermin zur SHOWTECH 2027. In einem kurzen Gespräch (ca. 15 min.) informieren wir Sie über Standoptionen, mögliche Platzierungen und beantworten Ihre Fragen. Gerne können wir dabei auch über Ihre Wünsche und Ideen für 2027 sprechen.</p>
-                                <div class="booking-card-note">
-                                    <p class="booking-note-text" data-i18n="booking_note_text">Bitte geben Sie bei der Terminbuchung Ihren Firmennamen, den Ansprechpartner sowie eine ungefähr gewünschte Flächengröße an:</p>
+                            <div class="booking-two-columns">
+                                <!-- Left Column: Text description -->
+                                <div class="booking-text-column">
+                                    <h3 data-i18n="booking_section_title">Aussteller werden</h3>
+                                    <p class="booking-intro-text" data-i18n="booking_intro_text">Buchen Sie hier Ihren persönlichen Online-Beratungstermin zur SHOWTECH 2027. In einem kurzen Gespräch (ca. 15 min.) informieren wir Sie über Standoptionen, mögliche Platzierungen und beantworten Ihre Fragen. Gerne können wir dabei auch über Ihre Wünsche und Ideen für 2027 sprechen.</p>
+                                    <div class="booking-card-note">
+                                        <p class="booking-note-text" data-i18n="booking_note_text">Bitte geben Sie bei der Terminbuchung Ihren Firmennamen, den Ansprechpartner sowie eine ungefähr gewünschte Flächengröße an:</p>
+                                    </div>
+                                </div>
+                                <!-- Right Column: Calendly Widget -->
+                                <div class="booking-widget-column">
+                                    <div class="booking-widget-wrapper-inner">
+                                        <!-- Calendly Inline-Widget Beginn -->
+                                        <div class="calendly-inline-widget" data-url="https://calendly.com/showtech-info/showtech-2025-prebooking-clone?hide_event_type_details=1&amp;hide_gdpr_banner=1&amp;background_color=ffffff&amp;text_color=0d1b2e&amp;primary_color=e53935" style="min-width:320px; height:660px;"></div>
+                                        <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
+                                        <!-- Calendly Inline-Widget Ende -->
+                                    </div>
                                 </div>
                             </div>
-                            <div class="booking-card-footer">
-                                <a href="mailto:info@showtech.dthg.de?subject=SHOWTECH%202027%20-%20Requesting%20information%20about%20stand%20reservations" class="btn btn-secondary" data-i18n="booking_alternative_cta">Oder hier per E-Mail</a>
-                            </div>
                         </div>
-                    </div>
-
-                    <!-- Right: Calendly Widget -->
-                    <div class="booking-widget-wrapper">
-                        <!-- Calendly Inline-Widget Beginn -->
-                        <div class="calendly-inline-widget" data-url="https://calendly.com/showtech-info/showtech-2025-prebooking-clone?hide_event_type_details=1&amp;hide_gdpr_banner=1&amp;background_color=ffffff&amp;text_color=0d1b2e&amp;primary_color=e53935" style="min-width:320px; height:700px;"></div>
-                        <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
-                        <!-- Calendly Inline-Widget Ende -->
                     </div>
                 </div>
             </div>
@@ -966,9 +981,9 @@
                             </svg>
                         </div>
                         <div class="timeline-new-content">
-                            <span class="timeline-new-date" data-i18n="timeline_step_1_date">Oktober 2025</span>
-                            <h4 data-i18n="timeline_step_1_title">Call for Proposals</h4>
-                            <p data-i18n="timeline_step_1_text">Reichen Sie Ihre Vorschläge für Workshops und Vorträge ein</p>
+                            <span class="timeline-new-date" data-i18n="timeline_step_1_date">Oktober 2026</span>
+                            <h4 data-i18n="timeline_step_1_title">Call for Speakers & Contributions</h4>
+                            <p data-i18n="timeline_step_1_text">Einreichung von Vorträgen, Panels und Praxisbeiträgen möglich</p>
                         </div>
                     </div>
 
@@ -984,9 +999,9 @@
                             </svg>
                         </div>
                         <div class="timeline-new-content">
-                            <span class="timeline-new-date" data-i18n="timeline_step_2_date">Januar 2026</span>
-                            <h4 data-i18n="timeline_step_2_title">Speaker Lineup</h4>
-                            <p data-i18n="timeline_step_2_text">Die ersten Referenten werden bekannt gegeben</p>
+                            <span class="timeline-new-date" data-i18n="timeline_step_2_date">Dezember 2026</span>
+                            <h4 data-i18n="timeline_step_2_title">Award Nominierung</h4>
+                            <p data-i18n="timeline_step_2_text">Nominieren Sie Innovationen für den SHOWTECH Award</p>
                         </div>
                     </div>
 
@@ -1000,9 +1015,9 @@
                             </svg>
                         </div>
                         <div class="timeline-new-content">
-                            <span class="timeline-new-date" data-i18n="timeline_step_3_date">März 2026</span>
-                            <h4 data-i18n="timeline_step_3_title">Award Nominations</h4>
-                            <p data-i18n="timeline_step_3_text">Nominieren Sie Innovationen für den SHOWTECH Product Award</p>
+                            <span class="timeline-new-date" data-i18n="timeline_step_3_date">Januar 2027</span>
+                            <h4 data-i18n="timeline_step_3_title">Early Bird Ticket Sales Start</h4>
+                            <p data-i18n="timeline_step_3_text">Vergünstigte Besuchertickets verfügbar</p>
                         </div>
                     </div>
 
@@ -1018,9 +1033,9 @@
                             </svg>
                         </div>
                         <div class="timeline-new-content">
-                            <span class="timeline-new-date" data-i18n="timeline_step_4_date">Januar 2027</span>
+                            <span class="timeline-new-date" data-i18n="timeline_step_4_date">Februar 2027</span>
                             <h4 data-i18n="timeline_step_4_title">Programm Veröffentlichung</h4>
-                            <p data-i18n="timeline_step_4_text">Kompletter Terminplan mit allen Vorträgen und Ausstellern</p>
+                            <p data-i18n="timeline_step_4_text">Bekanntgebung Programmpunkte und Aussteller</p>
                         </div>
                     </div>
 
@@ -1241,12 +1256,12 @@
                     </div> <!-- closes faq-content-area-dark -->
                 </div> <!-- closes faq-grid-layout -->
                 
-                <!-- Back to Top Button -->
                 <div class="back-to-top-wrapper">
                     <a href="#hero" class="btn-back-to-top">
                         <span class="arrow-up">&uarr;</span>
                         <span class="btn-text" data-i18n="faq_back_to_top">Zum Anfang</span>
                     </a>
+                    <a href="#booking" class="btn-become-exhibitor-footer" data-i18n="faq_become_exhibitor">Aussteller werden</a>
                 </div>
             </div> <!-- closes container -->
         </section> <!-- closes section-faq-redesign -->
@@ -1331,6 +1346,41 @@
         }
       };
       var AUTOHIDE = Boolean(0);
+    </script>
+    <script>
+      function switchNewsletterTab(type) {
+        var visitorBtn = document.getElementById('newsletter-tab-visitor');
+        var exhibitorBtn = document.getElementById('newsletter-tab-exhibitor');
+        var companyRow = document.getElementById('newsletter-company-row');
+        var companyInput = document.getElementById('name');
+        var form = document.getElementById('sib-form');
+        
+        if (type === 'visitor') {
+          if (visitorBtn) visitorBtn.classList.add('active');
+          if (exhibitorBtn) exhibitorBtn.classList.remove('active');
+          if (companyRow) companyRow.style.display = 'none';
+          if (companyInput) {
+            companyInput.removeAttribute('required');
+            companyInput.removeAttribute('data-required');
+            companyInput.value = '';
+          }
+          if (form) {
+            form.setAttribute('action', 'https://421e8861.sibforms.com/serve/MUIFAI7Ta4MS6vOVEa615Sb_hI1kD63WUC0pa_cAE3muYuuMu-XvCQNhZx2PWwhl2a5Z34OlXvsrQZlpGqPxgQK9jP8xbrf9qhkYoZ33Z363y8HeEqdnBjCSdELhJyJqJSTf0qeX7oTwf2GYkaShPTUIY1E6bNx7nkh2VjdYunDKKRAIiPCoejdjlxfUrBZZDbFVdqgEiHWB3sv8');
+          }
+        } else if (type === 'exhibitor') {
+          if (exhibitorBtn) exhibitorBtn.classList.add('active');
+          if (visitorBtn) visitorBtn.classList.remove('active');
+          if (companyRow) companyRow.style.display = 'block';
+          if (companyInput) {
+            companyInput.setAttribute('required', 'true');
+            companyInput.setAttribute('data-required', 'true');
+          }
+          if (form) {
+            form.setAttribute('action', 'https://421e8861.sibforms.com/v2/serve/MUIFADUlU5b4Jyw02gTqbDjhrujtvWBidMZZcE6FHrueHvzntD_zrLfq9z87Li147qWuyrzEbFXlcpkSx1rf22wJKuOaMBVcMfljxEL0p30GyJ09YePVbb5w5WlEHv_1MEmP6omsqtZuFEHSYPiuwvq_ppFkxwnESoyvXcJ1bMLqhwfV2olqiYuALXA78cIxW3uZg9SgYTUsl3cd');
+          }
+        }
+      }
+      window.switchNewsletterTab = switchNewsletterTab;
     </script>
     <script defer src="https://sibforms.com/forms/end-form/build/main.js"></script>
 
