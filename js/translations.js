@@ -207,6 +207,7 @@ const translations = {
         footer_col_3_link_1: "Fragen &amp; Antworten",
         footer_col_3_link_2: "Impressum",
         footer_col_3_link_3: "Datenschutz",
+        footer_col_3_link_4: "Aussteller-Downloads",
         footer_copyright: "&copy; 2027 SHOWTECH. Alle Rechte vorbehalten."
     },
     en: {
@@ -417,6 +418,7 @@ const translations = {
         footer_col_3_link_1: "FAQ",
         footer_col_3_link_2: "Imprint",
         footer_col_3_link_3: "Privacy Policy",
+        footer_col_3_link_4: "Exhibitor Downloads",
         footer_copyright: "&copy; 2027 SHOWTECH. All rights reserved."
     }
 };

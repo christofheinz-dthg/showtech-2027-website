@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aussteller-Downloads - SHOWTECH 2027</title>
+    <meta name="description" content="SHOWTECH 2027 - Downloadbereich für Aussteller. Hallenplan, AGB, Teilnahmebedingungen und technische Richtlinien.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+    <style>
+        /* Responsive design for grid layouts */
+        @media (max-width: 992px) {
+            .content-grid-layout {
+                grid-template-columns: 1fr !important;
+                gap: 2rem !important;
+            }
+            .downloads-columns-grid {
+                grid-template-columns: 1fr !important;
+                gap: 2rem !important;
+            }
+        }
+
+        /* Language-based display toggling */
+        body[data-current-lang="de"] .lang-en-content {
+            display: none !important;
+        }
+        body[data-current-lang="en"] .lang-de-content {
+            display: none !important;
+        }
+
+        /* Subgrid for German and English lists */
+        .downloads-columns-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2.5rem;
+            margin-bottom: 3rem;
+        }
+
+        .lang-column-header {
+            font-family: var(--font-heading);
+            font-size: 1.5rem;
+            color: #fff;
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.75rem;
+            border-bottom: 2px solid rgba(255, 255, 255, 0.05);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .lang-column-header.de {
+            border-bottom-color: var(--color-accent-blue);
+        }
+
+        .lang-column-header.en {
+            border-bottom-color: var(--color-accent-pink);
+        }
+
+        /* Modern download card styling */
+        .download-card-custom {
+            display: flex;
+            align-items: center;
+            gap: 1.25rem;
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 12px;
+            padding: 1.25rem;
+            text-decoration: none;
+            color: #fff;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            margin-bottom: 1rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .download-card-custom::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(41, 182, 246, 0.05) 0%, rgba(236, 64, 122, 0.05) 100%);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .download-card-custom:hover {
+            transform: translateY(-4px);
+            border-color: rgba(255, 255, 255, 0.15);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+        }
+
+        .download-card-custom.de:hover {
+            border-color: rgba(41, 182, 246, 0.4);
+            box-shadow: 0 8px 24px rgba(41, 182, 246, 0.15);
+        }
+
+        .download-card-custom.en:hover {
+            border-color: rgba(236, 64, 122, 0.4);
+            box-shadow: 0 8px 24px rgba(236, 64, 122, 0.15);
+        }
+
+        .download-card-custom:hover::before {
+            opacity: 1;
+        }
+
+        /* Card Icon */
+        .download-card-icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 48px;
+            height: 48px;
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 8px;
+            color: var(--color-accent-blue);
+            transition: all 0.3s ease;
+            position: relative;
+            z-index: 1;
+        }
+
+        .download-card-custom.en .download-card-icon {
+            color: var(--color-accent-pink);
+        }
+
+        .download-card-custom:hover .download-card-icon {
+            background: #fff;
+            color: #0d121f;
+            transform: scale(1.05);
+        }
+
+        /* Card Content Text */
+        .download-card-text {
+            flex-grow: 1;
+            position: relative;
+            z-index: 1;
+        }
+
+        .download-card-title {
+            font-size: 1.05rem;
+            font-weight: 600;
+            margin-bottom: 0.25rem;
+            color: #fff;
+            line-height: 1.3;
+        }
+
+        .download-card-meta {
+            font-size: 0.85rem;
+            color: var(--color-text-secondary);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .download-card-meta .format-pill {
+            background: rgba(255, 255, 255, 0.08);
+            padding: 0.1rem 0.4rem;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            color: #fff;
+            letter-spacing: 0.05em;
+        }
+
+        /* Right Arrow on hover */
+        .download-card-arrow {
+            font-size: 1.25rem;
+            color: rgba(255, 255, 255, 0.2);
+            transition: all 0.3s ease;
+            position: relative;
+            z-index: 1;
+        }
+
+        .download-card-custom:hover .download-card-arrow {
+            color: #fff;
+            transform: translateX(3px);
+        }
+    </style>
+    <script>
+        // Language synchronization logic
+        document.addEventListener('DOMContentLoaded', () => {
+            function updateLang(lang) {
+                document.body.setAttribute('data-current-lang', lang);
+                // Also update page metadata/title for EN/DE
+                if (lang === 'en') {
+                    document.title = "Exhibitor Downloads - SHOWTECH 2027";
+                } else {
+                    document.title = "Aussteller-Downloads - SHOWTECH 2027";
+                }
+            }
+
+            // Init from localStorage
+            const savedLang = localStorage.getItem('showtech_lang') || 'de';
+            updateLang(savedLang);
+
+            // React to clicks on header dropdown
+            const dropdownItems = document.querySelectorAll('.lang-dropdown-item');
+            dropdownItems.forEach(item => {
+                item.addEventListener('click', () => {
+                    const lang = item.getAttribute('data-lang');
+                    updateLang(lang);
+                });
+            });
+        });
+    </script>
+</head>
+
+<body>
+
+    <!-- Sticky Header -->
+    <header class="site-header scrolled" id="site-header">
+        <div class="container header-inner">
+            <div class="logo">
+                <a href="index.html#hero" class="logo-link">
+                    <!-- Standard Logo -->
+                    <img src="assets/SHOWTECH27_logo.png" alt="SHOWTECH 2027 Logo" class="logo-img logo-default" data-i18n="nav_logo_alt">
+                    <!-- Sticky Logo -->
+                    <img src="assets/ST27-sticky-logo.png" alt="SHOWTECH 2027 Sticky Logo" class="logo-img logo-sticky" data-i18n="nav_sticky_logo_alt">
+                </a>
+            </div>
+
+            <!-- Desktop Header Middle Navigation Pills -->
+            <div class="header-middle-pills">
+                <a href="index.html#factsandfigures" class="header-pill" data-i18n="nav_pill_trade_fair">Trade Fair</a>
+                <a href="index.html#factsandfigures" class="header-pill" data-i18n="nav_pill_congress">Congress</a>
+                <a href="index.html#factsandfigures" class="header-pill" data-i18n="nav_pill_network">Network</a>
+            </div>
+
+            <!-- Active Section Indicator -->
+            <div class="header-section-indicator" id="headerSectionIndicator">
+                <span class="indicator-text"></span>
+            </div>
+
+            <div class="header-actions">
+                <div class="lang-switcher-dropdown" id="langSwitcherDropdown">
+                    <button class="lang-switcher-btn" id="langSwitcherBtn" aria-haspopup="true" aria-expanded="false">
+                        <span class="current-lang">EN</span>
+                        <span class="lang-arrow">▼</span>
+                    </button>
+                    <ul class="lang-dropdown-menu" id="langDropdownMenu" aria-label="Language selection">
+                        <li><button class="lang-dropdown-item active" data-lang="en" data-i18n="nav_lang_en">EN</button></li>
+                        <li><button class="lang-dropdown-item" data-lang="de" data-i18n="nav_lang_de">DE</button></li>
+                    </ul>
+                </div>
+                <a href="index.html#exhibitor2027" class="btn btn-secondary btn-sm" data-i18n="nav_btn_exhibitor">Aussteller</a>
+                <button class="mobile-menu-toggle" id="menuToggle" aria-label="Toggle Menu" aria-expanded="false" data-i18n="nav_toggle_label">
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Full-screen Nav Overlay -->
+    <div class="nav-overlay" id="navOverlay" aria-hidden="true">
+        <nav class="nav-overlay-inner">
+            <ul class="nav-overlay-links">
+                <li><a href="index.html#hero" class="nav-overlay-link" data-i18n="nav_link_start">Start</a></li>
+                <li><a href="index.html#factsandfigures" class="nav-overlay-link" data-i18n="nav_link_facts">Facts and Figures</a></li>
+                <li><a href="index.html#exhibitor2027" class="nav-overlay-link" data-i18n="nav_link_exhibitors">Aussteller 2027</a></li>
+                <li><a href="index.html#moreinfo" class="nav-overlay-link" data-i18n="nav_link_about">Über das Event</a></li>
+                <li><a href="index.html#booking" class="nav-overlay-link" data-i18n="nav_link_become_exhibitor">Aussteller werden</a></li>
+                <li><a href="index.html#stages" class="nav-overlay-link" data-i18n="nav_link_stages">Bühnen &amp; Formate</a></li>
+                <li><a href="index.html#venue" class="nav-overlay-link" data-i18n="nav_link_location">Location</a></li>
+                <li><a href="index.html#timeline" class="nav-overlay-link" data-i18n="nav_link_road">Roadmap 2027</a></li>
+                <li><a href="index.html#faq" class="nav-overlay-link" data-i18n="nav_link_faq">FAQ</a></li>
+            </ul>
+            <div class="nav-overlay-contact">
+                <a href="tel:+4922167058464" class="contact-pill">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path
+                            d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.41 2 2 0 0 1 3.6 1.22h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.78a16 16 0 0 0 6.29 6.29l.96-.96a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z" />
+                    </svg>
+                    <span data-i18n="nav_contact_phone">+49 221 67058 464</span>
+                </a>
+
+                <a href="mailto:info@showtech.dthg.de" class="contact-pill">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path
+                            d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                        <polyline points="22,6 12,13 2,6" />
+                    </svg>
+                    <span data-i18n="nav_contact_email">info@showtech.dthg.de</span>
+                </a>
+            </div>
+        </nav>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <main>
+
+        <!-- Page Header -->
+        <section class="page-header">
+            <div class="container">
+                <!-- German Title Header -->
+                <div class="page-header-content lang-de-content">
+                    <span class="meta-pill">Aussteller-Service</span>
+                    <h1 class="page-title">Downloads</h1>
+                    <p class="page-subtitle">Hier finden Sie alle relevanten Dokumente und Pläne für Ihre Messeteilnahme an der SHOWTECH 2027.</p>
+                </div>
+                <!-- English Title Header -->
+                <div class="page-header-content lang-en-content">
+                    <span class="meta-pill">Exhibitor Service</span>
+                    <h1 class="page-title">Downloads</h1>
+                    <p class="page-subtitle">Here you can find all the relevant documents and plans for your participation at the SHOWTECH 2027.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Page Content Section -->
+        <section class="page-content section-padding">
+            <div class="container">
+                
+                <!-- Dual Column Layout for German / English Downloads -->
+                <div class="downloads-columns-grid">
+                    
+                    <!-- German Column -->
+                    <div>
+                        <!-- German Column Header -->
+                        <h2 class="lang-column-header de lang-de-content">
+                            <span style="font-size: 1.25rem;">🇩🇪</span> Dokumente in deutscher Sprache
+                        </h2>
+                        <!-- English Column Header for German Column -->
+                        <h2 class="lang-column-header de lang-en-content">
+                            <span style="font-size: 1.25rem;">🇩🇪</span> German Documents
+                        </h2>
+                        
+                        <a href="https://showtech.me/wp-content/uploads/2025/09/Showtech-2027_exhibitor-information-kit.pdf" target="_blank" rel="noopener noreferrer" class="download-card-custom de">
+                            <div class="download-card-icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="12" y1="18" x2="12" y2="12"/><polyline points="9 15 12 18 15 15"/></svg>
+                            </div>
+                            <div class="download-card-text">
+                                <div class="download-card-title">Exhibitor Info Kit</div>
+                                <div class="download-card-meta">
+                                    <span class="format-pill">PDF</span> 
+                                    <span class="lang-de-content">Wichtige Ausstellerinformationen</span>
+                                    <span class="lang-en-content">Important exhibitor info</span>
+                                </div>
+                            </div>
+                            <div class="download-card-arrow">↓</div>
+                        </a>
+
+                        <a href="https://showtech.me/wp-content/uploads/2025/09/SHOWTECH27_floorplan_web_Nov25.pdf" target="_blank" rel="noopener noreferrer" class="download-card-custom de">
+                            <div class="download-card-icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="3 6 9 3 15 6 21 3 21 18 15 21 9 18 3 21"/><line x1="9" y1="3" x2="9" y2="18"/><line x1="15" y1="6" x2="15" y2="21"/></svg>
+                            </div>
+                            <div class="download-card-text">
+                                <div class="download-card-title">Hallenplan SHOWTECH27</div>
+                                <div class="download-card-meta">
+                                    <span class="format-pill">PDF</span> 
+                                    <span class="lang-de-content">Standplatzierung &amp; Layout</span>
+                                    <span class="lang-en-content">Stand layout &amp; placement</span>
+                                </div>
+                            </div>
+                            <div class="download-card-arrow">↓</div>
+                        </a>
+
+                        <a href="https://showtech.me/wp-content/uploads/2025/09/DTHG_SHOWTECH2027_DE_Teilnahmebedingungen.pdf" target="_blank" rel="noopener noreferrer" class="download-card-custom de">
+                            <div class="download-card-icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="12" y1="18" x2="12" y2="12"/><polyline points="9 15 12 18 15 15"/></svg>
+                            </div>
+                            <div class="download-card-text">
+                                <div class="download-card-title">Teilnahmebedingungen</div>
+                                <div class="download-card-meta">
+                                    <span class="format-pill">PDF</span> 
+                                    <span class="lang-de-content">Konditionen für Aussteller</span>
+                                    <span class="lang-en-content">Conditions of participation</span>
+                                </div>
+                            </div>
+                            <div class="download-card-arrow">↓</div>
+                        </a>
+
+                        <a href="https://showtech.me/wp-content/uploads/2024/10/Technische_Richtlinien_240125.pdf" target="_blank" rel="noopener noreferrer" class="download-card-custom de">
+                            <div class="download-card-icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><line x1="9" y1="3" x2="9" y2="21"/><line x1="15" y1="3" x2="15" y2="21"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="3" y1="15" x2="21" y2="15"/></svg>
+                            </div>
+                            <div class="download-card-text">
+                                <div class="download-card-title">Technische Richtlinien</div>
+                                <div class="download-card-meta">
+                                    <span class="format-pill">PDF</span> 
+                                    <span class="lang-de-content">ARENA Berlin Vorschriften</span>
+                                    <span class="lang-en-content">ARENA Berlin regulations</span>
+                                </div>
+                            </div>
+                            <div class="download-card-arrow">↓</div>
+                        </a>
+
+                        <a href="https://showtech.me/wp-content/uploads/2025/09/DTHG_SHOWTECH2027_DE_AGB.pdf" target="_blank" rel="noopener noreferrer" class="download-card-custom de">
+                            <div class="download-card-icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+                            </div>
+                            <div class="download-card-text">
+                                <div class="download-card-title">Allgemeine Geschäftsbedingungen</div>
+                                <div class="download-card-meta">
+                                    <span class="format-pill">PDF</span> 
+                                    <span class="lang-de-content">AGB DTHG Service GmbH</span>
+                                    <span class="lang-en-content">GTC DTHG Service GmbH</span>
+                                </div>
+                            </div>
+                            <div class="download-card-arrow">↓</div>
+                        </a>
+                    </div>
+
+                    <!-- English Column -->
+                    <div>
+                        <!-- German Column Header -->
+                        <h2 class="lang-column-header en lang-de-content">
+                            <span style="font-size: 1.25rem;">🇬🇧</span> Dokumente in englischer Sprache
+                        </h2>
+                        <!-- English Column Header for English Column -->
+                        <h2 class="lang-column-header en lang-en-content">
+                            <span style="font-size: 1.25rem;">🇬🇧</span> Documents in English
+                        </h2>
+                        
+                        <a href="https://showtech.me/wp-content/uploads/2025/09/Showtech-2027_exhibitor-information-kit.pdf" target="_blank" rel="noopener noreferrer" class="download-card-custom en">
+                            <div class="download-card-icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="12" y1="18" x2="12" y2="12"/><polyline points="9 15 12 18 15 15"/></svg>
+                            </div>
+                            <div class="download-card-text">
+                                <div class="download-card-title">Exhibitor Info Kit</div>
+                                <div class="download-card-meta">
+                                    <span class="format-pill">PDF</span> 
+                                    <span class="lang-de-content">Wichtige Ausstellerinformationen</span>
+                                    <span class="lang-en-content">Important exhibitor info</span>
+                                </div>
+                            </div>
+                            <div class="download-card-arrow">↓</div>
+                        </a>
+
+                        <a href="https://showtech.me/wp-content/uploads/2025/09/SHOWTECH27_floorplan_web_Nov25.pdf" target="_blank" rel="noopener noreferrer" class="download-card-custom en">
+                            <div class="download-card-icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="3 6 9 3 15 6 21 3 21 18 15 21 9 18 3 21"/><line x1="9" y1="3" x2="9" y2="18"/><line x1="15" y1="6" x2="15" y2="21"/></svg>
+                            </div>
+                            <div class="download-card-text">
+                                <div class="download-card-title">Floorplan SHOWTECH27</div>
+                                <div class="download-card-meta">
+                                    <span class="format-pill">PDF</span> 
+                                    <span class="lang-de-content">Standplatzierung &amp; Layout</span>
+                                    <span class="lang-en-content">Stand layout &amp; placement</span>
+                                </div>
+                            </div>
+                            <div class="download-card-arrow">↓</div>
+                        </a>
+
+                        <a href="https://showtech.me/wp-content/uploads/2025/09/DTHG_SHOWTECH2027_EN_Terms-of-participation.pdf" target="_blank" rel="noopener noreferrer" class="download-card-custom en">
+                            <div class="download-card-icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="12" y1="18" x2="12" y2="12"/><polyline points="9 15 12 18 15 15"/></svg>
+                            </div>
+                            <div class="download-card-text">
+                                <div class="download-card-title">Conditions of Participation</div>
+                                <div class="download-card-meta">
+                                    <span class="format-pill">PDF</span> 
+                                    <span class="lang-de-content">Konditionen für Aussteller</span>
+                                    <span class="lang-en-content">Exhibitor participation terms</span>
+                                </div>
+                            </div>
+                            <div class="download-card-arrow">↓</div>
+                        </a>
+
+                        <a href="https://showtech.me/wp-content/uploads/2024/10/Technical_Guidelines_240125.pdf" target="_blank" rel="noopener noreferrer" class="download-card-custom en">
+                            <div class="download-card-icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><line x1="9" y1="3" x2="9" y2="21"/><line x1="15" y1="3" x2="15" y2="21"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="3" y1="15" x2="21" y2="15"/></svg>
+                            </div>
+                            <div class="download-card-text">
+                                <div class="download-card-title">Technical Guidelines</div>
+                                <div class="download-card-meta">
+                                    <span class="format-pill">PDF</span> 
+                                    <span class="lang-de-content">ARENA Berlin Vorschriften</span>
+                                    <span class="lang-en-content">ARENA Berlin requirements</span>
+                                </div>
+                            </div>
+                            <div class="download-card-arrow">↓</div>
+                        </a>
+
+                        <a href="https://showtech.me/wp-content/uploads/2025/09/DTHG_SHOWTECH2027_EN_General-terms-and-conditions.pdf" target="_blank" rel="noopener noreferrer" class="download-card-custom en">
+                            <div class="download-card-icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+                            </div>
+                            <div class="download-card-text">
+                                <div class="download-card-title">General Terms and Conditions</div>
+                                <div class="download-card-meta">
+                                    <span class="format-pill">PDF</span> 
+                                    <span class="lang-de-content">AGB DTHG Service GmbH</span>
+                                    <span class="lang-en-content">GTC DTHG Service GmbH</span>
+                                </div>
+                            </div>
+                            <div class="download-card-arrow">↓</div>
+                        </a>
+                    </div>
+
+                </div>
+
+                <!-- Bottom grid layout for extra info and support -->
+                <div class="content-grid-layout">
+                    <div class="content-main">
+                        <div class="info-box lang-de-content">
+                            <h4>Wichtiger Hinweis für Aussteller</h4>
+                            <p>Bitte beachten Sie die Fristen für die Einreichung von Standbauplänen und technischen Bestellungen. Die Genehmigung von Sonderbauten muss bis spätestens 6 Wochen vor Veranstaltungsbeginn bei der technischen Leitung eingereicht werden.</p>
+                        </div>
+                        <div class="info-box lang-en-content">
+                            <h4>Important Notice for Exhibitors</h4>
+                            <p>Please note the deadlines for submitting stand construction plans and technical orders. Approval for custom stand builds must be submitted to the technical management at least 6 weeks before the event starts.</p>
+                        </div>
+                    </div>
+                    
+                    <aside class="content-sidebar" style="margin-top: 2rem;">
+                        <div class="sidebar-widget contact-widget lang-de-content">
+                            <h3>Fragen zum Standbau?</h3>
+                            <p>Unser technisches Messeteam unterstützt Sie gerne bei allen Fragen rund um Standbau, Stromanschlüsse und Richtlinien.</p>
+                            <a href="mailto:info@showtech.dthg.de" class="link-arrow">info@showtech.dthg.de</a>
+                        </div>
+                        <div class="sidebar-widget contact-widget lang-en-content">
+                            <h3>Questions about stand construction?</h3>
+                            <p>Our technical exhibition team will be happy to help you with any questions you may have about stand construction, power connections and guidelines.</p>
+                            <a href="mailto:info@showtech.dthg.de" class="link-arrow">info@showtech.dthg.de</a>
+                        </div>
+                    </aside>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <a href="index.html#hero" class="footer-logo-link">
+                        <img src="assets/SHOWTECH27_logo.png" alt="SHOWTECH 2027 Logo" class="footer-logo-img">
+                    </a>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-col">
+                        <h4 data-i18n="footer_col_1_title">Event</h4>
+                        <ul>
+                            <li><a href="index.html#moreinfo" data-i18n="footer_col_1_link_1">Über das Event</a></li>
+                            <li><a href="index.html#factsandfigures" data-i18n="footer_col_1_link_2">Facts &amp; Figures</a></li>
+                            <li><a href="index.html#stages" data-i18n="footer_col_1_link_3">Bühnen &amp; Formate</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-col">
+                        <h4 data-i18n="footer_col_2_title">Teilnahme</h4>
+                        <ul>
+                            <li><a href="index.html#booking" data-i18n="footer_col_2_link_1">Aussteller werden</a></li>
+                            <li><a href="index.html#exhibitor2027" data-i18n="footer_col_2_link_2">Unsere Aussteller</a></li>
+                            <li><a href="index.html#timeline" data-i18n="footer_col_2_link_3">Road to SHOWTECH</a></li>
+                            <li><a href="index.html#venue" data-i18n="footer_col_2_link_4">Location</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-col">
+                        <h4 data-i18n="footer_col_3_title">Info</h4>
+                        <ul>
+                            <li><a href="index.html#faq" data-i18n="footer_col_3_link_1">Fragen &amp; Antworten</a></li>
+                            <li><a href="impressum.html">Impressum</a></li>
+                            <li><a href="datenschutz.html">Datenschutz</a></li>
+                            <li><a href="exhibitor-downloads.html">Aussteller-Downloads</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p data-i18n="footer_copyright">&copy; 2027 SHOWTECH. Alle Rechte vorbehalten.</p>
+                <div class="social-links">
+                    <a href="https://www.facebook.com/dthgev/" aria-label="Facebook" title="Facebook" target="_blank" rel="noopener noreferrer">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+                    </a>
+                    <a href="https://www.youtube.com/channel/UCl7KAGuAkLdZKngBbwQpfDA" aria-label="YouTube" title="YouTube" target="_blank" rel="noopener noreferrer">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"/>
+                            <polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"/>
+                        </svg>
+                    </a>
+                    <a href="https://de.linkedin.com/showcase/showtech-berlin/" aria-label="LinkedIn" title="LinkedIn" target="_blank" rel="noopener noreferrer">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+                    </a>
+                    <a href="https://www.instagram.com/showtech_berlin" aria-label="Instagram" title="Instagram" target="_blank" rel="noopener noreferrer">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js" type="module"></script>
+</body>
+
+</html>

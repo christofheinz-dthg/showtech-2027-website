@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Datenschutzerklärung - SHOWTECH 2027</title>
+    <meta name="description" content="SHOWTECH 2027 - Datenschutzerklärung / Privacy Policy der DTHG Service GmbH. Informationen zur Datenverarbeitung.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+    <style>
+        /* Responsive layout updates */
+        @media (max-width: 992px) {
+            .content-grid-layout {
+                grid-template-columns: 1fr !important;
+                gap: 2rem !important;
+            }
+            .sidebar-sticky-toc {
+                position: static !important;
+            }
+        }
+
+        /* Language-based display toggling */
+        body[data-current-lang="de"] .lang-en-content {
+            display: none !important;
+        }
+        body[data-current-lang="en"] .lang-de-content {
+            display: none !important;
+        }
+
+        /* Sticky sidebar navigation */
+        .sidebar-sticky-toc {
+            position: sticky;
+            top: 120px;
+            max-height: calc(100vh - 160px);
+            overflow-y: auto;
+            scrollbar-width: thin;
+            scrollbar-color: rgba(255,255,255,0.1) transparent;
+        }
+
+        .sidebar-sticky-toc::-webkit-scrollbar {
+            width: 4px;
+        }
+        .sidebar-sticky-toc::-webkit-scrollbar-thumb {
+            background-color: rgba(255,255,255,0.1);
+            border-radius: 4px;
+        }
+
+        /* TOC links styling */
+        .toc-list {
+            list-style: none !important;
+            padding-left: 0 !important;
+            margin: 0;
+        }
+
+        .toc-item {
+            margin-bottom: 0.5rem !important;
+        }
+
+        .toc-link {
+            display: block;
+            padding: 0.5rem 0.75rem;
+            color: var(--color-text-secondary);
+            text-decoration: none;
+            border-left: 2px solid rgba(255, 255, 255, 0.05);
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: all 0.2s ease;
+        }
+
+        .toc-link:hover {
+            color: var(--color-accent-blue);
+            border-left-color: var(--color-accent-blue);
+            background: rgba(255, 255, 255, 0.01);
+            padding-left: 1rem;
+        }
+
+        .toc-link.lang-divider {
+            border-left: 2px solid rgba(236, 64, 122, 0.3);
+            font-weight: 600;
+        }
+        .toc-link.lang-divider:hover {
+            color: var(--color-accent-pink);
+            border-left-color: var(--color-accent-pink);
+        }
+
+        /* Content section style overrides */
+        .content-main h2 {
+            font-size: 1.75rem;
+            color: #fff;
+            margin-top: 2.5rem;
+            margin-bottom: 1.25rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            padding-bottom: 0.5rem;
+        }
+
+        .content-main h3 {
+            font-size: 1.25rem;
+            color: #fff;
+            margin-top: 1.75rem;
+            margin-bottom: 1rem;
+        }
+
+        .content-main p {
+            line-height: 1.7;
+            margin-bottom: 1.25rem;
+        }
+
+        .content-main ul {
+            padding-left: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .content-main li {
+            margin-bottom: 0.5rem;
+            line-height: 1.6;
+        }
+
+        .content-main hr {
+            border: 0;
+            height: 1px;
+            background: linear-gradient(to right, rgba(255,255,255,0), rgba(255,255,255,0.1), rgba(255,255,255,0));
+            margin: 3rem 0;
+        }
+
+        /* Accent text container */
+        .ds-intro-box {
+            background: rgba(255, 255, 255, 0.01);
+            border: 1px dashed rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .ds-intro-box p {
+            margin-bottom: 0;
+            font-style: italic;
+        }
+    </style>
+    <script>
+        // Language synchronization logic
+        document.addEventListener('DOMContentLoaded', () => {
+            function updateLang(lang) {
+                document.body.setAttribute('data-current-lang', lang);
+                if (lang === 'en') {
+                    document.title = "Privacy Policy - SHOWTECH 2027";
+                } else {
+                    document.title = "Datenschutzerklärung - SHOWTECH 2027";
+                }
+            }
+
+            // Init from localStorage
+            const savedLang = localStorage.getItem('showtech_lang') || 'de';
+            updateLang(savedLang);
+
+            // React to clicks on header dropdown
+            const dropdownItems = document.querySelectorAll('.lang-dropdown-item');
+            dropdownItems.forEach(item => {
+                item.addEventListener('click', () => {
+                    const lang = item.getAttribute('data-lang');
+                    updateLang(lang);
+                });
+            });
+        });
+    </script>
+</head>
+
+<body>
+
+    <!-- Sticky Header -->
+    <header class="site-header scrolled" id="site-header">
+        <div class="container header-inner">
+            <div class="logo">
+                <a href="index.html#hero" class="logo-link">
+                    <!-- Standard Logo -->
+                    <img src="assets/SHOWTECH27_logo.png" alt="SHOWTECH 2027 Logo" class="logo-img logo-default" data-i18n="nav_logo_alt">
+                    <!-- Sticky Logo -->
+                    <img src="assets/ST27-sticky-logo.png" alt="SHOWTECH 2027 Sticky Logo" class="logo-img logo-sticky" data-i18n="nav_sticky_logo_alt">
+                </a>
+            </div>
+
+            <!-- Desktop Header Middle Navigation Pills -->
+            <div class="header-middle-pills">
+                <a href="index.html#factsandfigures" class="header-pill" data-i18n="nav_pill_trade_fair">Trade Fair</a>
+                <a href="index.html#factsandfigures" class="header-pill" data-i18n="nav_pill_congress">Congress</a>
+                <a href="index.html#factsandfigures" class="header-pill" data-i18n="nav_pill_network">Network</a>
+            </div>
+
+            <!-- Active Section Indicator -->
+            <div class="header-section-indicator" id="headerSectionIndicator">
+                <span class="indicator-text"></span>
+            </div>
+
+            <div class="header-actions">
+                <div class="lang-switcher-dropdown" id="langSwitcherDropdown">
+                    <button class="lang-switcher-btn" id="langSwitcherBtn" aria-haspopup="true" aria-expanded="false">
+                        <span class="current-lang">EN</span>
+                        <span class="lang-arrow">▼</span>
+                    </button>
+                    <ul class="lang-dropdown-menu" id="langDropdownMenu" aria-label="Language selection">
+                        <li><button class="lang-dropdown-item active" data-lang="en" data-i18n="nav_lang_en">EN</button></li>
+                        <li><button class="lang-dropdown-item" data-lang="de" data-i18n="nav_lang_de">DE</button></li>
+                    </ul>
+                </div>
+                <a href="index.html#exhibitor2027" class="btn btn-secondary btn-sm" data-i18n="nav_btn_exhibitor">Aussteller</a>
+                <button class="mobile-menu-toggle" id="menuToggle" aria-label="Toggle Menu" aria-expanded="false" data-i18n="nav_toggle_label">
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Full-screen Nav Overlay -->
+    <div class="nav-overlay" id="navOverlay" aria-hidden="true">
+        <nav class="nav-overlay-inner">
+            <ul class="nav-overlay-links">
+                <li><a href="index.html#hero" class="nav-overlay-link" data-i18n="nav_link_start">Start</a></li>
+                <li><a href="index.html#factsandfigures" class="nav-overlay-link" data-i18n="nav_link_facts">Facts and Figures</a></li>
+                <li><a href="index.html#exhibitor2027" class="nav-overlay-link" data-i18n="nav_link_exhibitors">Aussteller 2027</a></li>
+                <li><a href="index.html#moreinfo" class="nav-overlay-link" data-i18n="nav_link_about">Über das Event</a></li>
+                <li><a href="index.html#booking" class="nav-overlay-link" data-i18n="nav_link_become_exhibitor">Aussteller werden</a></li>
+                <li><a href="index.html#stages" class="nav-overlay-link" data-i18n="nav_link_stages">Bühnen &amp; Formate</a></li>
+                <li><a href="index.html#venue" class="nav-overlay-link" data-i18n="nav_link_location">Location</a></li>
+                <li><a href="index.html#timeline" class="nav-overlay-link" data-i18n="nav_link_road">Roadmap 2027</a></li>
+                <li><a href="index.html#faq" class="nav-overlay-link" data-i18n="nav_link_faq">FAQ</a></li>
+            </ul>
+            <div class="nav-overlay-contact">
+                <a href="tel:+4922167058464" class="contact-pill">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path
+                            d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.41 2 2 0 0 1 3.6 1.22h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.78a16 16 0 0 0 6.29 6.29l.96-.96a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z" />
+                    </svg>
+                    <span data-i18n="nav_contact_phone">+49 221 67058 464</span>
+                </a>
+
+                <a href="mailto:info@showtech.dthg.de" class="contact-pill">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path
+                            d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                        <polyline points="22,6 12,13 2,6" />
+                    </svg>
+                    <span data-i18n="nav_contact_email">info@showtech.dthg.de</span>
+                </a>
+            </div>
+        </nav>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <main>
+
+        <!-- Page Header -->
+        <section class="page-header" id="top">
+            <div class="container">
+                <!-- German Header -->
+                <div class="page-header-content lang-de-content">
+                    <span class="meta-pill">Rechtliches</span>
+                    <h1 class="page-title">Datenschutzerklärung</h1>
+                    <p class="page-subtitle">Informationen über die Erhebung, Verwendung und Verarbeitung personenbezogener Daten.</p>
+                </div>
+                <!-- English Header -->
+                <div class="page-header-content lang-en-content">
+                    <span class="meta-pill">Legal</span>
+                    <h1 class="page-title">Privacy Policy</h1>
+                    <p class="page-subtitle">Information on the collection, use and processing of personal data.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Page Content Section -->
+        <section class="page-content section-padding">
+            <div class="container">
+                <div class="content-grid-layout">
+
+                    <!-- Main Text Column -->
+                    <div class="content-main">
+                        
+                        <div class="ds-intro-box lang-de-content">
+                            <p>Sehr geehrte Besucherinnen und Besucher, wir freuen uns über Ihren Besuch auf unseren Webseiten. Wir möchten, dass Sie sich hierbei sicher und wohl fühlen. Der Schutz Ihrer Privatsphäre hat für uns einen hohen Stellenwert. Die folgenden Datenschutzbestimmungen sind dafür gedacht, Sie über unsere Handhabung der Erhebung, Verwendung und Weitergabe von persönlichen Daten zu informieren.</p>
+                        </div>
+
+                        <div class="ds-intro-box lang-en-content">
+                            <p>Dear visitors, we are delighted that you are visiting our website. We want you to feel safe and comfortable here. The protection of your privacy is very important to us. The following data protection provisions are intended to inform you about our handling of the collection, use and disclosure of personal data.</p>
+                        </div>
+
+                        <!-- GERMAN SECTION -->
+                        <div class="lang-de-content" id="de-version">
+                            <h2 id="de-1">1. Verantwortliche Person für die Datenverarbeitung</h2>
+                            <p>Verantwortlich für die Verarbeitung der personenbezogenen Daten im Sinne der DSGVO ist:</p>
+                            <p>
+                                <strong>DTHG Service GmbH</strong><br>
+                                Beauftragter: Christof Heinz<br>
+                                E-Mail: <a href="mailto:gmbh@dthg.de">gmbh@dthg.de</a><br>
+                                Geschäftsleitung: Wiebke Pohl &amp; Viktoria Ebel<br>
+                                Adresse: Am Hof 28 | 50667 Köln
+                            </p>
+
+                            <h2 id="de-2">2. Erhebung und Speicherung personenbezogener Daten sowie Art und Zweck der Verarbeitung</h2>
+                            <p>Wir erheben und verarbeiten personenbezogene Daten von Ihnen, wenn Sie unsere Website nutzen oder Dienstleistungen in Anspruch nehmen. Dies umfasst:</p>
+                            <ul>
+                                <li><strong>Name, E-Mail, Adresse, IP-Adresse und Cookies:</strong> Diese Daten werden beim Ticketkauf, bei der Anmeldung zu Veranstaltungen oder bei der Registrierung für unseren Newsletter erhoben.</li>
+                                <li><strong>Kontaktformular, Anmeldeformular und Newsletter-Abonnement:</strong> Wenn Sie sich über unsere Formulare anmelden oder mit uns in Kontakt treten, werden Ihre Daten zur Bearbeitung der Anfrage und für weitere Kommunikation verwendet.</li>
+                            </ul>
+                            
+                            <p><strong>Zwecke der Verarbeitung:</strong></p>
+                            <ul>
+                                <li>Kontaktaufnahme und Beantwortung von Anfragen</li>
+                                <li>Versand von Newslettern und Informationen zur Veranstaltung</li>
+                                <li>Marketing und Analyse von Statistiken zur Optimierung unserer Angebote</li>
+                                <li>Erstellung von personalisierten Ticketbadges für Events</li>
+                                <li>Erbringung der von Ihnen beauftragten Dienstleistungen durch uns oder unsere Partner</li>
+                            </ul>
+
+                            <h3>Aussteller- und Speakerservice Plattform (profairs)</h3>
+                            <p>Wir erheben und verarbeiten weiterführende personenbezogene und vertrauliche Informationen von Ihnen, wenn Sie als Aussteller oder Interessent mit uns zusammenarbeiten. Wir nutzen für die Zusammenarbeit mit Ausstellern und Interessenten die externe Service-Plattform profairs, welche von unserem Partner der web://contact GmbH betrieben wird. Alle personenbezogenen und vertraulichen Informationen innerhalb der Service-Plattform werden zum Zwecke der Kommunikation und Realisierung unserer Messeangebote sowie erweiterten Services verwendet und von Mitarbeitenden der DTHG Service GmbH bearbeitet.</p>
+                            <p>Einige der von Ihnen als Speaker oder Aussteller bereitgestellten Informationen werden von uns im Rahmen der Messe- und Eventkommunikation auf unserer Website sowie Plattformen und Profilen der DTHG veröffentlicht und im Rahmen von etwaigen weiteren Medien wie beispielsweise Printprodukten zur Besucherinformation weiterverarbeitet. Die betreffenden Informationen sind als solche innerhalb der Plattform kenntlich gemacht und dienen der Präsentation Ihrer Person und/oder Ihres Unternehmens. Beispielhaft zu nennen ist hier Ihr öffentliches Unternehmensprofil, die Branchenzuordnung, Produktvorstellung sowie die Besucherinformationen zum Veranstaltungs- und Kongressprogramm.</p>
+
+                            <h3>Ticketverkauf für unsere Veranstaltungen (pretix)</h3>
+                            <p>Innerhalb unseres Veranstaltungsangebotes werden Funktionen und Inhalte des Dienstes pretix, angeboten durch rami.io GmbH, Berthold-Mogel-Straße 1, 69126 Heidelberg, Deutschland, eingebunden. Hierzu gehört der Ticketshop, welcher über ein JavaScript-Widget eingebunden ist. Wenn Sie ein Ticket kaufen, nutzt pretix ein technisch notwendiges Cookie, um den Bestellablauf zu ermöglichen und sich zu merken, welcher Warenkorb zu Ihnen gehört. Das Cookie wird gesetzt, sobald Sie mit dem Widget interagieren. pretix speichert keine IP-Adressen, Browser-Informationen oder andere unnötige Metadaten über die Dauer Ihrer Anfrage hinaus. Weitere Infos zu Datenschutz bei pretix finden Sie unter: <a href="https://pretix.eu/about/de/privacy" target="_blank" rel="noopener noreferrer">https://pretix.eu/about/de/privacy</a></p>
+
+                            <h3>Terminbuchungstool für Beratungen (calendly)</h3>
+                            <p>Zur Organisation von Kundenterminen verwenden wir das Tool „Calendly“. Durch die Angabe Ihrer Kontaktdaten für Beratungstermine werden diese zum Zwecke der weiteren Verarbeitung und der Kontaktaufnahme durch uns auf der Plattform von Calendly verarbeitet, hierzu werden auch Cookies gesetzt um die Funktionsweise des Tools zu gewährleisten. Eine Weitergabe ihrer persönlichen Daten an andere Unternehmen zu Marketingzwecken o.Ä. geschieht nicht. Durch die Nutzung von Calendly stimmen Sie der Verwendung zu. Ausführlichere Informationen finden Sie in den Datenschutzbestimmungen von Calendly: <a href="https://calendly.com/legal/privacy-notice" target="_blank" rel="noopener noreferrer">https://calendly.com/legal/privacy-notice</a></p>
+
+                            <h2 id="de-3">3. Weitergabe von Daten an Dritte</h2>
+                            <p>Personenbezogene Daten werden nur dann an Dritte weitergegeben, wenn:</p>
+                            <ul>
+                                <li>dies zur Erfüllung eines Vertrags notwendig ist (z.B. Dienstleister für Ticketing oder Versand),</li>
+                                <li>Sie Ihre ausdrückliche Einwilligung erteilt haben,</li>
+                                <li>oder wir gesetzlich dazu verpflichtet sind.</li>
+                            </ul>
+                            
+                            <p>Wir bieten die Möglichkeit, sich per Newsletter über Neuerungen auf unserer Webseite zu informieren. Die Daten für den <strong>Newsletter-Versand</strong> (Name, E-Mail-Adresse, ggf. Firma) werden an <strong>Brevo</strong> weitergegeben, den von uns genutzten Dienstleister für E-Mail-Marketing. Brevo sorgt dafür, dass unsere Newsletter sicher und DSGVO-konform versendet werden. (<a href="https://www.brevo.com/de/legal/privacypolicy/" target="_blank" rel="noopener noreferrer">Brevo Datenschutzerklärung</a>).</p>
+                            <p>Wir nutzen für die Zusammenarbeit mit Ausstellern und Interessenten die externe Service-Plattform profairs. Dazu wird Ihre IP-Adresse an den Anbieter web://contact GmbH (Waldblumenstraße 48, 75334 Straubenhardt, Deutschland) übertragen. Alle personenbezogenen und vertraulichen Informationen innerhalb der Service-Plattform werden nur zum Zwecke der Kommunikation und Realisierung unserer Messeangebote verwendet und von Mitarbeitenden der DTHG Service GmbH weiterberarbeitet. Die web://contact GmbH gewährleistet durch profairs in diesem Sinne eine gesicherte Dateninfrastruktur für unsere Kundenkommunikation.</p>
+                            <p>Für die Darstellung des Messe- und Kongressprogramms sowie dem Ausstellerverzeichnis, verwenden wir einen Dienst von profairs. Dazu wird Ihre IP-Adresse an den Anbieter web://contact GmbH (Waldblumenstraße 48, 75334 Straubenhardt, Deutschland) übertragen. Eine Weiterverarbeitung und Nutzung dieser Daten geschieht nur im Rahmen der Bereitstellung dieses Dienstes.</p>
+
+                            <h3>Bestellprozess</h3>
+                            <p>Im Rahmen des Bestellprozesses können folgende Daten erhoben werden: Name, Adresse, Bankverbindung. Diese Daten werden ausschließlich für die Abwicklung der Bestellung verwendet und gem. der gesetzlichen Anforderungen an die an dem Bezahlprozess beteiligten Unternehmen (Banken, PayPal etc.) übertragen und gespeichert. Rechtsgrundlage für diese Datenverarbeitung ist Art. 6 Abs. 1 b DSGVO (vertragl. Verpflichtung).</p>
+                            <p>Wir bieten Ihnen folgende Bezahlverfahren an: Kreditkarte, Paypal, Lastschrift. Zur Ausführung der Zahlung werden die Zahlungsdaten an die entsprechenden Zahlungsdienstleister übermittelt.</p>
+                            <p>In diese Website sind die Schaltflächen des Payment-Dienstes Stripe eingebunden, der von der Firma Stripe Payments Europe Ltd, Block 4, Harcourt Centre, Harcourt Road, Dublin (Ireland) betrieben wird. Beim Aufruf dieser Webseite wird eine Verbindung mit den Servern von Stripe hergestellt. Ihre Zahlungsdaten werden bei Stripe zu Abrechnungszwecken gespeichert und an die Kreditkarteninstitute übermittelt. Mehr Informationen über die Verarbeitung Ihrer Daten bei Stripe erhalten Sie unter <a href="https://stripe.com/de/privacy" target="_blank" rel="noopener noreferrer">https://stripe.com/de/privacy</a>. Rechtsgrundlagen für diese Datenverarbeitung sind Art. 6 Abs. 1 lit. b DSGVO (vertragl. Verpflichtung) und die Einwilligung des Nutzers Art. 6 Abs. 1 lit. a DSGVO.</p>
+
+                            <h3>Kontaktformular</h3>
+                            <p>Sie können sich über ein Kontaktformular jederzeit mit Fragen oder Anregungen an uns wenden. Um Ihre Fragen beantworten oder Ihnen eine Rückmeldung zukommen lassen zu können, benötigen wir folgende Angaben: Name, Vorname und E-Mail-Adresse. Diese Daten verwenden wir ausschließlich für die o.g. Zwecke. Rechtsgrundlage für die Verarbeitung der Daten, die im Zuge der Nutzung des Kontaktformulars oder der Übersendung einer E-Mail übermittelt werden, ist Art. 6 Abs. 1 lit. f DSGVO. Zielt der E-Mail-Kontakt auf den Abschluss eines Vertrages ab, so ist zusätzliche Rechtsgrundlage für die Verarbeitung Art. 6 Abs. 1 lit. b DSGVO.</p>
+
+                            <h3>Analyseprogramme (Burst Statistics)</h3>
+                            <p>Diese Webseite verwendet das Plugin Burst Statistics. Mit diesem Plugin können die Zugriffe dieser Seite statistisch ausgewertet werden und es ist GDPR konform. Dabei werden sog. „Cookies“ verwendet. Die durch den Cookie erzeugten Informationen über Ihre Benutzung dieses Internetangebotes werden nicht weitergegeben, sondern verbleiben auf dem deutschen Server auf dem diese Website betrieben wird. Die IP-Adresse wird sofort nach der Verarbeitung und vor deren Speicherung anonymisiert. Mehr Informationen über das eingesetzte Plugin <a href="https://burst-statistics.com/docs/" target="_blank" rel="noopener noreferrer">finden Sie hier</a>.</p>
+                            <p>Die Speicherung der Cookies erfolgt auf Grundlage von Art. 6 Abs. 1 lit. f DSGVO. Der Websitebetreiber hat ein berechtigtes Interesse an der Analyse des Nutzerverhaltens, um sowohl sein Webangebot als auch seine Werbung zu optimieren.</p>
+
+                            <h2 id="de-4">4. Rechtsgrundlage für die Datenverarbeitung</h2>
+                            <p>Die Verarbeitung Ihrer personenbezogenen Daten erfolgt auf folgenden Rechtsgrundlagen nach Art. 6 Abs. 1 DSGVO:</p>
+                            <ul>
+                                <li><strong>Einwilligung (Art. 6 Abs. 1 lit. a DSGVO):</strong> Wenn Sie uns Ihre Einwilligung zur Verarbeitung Ihrer Daten geben, z.B. durch das Abonnieren eines Newsletters.</li>
+                                <li><strong>Vertragserfüllung (Art. 6 Abs. 1 lit. b DSGVO):</strong> Zur Erfüllung eines Vertrages, z.B. beim Ticketkauf oder der Registrierung für unsere Events.</li>
+                                <li><strong>Berechtigtes Interesse (Art. 6 Abs. 1 lit. f DSGVO):</strong> Zur Wahrung unserer berechtigten Interessen, wie z.B. statistische Auswertungen oder Marketingmaßnahmen.</li>
+                                <li><strong>Erfüllung rechtlicher Verpflichtungen (Art. 6 Abs. 1 lit. c DSGVO):</strong> Zur Erfüllung gesetzlicher Aufbewahrungspflichten.</li>
+                            </ul>
+
+                            <h2 id="de-5">5. Cookies und Tracking-Technologien</h2>
+                            <p>Unsere Website verwendet Cookies, um die Nutzung für Sie zu optimieren. Sie können die Speicherung von Cookies durch eine entsprechende Einstellung Ihrer Browser-Software verhindern, jedoch könnten Sie dann gegebenenfalls nicht alle Funktionen dieser Website vollumfänglich nutzen.</p>
+                            <p>Wir verwenden ein Cookie-Consent-Tool (über das Theme) zur Einholung und Verwaltung Ihrer Einwilligung zur Verwendung von Cookies.</p>
+
+                            <h2 id="de-6">6. Dauer der Speicherung</h2>
+                            <p>Ihre personenbezogenen Daten werden nur so lange gespeichert, wie es für die Erfüllung der jeweiligen Zwecke erforderlich ist. Danach werden sie gelöscht, es sei denn, gesetzliche Aufbewahrungsfristen erfordern eine längere Speicherung.</p>
+
+                            <h2 id="de-7">7. Englische Websiteinhalte: Übersetzung mit gTranslate</h2>
+                            <p>Wir verwenden das Plugin gTranslate, welches die Technologie von Google Translate nutzt, um Teile der Inhalte unserer Website auf Englisch zu übersetzen. Wenn Sie die Website auf Englisch nutzen, stellt der von Ihnen verwendete Browser über unsere Website eine Verbindung zu den Servern von gTranslate.io her. gTranslate verwendet ferner die Server von Google zur Übersetzung. Dies stellt ein berechtigtes Interesse im Sinne von Art. 6 Abs. 1 lit. f DSGVO dar.</p>
+                            <p>Im Zuge der Übersetzung wird neben der Sprache auch Ihre IP-Adresse gespeichert. Sie wird in der Regel für Zwecke wie die Sicherheit, die Fehlerbehebung und die Verbesserung der Dienstleistung verwendet. Google ist aktiver Teilnehmer des EU-US Data Privacy Frameworks, wodurch der korrekte und sichere Datentransfer personenbezogener Daten von EU-Bürgern in die USA geregelt wird. Mehr Informationen zum Umgang mit Nutzerdaten finden Sie in der Datenschutzerklärung von Google: <a href="https://www.google.de/intl/de/policies/privacy/" target="_blank" rel="noopener noreferrer">https://www.google.de/intl/de/policies/privacy/</a>.</p>
+
+                            <h2 id="de-8">8. Betroffenenrechte</h2>
+                            <p>Sie haben das Recht: Auskunft über Ihre bei uns gespeicherten personenbezogenen Daten zu verlangen; die Berichtigung, Löschung oder Einschränkung der Verarbeitung Ihrer Daten zu fordern; Ihre Einwilligung zur Datenverarbeitung zu widerrufen; der Verarbeitung Ihrer personenbezogenen Daten zu widersprechen sowie das Recht auf Datenübertragbarkeit.</p>
+
+                            <h2 id="de-9">9. Beschwerderecht bei einer Aufsichtsbehörde</h2>
+                            <p>Sie haben das Recht, sich bei der zuständigen Datenschutzbehörde zu beschweren, wenn Sie der Ansicht sind, dass die Verarbeitung Ihrer personenbezogenen Daten gegen die DSGVO verstoßt.</p>
+
+                            <h2 id="de-10">10. Datensicherheit</h2>
+                            <p>Wir setzen technische und organisatorische Maßnahmen ein, um Ihre Daten vor Verlust, Missbrauch oder unbefugtem Zugriff zu schützen.</p>
+
+                            <h2 id="de-11">11. Aktualität und Änderungen dieser Datenschutzerklärung</h2>
+                            <p>Diese Datenschutzerklärung ist aktuell gültig und hat den Stand Oktober 2024. Durch die Weiterentwicklung unserer Website oder aufgrund geänderter gesetzlicher Vorgaben kann eine Anpassung dieser Datenschutzerklärung erforderlich werden.</p>
+                        </div>
+
+                        <!-- ENGLISH SECTION -->
+                        <div class="lang-en-content" id="en-version">
+                            <h2 id="en-1">1. Person responsible for data processing</h2>
+                            <p>Responsible for the processing of personal data within the meaning of the GDPR is:</p>
+                            <p>
+                                <strong>DTHG Service GmbH</strong><br>
+                                Authorized representative: Christof Heinz<br>
+                                E-mail: <a href="mailto:gmbh@dthg.de">gmbh@dthg.de</a><br>
+                                Management: Wiebke Pohl &amp; Viktoria Ebel<br>
+                                Address: Am Hof 28 | 50667 Cologne
+                            </p>
+
+                            <h2 id="en-2">2. Collection and storage of personal data and the nature and purpose of processing</h2>
+                            <p>We collect and process your personal data when you use our website or make use of our services. This includes:</p>
+                            <ul>
+                                <li><strong>Name, email, address, IP address and cookies:</strong> this data is collected when you purchase tickets, register for events or register for our newsletter.</li>
+                                <li><strong>Contact form, registration form and newsletter subscription:</strong> If you register via our forms or contact us, your data will be used to process the request and for further communication.</li>
+                            </ul>
+                            
+                            <p><strong>Purposes of processing:</strong></p>
+                            <ul>
+                                <li>Making contact and responding to inquiries</li>
+                                <li>Sending newsletters and information about the event</li>
+                                <li>Marketing and analysis of statistics to optimize our offers</li>
+                                <li>Creation of personalized ticket badges for events</li>
+                                <li>Provision of the services commissioned by you by us or our partners</li>
+                            </ul>
+
+                            <h3>Exhibitor- and Speakerservice platform (profairs)</h3>
+                            <p>We collect and process further personal and confidential information from you if you work with us as an exhibitor or interested party. We use the external service platform profairs, which is operated by our partner web://contact GmbH, for cooperation with exhibitors and interested parties. All personal and confidential information within the service platform is used for the purpose of communication and realization of our trade fair offers and extended services and is processed by employees of DTHG Service GmbH.</p>
+                            <p>Some of the information provided by you as a speaker or exhibitor will be published by us on our website and DTHG platforms and profiles as part of our trade fair and event communication and processed further in any other media such as print products for visitor information.</p>
+
+                            <h3>Ticket sales for our events (pretix)</h3>
+                            <p>Functions and content of the service pretix, offered by rami.io GmbH, Berthold-Mogel-Straße 1, 69126 Heidelberg, Germany, are integrated into our event offer. This includes the ticket store, which is integrated via a JavaScript widget. When you buy a ticket, pretix uses a technically necessary cookie to enable the order process and to remember which shopping cart belongs to you. The cookie is set as soon as you interact with the widget. pretix does not store any IP addresses, browser information or other unnecessary metadata beyond the duration of your request. You can find more information about data protection at pretix here: <a href="https://pretix.eu/about/de/privacy" target="_blank" rel="noopener noreferrer">https://pretix.eu/about/de/privacy</a></p>
+
+                            <h3>Appointment booking tool for consultations (Calendly)</h3>
+                            <p>We use the Calendly tool to organize customer appointments. When you provide your contact details for consultation appointments, these are processed on the Calendly platform for the purpose of further processing and contacting you. Cookies are also set to ensure the functionality of the tool. Your personal data will not be passed on to other companies for marketing purposes or similar. By using Calendly, you consent to its use. For more detailed information, please refer to Calendly’s privacy policy: <a href="https://calendly.com/legal/privacy-notice" target="_blank" rel="noopener noreferrer">https://calendly.com/legal/privacy-notice</a></p>
+
+                            <h2 id="en-3">3. Disclosure of data to third parties</h2>
+                            <p>Personal data will only be passed on to third parties if:</p>
+                            <ul>
+                                <li>this is necessary for the fulfillment of a contract (e.g. service providers for ticketing or shipping),</li>
+                                <li>you have given your express consent,</li>
+                                <li>or we are legally obliged to do so.</li>
+                            </ul>
+                            
+                            <p>We offer the option of receiving information about new features on our website by newsletter. The data for sending the newsletter (name, e-mail address, company if applicable) is passed on to Brevo, the service provider we use for e-mail marketing. Brevo ensures that our newsletters are sent securely and in compliance with the GDPR. (<a href="https://www.brevo.com/de/legal/privacypolicy/" target="_blank" rel="noopener noreferrer">Brevo privacy policy</a>).</p>
+                            <p>We use the external service platform profairs for cooperation with exhibitors and interested parties. For this purpose, your IP address is transmitted to the provider web://contact GmbH (Waldblumenstraße 48, 75334 Straubenhardt, Germany). All personal and confidential information within the service platform will only be used for the purpose of communication and realization of our trade fair offers and further processed by employees of DTHG Service GmbH.</p>
+
+                            <h3>Ordering process</h3>
+                            <p>The following data may be collected as part of the ordering process: Name, address, bank details. This data is used exclusively for processing the order and is transmitted to and stored by the companies involved in the payment process (banks, PayPal, etc.) in accordance with legal requirements. The legal basis for this data processing is Art. 6 para. 1 b GDPR (contractual obligation).</p>
+                            <p>We offer the following payment methods: Credit card, Paypal, direct debit. The payment data is transmitted to the relevant payment service providers to execute the payment.</p>
+                            <p>The buttons of the payment service Stripe are integrated into this website, which is operated by the company Stripe Payments Europe Ltd, Block 4, Harcourt Centre, Harcourt Road, Dublin (Ireland). When you access this website, a connection is established with the Stripe servers. Your payment data is stored by Stripe for billing purposes and transmitted to the credit card companies. You can find more information about the processing of your data by Stripe at <a href="https://stripe.com/de/privacy" target="_blank" rel="noopener noreferrer">https://stripe.com/de/privacy</a>. The legal basis for this data processing is Art. 6 para. 1 lit. b GDPR (contractual obligation) and the user's consent Art. 6 para. 1 lit. a GDPR.</p>
+
+                            <h3>Contact form</h3>
+                            <p>You can contact us at any time with questions or suggestions using the contact form. In order to answer your questions or send you feedback, we need the following information: Surname, first name and e-mail address. We use this data exclusively for the above-mentioned purposes. The legal basis for the processing of data transmitted in the course of using the contact form or sending an email is Art. 6 para. 1 lit. f GDPR. If the e-mail contact is aimed at the conclusion of a contract, the additional legal basis for the processing is Art. 6 para. 1 lit. b GDPR.</p>
+
+                            <h3>Analysis programs (Burst Statistics)</h3>
+                            <p>This website uses the Burst Statistics plugin. With this plugin, access to this site can be statistically analyzed and it is GDPR compliant. So-called “cookies” are used. The information generated by the cookie about your use of this website is not passed on, but remains on the German server on which this website is operated. The IP address is anonymized immediately after processing and before it is stored.</p>
+
+                            <h2 id="en-4">4. Legal basis for data processing</h2>
+                            <p>Your personal data is processed on the following legal bases in accordance with Art. 6 para. 1 GDPR:</p>
+                            <ul>
+                                <li>Consent (Art. 6 para. 1 lit. a GDPR): If you give us your consent to process your data, e.g. by subscribing to a newsletter.</li>
+                                <li>Performance of a contract (Art. 6 para. 1 lit. b GDPR): To fulfill a contract, e.g. when purchasing tickets or registering for our events.</li>
+                                <li>Legitimate interest (Art. 6 para. 1 lit. f GDPR): To safeguard our legitimate interests, such as statistical evaluations or marketing measures.</li>
+                                <li>Fulfillment of legal obligations (Art. 6 para. 1 lit. c GDPR): For the fulfillment of legal retention obligations.</li>
+                            </ul>
+
+                            <h2 id="en-5">5. cookies and tracking technologies</h2>
+                            <p>Our website uses cookies to optimize its use for you. You can prevent the storage of cookies by setting your browser software accordingly, but then you may not be able to use all the functions of this website to their full extent. We use a cookie consent tool (via the theme) to obtain and manage your consent to the use of cookies.</p>
+
+                            <h2 id="en-6">6. duration of storage</h2>
+                            <p>Your personal data will only be stored for as long as is necessary to fulfill the respective purposes. It will then be deleted unless statutory retention periods require longer storage.</p>
+
+                            <h2 id="en-7">7. English translation: Use of gTranslate</h2>
+                            <p>We use the gTranslate plugin, which uses Google Translate technology to translate parts of the content of our website into English. When you use the website in English, the browser you use establishes a connection to the gTranslate.io servers via our website. Google is an active participant in the EU-US Data Privacy Framework, which regulates the correct and secure transfer of personal data from EU citizens to the USA. Google's privacy policy applies to the use of the gTranslate service: <a href="https://www.google.de/intl/de/policies/privacy/" target="_blank" rel="noopener noreferrer">https://www.google.de/intl/de/policies/privacy/</a>.</p>
+
+                            <h2 id="en-8">8. rights of data subjects</h2>
+                            <p>You have the right: to request information about your personal data stored by us; to request the rectification, erasure or restriction of the processing of your data; to withdraw your consent to data processing; to object to the processing of your personal data, and the right to data portability.</p>
+
+                            <h2 id="en-9">9. right to lodge a complaint with a supervisory authority</h2>
+                            <p>You have the right to lodge a complaint with the competent data protection authority if you believe that the processing of your personal data violates the GDPR.</p>
+
+                            <h2 id="en-10">10. data security</h2>
+                            <p>We use technical and organizational measures to protect your data from loss, misuse or unauthorized access.</p>
+
+                            <h2 id="en-11">11. topicality and changes to this privacy policy</h2>
+                            <p>This privacy policy is currently valid and is dated October 2024. Due to the further development of our website or due to changed legal requirements, it may become necessary to adapt this privacy policy.</p>
+                        </div>
+
+                    </div>
+
+                    <!-- Sidebar (TOC Widgets) -->
+                    <aside class="content-sidebar">
+                        
+                        <!-- GERMAN TOC -->
+                        <div class="sidebar-widget sidebar-sticky-toc lang-de-content">
+                            <h3>Inhaltsverzeichnis</h3>
+                            
+                            <ul class="toc-list">
+                                <li class="toc-item"><a href="#de-1" class="toc-link">1. Verantwortliche Person</a></li>
+                                <li class="toc-item"><a href="#de-2" class="toc-link">2. Datenerhebung &amp; Zweck</a></li>
+                                <li class="toc-item"><a href="#de-3" class="toc-link">3. Weitergabe an Dritte</a></li>
+                                <li class="toc-item"><a href="#de-4" class="toc-link">4. Rechtsgrundlagen</a></li>
+                                <li class="toc-item"><a href="#de-5" class="toc-link">5. Cookies &amp; Tracking</a></li>
+                                <li class="toc-item"><a href="#de-6" class="toc-link">6. Speicherdauer</a></li>
+                                <li class="toc-item"><a href="#de-7" class="toc-link">7. Übersetzung gTranslate</a></li>
+                                <li class="toc-item"><a href="#de-8" class="toc-link">8. Betroffenenrechte</a></li>
+                                <li class="toc-item"><a href="#de-9" class="toc-link">9. Beschwerderecht</a></li>
+                                <li class="toc-item"><a href="#de-10" class="toc-link">10. Datensicherheit</a></li>
+                                <li class="toc-item"><a href="#de-11" class="toc-link">11. Aktualität &amp; Änderung</a></li>
+                                
+                                <li style="height: 1px; background: rgba(255,255,255,0.05); margin: 0.75rem 0;"></li>
+                                <li class="toc-item">
+                                    <a href="exhibitor-downloads.html" class="toc-link" style="border-left-color: var(--color-accent-blue);">
+                                        ➔ Aussteller-Downloads
+                                    </a>
+                                </li>
+                                <li class="toc-item">
+                                    <a href="impressum.html" class="toc-link">
+                                        ➔ Impressum
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <!-- ENGLISH TOC -->
+                        <div class="sidebar-widget sidebar-sticky-toc lang-en-content">
+                            <h3>Table of Contents</h3>
+                            
+                            <ul class="toc-list">
+                                <li class="toc-item"><a href="#en-1" class="toc-link">1. Responsible Person</a></li>
+                                <li class="toc-item"><a href="#en-2" class="toc-link">2. Data Collection &amp; Purpose</a></li>
+                                <li class="toc-item"><a href="#en-3" class="toc-link">3. Third Party Transfer</a></li>
+                                <li class="toc-item"><a href="#en-4" class="toc-link">4. Legal Bases</a></li>
+                                <li class="toc-item"><a href="#en-5" class="toc-link">5. Cookies &amp; Tracking</a></li>
+                                <li class="toc-item"><a href="#en-6" class="toc-link">6. Storage Duration</a></li>
+                                <li class="toc-item"><a href="#en-7" class="toc-link">7. Translation gTranslate</a></li>
+                                <li class="toc-item"><a href="#en-8" class="toc-link">8. Subject Rights</a></li>
+                                <li class="toc-item"><a href="#en-9" class="toc-link">9. Right to Complain</a></li>
+                                <li class="toc-item"><a href="#en-10" class="toc-link">10. Data Security</a></li>
+                                <li class="toc-item"><a href="#en-11" class="toc-link">11. Document Validity</a></li>
+                                
+                                <li style="height: 1px; background: rgba(255,255,255,0.05); margin: 0.75rem 0;"></li>
+                                <li class="toc-item">
+                                    <a href="exhibitor-downloads.html" class="toc-link" style="border-left-color: var(--color-accent-pink);">
+                                        ➔ Exhibitor Downloads
+                                    </a>
+                                </li>
+                                <li class="toc-item">
+                                    <a href="impressum.html" class="toc-link">
+                                        ➔ Imprint
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </aside>
+
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <a href="index.html#hero" class="footer-logo-link">
+                        <img src="assets/SHOWTECH27_logo.png" alt="SHOWTECH 2027 Logo" class="footer-logo-img">
+                    </a>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-col">
+                        <h4 data-i18n="footer_col_1_title">Event</h4>
+                        <ul>
+                            <li><a href="index.html#moreinfo" data-i18n="footer_col_1_link_1">Über das Event</a></li>
+                            <li><a href="index.html#factsandfigures" data-i18n="footer_col_1_link_2">Facts &amp; Figures</a></li>
+                            <li><a href="index.html#stages" data-i18n="footer_col_1_link_3">Bühnen &amp; Formate</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-col">
+                        <h4 data-i18n="footer_col_2_title">Teilnahme</h4>
+                        <ul>
+                            <li><a href="index.html#booking" data-i18n="footer_col_2_link_1">Aussteller werden</a></li>
+                            <li><a href="index.html#exhibitor2027" data-i18n="footer_col_2_link_2">Unsere Aussteller</a></li>
+                            <li><a href="index.html#timeline" data-i18n="footer_col_2_link_3">Road to SHOWTECH</a></li>
+                            <li><a href="index.html#venue" data-i18n="footer_col_2_link_4">Location</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-col">
+                        <h4 data-i18n="footer_col_3_title">Info</h4>
+                        <ul>
+                            <li><a href="index.html#faq" data-i18n="footer_col_3_link_1">Fragen &amp; Antworten</a></li>
+                            <li><a href="impressum.html">Impressum</a></li>
+                            <li><a href="datenschutz.html">Datenschutz</a></li>
+                            <li><a href="exhibitor-downloads.html">Aussteller-Downloads</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p data-i18n="footer_copyright">&copy; 2027 SHOWTECH. Alle Rechte vorbehalten.</p>
+                <div class="social-links">
+                    <a href="https://www.facebook.com/dthgev/" aria-label="Facebook" title="Facebook" target="_blank" rel="noopener noreferrer">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+                    </a>
+                    <a href="https://www.youtube.com/channel/UCl7KAGuAkLdZKngBbwQpfDA" aria-label="YouTube" title="YouTube" target="_blank" rel="noopener noreferrer">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"/>
+                            <polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"/>
+                        </svg>
+                    </a>
+                    <a href="https://de.linkedin.com/showcase/showtech-berlin/" aria-label="LinkedIn" title="LinkedIn" target="_blank" rel="noopener noreferrer">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+                    </a>
+                    <a href="https://www.instagram.com/showtech_berlin" aria-label="Instagram" title="Instagram" target="_blank" rel="noopener noreferrer">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js" type="module"></script>
+</body>
+
+</html>
