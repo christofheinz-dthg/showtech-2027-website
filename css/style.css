@@ -2188,7 +2188,7 @@ p {
     align-items: center;
     gap: 64px;
     width: max-content;
-    animation: scroll-marquee 40s linear infinite;
+    animation: scroll-marquee 150s linear infinite;
 }
 
 .slider-wrap:hover .slider-track {
