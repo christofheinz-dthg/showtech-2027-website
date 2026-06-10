@@ -17,8 +17,16 @@
         /* Responsive layout updates */
         @media (max-width: 992px) {
             .content-grid-layout {
+                display: flex !important;
+                flex-direction: column !important;
                 grid-template-columns: 1fr !important;
                 gap: 2rem !important;
+            }
+            .content-main {
+                order: 2;
+            }
+            .content-sidebar {
+                order: 1;
             }
             .sidebar-sticky-toc {
                 position: static !important;

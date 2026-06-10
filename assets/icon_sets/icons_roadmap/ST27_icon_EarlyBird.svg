@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Ebene_2" data-name="Ebene 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+  <defs>
+    <style>
+      .cls-1, .cls-2 {
+        fill: none;
+      }
+
+      .cls-2 {
+        stroke: #323232;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        stroke-width: 1.5px;
+      }
+    </style>
+  </defs>
+  <g id="Icons">
+    <g>
+      <rect class="cls-1" width="24" height="24"/>
+      <g>
+        <path class="cls-2" d="M22,15.24v2.76c0,.55-.45,1-1,1H3c-.55,0-1-.45-1-1v-2.76c0-.14.08-.28.21-.34h0c1.1-.55,1.79-1.67,1.79-2.89h0c0-1.23-.69-2.35-1.79-2.89h0c-.13-.06-.21-.2-.21-.34v-2.76c0-.55.45-1,1-1h18c.55,0,1,.45,1,1v2.76c0,.14-.08.28-.21.34l-.04.02c-1.07.56-1.75,1.66-1.75,2.87h0c0,1.23.69,2.35,1.79,2.89h0c.13.06.21.2.21.34Z"/>
+        <line class="cls-2" x1="9.43" y1="14.57" x2="14.43" y2="9.57"/>
+        <path id="Shape_3077" data-name="Shape 3077" class="cls-2" d="M14.5,14.25c-.14,0-.25.11-.25.25,0,.14.11.25.25.25s.25-.11.25-.25-.11-.25-.25-.25"/>
+        <path id="Shape_3077-2" data-name="Shape 3077" class="cls-2" d="M9.5,9.25c-.14,0-.25.11-.25.25,0,.14.11.25.25.25s.25-.11.25-.25-.11-.25-.25-.25"/>
+      </g>
+    </g>
+  </g>
+</svg>

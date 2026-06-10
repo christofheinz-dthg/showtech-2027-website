@@ -4792,4 +4792,8 @@ Let's make marker part of flow? No, absolute in item easiest.
         text-overflow: ellipsis;
         white-space: nowrap;
     }
+
+    .page-header {
+        padding: 130px 0 50px 0 !important;
+    }
 }
