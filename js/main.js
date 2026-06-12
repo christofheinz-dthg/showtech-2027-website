@@ -1,4 +1,5 @@
 import translations from './translations.js';
+window.translations = translations;
 
 document.addEventListener('DOMContentLoaded', () => {
 
