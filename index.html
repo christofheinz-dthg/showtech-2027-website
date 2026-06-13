@@ -365,13 +365,90 @@
                             </div>
                         </div>
 
-                        <!-- Tile 8: 3.500+ (Large Blue) -->
-                        <div class="fact-card fact-card-blue-large">
+
+                        <!-- Tile 8: Donut Chart -->
+                        <div class="fact-card fact-card-chart">
                             <div class="fact-icon-wrapper">
                                 <img src="assets/icon_sets/icons_factandfigures/3500_Industry.svg" alt="Branchenvertreter Icon" class="fact-icon">
                             </div>
-                            <div class="fact-number" data-i18n="facts_card_4_number">3.500 +</div>
-                            <div class="fact-text" data-i18n="facts_card_4_text">Branchenvertreter*innen kamen zusammen, um die neuesten Entwicklungen in der Bühnen-, Theater- und Showtechnologie zu teilen.</div>
+                            <h3 class="chart-card-title" data-i18n="facts_chart_title">Besucher-Profil nach Segmenten</h3>
+                            
+                            <div class="chart-wrapper">
+                                <svg viewBox="28 28 44 44" class="donut-chart">
+                                    <g transform="rotate(-90 50 50)">
+                                        <!-- Segment 1: Technische Leitung & Management (17.8%) -->
+                                        <circle class="chart-segment" cx="50" cy="50" r="15.91549430918954" fill="transparent" stroke="var(--chart-color-1)" stroke-width="8" stroke-dasharray="17.8 100" stroke-dashoffset="0" data-segment="1" data-pct="17.8%" data-label="Technische Leitung & Management"></circle>
+                                        <!-- Segment 2: Bühnentechnik & Konstruktion (17.8%) -->
+                                        <circle class="chart-segment" cx="50" cy="50" r="15.91549430918954" fill="transparent" stroke="var(--chart-color-2)" stroke-width="8" stroke-dasharray="17.8 100" stroke-dashoffset="-17.8" data-segment="2" data-pct="17.8%" data-label="Bühnentechnik & Konstruktion"></circle>
+                                        <!-- Segment 3: Lichttechnik (14.9%) -->
+                                        <circle class="chart-segment" cx="50" cy="50" r="15.91549430918954" fill="transparent" stroke="var(--chart-color-3)" stroke-width="8" stroke-dasharray="14.9 100" stroke-dashoffset="-35.6" data-segment="3" data-pct="14.9%" data-label="Lichttechnik"></circle>
+                                        <!-- Segment 4: Audiotechnik (10.9%) -->
+                                        <circle class="chart-segment" cx="50" cy="50" r="15.91549430918954" fill="transparent" stroke="var(--chart-color-4)" stroke-width="8" stroke-dasharray="10.9 100" stroke-dashoffset="-50.5" data-segment="4" data-pct="10.9%" data-label="Audiotechnik"></circle>
+                                        <!-- Segment 5: Video & Multimedia (8.9%) -->
+                                        <circle class="chart-segment" cx="50" cy="50" r="15.91549430918954" fill="transparent" stroke="var(--chart-color-5)" stroke-width="8" stroke-dasharray="8.9 100" stroke-dashoffset="-61.4" data-segment="5" data-pct="8.9%" data-label="Video & Multimedia"></circle>
+                                        <!-- Segment 6: Requisite & Bühnenbild (7.9%) -->
+                                        <circle class="chart-segment" cx="50" cy="50" r="15.91549430918954" fill="transparent" stroke="var(--chart-color-6)" stroke-width="8" stroke-dasharray="7.9 100" stroke-dashoffset="-70.3" data-segment="6" data-pct="7.9%" data-label="Requisite & Bühnenbild"></circle>
+                                        <!-- Segment 7: Architektur / Fachplanung / Design (6.9%) -->
+                                        <circle class="chart-segment" cx="50" cy="50" r="15.91549430918954" fill="transparent" stroke="var(--chart-color-7)" stroke-width="8" stroke-dasharray="6.9 100" stroke-dashoffset="-78.2" data-segment="7" data-pct="6.9%" data-label="Architektur / Fachplanung / Design"></circle>
+                                        <!-- Segment 8: Bildung (6.9%) -->
+                                        <circle class="chart-segment" cx="50" cy="50" r="15.91549430918954" fill="transparent" stroke="var(--chart-color-8)" stroke-width="8" stroke-dasharray="6.9 100" stroke-dashoffset="-85.1" data-segment="8" data-pct="6.9%" data-label="Bildung"></circle>
+                                        <!-- Segment 9: Rigging (5.0%) -->
+                                        <circle class="chart-segment" cx="50" cy="50" r="15.91549430918954" fill="transparent" stroke="var(--chart-color-9)" stroke-width="8" stroke-dasharray="5 100" stroke-dashoffset="-92" data-segment="9" data-pct="5.0%" data-label="Rigging"></circle>
+                                        <!-- Segment 10: Unternehmen & Industrie (3.0%) -->
+                                        <circle class="chart-segment" cx="50" cy="50" r="15.91549430918954" fill="transparent" stroke="var(--chart-color-10)" stroke-width="8" stroke-dasharray="3 100" stroke-dashoffset="-97" data-segment="10" data-pct="3.0%" data-label="Unternehmen & Industrie"></circle>
+                                    </g>
+                                </svg>
+                                
+                                <!-- Interactive Center Info -->
+                                <div class="chart-center-info">
+                                    <div class="chart-center-pct" id="chartCenterPct">100%</div>
+                                    <div class="chart-center-label" id="chartCenterLabel" data-i18n="facts_chart_default_label">Besucher</div>
+                                </div>
+                            </div>
+                            
+                            <!-- Legend Grid -->
+                            <div class="chart-legend">
+                                <div class="legend-item" data-segment="1">
+                                    <span class="legend-dot" style="background-color: var(--chart-color-1);"></span>
+                                    <span class="legend-text"><span data-i18n="facts_chart_label_1">Technische Leitung & Management</span> <span class="legend-pct">17.8%</span></span>
+                                </div>
+                                <div class="legend-item" data-segment="2">
+                                    <span class="legend-dot" style="background-color: var(--chart-color-2);"></span>
+                                    <span class="legend-text"><span data-i18n="facts_chart_label_2">Bühnentechnik & Konstruktion</span> <span class="legend-pct">17.8%</span></span>
+                                </div>
+                                <div class="legend-item" data-segment="3">
+                                    <span class="legend-dot" style="background-color: var(--chart-color-3);"></span>
+                                    <span class="legend-text"><span data-i18n="facts_chart_label_3">Lichttechnik</span> <span class="legend-pct">14.9%</span></span>
+                                </div>
+                                <div class="legend-item" data-segment="4">
+                                    <span class="legend-dot" style="background-color: var(--chart-color-4);"></span>
+                                    <span class="legend-text"><span data-i18n="facts_chart_label_4">Audiotechnik</span> <span class="legend-pct">10.9%</span></span>
+                                </div>
+                                <div class="legend-item" data-segment="5">
+                                    <span class="legend-dot" style="background-color: var(--chart-color-5);"></span>
+                                    <span class="legend-text"><span data-i18n="facts_chart_label_5">Video & Multimedia</span> <span class="legend-pct">8.9%</span></span>
+                                </div>
+                                <div class="legend-item" data-segment="6">
+                                    <span class="legend-dot" style="background-color: var(--chart-color-6);"></span>
+                                    <span class="legend-text"><span data-i18n="facts_chart_label_6">Requisite & Bühnenbild</span> <span class="legend-pct">7.9%</span></span>
+                                </div>
+                                <div class="legend-item" data-segment="7">
+                                    <span class="legend-dot" style="background-color: var(--chart-color-7);"></span>
+                                    <span class="legend-text"><span data-i18n="facts_chart_label_7">Architektur / Fachplanung / Design</span> <span class="legend-pct">6.9%</span></span>
+                                </div>
+                                <div class="legend-item" data-segment="8">
+                                    <span class="legend-dot" style="background-color: var(--chart-color-8);"></span>
+                                    <span class="legend-text"><span data-i18n="facts_chart_label_8">Bildung</span> <span class="legend-pct">6.9%</span></span>
+                                </div>
+                                <div class="legend-item" data-segment="9">
+                                    <span class="legend-dot" style="background-color: var(--chart-color-9);"></span>
+                                    <span class="legend-text"><span data-i18n="facts_chart_label_9">Rigging</span> <span class="legend-pct">5.0%</span></span>
+                                </div>
+                                <div class="legend-item" data-segment="10">
+                                    <span class="legend-dot" style="background-color: var(--chart-color-10);"></span>
+                                    <span class="legend-text"><span data-i18n="facts_chart_label_10">Unternehmen & Industrie</span> <span class="legend-pct">3.0%</span></span>
+                                </div>
+                            </div>
                         </div>
 
                         <!-- Tile 9: Image (Projector) -->

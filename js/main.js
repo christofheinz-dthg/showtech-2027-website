@@ -669,8 +669,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 btn.classList.add('theme-purple');
             } else if (card.getAttribute('data-mobile-theme') === 'quote-shure') {
                 btn.classList.add('theme-quote-shure');
-            } else if (card.classList.contains('fact-card-blue-large')) {
-                btn.classList.add('theme-blue');
+            } else if (card.classList.contains('fact-card-chart')) {
+                btn.classList.add('theme-chart');
             } else if (card.classList.contains('fact-card-pink-small')) {
                 btn.classList.add('theme-pink-small');
             }
@@ -776,6 +776,142 @@ document.addEventListener('DOMContentLoaded', () => {
         window.addEventListener('resize', handleAutoplayState);
     }
 
+    // ── Interactive Donut Chart (Facts & Figures Redesign) ──
+    function initInteractiveChart() {
+        const chartWrapper = document.querySelector('.chart-wrapper');
+        const segments = document.querySelectorAll('.chart-segment');
+        const legendItems = document.querySelectorAll('.legend-item');
+        const chart = document.querySelector('.donut-chart');
+        const legend = document.querySelector('.chart-legend');
+        const centerPct = document.getElementById('chartCenterPct');
+        const centerLabel = document.getElementById('chartCenterLabel');
+
+        if (!chartWrapper || !segments.length || !legendItems.length) return;
+
+        // Default state
+        const defaultPct = "100%";
+        const defaultLabel = centerLabel.textContent;
+        let selectedSegmentId = null;
+
+        function highlightSegment(segmentId, pct, label) {
+            chart.classList.add('has-hover');
+            legend.classList.add('has-hover');
+
+            segments.forEach(seg => {
+                if (seg.getAttribute('data-segment') === segmentId) {
+                    seg.classList.add('hovered');
+                    seg.setAttribute('stroke-width', '11');
+                } else {
+                    seg.classList.remove('hovered');
+                    seg.setAttribute('stroke-width', '8');
+                }
+            });
+
+            legendItems.forEach(item => {
+                if (item.getAttribute('data-segment') === segmentId) {
+                    item.classList.add('active');
+                } else {
+                    item.classList.remove('active');
+                }
+            });
+
+            centerPct.textContent = pct;
+            centerLabel.textContent = label;
+        }
+
+        function resetHighlight() {
+            chart.classList.remove('has-hover');
+            legend.classList.remove('has-hover');
+
+            segments.forEach(seg => {
+                seg.classList.remove('hovered');
+                seg.setAttribute('stroke-width', '8');
+            });
+
+            legendItems.forEach(item => {
+                item.classList.remove('active');
+            });
+
+            centerPct.textContent = defaultPct;
+            const currentLang = localStorage.getItem('showtech_lang') || 'de';
+            centerLabel.textContent = currentLang === 'en' ? 'Visitors' : 'Besucher';
+        }
+
+        function handleInteract(segmentId) {
+            const correspondingSeg = document.querySelector(`.chart-segment[data-segment="${segmentId}"]`);
+            const pct = correspondingSeg ? correspondingSeg.getAttribute('data-pct') : "0%";
+            const legendItem = document.querySelector(`.legend-item[data-segment="${segmentId}"]`);
+            const labelTextNode = legendItem ? legendItem.querySelector('span[data-i18n]') : null;
+            const label = labelTextNode ? labelTextNode.textContent : (correspondingSeg ? correspondingSeg.getAttribute('data-label') : "");
+            
+            highlightSegment(segmentId, pct, label);
+        }
+
+        // Attach listeners for SVG segments
+        segments.forEach(seg => {
+            seg.addEventListener('mouseenter', () => {
+                if (selectedSegmentId === null) {
+                    const segmentId = seg.getAttribute('data-segment');
+                    handleInteract(segmentId);
+                }
+            });
+
+            seg.addEventListener('mouseleave', () => {
+                if (selectedSegmentId === null) {
+                    resetHighlight();
+                }
+            });
+
+            seg.addEventListener('click', (e) => {
+                e.stopPropagation();
+                const segmentId = seg.getAttribute('data-segment');
+                if (selectedSegmentId === segmentId) {
+                    selectedSegmentId = null;
+                    resetHighlight();
+                } else {
+                    selectedSegmentId = segmentId;
+                    handleInteract(segmentId);
+                }
+            });
+        });
+
+        // Attach listeners for Legend items
+        legendItems.forEach(item => {
+            item.addEventListener('mouseenter', () => {
+                if (selectedSegmentId === null) {
+                    const segmentId = item.getAttribute('data-segment');
+                    handleInteract(segmentId);
+                }
+            });
+
+            item.addEventListener('mouseleave', () => {
+                if (selectedSegmentId === null) {
+                    resetHighlight();
+                }
+            });
+
+            item.addEventListener('click', (e) => {
+                e.stopPropagation();
+                const segmentId = item.getAttribute('data-segment');
+                if (selectedSegmentId === segmentId) {
+                    selectedSegmentId = null;
+                    resetHighlight();
+                } else {
+                    selectedSegmentId = segmentId;
+                    handleInteract(segmentId);
+                }
+            });
+        });
+
+        // Click outside to reset selection
+        document.addEventListener('click', () => {
+            if (selectedSegmentId !== null) {
+                selectedSegmentId = null;
+                resetHighlight();
+            }
+        });
+    }
+
     // Attach listeners for scroll and resize
     window.addEventListener('scroll', handleMobileFlip, { passive: true });
     window.addEventListener('resize', handleMobileFlip);
@@ -789,5 +925,6 @@ document.addEventListener('DOMContentLoaded', () => {
     handleMobileTimelineActive();
     handleStickyHeaderIndicator();
     initMobileFactsCarousel();
+    initInteractiveChart();
 
 });

@@ -1707,6 +1707,157 @@ p {
     color: #ffffff;
 }
 
+/* Donut Chart Card and Wrapper */
+.fact-card-chart {
+    background: linear-gradient(135deg, #0d1b2e 0%, #172a45 100%) !important;
+    color: #ffffff;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.fact-card-chart .fact-icon-wrapper {
+    display: none;
+}
+
+.chart-card-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    text-align: center;
+    color: var(--color-text-primary);
+}
+
+.chart-wrapper {
+    position: relative;
+    width: 220px;
+    height: 220px;
+    margin: 0 auto;
+}
+
+.donut-chart {
+    width: 100%;
+    height: 100%;
+}
+
+.chart-segment {
+    cursor: pointer;
+    transition: stroke-width 0.3s ease, opacity 0.3s ease;
+    transform-origin: center;
+}
+
+.chart-center-info {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    pointer-events: none;
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.chart-center-pct {
+    font-size: 1.75rem;
+    font-weight: 800;
+    line-height: 1;
+    color: var(--color-text-primary);
+    font-family: var(--font-heading);
+}
+
+.chart-center-label {
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--color-text-secondary);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-top: 4px;
+    line-height: 1.2;
+    text-align: center;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+/* Chart Colors */
+:root {
+    --chart-color-1: #29b6f6;  /* Technical Direction - Bright Blue */
+    --chart-color-2: #5c6bc0;  /* Stage Tech - Indigo-Gray */
+    --chart-color-3: #ffd54f;  /* Warm Gold */
+    --chart-color-4: #d87c4f;  /* Audio - Terracotta */
+    --chart-color-5: #ec407a;  /* Video - Pink/Magenta */
+    --chart-color-6: #26a69a;  /* Props - Teal */
+    --chart-color-7: #26cbd9;  /* Architecture - Bright Cyan/Teal */
+    --chart-color-8: #ab47bc;  /* Education - Purple */
+    --chart-color-9: #cfd8dc;  /* Rigging - Silver-Gray */
+    --chart-color-10: #ffa726; /* Companies - Orange */
+}
+
+/* Legend Styling */
+.chart-legend {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0.5rem;
+    margin-top: 0.5rem;
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 6px 8px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.2s ease, opacity 0.2s ease;
+}
+
+.legend-item:hover,
+.legend-item.active {
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.legend-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
+.legend-text {
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: var(--color-text-secondary);
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.legend-pct {
+    font-weight: 700;
+    color: var(--color-text-primary);
+}
+
+.legend-item:hover .legend-text,
+.legend-item.active .legend-text {
+    color: var(--color-text-primary);
+}
+
+/* Dim segments/legend items when another is hovered */
+.donut-chart.has-hover .chart-segment:not(.hovered) {
+    opacity: 0.25;
+}
+
+.chart-legend.has-hover .legend-item:not(.active) {
+    opacity: 0.4;
+}
+
 /* Image Only Tile */
 .fact-card-image-only {
     padding: 0;
@@ -2092,6 +2243,11 @@ p {
         --theme-gradient: linear-gradient(135deg, #334155 0%, #475569 100%);
         --theme-glow: rgba(71, 85, 105, 0.4);
     }
+    .facts-mobile-tab-btn.theme-chart {
+        --theme-color: #29b6f6;
+        --theme-gradient: linear-gradient(135deg, #29b6f6 0%, #028bcf 100%);
+        --theme-glow: rgba(41, 182, 246, 0.45);
+    }
 
     /* Grid Flattening & Text Cards Display (with 3D perspective) */
     .facts-grid {
@@ -2147,6 +2303,38 @@ p {
         transform: rotateY(-90deg) scale(0.95) !important;
         opacity: 0 !important;
         display: flex !important;
+    }
+
+    /* Donut Chart Mobile Adjustments */
+    .fact-card-chart {
+        padding: 1.25rem 1rem !important;
+        gap: 0.5rem !important;
+        justify-content: center !important;
+        align-items: center !important;
+    }
+    .fact-card-chart .chart-card-title {
+        font-size: 1.05rem !important;
+        margin-bottom: 0 !important;
+    }
+    .fact-card-chart .chart-wrapper {
+        width: 175px !important;
+        height: 175px !important;
+    }
+    .fact-card-chart .chart-legend {
+        display: none !important;
+    }
+    .fact-card-chart .chart-center-pct {
+        font-size: 1.45rem !important;
+    }
+    .fact-card-chart .chart-center-info {
+        width: 82% !important;
+    }
+    .fact-card-chart .chart-center-label {
+        font-size: 0.62rem !important;
+        line-height: 1.15 !important;
+        margin-top: 3px !important;
+        -webkit-line-clamp: 3 !important;
+        max-width: 90% !important;
     }
 }
 /* ============================================
