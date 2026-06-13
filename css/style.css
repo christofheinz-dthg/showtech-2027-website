@@ -710,6 +710,18 @@ p {
     white-space: nowrap;
 }
 
+/* Make Hero date and calendar pills larger with 1rem labels */
+.hero-meta-bar .meta-pill {
+    font-size: 1rem;
+    padding: 10px 20px;
+    gap: 0.6rem;
+}
+
+.hero-meta-bar .meta-pill img {
+    width: 18px !important;
+    height: 18px !important;
+}
+
 .meta-btn {
     cursor: pointer;
     background: rgba(255, 255, 255, 0.04);
@@ -4823,5 +4835,44 @@ Let's make marker part of flow? No, absolute in item easiest.
 
     .page-header {
         padding: 130px 0 50px 0 !important;
+    }
+
+    /* Stack header items vertically in unscrolled state on mobile */
+    .site-header:not(.scrolled) {
+        padding: 1rem 0;
+    }
+
+    .site-header:not(.scrolled) .header-inner {
+        flex-direction: column;
+        align-items: center;
+        gap: 0.75rem;
+    }
+
+    .site-header:not(.scrolled) .header-actions {
+        order: 1; /* Language switcher first */
+        width: 100%;
+        justify-content: center;
+        margin-top: 0.5rem;
+    }
+
+    .site-header:not(.scrolled) .logo {
+        order: 2; /* Logo below language switcher */
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        margin-top: 1.25rem; /* Extra top margin as requested */
+    }
+
+    .site-header:not(.scrolled) .logo-link {
+        width: 280px;
+        margin: 0 auto;
+        justify-content: center;
+        padding: 0 1.5rem; /* Left/right padding as requested */
+    }
+
+    .site-header:not(.scrolled) .logo-default {
+        left: 50%;
+        transform: translate(-50%, -50%) scale(1);
+        max-width: calc(100% - 3rem);
     }
 }
