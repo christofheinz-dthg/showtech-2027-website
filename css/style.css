@@ -1750,11 +1750,18 @@ p {
 .quote-icon-wrapper {
     margin-bottom: 1rem;
     display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.15);
+    color: #ffffff;
 }
 
 .fact-quote-icon {
-    width: 32px;
-    height: 32px;
+    width: 24px;
+    height: 24px;
     object-fit: contain;
     filter: invert(1) brightness(2.5);
     opacity: 0.85;
@@ -2333,7 +2340,7 @@ p {
 
 .card-header-banner .card-tag {
     color: #ffffff !important;
-    font-size: 1.35rem !important; /* Larger font size as requested */
+    font-size: 1.0rem !important; /* Reduced from 1.35rem as requested */
     font-weight: 800 !important;
     text-transform: uppercase !important;
     letter-spacing: 0.12em !important;

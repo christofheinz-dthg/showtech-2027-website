@@ -40,7 +40,7 @@ const translations = {
         facts_quote_1_text: "„Der Standort war wunderschön, die Atmosphäre war durchweg freundlich, und das Publikum war hochkarätig und international – als Aussteller*in kann man sich nicht mehr wünschen.“",
         facts_quote_1_author: "Kai Uwe Patz, Bühnenbau Wertheim GmbH",
         facts_card_3_number: "7.200",
-        facts_card_3_text: "Besucher*innen aus 42 Ländern, davon 93 % aus der EU mit einem starken Kernpublikum aus Deutschland und den angrenzenden Ländern.",
+        facts_card_3_text: "Besucher*innen aus 42 Ländern, davon 93% aus der EU mit einem starken Kernpublikum aus Deutschland und den angrenzenden Ländern.",
         facts_quote_2_text: "„Es war großartig, mit vielen Standbesucher*innen in Kontakt zu treten. Vielen Dank für die tolle Stimmung vor, während und nach der Show in der Arena Berlin! Ein großes Lob an das SHOWTECH-Team für die reibungslose Organisation.“",
         facts_quote_2_author: "Monika Loreth, Shure Europe GmbH",
         facts_card_4_number: "3.500 +",
@@ -52,7 +52,7 @@ const translations = {
         exhibitors_section_tag: "Gemeinsam stark",
         exhibitors_section_title: "Ausstellende 2027",
         exhibitors_section_subtitle: "Führende Köpfe und innovative Unternehmen, die die Zukunft der Bühnenwelt gestalten.",
-        exhibitors_cta_btn: "Mitmachen",
+        exhibitors_cta_btn: "Stand buchen",
 
         // More Info Section
         moreinfo_section_tag: "Entdecken",
@@ -82,8 +82,8 @@ const translations = {
         moreinfo_newsletter_success_msg: "Deine Anmeldung war erfolgreich.",
 
         // Booking Section
-        booking_section_tag: "Terminvereinbarung",
-        booking_section_title: "Mitmachen bei der SHOWTECH",
+        booking_section_tag: "Standbuchung",
+        booking_section_title: "Jetzt Termin vereinbaren",
         booking_intro_text: "Buchen Sie hier Ihren persönlichen Online-Beratungstermin zur SHOWTECH 2027. In einem kurzen Gespräch (ca. 15 min.) informieren wir Sie über Standoptionen, mögliche Platzierungen und beantworten Ihre Fragen. Gerne können wir dabei auch über Ihre Wünsche und Ideen für 2027 sprechen.",
         booking_note_text: "Bitte geben Sie bei der Terminbuchung Ihren Firmennamen, die Ansprechperson sowie eine ungefähr gewünschte Flächengröße an:",
         booking_alternative_cta: "Oder hier per E-Mail",
@@ -188,7 +188,7 @@ const translations = {
         faq_exhibitor_q7: "Gibt es Sponsoring-Möglichkeiten?",
         faq_exhibitor_a7: "Ja, wir bieten vielfältige Sponsoring-Pakete an – von Branding auf Lanyards und Taschen bis hin zu exklusiven Eventsponsoring-Partnerschaften für die Abendveranstaltungen oder Kongressbühnen.",
         faq_back_to_top: "Zum Anfang",
-        faq_become_exhibitor: "Als Unternehmen teilnehmen",
+        faq_become_exhibitor: "Stand buchen",
 
         // Footer Section
         footer_col_1_title: "Event",
@@ -260,7 +260,7 @@ const translations = {
         exhibitors_section_tag: "Stronger together",
         exhibitors_section_title: "Exhibitors 2027",
         exhibitors_section_subtitle: "Leading minds and innovative companies shaping the future of the stage world.",
-        exhibitors_cta_btn: "Become an Exhibitor",
+        exhibitors_cta_btn: "Book a Stand",
 
         // More Info Section
         moreinfo_section_tag: "Discover",
@@ -290,8 +290,8 @@ const translations = {
         moreinfo_newsletter_success_msg: "Your registration was successful.",
 
         // Booking Section
-        booking_section_tag: "Book a Meeting",
-        booking_section_title: "Participate in SHOWTECH",
+        booking_section_tag: "Stand Booking",
+        booking_section_title: "Book an Appointment Now",
         booking_intro_text: "Book your personal online consultation for SHOWTECH 2027 here. In a short call (approx. 15 min.) we will inform you about stand options, possible placements and answer your questions. We are also happy to discuss your ideas and wishes for 2027.",
         booking_note_text: "Please provide your company name, contact person and approximate desired floor space when booking:",
         booking_alternative_cta: "Or contact us by email",
@@ -396,7 +396,7 @@ const translations = {
         faq_exhibitor_q7: "Are there sponsorship opportunities?",
         faq_exhibitor_a7: "Yes, we offer a wide range of sponsorship packages – from branding on lanyards and bags to exclusive event sponsorship partnerships for the evening events or congress stages.",
         faq_back_to_top: "Back to top",
-        faq_become_exhibitor: "Become an Exhibitor",
+        faq_become_exhibitor: "Book a Stand",
 
         // Footer Section
         footer_col_1_title: "Event",
