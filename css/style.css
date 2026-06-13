@@ -290,7 +290,7 @@ p {
 /* Sticky Logo (Icon/Smaller) */
 .logo-sticky {
     opacity: 0;
-    height: 40px;
+    height: 80px;
     /* Slightly larger icon */
     transform: translateY(-40%) scale(0.8);
     pointer-events: none;
@@ -4065,7 +4065,7 @@ Let's make marker part of flow? No, absolute in item easiest.
 .footer-logo-link {
     display: inline-block;
     margin-bottom: 0;
-    height: 80px;
+    height: 40px;
 }
 
 .footer-logo-img {
