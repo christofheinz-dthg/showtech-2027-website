@@ -239,6 +239,27 @@ p {
     will-change: background, padding;
 }
 
+/* Make header full-width on wider viewports */
+.site-header .container {
+    max-width: 100%;
+    padding-left: 4rem;
+    padding-right: 4rem;
+}
+
+@media (max-width: 1200px) {
+    .site-header .container {
+        padding-left: 2rem;
+        padding-right: 2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .site-header .container {
+        padding-left: var(--spacing-sm);
+        padding-right: var(--spacing-sm);
+    }
+}
+
 .site-header.scrolled {
     background: #050b14 !important;
     /* Force solid opaque color */
