@@ -291,7 +291,7 @@ p {
     height: 100%;
     width: auto;
     object-fit: contain;
-    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    transition: opacity 0.4s cubic-bezier(0.16, 1, 0.3, 1), transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
     position: absolute;
     left: 0;
     top: 50%;
@@ -2406,9 +2406,13 @@ p {
         margin-top: 0.15rem !important;
     }
     .fact-card-chart .chart-under-label-title {
-        font-size: 0.85rem !important;
-        line-height: 1.25 !important;
-        min-height: 2.6em !important;
+        font-size: 0.8rem !important;
+        line-height: 1.2 !important;
+        min-height: 2.4em !important;
+        display: block !important;
+        -webkit-line-clamp: unset !important;
+        overflow: visible !important;
+        white-space: normal !important;
     }
     .fact-card-chart .chart-interaction-hint {
         font-size: 0.65rem !important;
@@ -5136,10 +5140,6 @@ Let's make marker part of flow? No, absolute in item easiest.
         padding: 0;
     }
 
-    .site-header:not(.scrolled) .logo-default {
-        left: 50%;
-        transform: translate(-50%, -50%) scale(1);
-    }
 
     /* Prevent default logo overflow in mobile viewports */
     .logo-default {
