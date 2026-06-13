@@ -4864,15 +4864,28 @@ Let's make marker part of flow? No, absolute in item easiest.
     }
 
     .site-header:not(.scrolled) .logo-link {
-        width: 280px;
+        width: 100%;
+        max-width: 340px;
         margin: 0 auto;
         justify-content: center;
-        padding: 0 1.5rem; /* Left/right padding as requested */
+        padding: 0;
     }
 
     .site-header:not(.scrolled) .logo-default {
         left: 50%;
         transform: translate(-50%, -50%) scale(1);
-        max-width: calc(100% - 3rem);
+        max-width: 100%;
+    }
+
+    /* Hero meta bar pills should be smaller on mobile (reverted to default size) */
+    .hero-meta-bar .meta-pill {
+        font-size: var(--type-small);
+        padding: 6px 14px;
+        gap: 0.4rem;
+    }
+
+    .hero-meta-bar .meta-pill img {
+        width: 14px !important;
+        height: 14px !important;
     }
 }
