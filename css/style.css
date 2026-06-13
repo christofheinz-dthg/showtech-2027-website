@@ -4874,7 +4874,13 @@ Let's make marker part of flow? No, absolute in item easiest.
     .site-header:not(.scrolled) .logo-default {
         left: 50%;
         transform: translate(-50%, -50%) scale(1);
-        max-width: 100%;
+    }
+
+    /* Prevent default logo overflow in mobile viewports */
+    .logo-default {
+        width: 100% !important;
+        height: auto !important;
+        max-width: 100% !important;
     }
 
     /* Hero meta bar pills should be smaller on mobile (reverted to default size) */
