@@ -3,9 +3,6 @@ const translations = {
         // Header & Navigation
         nav_logo_alt: "SHOWTECH 2027 Logo",
         nav_sticky_logo_alt: "SHOWTECH 2027 Sticky Logo",
-        nav_pill_trade_fair: "Trade Fair",
-        nav_pill_congress: "Congress",
-        nav_pill_network: "Network",
         nav_lang_en: "EN",
         nav_lang_de: "DE",
         nav_btn_exhibitor: "Ausstellen",
@@ -214,9 +211,6 @@ const translations = {
         // Header & Navigation
         nav_logo_alt: "SHOWTECH 2027 Logo",
         nav_sticky_logo_alt: "SHOWTECH 2027 Sticky Logo",
-        nav_pill_trade_fair: "Trade Fair",
-        nav_pill_congress: "Congress",
-        nav_pill_network: "Network",
         nav_lang_en: "EN",
         nav_lang_de: "DE",
         nav_btn_exhibitor: "Exhibitors",
