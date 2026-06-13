@@ -796,6 +796,7 @@ document.addEventListener('DOMContentLoaded', () => {
         function highlightSegment(segmentId, pct, label) {
             chart.classList.add('has-hover');
             legend.classList.add('has-hover');
+            chartWrapper.classList.add('segment-active');
 
             segments.forEach(seg => {
                 if (seg.getAttribute('data-segment') === segmentId) {
@@ -822,6 +823,7 @@ document.addEventListener('DOMContentLoaded', () => {
         function resetHighlight() {
             chart.classList.remove('has-hover');
             legend.classList.remove('has-hover');
+            chartWrapper.classList.remove('segment-active');
 
             segments.forEach(seg => {
                 seg.classList.remove('hovered');
