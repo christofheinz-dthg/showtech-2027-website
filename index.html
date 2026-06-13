@@ -369,7 +369,7 @@
                         <!-- Tile 8: Donut Chart -->
                         <div class="fact-card fact-card-chart">
                             <div class="fact-icon-wrapper">
-                                <img src="assets/icon_sets/icons_factandfigures/3500_Industry.svg" alt="Branchenvertreter Icon" class="fact-icon">
+                                <img src="assets/icon_sets/icons_factandfigures/ST27_icon_branchen.svg" alt="Branchenvertreter Icon" class="fact-icon">
                             </div>
                             <h3 class="chart-card-title" data-i18n="facts_chart_title">Besucher-Profil nach Segmenten</h3>
                             
@@ -399,10 +399,18 @@
                                     </g>
                                 </svg>
                                 
-                                <!-- Interactive Center Info -->
+                                <!-- Interactive Center Info (Only percentage inside the ring) -->
                                 <div class="chart-center-info">
                                     <div class="chart-center-pct" id="chartCenterPct">100%</div>
-                                    <div class="chart-center-label" id="chartCenterLabel" data-i18n="facts_chart_default_label">Besucher</div>
+                                </div>
+                            </div>
+
+                            <!-- Dynamic Segment label container under the circle -->
+                            <div class="chart-under-info">
+                                <div class="chart-under-label-title" id="chartCenterLabel" data-i18n="facts_chart_default_label">Besucher</div>
+                                <div class="chart-interaction-hint">
+                                    <svg class="hint-icon" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="M12 16v-4"></path><path d="M12 8h.01"></path></svg>
+                                    <span data-i18n="facts_chart_hint">Segmente zum Erkunden berühren / hovern</span>
                                 </div>
                             </div>
                             
