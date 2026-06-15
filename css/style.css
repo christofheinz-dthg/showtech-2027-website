@@ -2844,6 +2844,26 @@ p {
     transform: scale(0.98);
 }
 
+/* Brevo Loader Spin Styling */
+.sib-form-block__button .progress-indicator__icon {
+    width: 16px;
+    height: 16px;
+    margin-right: 8px;
+    vertical-align: middle;
+    fill: currentColor;
+    display: inline-block;
+    animation: sib-spin 1s linear infinite;
+}
+
+@keyframes sib-spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.sib-hide-loader-icon {
+    display: none !important;
+}
+
 /* Custom Checkbox */
 .custom-checkbox-container {
     display: flex;
