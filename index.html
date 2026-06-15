@@ -579,7 +579,7 @@
 
                                         <!-- Form fields wrapper -->
                                         <div id="sib-container">
-                                            <form id="sib-form" method="POST" action="https://421e8861.sibforms.com/serve/MUIFAI7Ta4MS6vOVEa615Sb_hI1kD63WUC0pa_cAE3muYuuMu-XvCQNhZx2PWwhl2a5Z34OlXvsrQZlpGqPxgQK9jP8xbrf9qhkYoZ33Z363y8HeEqdnBjCSdELhJyJqJSTf0qeX7oTwf2GYkaShPTUIY1E6bNx7nkh2VjdYunDKKRAIiPCoejdjlxfUrBZZDbFVdqgEiHWB3sv8" data-type="subscription">
+                                            <form id="sib-form" method="POST" action="https://421e8861.sibforms.com/v2/serve/MUIFADUlU5b4Jyw02gTqbDjhrujtvWBidMZZcE6FHrueHvzntD_zrLfq9z87Li147qWuyrzEbFXlcpkSx1rf22wJKuOaMBVcMfljxEL0p30GyJ09YePVbb5w5WlEHv_1MEmP6omsqtZuFEHSYPiuwvq_ppFkxwnESoyvXcJ1bMLqhwfV2olqiYuALXA78cIxW3uZg9SgYTUsl3cd" data-type="subscription">
                                                 <!-- Name fields (Vorname & Nachname) -->
                                                 <div class="sib-form-row-names">
                                                     <div class="sib-input sib-form-block">
@@ -596,12 +596,24 @@
                                                     </div>
                                                 </div>
 
-                                                <!-- Company field (only visible for exhibitors) -->
-                                                <div class="sib-form-row" id="newsletter-company-row" style="display: none; margin-bottom: 1rem;">
+                                                <!-- Company field (Always visible and required for both visitor & exhibitor lists) -->
+                                                <div class="sib-form-row" id="newsletter-company-row" style="margin-bottom: 1.25rem;">
                                                     <div class="sib-input sib-form-block">
                                                         <div class="form__entry entry_block">
-                                                            <input class="input custom-input" type="text" id="name" name="COMPANY:name" autocomplete="off" placeholder="Firma" data-i18n="moreinfo_newsletter_placeholder_company" />
+                                                            <input class="input custom-input" type="text" id="name" name="COMPANY:name" autocomplete="off" placeholder="Firma" data-required="true" required data-i18n="moreinfo_newsletter_placeholder_company" />
                                                             <label class="entry__error entry__error--primary"></label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <!-- Hidden list checkboxes controlled by tabs -->
+                                                <div class="sib-checkbox-group sib-form-block" data-required="true" style="display: none;">
+                                                    <div class="form__entry entry_mcq">
+                                                        <div class="entry__choice">
+                                                            <input type="checkbox" class="input_replaced" name="lists_32[]" id="newsletter-list-visitor" data-value="Besucherinformationen" value="44" data-required="true" checked />
+                                                        </div>
+                                                        <div class="entry__choice">
+                                                            <input type="checkbox" class="input_replaced" name="lists_32[]" id="newsletter-list-exhibitor" data-value="Ausstellerinformationen" value="59" data-required="true" />
                                                         </div>
                                                     </div>
                                                 </div>
@@ -1419,24 +1431,18 @@
       function switchNewsletterTab(type) {
         var visitorBtn = document.getElementById('newsletter-tab-visitor');
         var exhibitorBtn = document.getElementById('newsletter-tab-exhibitor');
-        var companyRow = document.getElementById('newsletter-company-row');
-        var companyInput = document.getElementById('name');
-        var form = document.getElementById('sib-form');
+        var visitorListCheckbox = document.getElementById('newsletter-list-visitor');
+        var exhibitorListCheckbox = document.getElementById('newsletter-list-exhibitor');
         var descEl = document.getElementById('newsletter-desc');
         var lang = localStorage.getItem('showtech_lang') || 'de';
         
         if (type === 'visitor') {
           if (visitorBtn) visitorBtn.classList.add('active');
           if (exhibitorBtn) exhibitorBtn.classList.remove('active');
-          if (companyRow) companyRow.style.display = 'none';
-          if (companyInput) {
-            companyInput.removeAttribute('required');
-            companyInput.removeAttribute('data-required');
-            companyInput.value = '';
-          }
-          if (form) {
-            form.setAttribute('action', 'https://421e8861.sibforms.com/serve/MUIFAI7Ta4MS6vOVEa615Sb_hI1kD63WUC0pa_cAE3muYuuMu-XvCQNhZx2PWwhl2a5Z34OlXvsrQZlpGqPxgQK9jP8xbrf9qhkYoZ33Z363y8HeEqdnBjCSdELhJyJqJSTf0qeX7oTwf2GYkaShPTUIY1E6bNx7nkh2VjdYunDKKRAIiPCoejdjlxfUrBZZDbFVdqgEiHWB3sv8');
-          }
+          
+          if (visitorListCheckbox) visitorListCheckbox.checked = true;
+          if (exhibitorListCheckbox) exhibitorListCheckbox.checked = false;
+          
           if (descEl) {
             descEl.setAttribute('data-i18n', 'moreinfo_newsletter_desc_visitor');
             if (window.translations && window.translations[lang] && window.translations[lang]['moreinfo_newsletter_desc_visitor']) {
@@ -1446,14 +1452,10 @@
         } else if (type === 'exhibitor') {
           if (exhibitorBtn) exhibitorBtn.classList.add('active');
           if (visitorBtn) visitorBtn.classList.remove('active');
-          if (companyRow) companyRow.style.display = 'block';
-          if (companyInput) {
-            companyInput.setAttribute('required', 'true');
-            companyInput.setAttribute('data-required', 'true');
-          }
-          if (form) {
-            form.setAttribute('action', 'https://421e8861.sibforms.com/v2/serve/MUIFADUlU5b4Jyw02gTqbDjhrujtvWBidMZZcE6FHrueHvzntD_zrLfq9z87Li147qWuyrzEbFXlcpkSx1rf22wJKuOaMBVcMfljxEL0p30GyJ09YePVbb5w5WlEHv_1MEmP6omsqtZuFEHSYPiuwvq_ppFkxwnESoyvXcJ1bMLqhwfV2olqiYuALXA78cIxW3uZg9SgYTUsl3cd');
-          }
+          
+          if (visitorListCheckbox) visitorListCheckbox.checked = false;
+          if (exhibitorListCheckbox) exhibitorListCheckbox.checked = true;
+          
           if (descEl) {
             descEl.setAttribute('data-i18n', 'moreinfo_newsletter_desc_exhibitor');
             if (window.translations && window.translations[lang] && window.translations[lang]['moreinfo_newsletter_desc_exhibitor']) {
