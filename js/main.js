@@ -123,6 +123,30 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Save lang selection in localStorage
         localStorage.setItem('showtech_lang', lang);
+
+        // Fix WordPress links after translations are applied
+        fixWordPressLinks();
+    }
+
+    function fixWordPressLinks() {
+        if (!window.LANDINGPAGE_URL) return; // nur im WordPress-Kontext aktiv, lokal unverändert
+
+        const linkMap = {
+            'exhibitor-downloads.html': '/exhibitor-downloads/',
+            'impressum.html': '/impressum/',
+            'datenschutz.html': '/datenschutz/'
+        };
+
+        Object.entries(linkMap).forEach(([oldHref, newHref]) => {
+            document.querySelectorAll(`a[href="${oldHref}"]`).forEach(link => {
+                link.setAttribute('href', newHref);
+            });
+        });
+
+        document.querySelectorAll('a[href^="index.html#"]').forEach(link => {
+            const hash = link.getAttribute('href').replace('index.html#', '');
+            link.setAttribute('href', '/#' + hash);
+        });
     }
 
     if (langSwitcherBtn && langSwitcherDropdown) {
