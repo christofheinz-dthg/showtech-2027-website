@@ -1758,22 +1758,79 @@
         window.switchNewsletterTab = switchNewsletterTab;
     </script>
     <script>
-        // Override JSON.parse to handle CORS-blocked empty responses from Brevo
-        (function() {
-            const originalParse = JSON.parse;
-            JSON.parse = function(text, reviver) {
-                if (typeof text === 'string' && text.trim() === '') {
-                    const lang = localStorage.getItem('showtech_lang') || 'de';
-                    const msg = lang === 'en' 
-                        ? 'Your registration was successful.' 
-                        : 'Deine Anmeldung war erfolgreich.';
-                    return { success: true, message: msg };
+        document.addEventListener('DOMContentLoaded', () => {
+            const form = document.getElementById('sib-form');
+            if (!form) return;
+
+            form.addEventListener('submit', (event) => {
+                event.preventDefault();
+
+                if (!form.checkValidity()) {
+                    return;
                 }
-                return originalParse(text, reviver);
-            };
-        })();
+
+                // Show loading spinner inside submit button
+                const submitBtn = form.querySelector('button[type="submit"]');
+                const loaderIcon = submitBtn.querySelector('svg');
+                if (loaderIcon) {
+                    loaderIcon.classList.remove('sib-hide-loader-icon');
+                }
+                submitBtn.setAttribute('disabled', 'true');
+
+                // Build FormData from form fields
+                const formData = new FormData(form);
+
+                // Submit to Brevo using no-cors mode to bypass CORS block
+                fetch(form.getAttribute('action'), {
+                    method: 'POST',
+                    body: formData,
+                    mode: 'no-cors'
+                })
+                .then(() => {
+                    // Hide spinner
+                    if (loaderIcon) {
+                        loaderIcon.classList.add('sib-hide-loader-icon');
+                    }
+                    submitBtn.removeAttribute('disabled');
+                    
+                    // Hide inputs form container
+                    const container = document.getElementById('sib-container');
+                    if (container) {
+                        container.style.display = 'none';
+                    }
+                    
+                    // Show success message panel
+                    const successMsg = document.getElementById('success-message');
+                    if (successMsg) {
+                        successMsg.style.display = 'flex';
+                        successMsg.classList.add('sib-form-message-panel--active');
+                    }
+                    
+                    // Hide error message panel if visible
+                    const errorMsg = document.getElementById('error-message');
+                    if (errorMsg) {
+                        errorMsg.style.display = 'none';
+                        errorMsg.classList.remove('sib-form-message-panel--active');
+                    }
+                })
+                .catch((err) => {
+                    console.error("Newsletter submission error:", err);
+                    // Hide spinner
+                    if (loaderIcon) {
+                        loaderIcon.classList.add('sib-hide-loader-icon');
+                    }
+                    submitBtn.removeAttribute('disabled');
+                    
+                    // Show error message panel
+                    const errorMsg = document.getElementById('error-message');
+                    if (errorMsg) {
+                        errorMsg.style.display = 'flex';
+                        errorMsg.classList.add('sib-form-message-panel--active');
+                    }
+                });
+            });
+        });
     </script>
-    <script defer src="https://sibforms.com/forms/end-form/build/main.js"></script>
 
     <script src="js/main.js" type="module"></script>
 </body>
