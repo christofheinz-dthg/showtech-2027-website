@@ -90,7 +90,7 @@ const translations = {
         moreinfo_newsletter_checkbox: "Ja, ich möchte den SHOWTECH-Newsletter mit weiteren Informationen zur Veranstaltung erhalten.",
         moreinfo_newsletter_checkbox_spec: "Sie können sich jederzeit über den Link in jeder Newsletter-Ausgabe abmelden.",
         moreinfo_newsletter_error_msg: "Deine Anmeldung konnte nicht gespeichert werden. Bitte versuche es erneut.",
-        moreinfo_newsletter_success_msg: "Deine Anmeldung war erfolgreich.",
+        moreinfo_newsletter_success_msg: "Das hat geklappt! Bitte prüfen Sie Ihr Postfach in den nächsten Minuten, um die Anmeldung abzuschließen.",
 
         // Booking Section
         booking_section_tag: "Standbuchung",
@@ -309,7 +309,7 @@ const translations = {
         moreinfo_newsletter_checkbox: "Yes, I would like to receive the SHOWTECH newsletter with further information about the event.",
         moreinfo_newsletter_checkbox_spec: "You can unsubscribe at any time via the link in any newsletter edition.",
         moreinfo_newsletter_error_msg: "Your registration could not be saved. Please try again.",
-        moreinfo_newsletter_success_msg: "Your registration was successful.",
+        moreinfo_newsletter_success_msg: "It worked! Please check your inbox in the next few minutes to complete your registration.",
 
         // Booking Section
         booking_section_tag: "Stand Booking",
