@@ -109,7 +109,7 @@
     </div>
     <div></div>
     <div id="sib-container" class="sib-container--large sib-container--vertical" style="max-width:540px; text-align:center; background-color:rgba(255,255,255,1); border-width:1px; border-style:solid; border-color:#C0CCD9; border-radius:3px; direction:ltr">
-      <form id="sib-form" method="POST" action="https://421e8861.sibforms.com/serve/MUIFAI7Ta4MS6vOVEa615Sb_hI1kD63WUC0pa_cAE3muYuuMu-XvCQNhZx2PWwhl2a5Z34OlXvsrQZlpGqPxgQK9jP8xbrf9qhkYoZ33Z363y8HeEqdnBjCSdELhJyJqJSTf0qeX7oTwf2GYkaShPTUIY1E6bNx7nkh2VjdYunDKKRAIiPCoejdjlxfUrBZZDbFVdqgEiHWB3sv8" data-type="subscription">
+      <form id="sib-form" method="POST" action="https://421e8861.sibforms.com/v2/serve/MUIFADUlU5b4Jyw02gTqbDjhrujtvWBidMZZcE6FHrueHvzntD_zrLfq9z87Li147qWuyrzEbFXlcpkSx1rf22wJKuOaMBVcMfljxEL0p30GyJ09YePVbb5w5WlEHv_1MEmP6omsqtZuFEHSYPiuwvq_ppFkxwnESoyvXcJ1bMLqhwfV2olqiYuALXA78cIxW3uZg9SgYTUsl3cd" data-type="subscription">
 
 
         <div style="padding: 8px 0;">
@@ -158,7 +158,7 @@
               <div class="form__label-row ">
 
 
-                <label class="entry__label" style="font-weight: 700; text-align: left; font-family:Helvetica, sans-serif; font-size:16px; font-weight:700; text-align:left; color:#3c4858;" for="NACHNAME" data-required="*">Nachname</label>
+                <label class="entry__label" style="font-weight: 700; text-align: left; font-family:Helvetica, sans-serif; font-size:16px; font-weight:700; text-align:left; color:#3c4858;" for="NACHNAME" data-required="*">Gib dein(e) NACHNAME ein</label>
 
 
 
@@ -166,6 +166,43 @@
                 <div class="entry__field">
 
                   <input class="input " maxlength="200" type="text" id="NACHNAME" name="NACHNAME" autocomplete="off" placeholder="NACHNAME" data-required="true" required />
+
+                </div>
+
+              </div>
+
+              <label class="entry__error entry__error--primary" style="font-family:Helvetica, sans-serif; font-size:16px; text-align:left; color:#661d1d; background-color:#ffeded; border-color:#ff4949; border-radius:3px;">
+              </label>
+
+
+
+            </div>
+          </div>
+
+
+
+
+        </div>
+
+
+
+        <div style="padding: 8px 0;">
+
+
+
+          <div class="sib-input sib-form-block">
+            <div class="form__entry entry_block">
+              <div class="form__label-row ">
+
+
+                <label class="entry__label" style="font-weight: 700; text-align: left; font-family:Helvetica, sans-serif; font-size:16px; font-weight:700; text-align:left; color:#3c4858;" for="name" data-required="*">Firma</label>
+
+
+
+
+                <div class="entry__field">
+
+                  <input class="input " maxlength="200" type="text" id="name" name="COMPANY:name" autocomplete="off" placeholder="FIRMA" data-required="true" required />
 
                 </div>
 
@@ -216,6 +253,60 @@
               <label class="entry__specification" style="font-family:Helvetica, sans-serif; font-size:12px; text-align:left; color:#8390A4; text-align: left ">
                 Please enter your e-mail address for registration, e.g. abc@xyz.com.
               </label>
+
+            </div>
+          </div>
+
+
+
+
+        </div>
+
+
+
+        <div style="padding: 8px 0;">
+
+
+
+
+          <div class="sib-checkbox-group sib-form-block" data-required="true">
+            <div class="form__entry entry_mcq">
+              <div class="form__label-row ">
+
+
+                <label class="entry__label" style="font-weight: 700; text-align: left; font-family:Helvetica, sans-serif; font-size:16px; font-weight:700; text-align:left; color:#3c4858;" data-required="*">Art des Newsletters:</label>
+
+
+                <div style="">
+
+                  <div class="entry__choice">
+                    <label class="checkbox__label">
+                      <input type="checkbox" class="input_replaced" name="lists_32[]" data-value="Besucherinformationen" value="44" data-required="true" />
+
+                      <span class="checkbox checkbox_tick_positive"
+                style="margin-left:"
+                ></span><span style="font-family:Helvetica, sans-serif; font-size:16px; text-align:left; color:#3C4858; background-color:transparent;">Besucherinformationen</span>
+
+                    </label>
+                  </div>
+
+                  <div class="entry__choice">
+                    <label class="checkbox__label">
+                      <input type="checkbox" class="input_replaced" name="lists_32[]" data-value="Ausstellerinformationen" value="59" data-required="true" />
+
+                      <span class="checkbox checkbox_tick_positive"
+                style="margin-left:"
+                ></span><span style="font-family:Helvetica, sans-serif; font-size:16px; text-align:left; color:#3C4858; background-color:transparent;">Ausstellerinformationen</span>
+
+                    </label>
+                  </div>
+
+                </div>
+              </div>
+              <label class="entry__error entry__error--primary" style="font-family:Helvetica, sans-serif; font-size:16px; text-align:left; color:#661d1d; background-color:#ffeded; border-color:#ff4949; border-radius:3px;">
+              </label>
+
+
 
             </div>
           </div>
