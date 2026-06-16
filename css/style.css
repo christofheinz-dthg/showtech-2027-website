@@ -2940,9 +2940,13 @@ p {
     padding: 1.25rem;
     margin-bottom: 1.5rem;
     font-size: 0.9rem;
-    display: flex;
+    display: none !important;
     align-items: center;
     border: 1px solid transparent;
+}
+
+.sib-form-message-panel.sib-form-message-panel--active {
+    display: flex !important;
 }
 
 .sib-form-message-panel.error-message {

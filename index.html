@@ -678,8 +678,7 @@
                                 <div class="sib-form">
                                     <div id="sib-form-container" class="sib-form-container">
                                         <!-- Error Message Box -->
-                                        <div id="error-message" class="sib-form-message-panel error-message"
-                                            style="display: none;">
+                                        <div id="error-message" class="sib-form-message-panel error-message">
                                             <div class="sib-form-message-panel__text">
                                                 <svg viewBox="0 0 512 512" class="sib-icon sib-notification__icon">
                                                     <path
@@ -694,8 +693,7 @@
                                         </div>
 
                                         <!-- Success Message Box -->
-                                        <div id="success-message" class="sib-form-message-panel success-message"
-                                            style="display: none;">
+                                        <div id="success-message" class="sib-form-message-panel success-message">
                                             <div class="sib-form-message-panel__text">
                                                 <svg viewBox="0 0 512 512" class="sib-icon sib-notification__icon">
                                                     <path
@@ -765,6 +763,7 @@
                                                                 data-value="Ausstellerinformationen" value="59"
                                                                 data-required="true" />
                                                         </div>
+                                                        <label class="entry__error entry__error--primary"></label>
                                                     </div>
                                                 </div>
 
@@ -1719,8 +1718,14 @@
                 if (visitorBtn) visitorBtn.classList.add('active');
                 if (exhibitorBtn) exhibitorBtn.classList.remove('active');
 
-                if (visitorListCheckbox) visitorListCheckbox.checked = true;
-                if (exhibitorListCheckbox) exhibitorListCheckbox.checked = false;
+                if (visitorListCheckbox && !visitorListCheckbox.checked) {
+                    visitorListCheckbox.checked = true;
+                    visitorListCheckbox.dispatchEvent(new Event('change'));
+                }
+                if (exhibitorListCheckbox && exhibitorListCheckbox.checked) {
+                    exhibitorListCheckbox.checked = false;
+                    exhibitorListCheckbox.dispatchEvent(new Event('change'));
+                }
 
                 if (descEl) {
                     descEl.setAttribute('data-i18n', 'moreinfo_newsletter_desc_visitor');
@@ -1732,8 +1737,14 @@
                 if (exhibitorBtn) exhibitorBtn.classList.add('active');
                 if (visitorBtn) visitorBtn.classList.remove('active');
 
-                if (visitorListCheckbox) visitorListCheckbox.checked = false;
-                if (exhibitorListCheckbox) exhibitorListCheckbox.checked = true;
+                if (visitorListCheckbox && visitorListCheckbox.checked) {
+                    visitorListCheckbox.checked = false;
+                    visitorListCheckbox.dispatchEvent(new Event('change'));
+                }
+                if (exhibitorListCheckbox && !exhibitorListCheckbox.checked) {
+                    exhibitorListCheckbox.checked = true;
+                    exhibitorListCheckbox.dispatchEvent(new Event('change'));
+                }
 
                 if (descEl) {
                     descEl.setAttribute('data-i18n', 'moreinfo_newsletter_desc_exhibitor');
