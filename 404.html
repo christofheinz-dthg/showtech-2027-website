@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seite nicht gefunden - SHOWTECH 2027</title>
+    <meta name="description" content="SHOWTECH 2027 - Fehler 404: Seite nicht gefunden.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+    <style>
+        /* Language-based display toggling */
+        body[data-current-lang="de"] .lang-en-content {
+            display: none !important;
+        }
+        body[data-current-lang="en"] .lang-de-content {
+            display: none !important;
+        }
+
+        /* 404 Center Card Styling */
+        .error-card {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 24px;
+            padding: 4rem 2rem;
+            max-width: 650px;
+            margin: 0 auto;
+            text-align: center;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+            backdrop-filter: blur(5px);
+            -webkit-backdrop-filter: blur(5px);
+        }
+
+        .error-code {
+            font-size: 7rem;
+            font-family: var(--font-heading);
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--color-accent-blue), var(--color-accent-pink));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 1rem;
+            line-height: 1;
+            letter-spacing: -0.05em;
+        }
+
+        .error-message {
+            font-size: 1.25rem;
+            color: var(--color-text-secondary);
+            margin-bottom: 2.5rem;
+            line-height: 1.6;
+        }
+    </style>
+    <script>
+        // Language synchronization logic
+        document.addEventListener('DOMContentLoaded', () => {
+            function updateLang(lang) {
+                document.body.setAttribute('data-current-lang', lang);
+                if (lang === 'en') {
+                    document.title = "Page Not Found - SHOWTECH 2027";
+                } else {
+                    document.title = "Seite nicht gefunden - SHOWTECH 2027";
+                }
+            }
+
+            // Init from localStorage
+            const savedLang = localStorage.getItem('showtech_lang') || 'de';
+            updateLang(savedLang);
+
+            // React to clicks on header dropdown
+            const dropdownItems = document.querySelectorAll('.lang-dropdown-item');
+            dropdownItems.forEach(item => {
+                item.addEventListener('click', () => {
+                    const lang = item.getAttribute('data-lang');
+                    updateLang(lang);
+                });
+            });
+        });
+    </script>
+</head>
+
+<body>
+
+    <!-- Sticky Header -->
+    <header class="site-header scrolled" id="site-header">
+        <div class="container header-inner">
+            <div class="logo">
+                <a href="index.html#hero" class="logo-link">
+                    <!-- Standard Logo -->
+                    <img src="assets/hero logos/SHOWTECH_logo_wht.png" alt="SHOWTECH 2027 Logo" class="logo-img logo-default" data-i18n="nav_logo_alt">
+                    <!-- Sticky Logo -->
+                    <img src="assets/hero logos/SHOWTECH_ellipse_logo-wht.png" alt="SHOWTECH 2027 Sticky Logo" class="logo-img logo-sticky" data-i18n="nav_sticky_logo_alt">
+                </a>
+            </div>
+
+            <!-- Active Section Indicator -->
+            <div class="header-section-indicator" id="headerSectionIndicator">
+                <span class="indicator-text"></span>
+            </div>
+
+            <div class="header-actions">
+                <div class="lang-switcher-dropdown" id="langSwitcherDropdown">
+                    <button class="lang-switcher-btn" id="langSwitcherBtn" aria-haspopup="true" aria-expanded="false">
+                        <span class="current-lang">EN</span>
+                        <span class="lang-arrow">▼</span>
+                    </button>
+                    <ul class="lang-dropdown-menu" id="langDropdownMenu" aria-label="Language selection">
+                        <li><button class="lang-dropdown-item active" data-lang="en" data-i18n="nav_lang_en">EN</button></li>
+                        <li><button class="lang-dropdown-item" data-lang="de" data-i18n="nav_lang_de">DE</button></li>
+                    </ul>
+                </div>
+                <a href="index.html#exhibitor2027" class="btn btn-secondary btn-sm" data-i18n="nav_btn_exhibitor">Ausstellen</a>
+                <button class="mobile-menu-toggle" id="menuToggle" aria-label="Toggle Menu" aria-expanded="false" data-i18n="nav_toggle_label">
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Full-screen Nav Overlay -->
+    <div class="nav-overlay" id="navOverlay" aria-hidden="true">
+        <nav class="nav-overlay-inner">
+            <ul class="nav-overlay-links">
+                <li><a href="index.html#hero" class="nav-overlay-link" data-i18n="nav_link_start">Start</a></li>
+                <li><a href="index.html#factsandfigures" class="nav-overlay-link" data-i18n="nav_link_facts">Facts and Figures</a></li>
+                <li><a href="index.html#exhibitor2027" class="nav-overlay-link" data-i18n="nav_link_exhibitors">Ausstellende 2027</a></li>
+                <li><a href="index.html#moreinfo" class="nav-overlay-link" data-i18n="nav_link_about">Über das Event</a></li>
+                <li><a href="index.html#booking" class="nav-overlay-link" data-i18n="nav_link_become_exhibitor">Ausstellende werden</a></li>
+                <li><a href="index.html#stages" class="nav-overlay-link" data-i18n="nav_link_stages">Bühnen &amp; Formate</a></li>
+                <li><a href="index.html#location" class="nav-overlay-link" data-i18n="nav_link_location">Location</a></li>
+                <li><a href="index.html#timeline" class="nav-overlay-link" data-i18n="nav_link_road">Roadmap 2027</a></li>
+                <li><a href="index.html#faq" class="nav-overlay-link" data-i18n="nav_link_faq">FAQ</a></li>
+            </ul>
+            <div class="nav-overlay-contact">
+                <a href="tel:+4922167058464" class="contact-pill">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path
+                            d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.41 2 2 0 0 1 3.6 1.22h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.78a16 16 0 0 0 6.29 6.29l.96-.96a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z" />
+                    </svg>
+                    <span data-i18n="nav_contact_phone">+49 221 67058 464</span>
+                </a>
+
+                <a href="mailto:info@showtech.dthg.de" class="contact-pill">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path
+                            d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                        <polyline points="22,6 12,13 2,6" />
+                    </svg>
+                    <span data-i18n="nav_contact_email">info@showtech.dthg.de</span>
+                </a>
+            </div>
+        </nav>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <main>
+
+        <!-- Page Header -->
+        <section class="page-header">
+            <div class="container">
+                <!-- German Header -->
+                <div class="page-header-content lang-de-content">
+                    <span class="meta-pill">Fehler 404</span>
+                    <h1 class="page-title">Seite nicht gefunden</h1>
+                    <p class="page-subtitle">Die von Ihnen gesuchte Seite existiert leider nicht.</p>
+                </div>
+                <!-- English Header -->
+                <div class="page-header-content lang-en-content">
+                    <span class="meta-pill">Error 404</span>
+                    <h1 class="page-title">Page not found</h1>
+                    <p class="page-subtitle">The page you are looking for does not exist.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Page Content Section -->
+        <section class="page-content section-padding">
+            <div class="container">
+                <div class="error-card">
+                    
+                    <!-- German Content -->
+                    <div class="lang-de-content">
+                        <div class="error-code">404</div>
+                        <p class="error-message">Hoppla! Es sieht so aus, als hätten Sie sich im Backstage-Bereich verirrt. Keine Sorge – über den Button unten gelangen Sie direkt zurück zur Hauptbühne.</p>
+                        <a href="index.html" class="btn btn-primary">Zurück zur Startseite</a>
+                    </div>
+
+                    <!-- English Content -->
+                    <div class="lang-en-content">
+                        <div class="error-code">404</div>
+                        <p class="error-message">Oops! It looks like you've wandered into the backstage area. Don't worry – use the button below to get straight back to the main stage.</p>
+                        <a href="index.html" class="btn btn-primary">Back to Homepage</a>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <a href="index.html#hero" class="footer-logo-link">
+                        <img src="assets/hero logos/SHOWTECH_logo_wht.png" alt="SHOWTECH 2027 Logo" class="footer-logo-img">
+                    </a>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-col">
+                        <h4 data-i18n="footer_col_1_title">Event</h4>
+                        <ul>
+                            <li><a href="index.html#moreinfo" data-i18n="footer_col_1_link_1">Über das Event</a></li>
+                            <li><a href="index.html#factsandfigures" data-i18n="footer_col_1_link_2">Facts &amp; Figures</a></li>
+                            <li><a href="index.html#stages" data-i18n="footer_col_1_link_3">Bühnen &amp; Formate</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-col">
+                        <h4 data-i18n="footer_col_2_title">Teilnahme</h4>
+                        <ul>
+                            <li><a href="index.html#booking" data-i18n="footer_col_2_link_1">Ausstellende werden</a></li>
+                            <li><a href="index.html#exhibitor2027" data-i18n="footer_col_2_link_2">Unsere Ausstellenden</a></li>
+                            <li><a href="index.html#timeline" data-i18n="footer_col_2_link_3">Road to SHOWTECH</a></li>
+                            <li><a href="index.html#venue" data-i18n="footer_col_2_link_4">Location</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-col">
+                        <h4 data-i18n="footer_col_3_title">Info</h4>
+                        <ul>
+                            <li><a href="index.html#faq" data-i18n="footer_col_3_link_1">Fragen &amp; Antworten</a></li>
+                            <li><a href="impressum.html">Impressum</a></li>
+                            <li><a href="datenschutz.html">Datenschutz</a></li>
+                            <li><a href="exhibitor-downloads.html">Downloads für Ausstellende</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p data-i18n="footer_copyright">&copy; 2027 SHOWTECH. Alle Rechte vorbehalten.</p>
+                <div class="social-links">
+                    <a href="https://www.facebook.com/dthgev/" aria-label="Facebook" title="Facebook" target="_blank" rel="noopener noreferrer">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+                    </a>
+                    <a href="https://www.youtube.com/channel/UCl7KAGuAkLdZKngBbwQpfDA" aria-label="YouTube" title="YouTube" target="_blank" rel="noopener noreferrer">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"/>
+                            <polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"/>
+                        </svg>
+                    </a>
+                    <a href="https://de.linkedin.com/showcase/showtech-berlin/" aria-label="LinkedIn" title="LinkedIn" target="_blank" rel="noopener noreferrer">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+                    </a>
+                    <a href="https://www.instagram.com/showtech_berlin" aria-label="Instagram" title="Instagram" target="_blank" rel="noopener noreferrer">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js" type="module"></script>
+</body>
+
+</html>
