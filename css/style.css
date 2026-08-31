@@ -5184,3 +5184,16 @@ Let's make marker part of flow? No, absolute in item easiest.
         height: 14px !important;
     }
 }
+
+/* ============================================
+   WORDPRESS ADMIN BAR COMPATIBILITY
+   ============================================ */
+body.admin-bar .site-header {
+    top: 32px;
+}
+
+@media screen and (max-width: 782px) {
+    body.admin-bar .site-header {
+        top: 46px;
+    }
+}

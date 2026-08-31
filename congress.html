@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SHOWTECH Kongress 2027 - Arena Berlin / Glashaus</title>
+    <meta name="description" content="SHOWTECH Kongress 02.-03.06.2027 in der Arena Berlin / Glashaus. Der internationale Treffpunkt für die Theater-, Veranstaltungs- und Bühnenbranche.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+    <style>
+        /* Responsive design for layout grid */
+        @media (max-width: 992px) {
+            .content-grid-layout {
+                grid-template-columns: 1fr !important;
+                gap: 2rem !important;
+            }
+        }
+
+        /* Language-based display toggling */
+        body[data-current-lang="de"] .lang-en-content {
+            display: none !important;
+        }
+        body[data-current-lang="en"] .lang-de-content {
+            display: none !important;
+        }
+
+        /* Styling for Call for Papers module */
+        .call-for-papers-card {
+            background: linear-gradient(135deg, var(--color-bg-surface) 0%, var(--color-bg-base) 100%);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: var(--radius-md);
+            padding: 3.5rem;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.25);
+        }
+
+        .highlight-box {
+            background: rgba(41, 182, 246, 0.06);
+            border-left: 4px solid var(--color-accent-blue);
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 1.75rem 0 2.25rem 0;
+        }
+
+        .highlight-box p {
+            color: #ffffff;
+            font-weight: 500;
+            font-size: 1.05rem;
+            margin: 0;
+            line-height: 1.6;
+        }
+
+        /* Styling for Funding section */
+        .funding-card {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            border-radius: var(--radius-md);
+            padding: 3.5rem 2rem;
+            text-align: center;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .funding-logo-container {
+            margin-top: 2.5rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .funding-logo {
+            max-width: 360px;
+            width: 100%;
+            height: auto;
+            filter: brightness(0) invert(1) opacity(0.9);
+            transition: filter 0.3s ease;
+        }
+
+        .funding-logo:hover {
+            filter: brightness(0) invert(1) opacity(1);
+        }
+
+        /* Action buttons bar */
+        .action-buttons-wrap {
+            display: flex;
+            gap: 1.25rem;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        @media (max-width: 576px) {
+            .action-buttons-wrap {
+                flex-direction: column;
+                width: 100%;
+            }
+            .action-buttons-wrap .btn {
+                width: 100%;
+                text-align: center;
+            }
+            .call-for-papers-card,
+            .funding-card {
+                padding: 2.25rem 1.5rem;
+            }
+        }
+    </style>
+    <script>
+        // Language synchronization logic
+        document.addEventListener('DOMContentLoaded', () => {
+            function updateLang(lang) {
+                document.body.setAttribute('data-current-lang', lang);
+                if (lang === 'en') {
+                    document.title = "SHOWTECH Congress 2027 - Arena Berlin / Glashaus";
+                } else {
+                    document.title = "SHOWTECH Kongress 2027 - Arena Berlin / Glashaus";
+                }
+            }
+
+            // Init from localStorage
+            const savedLang = localStorage.getItem('showtech_lang') || 'de';
+            updateLang(savedLang);
+
+            // React to clicks on header dropdown
+            const dropdownItems = document.querySelectorAll('.lang-dropdown-item');
+            dropdownItems.forEach(item => {
+                item.addEventListener('click', () => {
+                    const lang = item.getAttribute('data-lang');
+                    updateLang(lang);
+                });
+            });
+        });
+    </script>
+</head>
+
+<body id="top">
+
+    <!-- Sticky Header -->
+    <header class="site-header scrolled" id="site-header">
+        <div class="container header-inner">
+            <div class="logo">
+                <a href="index.html#hero" class="logo-link">
+                    <!-- Standard Logo -->
+                    <img src="assets/hero logos/SHOWTECH_logo_wht.png" alt="SHOWTECH 2027 Logo" class="logo-img logo-default" data-i18n="nav_logo_alt">
+                    <!-- Sticky Logo -->
+                    <img src="assets/hero logos/SHOWTECH_ellipse_logo-wht.png" alt="SHOWTECH 2027 Sticky Logo" class="logo-img logo-sticky" data-i18n="nav_sticky_logo_alt">
+                </a>
+            </div>
+
+            <!-- Active Section Indicator -->
+            <div class="header-section-indicator" id="headerSectionIndicator">
+                <span class="indicator-text"></span>
+            </div>
+
+            <div class="header-actions">
+                <div class="lang-switcher-dropdown" id="langSwitcherDropdown">
+                    <button class="lang-switcher-btn" id="langSwitcherBtn" aria-haspopup="true" aria-expanded="false">
+                        <span class="current-lang">EN</span>
+                        <span class="lang-arrow">▼</span>
+                    </button>
+                    <ul class="lang-dropdown-menu" id="langDropdownMenu" aria-label="Language selection">
+                        <li><button class="lang-dropdown-item active" data-lang="en" data-i18n="nav_lang_en">EN</button></li>
+                        <li><button class="lang-dropdown-item" data-lang="de" data-i18n="nav_lang_de">DE</button></li>
+                    </ul>
+                </div>
+                <a href="index.html#exhibitor2027" class="btn btn-secondary btn-sm" data-i18n="nav_btn_exhibitor">Ausstellen</a>
+                <button class="mobile-menu-toggle" id="menuToggle" aria-label="Toggle Menu" aria-expanded="false" data-i18n="nav_toggle_label">
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Full-screen Nav Overlay -->
+    <div class="nav-overlay" id="navOverlay" aria-hidden="true">
+        <nav class="nav-overlay-inner">
+            <ul class="nav-overlay-links">
+                <li><a href="index.html#hero" class="nav-overlay-link" data-i18n="nav_link_start">Start</a></li>
+                <li><a href="congress.html" class="nav-overlay-link active">SHOWTECH Kongress</a></li>
+                <li><a href="index.html#factsandfigures" class="nav-overlay-link" data-i18n="nav_link_facts">Facts and Figures</a></li>
+                <li><a href="index.html#exhibitor2027" class="nav-overlay-link" data-i18n="nav_link_exhibitors">Ausstellende 2027</a></li>
+                <li><a href="index.html#moreinfo" class="nav-overlay-link" data-i18n="nav_link_about">Über das Event</a></li>
+                <li><a href="index.html#booking" class="nav-overlay-link" data-i18n="nav_link_become_exhibitor">Ausstellende werden</a></li>
+                <li><a href="index.html#stages" class="nav-overlay-link" data-i18n="nav_link_stages">Bühnen &amp; Formate</a></li>
+                <li><a href="index.html#venue" class="nav-overlay-link" data-i18n="nav_link_location">Location</a></li>
+                <li><a href="index.html#timeline" class="nav-overlay-link" data-i18n="nav_link_road">Roadmap 2027</a></li>
+                <li><a href="index.html#faq" class="nav-overlay-link" data-i18n="nav_link_faq">FAQ</a></li>
+            </ul>
+            <div class="nav-overlay-contact">
+                <a href="tel:+4922167058464" class="contact-pill">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path
+                            d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.41 2 2 0 0 1 3.6 1.22h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.78a16 16 0 0 0 6.29 6.29l.96-.96a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z" />
+                    </svg>
+                    <span data-i18n="nav_contact_phone">+49 221 67058 464</span>
+                </a>
+
+                <a href="mailto:info@showtech.dthg.de" class="contact-pill">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path
+                            d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                        <polyline points="22,6 12,13 2,6" />
+                    </svg>
+                    <span data-i18n="nav_contact_email">info@showtech.dthg.de</span>
+                </a>
+            </div>
+        </nav>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <main>
+
+        <!-- Modul 1: Page Header / Hero Sektion (Briefing S. 1) -->
+        <section class="page-header">
+            <div class="container">
+                <!-- German Header Content -->
+                <div class="page-header-content lang-de-content">
+                    <span class="meta-pill">SHOWTECH Kongress 2027</span>
+                    <h1 class="page-title">SHOWTECH Kongress</h1>
+                    <p class="page-subtitle" style="font-weight: 600; color: var(--color-accent-blue); margin-bottom: 1rem;">
+                        02.–03.06.2027 | Arena Berlin / Glashaus
+                    </p>
+                    <p class="page-subtitle">
+                        Der internationale Treffpunkt für die Theater-, Veranstaltungs- und Bühnenbranche. Technologie erleben, Netzwerke aufbauen, Zukunft gestalten.
+                    </p>
+                </div>
+                <!-- English Header Content -->
+                <div class="page-header-content lang-en-content">
+                    <span class="meta-pill">SHOWTECH Congress 2027</span>
+                    <h1 class="page-title">SHOWTECH Congress</h1>
+                    <p class="page-subtitle" style="font-weight: 600; color: var(--color-accent-blue); margin-bottom: 1rem;">
+                        June 02–03, 2027 | Arena Berlin / Glashaus
+                    </p>
+                    <p class="page-subtitle">
+                        The international meeting place for the theatre, event, and stage industry. Experience technology, build networks, shape the future.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Modul 2: Über den Kongress (Briefing S. 2, Zeile 2) -->
+        <section id="about-congress" class="section-moreinfo">
+            <div class="container">
+                <div class="moreinfo-section-header">
+                    <span class="section-tag">Entdecken</span>
+                    <!-- German Title -->
+                    <div class="lang-de-content">
+                        <h2>Über den Kongress</h2>
+                        <p>In Keynotes, Fachvorträgen und Diskussionen stehen die Themen im Mittelpunkt, die die Branche heute und morgen bewegen.</p>
+                    </div>
+                    <!-- English Title -->
+                    <div class="lang-en-content">
+                        <h2>About the Congress</h2>
+                        <p>Keynotes, specialist presentations, and panel discussions focus on the topics moving the industry today and tomorrow.</p>
+                    </div>
+                </div>
+
+                <div class="moreinfo-grid">
+                    <!-- Linke Rote Kachel: RAUM FÜR AUSTAUSCH -->
+                    <div class="moreinfo-card visitor-card">
+                        <div class="card-header-banner">
+                            <span class="card-tag">RAUM FÜR AUSTAUSCH</span>
+                        </div>
+                        <div class="card-body-content">
+                            <div class="card-top">
+                                <!-- German Content -->
+                                <div class="lang-de-content">
+                                    <h3>Fachlicher Dialog</h3>
+                                    <p>Parallel zur Messe findet der SHOWTECH Kongress statt – der internationale Treffpunkt für Theater- und Bühnentechnik. Der Kongress richtet sich an ein internationales Fachpublikum und bringt alle zwei Jahre in Berlin Fachleute, Expert*innen und Nachwuchskräfte aus dem In- und Ausland zusammen.</p>
+                                </div>
+                                <!-- English Content -->
+                                <div class="lang-en-content">
+                                    <h3>Professional Dialogue</h3>
+                                    <p>Running parallel to the exhibition, the SHOWTECH Congress is the international meeting place for theatre and stage technology. The congress targets an international professional audience and brings together experts, specialists, and emerging talents from Germany and abroad every two years in Berlin.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Rechte Blaue Kachel: ZUKUNFT GESTALTEN -->
+                    <div class="moreinfo-card exhibitor-card">
+                        <div class="card-header-banner">
+                            <span class="card-tag">ZUKUNFT GESTALTEN</span>
+                        </div>
+                        <div class="card-body-content">
+                            <div class="card-top">
+                                <!-- German Content -->
+                                <div class="lang-de-content">
+                                    <h3>Wissen &amp; Inspiration</h3>
+                                    <p>Der SHOWTECH Kongress verbindet fundiertes Wissen mit Inspiration und Networking. Er schafft Raum für den Austausch von Erfahrungen und Best Practices, neue Perspektiven und zukunftsweisende Ideen – und bringt die Menschen zusammen, die die Zukunft der Theater- und Bühnentechnik gestalten.</p>
+                                </div>
+                                <!-- English Content -->
+                                <div class="lang-en-content">
+                                    <h3>Knowledge &amp; Inspiration</h3>
+                                    <p>The SHOWTECH Congress combines in-depth knowledge with inspiration and networking. It creates space for exchanging experiences and best practices, new perspectives, and forward-looking ideas – bringing together the people who shape the future of theatre and stage technology.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Modul 3: BÜHNEN & FORMATE (Briefing S. 2, Zeile 3) -->
+        <section id="stages-congress" class="section-stages">
+            <div class="container">
+                <div class="stages-section-header">
+                    <span class="section-tag">Kongressprogramm</span>
+                    <!-- German Header -->
+                    <div class="lang-de-content">
+                        <h2>BÜHNEN &amp; FORMATE</h2>
+                        <p>Entdecken Sie die zentralen Präsentations- und Interaktionsbereiche des SHOWTECH Kongresses.</p>
+                    </div>
+                    <!-- English Header -->
+                    <div class="lang-en-content">
+                        <h2>STAGES &amp; FORMATS</h2>
+                        <p>Discover the central presentation and interaction areas of the SHOWTECH Congress.</p>
+                    </div>
+                </div>
+
+                <div class="stages-grid" style="grid-template-columns: repeat(3, 1fr);">
+                    <!-- Kachel 1 (Links): Main Stage -->
+                    <div class="stages-col">
+                        <div class="stage-card">
+                            <div class="stage-card-image">
+                                <img src="assets/fotos/fotos_buehnenformate/ST27_img_mainstage.png" alt="Main Stage">
+                            </div>
+                            <div class="stage-card-overlay"></div>
+                            <div class="stage-card-content">
+                                <div class="stage-card-icon-wrapper">
+                                    <img src="assets/icon_sets/icons_buehnenformate/ST27_icon_Mainstage.svg" alt="Main Stage Icon" class="stage-card-icon">
+                                </div>
+                                <h3 class="stage-card-title">Main Stage</h3>
+                                <div class="stage-card-divider"></div>
+                                <!-- German Content -->
+                                <p class="stage-card-description lang-de-content">Der Kongress im Glashaus und auf der Main Stage bietet ein umfangreiches zweitägiges Programm, das sich auf die Vermittlung von Wissen aus den Bereichen Theater, Technik und Kunst fokussiert.</p>
+                                <!-- English Content -->
+                                <p class="stage-card-description lang-en-content">The congress at Glashaus and on the Main Stage offers a comprehensive two-day program focusing on knowledge transfer across theatre, technology, and art.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Kachel 2 (Mitte): Round Tables -->
+                    <div class="stages-col">
+                        <div class="stage-card">
+                            <div class="stage-card-image">
+                                <img src="assets/fotos/fotos_buehnenformate/ST27_img_roundtables.png" alt="Round Tables">
+                            </div>
+                            <div class="stage-card-overlay"></div>
+                            <div class="stage-card-content">
+                                <div class="stage-card-icon-wrapper">
+                                    <img src="assets/icon_sets/icons_buehnenformate/ST27_icon_Roundtables.svg" alt="Round Tables Icon" class="stage-card-icon">
+                                </div>
+                                <h3 class="stage-card-title">Round Tables</h3>
+                                <div class="stage-card-divider"></div>
+                                <!-- German Content -->
+                                <p class="stage-card-description lang-de-content">An den Round Tables treffen sich Fachgruppen und AGs und sprechen gemeinsam über die aktuellen Herausforderungen und Chancen der Branche.</p>
+                                <!-- English Content -->
+                                <p class="stage-card-description lang-en-content">At the Round Tables, specialist groups and working committees meet to discuss current industry challenges and opportunities.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Kachel 3 (Rechts): Workshops (NEU - Bild & Icon von SoundLab) -->
+                    <div class="stages-col">
+                        <div class="stage-card">
+                            <div class="stage-card-image">
+                                <img src="assets/fotos/fotos_buehnenformate/ST27_img_soundlab.png" alt="Workshops">
+                            </div>
+                            <div class="stage-card-overlay"></div>
+                            <div class="stage-card-content">
+                                <div class="stage-card-icon-wrapper">
+                                    <img src="assets/icon_sets/icons_buehnenformate/ST27_Icon_SoundLab.svg" alt="Workshops Icon" class="stage-card-icon">
+                                </div>
+                                <h3 class="stage-card-title">Workshops</h3>
+                                <div class="stage-card-divider"></div>
+                                <!-- German Content -->
+                                <p class="stage-card-description lang-de-content">In praxisorientierten Workshops bieten wir aktive Weiterbildungsmöglichkeiten. Vertiefendes Fachwissen und interaktive Übungen stehen hier im Fokus.</p>
+                                <!-- English Content -->
+                                <p class="stage-card-description lang-en-content">In practice-oriented workshops, we offer active further education opportunities. Deep technical knowledge and interactive exercises are the main focus.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Modul 4: CALL FOR PAPERS (Briefing S. 3, Zeile 4) -->
+        <section id="call-for-papers" class="section-booking" style="padding: 6rem 0; background: var(--color-bg-base);">
+            <div class="container">
+                <div class="call-for-papers-card">
+                    <!-- German Content -->
+                    <div class="lang-de-content">
+                        <span class="card-tag" style="color: var(--color-accent-blue); text-transform: uppercase; font-weight: 700; letter-spacing: 0.1em; display: block; margin-bottom: 0.5rem;">Programmbeiträge</span>
+                        <h2 style="font-family: var(--font-heading); font-size: clamp(2rem, 4vw, 2.75rem); color: #fff; margin-bottom: 1.25rem; font-weight: 800;">CALL FOR PAPERS</h2>
+                        <p style="color: var(--color-text-secondary); font-size: 1.1rem; line-height: 1.7; max-width: 850px;">
+                            Ab Oktober 2026 ist der <strong>Call for Papers</strong> für den SHOWTECH Kongress geöffnet. Sie haben ein spannendes Projekt, eine innovative Idee oder wertvolle Erfahrungen aus der Praxis? Dann reichen Sie Ihren Beitrag ein und gestalten Sie das Kongressprogramm mit.
+                        </p>
+                        <div class="highlight-box">
+                            <p>Abonnieren Sie unseren Newsletter und erfahren Sie rechtzeitig von Einreichungsfristen und Neuigkeiten zum Kongress.</p>
+                        </div>
+                        <div style="margin-top: 2rem;">
+                            <!-- Button führt zum Newsletter-Modul auf der Landingpage -->
+                            <a href="index.html#moreinfo" class="btn btn-primary btn-lg">Informiert bleiben</a>
+                        </div>
+                    </div>
+
+                    <!-- English Content -->
+                    <div class="lang-en-content">
+                        <span class="card-tag" style="color: var(--color-accent-blue); text-transform: uppercase; font-weight: 700; letter-spacing: 0.1em; display: block; margin-bottom: 0.5rem;">Program Submissions</span>
+                        <h2 style="font-family: var(--font-heading); font-size: clamp(2rem, 4vw, 2.75rem); color: #fff; margin-bottom: 1.25rem; font-weight: 800;">CALL FOR PAPERS</h2>
+                        <p style="color: var(--color-text-secondary); font-size: 1.1rem; line-height: 1.7; max-width: 850px;">
+                            From October 2026, the <strong>Call for Papers</strong> for the SHOWTECH Congress will be open. Do you have an exciting project, an innovative idea, or valuable practical experience? Submit your contribution and help shape the congress program.
+                        </p>
+                        <div class="highlight-box">
+                            <p>Subscribe to our newsletter to receive timely updates on submission deadlines and congress news.</p>
+                        </div>
+                        <div style="margin-top: 2rem;">
+                            <!-- Button linking to newsletter module on homepage -->
+                            <a href="index.html#moreinfo" class="btn btn-primary btn-lg">Stay Informed</a>
+                        </div>
+                    </div>
+
+                    <!-- Online Formular Placeholder Container (wird bei Aktivierung des Call for Papers befüllt) -->
+                    <div id="cfp-form-placeholder" style="display: none; margin-top: 3rem;">
+                        <!-- Custom submission form widget will be mounted here -->
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Modul 5: FÖRDERUNG (Briefing S. 3, Zeile 5) -->
+        <section id="funding" class="section-moreinfo" style="padding: 6rem 0; background: linear-gradient(180deg, var(--color-bg-base) 0%, #050b14 100%);">
+            <div class="container">
+                <div class="funding-card">
+                    <!-- German Content -->
+                    <div class="lang-de-content">
+                        <span class="section-tag" style="color: var(--color-accent-blue); text-transform: uppercase; font-weight: 700; letter-spacing: 0.1em; display: block; margin-bottom: 0.5rem;">Unterstützung</span>
+                        <h2 style="font-family: var(--font-heading); font-size: clamp(2rem, 4vw, 2.5rem); color: #fff; margin-bottom: 1rem; font-weight: 800;">FÖRDERUNG</h2>
+                        <p style="color: var(--color-text-secondary); font-size: 1.1rem; line-height: 1.6; max-width: 750px; margin: 0 auto;">
+                            Der SHOWTECH Kongress wird durch die Senatsverwaltung für Wirtschaft, Energie und Betriebe des Landes Berlin im Rahmen des Kongressfonds für nachhaltiges Tagen gefördert.
+                        </p>
+                    </div>
+
+                    <!-- English Content -->
+                    <div class="lang-en-content">
+                        <span class="section-tag" style="color: var(--color-accent-blue); text-transform: uppercase; font-weight: 700; letter-spacing: 0.1em; display: block; margin-bottom: 0.5rem;">Support</span>
+                        <h2 style="font-family: var(--font-heading); font-size: clamp(2rem, 4vw, 2.5rem); color: #fff; margin-bottom: 1rem; font-weight: 800;">FUNDING</h2>
+                        <p style="color: var(--color-text-secondary); font-size: 1.1rem; line-height: 1.6; max-width: 750px; margin: 0 auto;">
+                            The SHOWTECH Congress is funded by the Senate Department for Economics, Energy and Public Enterprises of the State of Berlin within the framework of the Congress Fund for Sustainable Meetings.
+                        </p>
+                    </div>
+
+                    <!-- Logo der Senatsverwaltung Berlin -->
+                    <div class="funding-logo-container">
+                        <img src="https://www.ibb.de/media/bilder/logos/berlin-senwienbe-logo-horiz-transp.png" alt="Logo Senatsverwaltung für Wirtschaft, Energie und Betriebe Berlin" class="funding-logo">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Modul 6: Abschluss-Aktionen (Briefing S. 3, Zeile 6) -->
+        <section class="section-actions" style="padding: 3rem 0 5rem 0; background: #050b14; border-top: 1px solid rgba(255,255,255,0.06);">
+            <div class="container">
+                <div class="action-buttons-wrap">
+                    <!-- Roter Button: Zum Anfang -->
+                    <a href="#top" class="btn btn-primary btn-lg" style="background-color: var(--color-accent);">
+                        <span class="lang-de-content">Zum Anfang</span>
+                        <span class="lang-en-content">To Top</span>
+                    </a>
+                    <!-- Blauer Button: Zur Startseite -->
+                    <a href="index.html" class="btn btn-secondary btn-lg" style="background-color: var(--color-accent-blue); border-color: var(--color-accent-blue); color: #fff;">
+                        <span class="lang-de-content">Zur Startseite</span>
+                        <span class="lang-en-content">Back to Homepage</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <a href="index.html#hero" class="footer-logo-link">
+                        <img src="assets/hero logos/SHOWTECH_logo_wht.png" alt="SHOWTECH 2027 Logo" class="footer-logo-img">
+                    </a>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-col">
+                        <h4 data-i18n="footer_col_1_title">Event</h4>
+                        <ul>
+                            <li><a href="congress.html">SHOWTECH Kongress</a></li>
+                            <li><a href="index.html#moreinfo" data-i18n="footer_col_1_link_1">Über das Event</a></li>
+                            <li><a href="index.html#factsandfigures" data-i18n="footer_col_1_link_2">Facts &amp; Figures</a></li>
+                            <li><a href="index.html#stages" data-i18n="footer_col_1_link_3">Bühnen &amp; Formate</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-col">
+                        <h4 data-i18n="footer_col_2_title">Teilnahme</h4>
+                        <ul>
+                            <li><a href="index.html#booking" data-i18n="footer_col_2_link_1">Ausstellende werden</a></li>
+                            <li><a href="index.html#exhibitor2027" data-i18n="footer_col_2_link_2">Unsere Ausstellenden</a></li>
+                            <li><a href="index.html#timeline" data-i18n="footer_col_2_link_3">Road to SHOWTECH</a></li>
+                            <li><a href="index.html#venue" data-i18n="footer_col_2_link_4">Location</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-col">
+                        <h4 data-i18n="footer_col_3_title">Info</h4>
+                        <ul>
+                            <li><a href="index.html#faq" data-i18n="footer_col_3_link_1">Fragen &amp; Antworten</a></li>
+                            <li><a href="impressum.html">Impressum</a></li>
+                            <li><a href="datenschutz.html">Datenschutz</a></li>
+                            <li><a href="exhibitor-downloads.html">Downloads für Ausstellende</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p data-i18n="footer_copyright">&copy; 2027 SHOWTECH. Alle Rechte vorbehalten.</p>
+                <div class="social-links">
+                    <a href="https://www.facebook.com/dthgev/" aria-label="Facebook" title="Facebook" target="_blank" rel="noopener noreferrer">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+                    </a>
+                    <a href="https://www.youtube.com/channel/UCl7KAGuAkLdZKngBbwQpfDA" aria-label="YouTube" title="YouTube" target="_blank" rel="noopener noreferrer">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"/>
+                            <polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"/>
+                        </svg>
+                    </a>
+                    <a href="https://de.linkedin.com/showcase/showtech-berlin/" aria-label="LinkedIn" title="LinkedIn" target="_blank" rel="noopener noreferrer">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+                    </a>
+                    <a href="https://www.instagram.com/showtech_berlin" aria-label="Instagram" title="Instagram" target="_blank" rel="noopener noreferrer">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js" type="module"></script>
+</body>
+
+</html>
