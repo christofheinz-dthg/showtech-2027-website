@@ -217,30 +217,52 @@
     <!-- MAIN CONTENT -->
     <main>
 
-        <!-- Modul 1: Page Header / Hero Sektion (Briefing S. 1) -->
-        <section class="page-header">
-            <div class="container">
-                <!-- German Header Content -->
-                <div class="page-header-content lang-de-content">
-                    <span class="meta-pill">SHOWTECH Kongress 2027</span>
-                    <h1 class="page-title">SHOWTECH Kongress</h1>
-                    <p class="page-subtitle" style="font-weight: 600; color: var(--color-accent-blue); margin-bottom: 1rem;">
-                        02.–03.06.2027 | Arena Berlin / Glashaus
+        <!-- Hero Section with Video Background -->
+        <section class="hero-redesign" id="hero">
+            <!-- Video Background -->
+            <video class="hero-video-bg" autoplay loop muted playsinline>
+                <source src="assets/videos/WebsiteShowtechTrailer_v1_small.mp4" type="video/mp4">
+            </video>
+            <!-- Colored Overlay -->
+            <div class="hero-overlay"></div>
+
+            <div class="container hero-wrapper">
+                <!-- Centered Content -->
+                <div class="hero-content-centered">
+
+                    <!-- Meta Bar -->
+                    <div class="hero-meta-bar">
+                        <span class="meta-pill meta-date">
+                            <span class="lang-de-content">2.–3. JUNI 2027 · ARENA BERLIN</span>
+                            <span class="lang-en-content">JUNE 2–3, 2027 · ARENA BERLIN</span>
+                        </span>
+                        <a href="showtech-2027.ics" download="showtech-2027.ics" class="meta-pill meta-btn" style="text-decoration: none;">
+                            <img src="assets/icon_sets/other/ST27_icon_Addtocalendar.svg" alt="" style="width: 14px; height: 14px; filter: brightness(0) invert(1);">
+                            <span class="lang-de-content">Zum Kalender</span>
+                            <span class="lang-en-content">Add to Calendar</span>
+                        </a>
+                    </div>
+
+                    <h1 class="hero-title-en">
+                        <span class="lang-de-content">SHOWTECH <span class="text-gradient">Kongress 2027</span></span>
+                        <span class="lang-en-content">SHOWTECH <span class="text-gradient">Congress 2027</span></span>
+                    </h1>
+
+                    <p class="hero-sub">
+                        <span class="lang-de-content">Der internationale Treffpunkt für die Theater-, Veranstaltungs- und Bühnenbranche. Technologie erleben, Netzwerke aufbauen, Zukunft gestalten.</span>
+                        <span class="lang-en-content">The international meeting place for the theatre, event, and stage industry. Experience technology, build networks, shape the future.</span>
                     </p>
-                    <p class="page-subtitle">
-                        Der internationale Treffpunkt für die Theater-, Veranstaltungs- und Bühnenbranche. Technologie erleben, Netzwerke aufbauen, Zukunft gestalten.
-                    </p>
-                </div>
-                <!-- English Header Content -->
-                <div class="page-header-content lang-en-content">
-                    <span class="meta-pill">SHOWTECH Congress 2027</span>
-                    <h1 class="page-title">SHOWTECH Congress</h1>
-                    <p class="page-subtitle" style="font-weight: 600; color: var(--color-accent-blue); margin-bottom: 1rem;">
-                        June 02–03, 2027 | Arena Berlin / Glashaus
-                    </p>
-                    <p class="page-subtitle">
-                        The international meeting place for the theatre, event, and stage industry. Experience technology, build networks, shape the future.
-                    </p>
+
+                    <div class="hero-actions">
+                        <a href="#about-congress" class="btn btn-primary btn-lg btn-pill">SHOW MORE</a>
+                    </div>
+
+                    <a href="#about-congress" class="hero-scroll-arrow" aria-label="Scroll down">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="bounce-arrow">
+                            <polyline points="7 13 12 18 17 13"></polyline>
+                            <polyline points="7 6 12 11 17 6"></polyline>
+                        </svg>
+                    </a>
                 </div>
             </div>
         </section>
@@ -407,8 +429,8 @@
                             <p>Abonnieren Sie unseren Newsletter und erfahren Sie rechtzeitig von Einreichungsfristen und Neuigkeiten zum Kongress.</p>
                         </div>
                         <div style="margin-top: 2rem;">
-                            <!-- Button führt zum Newsletter-Modul auf der Landingpage -->
-                            <a href="index.html#moreinfo" class="btn btn-primary btn-lg">Informiert bleiben</a>
+                            <!-- Button führt direkt zum Newsletter-Formular auf der Landingpage -->
+                            <a href="index.html#newsletter" class="btn btn-primary btn-lg btn-pill">Informiert bleiben</a>
                         </div>
                     </div>
 
@@ -423,8 +445,8 @@
                             <p>Subscribe to our newsletter to receive timely updates on submission deadlines and congress news.</p>
                         </div>
                         <div style="margin-top: 2rem;">
-                            <!-- Button linking to newsletter module on homepage -->
-                            <a href="index.html#moreinfo" class="btn btn-primary btn-lg">Stay Informed</a>
+                            <!-- Button linking directly to newsletter form on homepage -->
+                            <a href="index.html#newsletter" class="btn btn-primary btn-lg btn-pill">Stay Informed</a>
                         </div>
                     </div>
 
@@ -436,14 +458,14 @@
             </div>
         </section>
 
-        <!-- Modul 5: FÖRDERUNG (Briefing S. 3, Zeile 5) -->
+        <!-- Modul 5: PARTNERSCHAFT (Briefing S. 3, Zeile 5) -->
         <section id="funding" class="section-moreinfo" style="padding: 6rem 0; background: linear-gradient(180deg, var(--color-bg-base) 0%, #050b14 100%);">
             <div class="container">
                 <div class="funding-card">
                     <!-- German Content -->
                     <div class="lang-de-content">
                         <span class="section-tag" style="color: var(--color-accent-blue); text-transform: uppercase; font-weight: 700; letter-spacing: 0.1em; display: block; margin-bottom: 0.5rem;">Unterstützung</span>
-                        <h2 style="font-family: var(--font-heading); font-size: clamp(2rem, 4vw, 2.5rem); color: #fff; margin-bottom: 1rem; font-weight: 800;">FÖRDERUNG</h2>
+                        <h2 style="font-family: var(--font-heading); font-size: clamp(2rem, 4vw, 2.5rem); color: #fff; margin-bottom: 1rem; font-weight: 800;">Partnerschaft</h2>
                         <p style="color: var(--color-text-secondary); font-size: 1.1rem; line-height: 1.6; max-width: 750px; margin: 0 auto;">
                             Der SHOWTECH Kongress wird durch die Senatsverwaltung für Wirtschaft, Energie und Betriebe des Landes Berlin im Rahmen des Kongressfonds für nachhaltiges Tagen gefördert.
                         </p>
@@ -452,15 +474,15 @@
                     <!-- English Content -->
                     <div class="lang-en-content">
                         <span class="section-tag" style="color: var(--color-accent-blue); text-transform: uppercase; font-weight: 700; letter-spacing: 0.1em; display: block; margin-bottom: 0.5rem;">Support</span>
-                        <h2 style="font-family: var(--font-heading); font-size: clamp(2rem, 4vw, 2.5rem); color: #fff; margin-bottom: 1rem; font-weight: 800;">FUNDING</h2>
+                        <h2 style="font-family: var(--font-heading); font-size: clamp(2rem, 4vw, 2.5rem); color: #fff; margin-bottom: 1rem; font-weight: 800;">Partnership</h2>
                         <p style="color: var(--color-text-secondary); font-size: 1.1rem; line-height: 1.6; max-width: 750px; margin: 0 auto;">
                             The SHOWTECH Congress is funded by the Senate Department for Economics, Energy and Public Enterprises of the State of Berlin within the framework of the Congress Fund for Sustainable Meetings.
                         </p>
                     </div>
 
-                    <!-- Logo der Senatsverwaltung Berlin -->
+                    <!-- Logo der Senatsverwaltung Berlin aus logos partner -->
                     <div class="funding-logo-container">
-                        <img src="https://www.ibb.de/media/bilder/logos/berlin-senwienbe-logo-horiz-transp.png" alt="Logo Senatsverwaltung für Wirtschaft, Energie und Betriebe Berlin" class="funding-logo">
+                        <img src="assets/logos partner/berlin-senwienbe-logo-horiz-transp.png" alt="Logo Senatsverwaltung für Wirtschaft, Energie und Betriebe Berlin" class="funding-logo">
                     </div>
                 </div>
             </div>
@@ -469,16 +491,19 @@
         <!-- Modul 6: Abschluss-Aktionen (Briefing S. 3, Zeile 6) -->
         <section class="section-actions" style="padding: 3rem 0 5rem 0; background: #050b14; border-top: 1px solid rgba(255,255,255,0.06);">
             <div class="container">
-                <div class="action-buttons-wrap">
-                    <!-- Roter Button: Zum Anfang -->
-                    <a href="#top" class="btn btn-primary btn-lg" style="background-color: var(--color-accent);">
-                        <span class="lang-de-content">Zum Anfang</span>
-                        <span class="lang-en-content">To Top</span>
+                <div class="action-buttons-wrap" style="justify-content: flex-start;">
+                    <!-- Roter Button: ZUM ANFANG mit Pfeil-Icon -->
+                    <a href="#top" class="btn btn-primary btn-lg btn-pill" style="background-color: var(--color-accent); display: inline-flex; align-items: center; gap: 0.5rem;">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="18 15 12 9 6 15"></polyline>
+                        </svg>
+                        <span class="lang-de-content">ZUM ANFANG</span>
+                        <span class="lang-en-content">TO TOP</span>
                     </a>
-                    <!-- Blauer Button: Zur Startseite -->
-                    <a href="index.html" class="btn btn-secondary btn-lg" style="background-color: var(--color-accent-blue); border-color: var(--color-accent-blue); color: #fff;">
-                        <span class="lang-de-content">Zur Startseite</span>
-                        <span class="lang-en-content">Back to Homepage</span>
+                    <!-- Blauer Button: ZUR STARTSEITE -->
+                    <a href="index.html" class="btn btn-secondary btn-lg btn-pill" style="background-color: var(--color-accent-blue); border-color: var(--color-accent-blue); color: #fff;">
+                        <span class="lang-de-content">ZUR STARTSEITE</span>
+                        <span class="lang-en-content">BACK TO HOMEPAGE</span>
                     </a>
                 </div>
             </div>
