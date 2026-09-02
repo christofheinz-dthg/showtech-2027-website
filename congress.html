@@ -16,7 +16,8 @@
     <style>
         /* Responsive design for layout grid */
         @media (max-width: 992px) {
-            .content-grid-layout {
+            .content-grid-layout,
+            .call-for-papers-card {
                 grid-template-columns: 1fr !important;
                 gap: 2rem !important;
             }
@@ -37,6 +38,27 @@
             border-radius: var(--radius-md);
             padding: 3.5rem;
             box-shadow: 0 15px 40px rgba(0, 0, 0, 0.25);
+            display: grid;
+            grid-template-columns: minmax(280px, 380px) 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .call-for-papers-image {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+        }
+
+        .call-for-papers-image img {
+            width: 100%;
+            height: 100%;
+            max-height: 380px;
+            object-fit: cover;
+            border-radius: 16px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
         }
 
         .highlight-box {
@@ -402,16 +424,16 @@
                         </div>
                     </div>
 
-                    <!-- Kachel 3 (Rechts): Workshops (NEU - Bild & Icon von SoundLab) -->
+                    <!-- Kachel 3 (Rechts): Workshops -->
                     <div class="stages-col">
                         <div class="stage-card">
                             <div class="stage-card-image">
-                                <img src="assets/fotos/fotos_buehnenformate/ST27_img_soundlab.png" alt="Workshops">
+                                <img src="assets/fotos/fotos_buehnenformate/ST27_img_workshop.png" alt="Workshops">
                             </div>
                             <div class="stage-card-overlay"></div>
                             <div class="stage-card-content">
                                 <div class="stage-card-icon-wrapper">
-                                    <img src="assets/icon_sets/icons_buehnenformate/ST27_Icon_SoundLab.svg" alt="Workshops Icon" class="stage-card-icon">
+                                    <img src="assets/icon_sets/icons_buehnenformate/ST27_icon_workshop.svg" alt="Workshops Icon" class="stage-card-icon">
                                 </div>
                                 <h3 class="stage-card-title">Workshops</h3>
                                 <div class="stage-card-divider"></div>
@@ -430,41 +452,48 @@
         <section id="call-for-papers" class="section-booking" style="padding: 6rem 0; background: var(--color-bg-base);">
             <div class="container">
                 <div class="call-for-papers-card">
-                    <!-- German Content -->
-                    <div class="lang-de-content">
-                        <span class="card-tag" style="color: var(--color-accent-blue); text-transform: uppercase; font-weight: 700; letter-spacing: 0.1em; display: block; margin-bottom: 0.5rem;">Programmbeiträge</span>
-                        <h2 style="font-family: var(--font-heading); font-size: clamp(2rem, 4vw, 2.75rem); color: #fff; margin-bottom: 1.25rem; font-weight: 800;">CALL FOR PAPERS</h2>
-                        <p style="color: var(--color-text-secondary); font-size: 1.1rem; line-height: 1.7; max-width: 850px;">
-                            Ab Oktober 2026 ist der <strong>Call for Papers</strong> für den SHOWTECH Kongress geöffnet. Sie haben ein spannendes Projekt, eine innovative Idee oder wertvolle Erfahrungen aus der Praxis? Dann reichen Sie Ihren Beitrag ein und gestalten Sie das Kongressprogramm mit.
-                        </p>
-                        <div class="highlight-box">
-                            <p>Abonnieren Sie unseren Newsletter und erfahren Sie rechtzeitig von Einreichungsfristen und Neuigkeiten zum Kongress.</p>
-                        </div>
-                        <div style="margin-top: 2rem;">
-                            <!-- Button führt direkt zum Newsletter-Formular auf der Landingpage -->
-                            <a href="index.html#newsletter" class="btn btn-primary btn-lg btn-pill">Informiert bleiben</a>
-                        </div>
+                    <!-- Linksbündiges Bild mit abgerundeten Ecken -->
+                    <div class="call-for-papers-image">
+                        <img src="assets/fotos/fotos_congress/ST27_Callforpapers.png" alt="SHOWTECH Call for Papers 2027">
                     </div>
 
-                    <!-- English Content -->
-                    <div class="lang-en-content">
-                        <span class="card-tag" style="color: var(--color-accent-blue); text-transform: uppercase; font-weight: 700; letter-spacing: 0.1em; display: block; margin-bottom: 0.5rem;">Program Submissions</span>
-                        <h2 style="font-family: var(--font-heading); font-size: clamp(2rem, 4vw, 2.75rem); color: #fff; margin-bottom: 1.25rem; font-weight: 800;">CALL FOR PAPERS</h2>
-                        <p style="color: var(--color-text-secondary); font-size: 1.1rem; line-height: 1.7; max-width: 850px;">
-                            From October 2026, the <strong>Call for Papers</strong> for the SHOWTECH Congress will be open. Do you have an exciting project, an innovative idea, or valuable practical experience? Submit your contribution and help shape the congress program.
-                        </p>
-                        <div class="highlight-box">
-                            <p>Subscribe to our newsletter to receive timely updates on submission deadlines and congress news.</p>
+                    <div class="call-for-papers-body">
+                        <!-- German Content -->
+                        <div class="lang-de-content">
+                            <span class="card-tag" style="color: var(--color-accent-blue); text-transform: uppercase; font-weight: 700; letter-spacing: 0.1em; display: block; margin-bottom: 0.5rem;">Programmbeiträge</span>
+                            <h2 style="font-family: var(--font-heading); font-size: clamp(2rem, 4vw, 2.75rem); color: #fff; margin-bottom: 1.25rem; font-weight: 800;">CALL FOR PAPERS</h2>
+                            <p style="color: var(--color-text-secondary); font-size: 1.1rem; line-height: 1.7;">
+                                Ab Oktober 2026 ist der <strong>Call for Papers</strong> für den SHOWTECH Kongress geöffnet. Sie haben ein spannendes Projekt, eine innovative Idee oder wertvolle Erfahrungen aus der Praxis? Dann reichen Sie Ihren Beitrag ein und gestalten Sie das Kongressprogramm mit.
+                            </p>
+                            <div class="highlight-box">
+                                <p>Abonnieren Sie unseren Newsletter und erfahren Sie rechtzeitig von Einreichungsfristen und Neuigkeiten zum Kongress.</p>
+                            </div>
+                            <div style="margin-top: 2rem;">
+                                <!-- Button führt direkt zum Newsletter-Formular auf der Landingpage -->
+                                <a href="index.html#newsletter" class="btn btn-primary btn-lg btn-pill">Informiert bleiben</a>
+                            </div>
                         </div>
-                        <div style="margin-top: 2rem;">
-                            <!-- Button linking directly to newsletter form on homepage -->
-                            <a href="index.html#newsletter" class="btn btn-primary btn-lg btn-pill">Stay Informed</a>
-                        </div>
-                    </div>
 
-                    <!-- Online Formular Placeholder Container (wird bei Aktivierung des Call for Papers befüllt) -->
-                    <div id="cfp-form-placeholder" style="display: none; margin-top: 3rem;">
-                        <!-- Custom submission form widget will be mounted here -->
+                        <!-- English Content -->
+                        <div class="lang-en-content">
+                            <span class="card-tag" style="color: var(--color-accent-blue); text-transform: uppercase; font-weight: 700; letter-spacing: 0.1em; display: block; margin-bottom: 0.5rem;">Program Submissions</span>
+                            <h2 style="font-family: var(--font-heading); font-size: clamp(2rem, 4vw, 2.75rem); color: #fff; margin-bottom: 1.25rem; font-weight: 800;">CALL FOR PAPERS</h2>
+                            <p style="color: var(--color-text-secondary); font-size: 1.1rem; line-height: 1.7;">
+                                From October 2026, the <strong>Call for Papers</strong> for the SHOWTECH Congress will be open. Do you have an exciting project, an innovative idea, or valuable practical experience? Submit your contribution and help shape the congress program.
+                            </p>
+                            <div class="highlight-box">
+                                <p>Subscribe to our newsletter to receive timely updates on submission deadlines and congress news.</p>
+                            </div>
+                            <div style="margin-top: 2rem;">
+                                <!-- Button linking directly to newsletter form on homepage -->
+                                <a href="index.html#newsletter" class="btn btn-primary btn-lg btn-pill">Stay Informed</a>
+                            </div>
+                        </div>
+
+                        <!-- Online Formular Placeholder Container (wird bei Aktivierung des Call for Papers befüllt) -->
+                        <div id="cfp-form-placeholder" style="display: none; margin-top: 3rem;">
+                            <!-- Custom submission form widget will be mounted here -->
+                        </div>
                     </div>
                 </div>
             </div>
