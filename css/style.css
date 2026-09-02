@@ -441,108 +441,147 @@ p {
 
 /* ── Full-screen Nav Overlay ─────────────────────────────────── */
 .nav-overlay {
-    position: fixed;
-    inset: 0;
-    z-index: 999;
-    background: rgba(5, 11, 20, 0.98);
+    position: fixed !important;
+    inset: 0 !important;
+    z-index: 9999 !important;
+    background: #050b14 !important;
+    background-color: #050b14 !important;
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start; /* Aligns content from the top to prevent overlapping */
-    padding-top: 140px; /* Clears the header logo and bar space */
-    opacity: 0;
-    pointer-events: none;
-    transition: opacity 0.35s ease;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: flex-start !important; /* Aligns content from the top to prevent overlapping */
+    padding-top: 140px !important; /* Clears the header logo and bar space */
+    opacity: 0 !important;
+    pointer-events: none !important;
+    transition: opacity 0.35s ease !important;
 }
 
-.nav-overlay.open {
-    opacity: 1;
-    pointer-events: all;
+.nav-overlay.open,
+.nav-overlay.is-open {
+    opacity: 1 !important;
+    pointer-events: all !important;
+    display: flex !important;
 }
 
 .nav-overlay-inner {
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 2rem; /* Reduced gap for smaller list */
-    width: 100%;
+    text-align: center !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 2rem !important; /* Reduced gap for smaller list */
+    width: 100% !important;
+    background: transparent !important;
 }
 
 .nav-overlay-links {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    flex-direction: column;
-    gap: 0.75rem; /* Clean vertical spacing for list */
+    list-style: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 0.75rem !important; /* Clean vertical spacing for list */
+    background: transparent !important;
+}
+
+.nav-overlay-links li {
+    list-style: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    background: transparent !important;
 }
 
 
 .nav-overlay-link {
-    display: block;
-    font-size: 1.1rem; /* Reduced to ~1rem (rm 1) as requested */
-    font-weight: 600;
-    letter-spacing: 0.05em;
-    color: #ffffff; /* White font color */
-    opacity: 0.8; /* High opacity to render as white rather than gray */
-    text-decoration: none;
-    font-family: var(--font-primary);
-    transition: opacity 0.2s ease, color 0.2s ease, transform 0.2s ease;
-    line-height: 1.2;
-    padding: 0.35em 0;
-    text-transform: uppercase; /* Styled menu look */
+    display: block !important;
+    font-size: 1.1rem !important; /* Reduced to ~1rem (rm 1) as requested */
+    font-weight: 600 !important;
+    letter-spacing: 0.05em !important;
+    color: #ffffff !important; /* White font color */
+    opacity: 0.8 !important; /* High opacity to render as white rather than gray */
+    text-decoration: none !important;
+    font-family: var(--font-primary) !important;
+    transition: opacity 0.2s ease, color 0.2s ease, transform 0.2s ease !important;
+    line-height: 1.2 !important;
+    padding: 0.35em 0 !important;
+    text-transform: uppercase !important; /* Styled menu look */
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+}
+
+.nav-overlay-link.active {
+    color: var(--color-accent-blue) !important;
+    opacity: 1 !important;
 }
 
 .nav-overlay-link:hover {
-    opacity: 1;
-    color: var(--color-accent-blue);
-    transform: translateY(-2px); /* Premium vertical transition */
+    opacity: 1 !important;
+    color: var(--color-accent) !important;
+    transform: translateY(-2px) !important; /* Premium vertical transition */
 }
 
 /* Navigation Overlay Contact Info - Blue Pills */
 .nav-overlay-contact {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    margin-top: 1.5rem;
-    align-items: center;
-    width: 100%;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 1rem !important;
+    margin-top: 1.5rem !important;
+    align-items: center !important;
+    width: 100% !important;
+    background: transparent !important;
 }
 
 .contact-pill {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 0.75rem;
-    padding: 0.75rem 1.75rem;
-    background: #0d1b2e; /* dark blue background matching the icons/FAQ cards */
-    border: 1.5px solid rgba(41, 182, 246, 0.3); /* blue outline border */
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 0.75rem !important;
+    padding: 0.75rem 1.75rem !important;
+    background: #0d1b2e !important; /* dark blue background matching the icons/FAQ cards */
+    background-color: #0d1b2e !important;
+    border: 1.5px solid rgba(41, 182, 246, 0.3) !important; /* blue outline border */
     color: var(--color-accent-blue) !important; /* light blue/cyan text and icon color */
-    font-weight: 700;
-    font-size: 0.95rem;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-    border-radius: var(--radius-pill);
+    font-weight: 700 !important;
+    font-size: 0.95rem !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.05em !important;
+    border-radius: var(--radius-pill) !important;
     text-decoration: none !important;
-    box-shadow: 0 4px 12px rgba(41, 182, 246, 0.1);
-    transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1);
-    width: 290px; /* fixed width so both pills are identical size */
+    box-shadow: 0 4px 12px rgba(41, 182, 246, 0.1) !important;
+    transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1) !important;
+    width: 290px !important; /* fixed width so both pills are identical size */
+    max-width: 90vw !important;
+    white-space: nowrap !important;
+    line-height: 1.2 !important;
+    box-sizing: border-box !important;
 }
 
-.contact-pill:hover {
-    transform: translateY(-3px);
-    background: rgba(41, 182, 246, 0.1); /* light blue overlay background */
-    border-color: var(--color-accent-blue); /* leuchtende outline */
+.contact-pill:hover,
+.contact-pill:focus,
+.contact-pill:active {
+    transform: translateY(-3px) !important;
+    background: rgba(41, 182, 246, 0.1) !important; /* light blue overlay background */
+    background-color: rgba(41, 182, 246, 0.1) !important;
+    border-color: var(--color-accent-blue) !important; /* leuchtende outline */
     color: #ffffff !important; /* white text on hover for premium contrast */
-    box-shadow: 0 8px 20px rgba(41, 182, 246, 0.35); /* leuchtender shadow glow */
+    box-shadow: 0 8px 20px rgba(41, 182, 246, 0.35) !important; /* leuchtender shadow glow */
+}
+
+.contact-pill span {
+    color: inherit !important;
+    background: transparent !important;
+    white-space: nowrap !important;
+    font-size: inherit !important;
+    font-weight: inherit !important;
 }
 
 .contact-pill svg {
-    flex-shrink: 0;
-    stroke-width: 2.5;
+    flex-shrink: 0 !important;
+    stroke-width: 2.5 !important;
+    color: inherit !important;
+    stroke: currentColor !important;
 }
 
 /* Burger → X animation */
