@@ -180,26 +180,40 @@ p {
     cursor: pointer;
     transition: all 0.3s ease;
     border: none;
+    text-decoration: none !important;
 }
 
 .btn-primary {
-    background-color: var(--color-accent);
-    color: var(--color-text-primary);
+    background-color: var(--color-accent) !important;
+    color: #ffffff !important;
 }
 
-.btn-primary:hover {
-    background-color: var(--color-accent-hover);
+.btn-primary:hover,
+.btn-primary:focus,
+.btn-primary:active {
+    background-color: var(--color-accent-hover) !important;
+    color: #ffffff !important;
     transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(229, 57, 53, 0.4);
 }
 
 .btn-secondary {
-    background-color: var(--color-accent-blue);
-    color: var(--color-text-primary);
+    background-color: var(--color-accent-blue) !important;
+    color: #ffffff !important;
 }
 
-.btn-secondary:hover {
-    background-color: var(--color-accent-blue-hover);
+.btn-secondary:hover,
+.btn-secondary:focus,
+.btn-secondary:active {
+    background-color: var(--color-accent-blue-hover) !important;
+    color: #ffffff !important;
     transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(41, 182, 246, 0.4);
+}
+
+.btn-primary *,
+.btn-secondary * {
+    color: inherit !important;
 }
 
 .btn-outline {
