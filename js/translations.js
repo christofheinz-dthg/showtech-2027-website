@@ -12,6 +12,7 @@ const translations = {
         nav_link_exhibitors: "Ausstellende 2027",
         nav_link_about: "Über das Event",
         nav_link_become_exhibitor: "Ausstellende werden",
+        nav_link_congress: "Der Kongress",
         nav_link_stages: "Bühnen & Formate",
         nav_link_location: "Location",
         nav_link_road: "Roadmap 2027",
@@ -22,8 +23,10 @@ const translations = {
 
         // Hero Section
         hero_date_location: "1.–3. Juni 2027 · Arena Berlin",
+        hero_date_pre: "1.–3. Juni 2027",
+        hero_date_post: "Arena Berlin",
         hero_calendar_btn: "Zum Kalender",
-        hero_title: "The world of theatre <span class=\"text-gradient\">&amp; stage<br>technology</span>",
+        hero_title: "The world of theatre <span class=\"text-gradient\">and stage<br>technology</span>",
         hero_subtitle: "Der internationale Treffpunkt für die Theater-, Veranstaltungs- und Bühnenbranche. Technologie erleben, Netzwerke aufbauen, Zukunft gestalten.",
         hero_cta_btn: "SHOW MORE",
         hero_scroll_arrow_label: "Scroll down",
@@ -74,9 +77,9 @@ const translations = {
         moreinfo_card_1_text: "Freuen Sie sich auf ein vielfältiges Fachprogramm mit Vorträgen, Diskussionen und praxisnahen Impulsen für die Theater- und Bühnentechnik.",
         moreinfo_card_1_btn: "Mehr erfahren",
         moreinfo_card_2_tag: "AUSSTELLER*INNEN",
-        moreinfo_card_2_title: "Downloads &amp; Richtlinien",
-        moreinfo_card_2_text: "Hier finden Sie alle wichtigen Bestellformulare, Factsheets, Standbaurichtlinien und Werbematerialien für Ihren Messeauftritt.",
-        moreinfo_card_2_btn: "Downloads öffnen",
+        moreinfo_card_2_title: "Ihr Auftritt bei uns",
+        moreinfo_card_2_text: "In unserem Ausstellerbereich finden Sie alle wichtigen Informationen für Ihre Teilnahme an der SHOWTECH sowie einen direkten Kontakt zu uns.",
+        moreinfo_card_2_btn: "Exhibitor Center",
         moreinfo_card_3_tag: "Newsletter",
         moreinfo_card_3_title: "Immer auf dem Laufenden bleiben",
         moreinfo_card_3_text: "Melden Sie sich für unseren Newsletter an, um rechtzeitig über Programm-Highlights, Ticket-Angebote und wichtige Termine informiert zu werden.",
@@ -92,12 +95,18 @@ const translations = {
         moreinfo_newsletter_error_msg: "Deine Anmeldung konnte nicht gespeichert werden. Bitte versuche es erneut.",
         moreinfo_newsletter_success_msg: "Das hat geklappt! Bitte prüfen Sie Ihr Postfach in den nächsten Minuten, um die Anmeldung abzuschließen.",
 
-        // Booking Section
+        // Booking Section (legacy, kept for reference)
         booking_section_tag: "Standbuchung",
         booking_section_title: "Jetzt Termin vereinbaren",
         booking_intro_text: "Buchen Sie hier Ihren persönlichen Online-Beratungstermin zur SHOWTECH 2027. In einem kurzen Gespräch (ca. 15 min.) informieren wir Sie über Standoptionen, mögliche Platzierungen und beantworten Ihre Fragen. Gerne können wir dabei auch über Ihre Wünsche und Ideen für 2027 sprechen.",
         booking_note_text: "Bitte geben Sie bei der Terminbuchung Ihren Firmennamen, die Ansprechperson sowie eine ungefähr gewünschte Flächengröße an:",
         booking_alternative_cta: "Oder hier per E-Mail",
+
+        // Congress Section
+        congress_section_tag: "NETWORKING",
+        congress_section_title: "Der Kongress",
+        congress_section_subtitle: "Der SHOWTECH Kongress 2027 ist das Event bei dem die aktuellen Themen der Theaterbranche diskutiert werden. Wir haben die spannendsten Speaker*Innen eingeladen, gemeinsam mit uns, ein vielseitiges Programm zu gestalten!",
+        congress_cta_btn: "Zur Veranstaltung",
 
         // Venue Section
         venue_eyebrow: "Die Location",
@@ -241,6 +250,7 @@ const translations = {
         nav_link_exhibitors: "Exhibitors 2027",
         nav_link_about: "About the Event",
         nav_link_become_exhibitor: "Become an Exhibitor",
+        nav_link_congress: "The Congress",
         nav_link_stages: "Stages &amp; Formats",
         nav_link_location: "Location",
         nav_link_road: "Roadmap 2027",
@@ -251,8 +261,10 @@ const translations = {
 
         // Hero Section
         hero_date_location: "June 1–3, 2027 · Arena Berlin",
+        hero_date_pre: "June 1–3, 2027",
+        hero_date_post: "Arena Berlin",
         hero_calendar_btn: "Add to Calendar",
-        hero_title: "The world of theatre <span class=\"text-gradient\">&amp; stage<br>technology</span>",
+        hero_title: "The world of theatre <span class=\"text-gradient\">and stage<br>technology</span>",
         hero_subtitle: "The international meeting point for the theatre, event and stage industry. Experience technology, build networks, shape the future.",
         hero_cta_btn: "SHOW MORE",
         hero_scroll_arrow_label: "Scroll down",
@@ -303,9 +315,9 @@ const translations = {
         moreinfo_card_1_text: "Look forward to a diverse professional programme with presentations, discussions and practical impulses for theatre and stage technology.",
         moreinfo_card_1_btn: "Learn more",
         moreinfo_card_2_tag: "EXHIBITORS",
-        moreinfo_card_2_title: "Downloads &amp; Guidelines",
-        moreinfo_card_2_text: "Find all important order forms, factsheets, stand construction guidelines and promotional materials for your trade fair appearance.",
-        moreinfo_card_2_btn: "Open downloads",
+        moreinfo_card_2_title: "Your Appearance with Us",
+        moreinfo_card_2_text: "In our exhibitor area you will find all important information for your participation in SHOWTECH as well as a direct contact to us.",
+        moreinfo_card_2_btn: "Exhibitor Center",
         moreinfo_card_3_tag: "Newsletter",
         moreinfo_card_3_title: "Stay up to date",
         moreinfo_card_3_text: "Sign up for our newsletter to receive timely updates on programme highlights, ticket offers and important dates.",
@@ -321,12 +333,18 @@ const translations = {
         moreinfo_newsletter_error_msg: "Your registration could not be saved. Please try again.",
         moreinfo_newsletter_success_msg: "It worked! Please check your inbox in the next few minutes to complete your registration.",
 
-        // Booking Section
+        // Booking Section (legacy, kept for reference)
         booking_section_tag: "Stand Booking",
         booking_section_title: "Book an Appointment Now",
         booking_intro_text: "Book your personal online consultation for SHOWTECH 2027 here. In a short call (approx. 15 min.) we will inform you about stand options, possible placements and answer your questions. We are also happy to discuss your ideas and wishes for 2027.",
         booking_note_text: "Please provide your company name, contact person and approximate desired floor space when booking:",
         booking_alternative_cta: "Or contact us by email",
+
+        // Congress Section
+        congress_section_tag: "NETWORKING",
+        congress_section_title: "The Congress",
+        congress_section_subtitle: "The SHOWTECH Congress 2027 is the event where the current topics of the theatre industry are discussed. We have invited the most exciting speakers to join us in creating a diverse programme!",
+        congress_cta_btn: "To the Event",
 
         // Venue Section
         venue_eyebrow: "The Venue",

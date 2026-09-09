@@ -327,7 +327,6 @@ p {
 }
 
 /* Sticky Logo (Icon/Smaller) */
-/* Sticky Logo (Icon/Smaller) */
 .logo-sticky {
     opacity: 0;
     height: 80px;
@@ -768,28 +767,84 @@ p {
     white-space: nowrap;
 }
 
-/* Make Hero date and calendar pills larger with 1rem labels */
+/* Make Hero date pill clear and readable */
 .hero-meta-bar .meta-pill {
     font-size: 1rem;
     padding: 10px 20px;
     gap: 0.6rem;
 }
 
-.hero-meta-bar .meta-pill img {
-    width: 18px !important;
-    height: 18px !important;
-}
-
-.meta-btn {
+/* Date pill as clickable link */
+.meta-date-link {
     cursor: pointer;
-    background: rgba(255, 255, 255, 0.04);
-    font-family: var(--font-primary);
-    transition: background 0.2s ease, border-color 0.2s ease;
+    transition: border-color 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
 }
 
-.meta-btn:hover {
-    background: rgba(255, 255, 255, 0.15);
-    border-color: rgba(255, 255, 255, 0.4);
+.meta-date-link:hover {
+    background: rgba(41, 182, 246, 0.12);
+    border-color: rgba(41, 182, 246, 0.4);
+    box-shadow: 0 0 12px rgba(41, 182, 246, 0.35), 0 0 24px rgba(41, 182, 246, 0.15);
+}
+
+/* Inline calendar icon inside the date pill */
+.meta-pill-cal-icon {
+    width: 22px !important;
+    height: 22px !important;
+    filter: brightness(0) invert(1);
+    display: inline-block;
+    vertical-align: middle;
+    flex-shrink: 0;
+    transition: filter 0.25s ease, transform 0.25s ease;
+}
+
+.meta-date-link:hover .meta-pill-cal-icon {
+    filter: drop-shadow(0 0 6px rgba(41, 182, 246, 0.9)) drop-shadow(0 0 14px rgba(41, 182, 246, 0.5)) invert(61%) sepia(88%) saturate(1450%) hue-rotate(167deg) brightness(101%) contrast(95%);
+    transform: scale(1.15);
+}
+
+/* Legacy: Standalone Calendar Icon Button (kept for compatibility) */
+.meta-btn,
+.hero-meta-bar .meta-pill.meta-btn {
+    cursor: pointer;
+    background: transparent !important;
+    border: none !important;
+    border-radius: 0 !important;
+    width: auto !important;
+    height: 44px !important;
+    padding: 0 !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    flex-shrink: 0;
+    transition: transform 0.25s ease, opacity 0.25s ease !important;
+    opacity: 0.9;
+    box-shadow: none !important;
+}
+
+.meta-btn:hover,
+.hero-meta-bar .meta-pill.meta-btn:hover {
+    background: transparent !important;
+    border: none !important;
+    transform: scale(1.12);
+    opacity: 1;
+    box-shadow: none !important;
+}
+
+.meta-btn img,
+.hero-meta-bar .meta-pill.meta-btn img,
+.meta-btn-icon {
+    width: 38px !important;
+    height: 38px !important;
+    filter: brightness(0) invert(1);
+    display: block;
+    margin: 0 !important;
+    transition: filter 0.25s ease, transform 0.25s ease !important;
+}
+
+.meta-btn:hover img,
+.hero-meta-bar .meta-pill.meta-btn:hover img,
+.meta-btn:hover .meta-btn-icon {
+    filter: drop-shadow(0 0 8px rgba(41, 182, 246, 0.85)) drop-shadow(0 0 16px rgba(41, 182, 246, 0.5)) invert(61%) sepia(88%) saturate(1450%) hue-rotate(167deg) brightness(101%) contrast(95%) !important;
 }
 
 
@@ -4802,30 +4857,42 @@ Let's make marker part of flow? No, absolute in item easiest.
         padding: 3rem 0 !important;
     }
 
-    /* Hero specifics */
+    /* Hero specifics on mobile */
     .hero-redesign {
-        padding-top: 140px !important;
-        /* Account for sticky header */
-        padding-bottom: 3rem !important;
+        padding-top: 150px !important;
+        padding-bottom: 3.5rem !important;
         min-height: auto;
-        /* Allow auto height on mobile */
+    }
+
+    .hero-content-centered {
+        padding: 5rem 0.5rem 1.5rem !important;
+    }
+
+    .hero-content-centered .hero-meta-bar {
+        margin-bottom: 1.75rem !important;
+        gap: 0.75rem !important;
+    }
+
+    .hero-title-en {
+        font-size: clamp(2.1rem, 7vw, 2.8rem) !important;
+        line-height: 1.15 !important;
+        margin-bottom: 1.5rem !important;
     }
 
     .hero-sub {
-        font-size: 1rem;
-        margin-bottom: 2rem;
+        font-size: 1.05rem !important;
+        line-height: 1.65 !important;
+        margin-bottom: 2rem !important;
+        max-width: 95% !important;
     }
 
-    /* Ensure buttons stack nicely */
+    /* Hide "SHOW MORE" button on mobile for a clean, airy view */
     .hero-actions {
-        flex-direction: column;
-        align-items: stretch;
-        gap: 1rem;
+        display: none !important;
     }
 
-    .hero-actions .btn {
-        width: 100%;
-        /* Full width buttons on mobile */
+    .hero-scroll-arrow {
+        margin-top: 1.5rem !important;
     }
 
     /* Fix Logos/Footer alignment */
@@ -5237,7 +5304,8 @@ Let's make marker part of flow? No, absolute in item easiest.
         gap: 0.4rem;
     }
 
-    .hero-meta-bar .meta-pill img {
+    .hero-meta-bar .meta-pill img,
+    .meta-pill-cal-icon {
         width: 14px !important;
         height: 14px !important;
     }
