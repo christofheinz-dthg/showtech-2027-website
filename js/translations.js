@@ -241,7 +241,14 @@ const translations = {
         exhibitor_area_title: "Exhibitor Area",
         exhibitor_area_tile_booking: "Standbuchung",
         exhibitor_area_tile_downloads: "Downloads",
-        exhibitor_area_tile_management: "Aussteller-Management System"
+        exhibitor_area_tile_management: "Aussteller-Management System",
+
+        // Team Section
+        nav_link_team: "Team",
+        team_section_tag: "Das sind wir",
+        team_section_title: "Team",
+        team_section_subline: "Wiebke Pohl, Marius Lohmann, Vincent Kaufmann, Christof Heinz, Viktoria Ebel",
+        team_photo_alt: "Das SHOWTECH-Team 2026"
     },
     en: {
         // Header & Navigation
@@ -485,7 +492,14 @@ const translations = {
         exhibitor_area_title: "Exhibitor Area",
         exhibitor_area_tile_booking: "Stand Booking",
         exhibitor_area_tile_downloads: "Downloads",
-        exhibitor_area_tile_management: "Exhibitor Management System"
+        exhibitor_area_tile_management: "Exhibitor Management System",
+
+        // Team Section
+        nav_link_team: "Team",
+        team_section_tag: "Who we are",
+        team_section_title: "Team",
+        team_section_subline: "Wiebke Pohl, Marius Lohmann, Vincent Kaufmann, Christof Heinz, Viktoria Ebel",
+        team_photo_alt: "The SHOWTECH Team 2026"
     }
 };
 

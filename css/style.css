@@ -5322,4 +5322,62 @@ body.admin-bar .site-header {
     body.admin-bar .site-header {
         top: 46px;
     }
+
+/* ── Team Section ─────────────────────────────────────────── */
+.section-team {
+    padding: 6rem 0;
+    background-color: #ffffff;
+    overflow: hidden;
+    position: relative;
+}
+
+.team-section-header {
+    margin-bottom: 3rem;
+    text-align: center;
+}
+
+.team-section-header .section-tag {
+    display: inline-block;
+    color: var(--color-accent);
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 0.5rem;
+}
+
+.team-section-header h2 {
+    font-size: clamp(2.25rem, 4vw, 2.75rem);
+    font-weight: 800;
+    color: var(--color-text-dark);
+    margin: 0 0 0.75rem 0;
+    font-family: var(--font-heading);
+}
+
+.team-subline {
+    color: #5a7a9a;
+    font-size: 1.05rem;
+    line-height: 1.5;
+    margin: 0 auto;
+}
+
+.team-photo-wrapper {
+    width: 100%;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: 0 16px 48px rgba(0, 0, 0, 0.12);
+}
+
+.team-photo {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+@media (max-width: 768px) {
+    .section-team {
+        padding: 4rem 0;
+    }
+}
+
 }
