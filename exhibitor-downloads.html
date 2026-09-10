@@ -182,6 +182,115 @@
             color: #fff;
             transform: translateX(3px);
         }
+
+        /* ── Exhibitor Area Navigation ── */
+        .exhibitor-area-nav {
+            background: var(--color-bg-base);
+            padding: 5rem 0 3rem;
+        }
+
+        .exhibitor-area-title {
+            font-family: var(--font-heading);
+            font-size: clamp(1.6rem, 3vw, 2.2rem);
+            color: var(--color-text-primary);
+            margin-bottom: 2rem;
+            text-align: center;
+            letter-spacing: -0.02em;
+        }
+
+        .exhibitor-area-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+        }
+
+        .exhibitor-area-tile {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+            background: var(--color-bg-surface);
+            border: 1px solid rgba(255, 255, 255, 0.07);
+            border-radius: var(--radius-lg);
+            padding: 2.5rem 2rem;
+            text-decoration: none;
+            color: var(--color-text-primary);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .exhibitor-area-tile::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, rgba(41, 182, 246, 0.07) 0%, rgba(229, 57, 53, 0.07) 100%);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            border-radius: inherit;
+        }
+
+        .exhibitor-area-tile:hover {
+            transform: translateY(-6px);
+            border-color: rgba(41, 182, 246, 0.35);
+            box-shadow: 0 12px 32px rgba(0, 0, 0, 0.35);
+            color: var(--color-text-primary);
+            text-decoration: none;
+        }
+
+        .exhibitor-area-tile:hover::before {
+            opacity: 1;
+        }
+
+        .exhibitor-tile-icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 64px;
+            height: 64px;
+            background: rgba(41, 182, 246, 0.08);
+            border-radius: var(--radius-md);
+            color: var(--color-accent-blue);
+            transition: all 0.3s ease;
+            position: relative;
+            z-index: 1;
+        }
+
+        .exhibitor-area-tile:hover .exhibitor-tile-icon {
+            background: var(--color-accent-blue);
+            color: var(--color-bg-base);
+            transform: scale(1.08);
+        }
+
+        .exhibitor-tile-label {
+            font-family: var(--font-heading);
+            font-size: 1.1rem;
+            font-weight: 600;
+            text-align: center;
+            line-height: 1.3;
+            position: relative;
+            z-index: 1;
+        }
+
+        .exhibitor-tile-arrow {
+            font-size: 1.2rem;
+            color: rgba(255, 255, 255, 0.3);
+            transition: all 0.3s ease;
+            position: relative;
+            z-index: 1;
+        }
+
+        .exhibitor-area-tile:hover .exhibitor-tile-arrow {
+            color: var(--color-accent-blue);
+            transform: translateY(3px);
+        }
+
+        @media (max-width: 768px) {
+            .exhibitor-area-grid {
+                grid-template-columns: 1fr;
+            }
+        }
     </style>
     <script>
         // Language synchronization logic
@@ -261,7 +370,7 @@
                 <li><a href="index.html#factsandfigures" class="nav-overlay-link" data-i18n="nav_link_facts">Facts and Figures</a></li>
                 <li><a href="index.html#exhibitor2027" class="nav-overlay-link" data-i18n="nav_link_exhibitors">Ausstellende 2027</a></li>
                 <li><a href="index.html#moreinfo" class="nav-overlay-link" data-i18n="nav_link_about">Über das Event</a></li>
-                <li><a href="index.html#booking" class="nav-overlay-link" data-i18n="nav_link_become_exhibitor">Ausstellende werden</a></li>
+                <li><a href="/exhibitor-downloads/#standbuchung" class="nav-overlay-link" data-i18n="nav_link_become_exhibitor">Ausstellende werden</a></li>
                 <li><a href="index.html#stages" class="nav-overlay-link" data-i18n="nav_link_stages">Bühnen &amp; Formate</a></li>
                 <li><a href="index.html#venue" class="nav-overlay-link" data-i18n="nav_link_location">Location</a></li>
                 <li><a href="index.html#timeline" class="nav-overlay-link" data-i18n="nav_link_road">Roadmap 2027</a></li>
@@ -293,8 +402,38 @@
     <!-- MAIN CONTENT -->
     <main>
 
+        <!-- Exhibitor Area Navigation Tiles -->
+        <section class="exhibitor-area-nav">
+            <div class="container">
+                <h2 class="exhibitor-area-title" data-i18n="exhibitor_area_title">Exhibitor Area</h2>
+                <div class="exhibitor-area-grid">
+                    <a href="#standbuchung" class="exhibitor-area-tile">
+                        <div class="exhibitor-tile-icon">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><path d="M14 17h7M17 14v7"/></svg>
+                        </div>
+                        <span class="exhibitor-tile-label" data-i18n="exhibitor_area_tile_booking">Standbuchung</span>
+                        <span class="exhibitor-tile-arrow">↓</span>
+                    </a>
+                    <a href="#downloads" class="exhibitor-area-tile">
+                        <div class="exhibitor-tile-icon">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                        </div>
+                        <span class="exhibitor-tile-label" data-i18n="exhibitor_area_tile_downloads">Downloads</span>
+                        <span class="exhibitor-tile-arrow">↓</span>
+                    </a>
+                    <a href="https://dthg.profairs.de/" target="_blank" rel="noopener noreferrer" class="exhibitor-area-tile">
+                        <div class="exhibitor-tile-icon">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                        </div>
+                        <span class="exhibitor-tile-label" data-i18n="exhibitor_area_tile_management">Ausstellermanagementsystem</span>
+                        <span class="exhibitor-tile-arrow">↗</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
         <!-- Page Header -->
-        <section class="page-header">
+        <section class="page-header" id="downloads">
             <div class="container">
                 <!-- German Title Header -->
                 <div class="page-header-content lang-de-content">
@@ -495,7 +634,7 @@
                 </div>
 
                 <!-- Terminvereinbarung Card -->
-                <div class="booking-grid" style="margin-top: 4rem; margin-bottom: 2rem;">
+                <div class="booking-grid" id="standbuchung" style="margin-top: 4rem; margin-bottom: 2rem;">
                     <div class="moreinfo-card exhibitor-card booking-info-card booking-full-card">
                         <div class="card-header-banner">
                             <span class="card-tag" data-i18n="booking_section_tag">Standbuchung</span>
@@ -580,7 +719,7 @@
                     <div class="footer-col">
                         <h4 data-i18n="footer_col_2_title">Teilnahme</h4>
                         <ul>
-                            <li><a href="index.html#booking" data-i18n="footer_col_2_link_1">Ausstellende werden</a></li>
+                            <li><a href="/exhibitor-downloads/#standbuchung" data-i18n="footer_col_2_link_1">Ausstellende werden</a></li>
                             <li><a href="index.html#exhibitor2027" data-i18n="footer_col_2_link_2">Unsere Ausstellenden</a></li>
                             <li><a href="index.html#timeline" data-i18n="footer_col_2_link_3">Road to SHOWTECH</a></li>
                             <li><a href="index.html#venue" data-i18n="footer_col_2_link_4">Location</a></li>

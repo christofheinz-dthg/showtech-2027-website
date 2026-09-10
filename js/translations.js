@@ -79,7 +79,7 @@ const translations = {
         moreinfo_card_2_tag: "AUSSTELLER*INNEN",
         moreinfo_card_2_title: "Ihr Auftritt bei uns",
         moreinfo_card_2_text: "In unserem Ausstellerbereich finden Sie alle wichtigen Informationen für Ihre Teilnahme an der SHOWTECH sowie einen direkten Kontakt zu uns.",
-        moreinfo_card_2_btn: "Exhibitor Center",
+        moreinfo_card_2_btn: "Exhibitor Area",
         moreinfo_card_3_tag: "Newsletter",
         moreinfo_card_3_title: "Immer auf dem Laufenden bleiben",
         moreinfo_card_3_text: "Melden Sie sich für unseren Newsletter an, um rechtzeitig über Programm-Highlights, Ticket-Angebote und wichtige Termine informiert zu werden.",
@@ -235,7 +235,13 @@ const translations = {
         footer_col_3_link_2: "Impressum",
         footer_col_3_link_3: "Datenschutz",
         footer_col_3_link_4: "Downloads für Ausstellende",
-        footer_copyright: "&copy; 2027 SHOWTECH. Alle Rechte vorbehalten."
+        footer_copyright: "&copy; 2027 SHOWTECH. Alle Rechte vorbehalten.",
+
+        // Exhibitor Area Tiles (exhibitor-downloads page)
+        exhibitor_area_title: "Exhibitor Area",
+        exhibitor_area_tile_booking: "Standbuchung",
+        exhibitor_area_tile_downloads: "Downloads",
+        exhibitor_area_tile_management: "Ausstellermanagementsystem"
     },
     en: {
         // Header & Navigation
@@ -317,7 +323,7 @@ const translations = {
         moreinfo_card_2_tag: "EXHIBITORS",
         moreinfo_card_2_title: "Your Appearance with Us",
         moreinfo_card_2_text: "In our exhibitor area you will find all important information for your participation in SHOWTECH as well as a direct contact to us.",
-        moreinfo_card_2_btn: "Exhibitor Center",
+        moreinfo_card_2_btn: "Exhibitor Area",
         moreinfo_card_3_tag: "Newsletter",
         moreinfo_card_3_title: "Stay up to date",
         moreinfo_card_3_text: "Sign up for our newsletter to receive timely updates on programme highlights, ticket offers and important dates.",
@@ -473,7 +479,13 @@ const translations = {
         footer_col_3_link_2: "Imprint",
         footer_col_3_link_3: "Privacy Policy",
         footer_col_3_link_4: "Exhibitor Downloads",
-        footer_copyright: "&copy; 2027 SHOWTECH. All rights reserved."
+        footer_copyright: "&copy; 2027 SHOWTECH. All rights reserved.",
+
+        // Exhibitor Area Tiles (exhibitor-downloads page)
+        exhibitor_area_title: "Exhibitor Area",
+        exhibitor_area_tile_booking: "Stand Booking",
+        exhibitor_area_tile_downloads: "Downloads",
+        exhibitor_area_tile_management: "Exhibitor Management System"
     }
 };
 
