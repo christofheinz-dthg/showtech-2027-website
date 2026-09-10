@@ -541,6 +541,7 @@ document.addEventListener('DOMContentLoaded', () => {
             'stages',
             'venue',
             'timeline',
+            'team',
             'faq'
         ];
 

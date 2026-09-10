@@ -179,6 +179,9 @@ const translations = {
 
         // FAQ Section
         faq_sidebar_title: "Häufig gestellte Fragen<br>&amp; Antworten",
+        faq_contact_person_name: "Hannes Kalauch",
+        faq_contact_person_role: "Aussteller*innen- & Kund*innenservice",
+        faq_contact_person_alt: "Hannes Kalauch",
         faq_contact_phone_label: "Telefon",
         faq_contact_email_label: "E-Mail",
         faq_tab_visitor: "Besucher*in",
@@ -430,6 +433,9 @@ const translations = {
 
         // FAQ Section
         faq_sidebar_title: "Frequently Asked<br>Questions",
+        faq_contact_person_name: "Hannes Kalauch",
+        faq_contact_person_role: "Exhibitor & Customer Service",
+        faq_contact_person_alt: "Hannes Kalauch",
         faq_contact_phone_label: "Phone",
         faq_contact_email_label: "Email",
         faq_tab_visitor: "Visitors",
