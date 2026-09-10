@@ -241,7 +241,7 @@ const translations = {
         exhibitor_area_title: "Exhibitor Area",
         exhibitor_area_tile_booking: "Standbuchung",
         exhibitor_area_tile_downloads: "Downloads",
-        exhibitor_area_tile_management: "Ausstellermanagementsystem"
+        exhibitor_area_tile_management: "Aussteller-Management System"
     },
     en: {
         // Header & Navigation
