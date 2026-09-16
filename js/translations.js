@@ -124,9 +124,9 @@ const translations = {
         venue_acc_3_body_1: "Die Ausstellung erstreckt sich &uuml;ber die Arena Halle (Hauptfl&auml;che), die Glashaus-Galerie sowie die Spree-Terrasse im Au&szlig;enbereich.",
         venue_acc_3_body_2: "Ein detaillierter Hallenplan wird rechtzeitig vor der Veranstaltung zum Download bereitgestellt.",
         venue_acc_4_header: "&Ouml;ffnungszeiten",
-        venue_acc_4_body_1: "<strong>Montag, 1. Juni 2027:</strong> 10:00 &ndash; 18:00 Uhr",
-        venue_acc_4_body_2: "<strong>Dienstag, 2. Juni 2027:</strong> 10:00 &ndash; 18:00 Uhr",
-        venue_acc_4_body_3: "<strong>Mittwoch, 3. Juni 2027:</strong> 10:00 &ndash; 16:00 Uhr",
+        venue_acc_4_body_1: "<strong>Dienstag, 1. Juni 2027:</strong> 10:00 &ndash; 18:00 Uhr",
+        venue_acc_4_body_2: "<strong>Mittwoch, 2. Juni 2027:</strong> 10:00 &ndash; 18:00 Uhr",
+        venue_acc_4_body_3: "<strong>Donnerstag, 3. Juni 2027:</strong> 10:00 &ndash; 16:00 Uhr",
         venue_acc_4_body_4: "Nur f&uuml;r Fachbesucher*innen. Ausstellende erhalten 30 Min. fr&uuml;her Einlass.",
         venue_slide_1_title: "Die große Messehalle",
         venue_slide_1_caption: "1927 war es die größte freitragende Halle Europas",
@@ -250,7 +250,7 @@ const translations = {
         nav_link_team: "Team",
         team_section_tag: "Das sind wir",
         team_section_title: "Team",
-        team_section_subline: "Wiebke Pohl, Marius Lohmann, Vincent Kaufmann, Christof Heinz, Viktoria Ebel",
+        team_section_subline: "Wiebke Pohl, Marius Lohmann, Vincent Kaufmann, Christof Heinz, Hannes Kalauch, Viktoria Ebel",
         team_photo_alt: "Das SHOWTECH-Team 2026"
     },
     en: {
@@ -504,7 +504,7 @@ const translations = {
         nav_link_team: "Team",
         team_section_tag: "Who we are",
         team_section_title: "Team",
-        team_section_subline: "Wiebke Pohl, Marius Lohmann, Vincent Kaufmann, Christof Heinz, Viktoria Ebel",
+        team_section_subline: "Wiebke Pohl, Marius Lohmann, Vincent Kaufmann, Christof Heinz, Hannes Kalauch, Viktoria Ebel",
         team_photo_alt: "The SHOWTECH Team 2026"
     }
 };
