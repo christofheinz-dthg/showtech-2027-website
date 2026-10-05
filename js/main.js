@@ -370,6 +370,29 @@ document.addEventListener('DOMContentLoaded', () => {
         startVenueAuto();
     }
 
+    // ── Team Slider (no auto-rotate) ─────────────────────────────────
+    const teamSlides = document.querySelectorAll('.team-slide');
+    const teamDots = document.querySelectorAll('.team-dot');
+    const teamPrev = document.getElementById('teamPrev');
+    const teamNext = document.getElementById('teamNext');
+    let teamIndex = 0;
+
+    function goToTeamSlide(n) {
+        teamSlides[teamIndex].classList.remove('active');
+        teamDots[teamIndex].classList.remove('active');
+        teamIndex = (n + teamSlides.length) % teamSlides.length;
+        teamSlides[teamIndex].classList.add('active');
+        teamDots[teamIndex].classList.add('active');
+    }
+
+    if (teamSlides.length) {
+        teamPrev && teamPrev.addEventListener('click', () => goToTeamSlide(teamIndex - 1));
+        teamNext && teamNext.addEventListener('click', () => goToTeamSlide(teamIndex + 1));
+        teamDots.forEach(dot => {
+            dot.addEventListener('click', () => goToTeamSlide(+dot.dataset.index));
+        });
+    }
+
 
 
     // ── Hero Collage: One-time Init (Static) ──────────

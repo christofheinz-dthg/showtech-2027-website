@@ -250,8 +250,23 @@ const translations = {
         nav_link_team: "Team",
         team_section_tag: "Das sind wir",
         team_section_title: "Team",
-        team_section_subline: "Wiebke Pohl, Marius Lohmann, Vincent Kaufmann, Christof Heinz, Hannes Kalauch, Viktoria Ebel",
-        team_photo_alt: "Das SHOWTECH-Team 2026"
+        team_section_intro: "Hinter der SHOWTECH steht das Team der DTHG. Wir begleiten Sie von der ersten Anfrage bis zur Veranstaltung und sind bei allen Fragen rund um Ihre Teilnahme persönlich für Sie da.",
+        team_slide_0_name: "DTHG Team",
+        team_slide_0_role: "Wiebke Pohl, Marius Lohmann, Vincent Kaufmann, Christof Heinz, Hannes Kalauch, Viktoria Ebel",
+        team_slide_1_name: "Viktoria Ebel",
+        team_slide_1_role: "Geschäftsführerin, Koordination Kongress",
+        team_slide_2_name: "Christof Heinz",
+        team_slide_2_role: "Kommunikation & Marketing",
+        team_slide_3_name: "Hannes Kalauch",
+        team_slide_3_role: "Aussteller- & Kundenservice",
+        team_slide_4_name: "Vincent Kaufmann",
+        team_slide_4_role: "Immersive Showroom & SHOWTECH Award",
+        team_slide_5_name: "Marius Lohmann",
+        team_slide_5_role: "Koordination IT",
+        team_slide_6_name: "Wiebke Pohl",
+        team_slide_6_role: "Geschäftsführerin, Koordination Messe",
+        team_slide_7_name: "Jörg Schildbach",
+        team_slide_7_role: "Technische Leitung"
     },
     en: {
         // Header & Navigation
@@ -504,8 +519,23 @@ const translations = {
         nav_link_team: "Team",
         team_section_tag: "Who we are",
         team_section_title: "Team",
-        team_section_subline: "Wiebke Pohl, Marius Lohmann, Vincent Kaufmann, Christof Heinz, Hannes Kalauch, Viktoria Ebel",
-        team_photo_alt: "The SHOWTECH Team 2026"
+        team_section_intro: "Behind SHOWTECH is the DTHG team. We support you from the first enquiry through to the event and are personally available to answer all your questions about your participation.",
+        team_slide_0_name: "DTHG Team",
+        team_slide_0_role: "Wiebke Pohl, Marius Lohmann, Vincent Kaufmann, Christof Heinz, Hannes Kalauch, Viktoria Ebel",
+        team_slide_1_name: "Viktoria Ebel",
+        team_slide_1_role: "Managing Director, Congress Coordination",
+        team_slide_2_name: "Christof Heinz",
+        team_slide_2_role: "Communications & Marketing",
+        team_slide_3_name: "Hannes Kalauch",
+        team_slide_3_role: "Exhibitor & Customer Service",
+        team_slide_4_name: "Vincent Kaufmann",
+        team_slide_4_role: "Immersive Showroom & SHOWTECH Award",
+        team_slide_5_name: "Marius Lohmann",
+        team_slide_5_role: "IT Coordination",
+        team_slide_6_name: "Wiebke Pohl",
+        team_slide_6_role: "Managing Director, Exhibition Coordination",
+        team_slide_7_name: "Jörg Schildbach",
+        team_slide_7_role: "Technical Director"
     }
 };
 
