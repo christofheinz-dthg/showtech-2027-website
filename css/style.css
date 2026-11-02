@@ -769,6 +769,7 @@ p {
     font-weight: 500;
     color: var(--color-text-primary);
     white-space: nowrap;
+    margin-bottom: 1.95rem;
 }
 
 /* Make Hero date pill clear and readable */
